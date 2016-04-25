@@ -217,11 +217,29 @@ sap.ui.define([
 						processed: true
 					}]
 				}]
+				
 			});
 			this.byId("date_id").setDateValue(new Date());
 			this.getView().setModel(jsonModel);
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
             this.getView().setModel(oSelectedBayModel,"selectedBay");
+            
+            	var oFilterSelectData = {
+				filterData: [{
+					name: "001 Feeling green dark"
+				}, {
+					name: "015 Grand cherry"
+				}, {
+					name: "004 Talitha"
+				}, {
+					name: "001 Feeling DDD"
+				}]
+			};
+            
+			var filterModel= new sap.ui.model.json.JSONModel(oFilterSelectData);
+	
+					this.getView().setModel(filterModel,"plants");
+				
 		},
 		formatOddWeek: function(date) {
 		    console.log(date);
@@ -296,11 +314,20 @@ sap.ui.define([
 		onDataFilter: function(oEvent) {
 			console.log(this._sPlantName);
 			console.log(this._sPlanningType);
+			console.log(this._sDiscriptionValue);
 
 			var aFilters = [];
 			// update list binding
 			var obayTable = this.getView().byId("bay_table_id");
-			var binding = obayTable.getBinding("items");
+			
+			var aTableItems = obayTable.getItems();
+				
+			if(this._sDiscriptionValue !=null && this._sDiscriptionValue.trim().length > 0) {
+			    console.log("DS");
+			    var oDiscriptionFilter = new sap.ui.model.Filter("discription", sap.ui.model.FilterOperator.Contains, this._sDiscriptionValue);
+			    aFilters.push(oDiscriptionFilter);
+			}	
+				
 			if (this._sPlanningType != "-" && this._sPlanningType != null) {
 				console.log("sPT");
 				var oPlanningTypeFilter = new sap.ui.model.Filter("planingType", sap.ui.model.FilterOperator.EQ, this._sPlanningType);
@@ -314,7 +341,10 @@ sap.ui.define([
 			}
 			console.log(aFilters.length);
 			if (aFilters.length > 0) {
-				binding.filter(aFilters);
+				for (var x = 0; x < aTableItems.length; x++) {
+				    //	console.log(aTableItems[x]);
+					aTableItems[x].getBinding("rows").filter(aFilters);
+				}
 			}
 
 			this._getBayFilterDialog().close();

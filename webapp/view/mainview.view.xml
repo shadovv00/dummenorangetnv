@@ -9,17 +9,23 @@
 					<!--<Button text="Bay overview" press="goToBayOverview"/>-->
 					<!--<Button text="Bay details" press="goToBayDetails"/>-->
 					<!--<Button text="Add plants to a bay" press="goToAddPlantsToABay"/>-->
-            		<Toolbar height="100%" class="orangeHeader" >
-					<!--<FlexBox height="100%" alignItems="Center" justifyContent="Start">-->
-					<!--	<items>-->
-					    <ToolbarSpacer/>
-    					<core:Icon src="sap-icon://shipping-status" size="100px" press="goToCustomerSelectAsGrowerAdvisor"/>
-					    <ToolbarSpacer/>
-    					<core:Icon src="sap-icon://employee-approvals" size="100px"/>
-					    <ToolbarSpacer/>
-					<!--	</items>-->
-					<!--</FlexBox>-->
-            		</Toolbar>
+					<Toolbar height="100%" class="orangeHeader">
+						<!--<FlexBox height="100%" alignItems="Center" justifyContent="Start">-->
+						<!--	<items>-->
+						<ToolbarSpacer/>
+						<VBox alignItems="Center" width="19%" class="panel-border">
+							<core:Icon src="sap-icon://shipping-status" size="1000%" press="goToCustomerSelectAsGrowerAdvisor"/>
+							<Label text="Current planning" design="Bold" class="texts-font"/>
+						</VBox>
+						<ToolbarSpacer/>
+						<VBox alignItems="Center" width="19%" class="panel-border">
+							<core:Icon src="sap-icon://employee-approvals" size="1000%"/>
+							<Label text="Approvals" design="Bold" class="texts-font"/>
+						</VBox>
+						<ToolbarSpacer/>
+						<!--	</items>-->
+						<!--</FlexBox>-->
+					</Toolbar>
 				</content>
 			</Page>
 		</pages>

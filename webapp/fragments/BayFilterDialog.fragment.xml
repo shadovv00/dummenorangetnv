@@ -34,8 +34,8 @@
 					<l:MatrixLayoutCell>
 						<Label text="Variety / product form" labelFor="selectId1" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
 					<l:MatrixLayoutCell >
-						<Select id="plantSelectorId" items="{/data/plant}" width="90%" class="sapUiMediumMarginEnd" change="onPlantChange">
-							<core:Item key="{name}" text="{name}"/>
+						<Select id="plantSelectorId" items="{plants>/filterData}" width="90%" class="sapUiMediumMarginEnd" change="onPlantChange">
+							<core:Item key="{plants>name}" text="{plants>name}"/>
 						</Select>
 					</l:MatrixLayoutCell>
 				</l:MatrixLayoutRow>
