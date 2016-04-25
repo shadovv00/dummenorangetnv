@@ -1,0 +1,24 @@
+/**
+* Copyright (c) 2013 SAP AG, All Rights Reserved
+*
+* Theming Engine 1.16.1
+* data:{"Path": "UI5.sap/ui/generic/template.custom8orange8bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160422193601", "Source": "1.36.6", "Engine": "1.16.1"}}
+*/
+
+/******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
+/******************* FILE /UI5/sap/ui/core/themes/base/global.less (Version 1.36.6) *******************/
+
+
+/******************* FILE /UI5/sap/ui/generic/template/themes/base/library.less (Version 1.36.6) *******************/
+/******************* FILE /Base/baseLib/sap_bluecrystal/base.less (Version 10.30.3.245729.0) *******************/
+/******************* FILE /UI5/sap/ui/core/themes/sap_bluecrystal/global.less (Version 1.36.6) *******************/
+/******************* FILE /UI5/sap/ui/generic/template/themes/sap_bluecrystal/library.less (Version 1.36.6) *******************/
+/******************* FILE /Base/baseLib/custom8orange8bluecrystal/custom.less (Version 10.30.3.245729.0) *******************/
+
+
+/******************* FILE /Base/baseLib/custom8orange8bluecrystal/base.less (Version 10.30.3.245729.0) *******************/
+/******************* FILE /UI5/sap/ui/core/themes/custom8orange8bluecrystal/global.less (Version 1.36.6) *******************/
+/******************* FILE /UI5/sap/ui/generic/template/themes/custom8orange8bluecrystal/library.less (Version 1.36.6) *******************/
+
+
+.sapThemeMetaData-UI5-sap-ui-generic-template{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/generic/template.custom8orange8bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160422193601", "Source": "1.36.6", "Engine": "1.16.1"}}');}

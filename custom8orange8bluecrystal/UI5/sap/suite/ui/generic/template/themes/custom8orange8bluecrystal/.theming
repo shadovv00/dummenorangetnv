@@ -1,0 +1,7 @@
+{
+	"sEntity": "Theme",
+	"sId": "custom8orange8bluecrystal",
+	"sLabel": "Custom Orange Blue Crystal",
+	"oExtends": "UI5.sap/suite/ui/generic/template.sap_bluecrystal",
+	"sTextDirections": "LTR"
+}

@@ -1,0 +1,75 @@
+/* Enter your custom styles here */
+.bay-table-outer-wrapper {
+	background: #fff;
+    position: absolute;
+    top: 13rem;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+}
+.bay-table-inner-wrapper {
+	position: absolute;
+    top: 3rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+}
+.bay-table {
+	border-collapse: collapse;
+}
+.bay-row-height {
+	line-height: 3em;
+}
+.bay-row-paddings {
+	padding: 0 1rem;
+}
+.bay-table-cell-paddings th, .bay-table-cell-paddings td {
+	padding: 0 0.7rem;
+}
+.bay-row-border-bottom td {
+	border-bottom: 2px solid black;
+}
+.progress-bar-text-middle span {
+	width: 100%;
+	text-align: center;
+}
+/*technical*/
+.-visible-header-table {
+	background: white;
+	position: absolute;
+	border-bottom: 1px solid #ccc;
+	z-index: 2;
+}
+.-invisible-header {
+	visibility: hidden;
+	line-height: 0px;
+}
+.bay-row {
+	height: 3rem;
+}
+.sapUiProgIndEnd {
+	background-color: black !important;
+}
+.sapUiProgIndBorder {
+	border: 1px solid #000000 !important;
+}
+.-bay-empty-cell {
+    text-align: center;
+    font-weight: bold;
+}
+.bayRedColour {
+    color: red;
+}
+.sap-custom-icon-adjust img:active {
+    -webkit-filter: invert(1);
+}
+.bay-table .sapMObjectNumberStatusError {
+    color: red !important;
+}
+.bay-week-colour0 {
+    background: #E8FFE8;
+}
+.bay-week-colour1 {
+    background: #FFF5F0;
+}

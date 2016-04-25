@@ -1,0 +1,261 @@
+/**
+* Copyright (c) 2013 SAP AG, All Rights Reserved
+*
+* Theming Engine 1.16.1
+* data:{"Path": "UI5.sap/gantt.custom8orange8bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.5.20160422193558", "Source": "1.36.5", "Engine": "1.16.1"}}
+*/
+
+/******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
+/******************* FILE /UI5/sap/ui/core/themes/base/global.less (Version 1.36.6) *******************/
+
+
+/******************* FILE /UI5/sap/gantt/themes/base/library.less (Version 1.36.5) *******************/
+
+.sapUiTableCol {
+  display: flex;
+  align-items: center;
+}
+.sapGanttTimeHeaderSvgText0 {
+  font-size: small;
+  fill: #999999;
+}
+.sapGanttTimeHeaderSvgText1 {
+  font-size: small;
+  fill: #000000;
+}
+html[data-sap-ui-browser^="ie"][dir=rtl] .sapGanttTimeHeaderSvgText1 {
+  text-anchor: end;
+}
+.sapGanttTimeHeaderSvgPath {
+  stroke: #d3d3d3;
+  stroke-width: 1px;
+  stroke-dasharray: none;
+}
+.sapGanttShapeSvgText {
+  fill: #000000;
+}
+.sapGanttChartHeader {
+  height: 97px;
+  width: 100%;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.sapGanttChartHeaderSvg {
+  height: 100%;
+}
+.sapGanttChartSvgCtn {
+  position: absolute;
+  overflow: hidden;
+  top: 100px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+.sapGanttChartTT {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.sapGanttChartSPMSvgCtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+.sapGanttExpandChartCloseButton {
+  cursor: pointer;
+  pointer-events: auto;
+  stroke: black;
+  stroke-width: 0.5;
+  fill: white;
+}
+.sapGanttExpandChartBG {
+  pointer-events: auto;
+  fill: #f6f6f6;
+  opacity: 1;
+}
+.sapGanttExpandChartContent text {
+  fill: #000000;
+}
+.sapGanttSPMaskSvg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.sapGanttChartLayoutBG {
+  background-color: #ffffff;
+}
+.sapUiSettingBox {
+  padding-right: 10px;
+}
+.sapUiSettingBoxItem {
+  max-width: 100%;
+}
+.sap-desktop .sapGanttViewSplitterH > div[role=separator],
+.sap-tablet .sapGanttViewSplitterH > div[role=separator],
+.sap-phone .sapGanttViewSplitterH > div[role=separator] {
+  width: 2px !important;
+  border-right: solid 1px #cccccc;
+  background-color: #ffffff;
+}
+.sap-desktop .sapGanttViewSplitterH > div[role=separator] span,
+.sap-tablet .sapGanttViewSplitterH > div[role=separator] span,
+.sap-phone .sapGanttViewSplitterH > div[role=separator] span {
+  visibility: hidden;
+}
+.sapGanttInvisiblePaintServer {
+  float: left;
+  height: 0;
+  width: 0;
+}
+.sapGanttViewContainer {
+  clear: left;
+  float: left;
+}
+.sapGanttCursorLineHeader {
+  width: 64px;
+  height: 30px;
+  fill: #ffffff;
+  font-size: small;
+  stroke: #1da9c1;
+  stroke-width: 1;
+  pointer-events: none;
+}
+text.sapGanttCursorLineLabel {
+  fill: #1da9c1;
+  font-size: small;
+  text-anchor: middle;
+  alignment-baseline: baseline;
+  dominant-baseline: central;
+}
+.sapGanttCursorLineBody {
+  shape-rendering: crispEdges;
+  stroke: #1da9c1;
+  stroke-width: 1;
+  stroke-dasharray: none;
+  pointer-events: none;
+}
+.sapGanttChartVerticalLine {
+  stroke: #dddddd;
+  stroke-width: 1;
+  stroke-dasharray: none;
+}
+.sapGanttNowLine {
+  stroke: #111177;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+.sapGanttNowLineHeaderSvgPath {
+  stroke: #111177;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  fill: #111177;
+}
+.sapGanttNowLineBodySvgLine {
+  stroke: #111177;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  stroke-dasharray: 10, 5;
+}
+.sapGanttChartColumnHeight .sapUiTableColHdrCnt > .sapUiTableColHdrScr {
+  height: 97px;
+}
+.sapGanttSkipToolbar {
+  height: 0;
+}
+.sapGanttToolbar .sapMSlider {
+  width: 200px !important;
+}
+.sapGanttDraggingCursor {
+  cursor: move;
+}
+/* ------------------------------------------------ */
+/* Compact size */
+/* ------------------------------------------------ */
+html[data-sap-ui-browser^="ff"] .sapUiSizeCompact .sapGanttChartHeader {
+  height: 67px;
+}
+.sapUiSizeCompact {
+  /** For no reason, the busy indicator can't fully cover container, the MTB height not included */
+}
+.sapUiSizeCompact .sapGanttChartHeader {
+  height: 65px;
+}
+.sapUiSizeCompact .sapGanttChartSvgCtn {
+  top: 70px;
+}
+.sapUiSizeCompact .sapGanttCursorLineHeader {
+  width: 64px;
+  height: 25px;
+}
+.sapUiSizeCompact text.sapGanttCursorLineLabel {
+  font-size: small;
+}
+.sapUiSizeCompact .sapGanttChartColumnHeight .sapUiTableColHdrCnt > .sapUiTableColHdrScr {
+  height: 65px;
+}
+.sapUiSizeCompact .sapGanttChartContainer .sapUiLocalBusyIndicator {
+  bottom: -32px;
+}
+.sapGanttTrNoBorder > td {
+  border-bottom: 1px solid transparent !important;
+}
+.sapGanttTHeaderNoBorder {
+  border-bottom: 1px solid transparent !important;
+}
+.sapGanttChartContainer .sapUiLocalBusyIndicator,
+.sapGanttChartWithTable .sapUiLocalBusyIndicator,
+.sapGanttChart .sapUiLocalBusyIndicator {
+  z-index: 999;
+}
+.sapGanttLLItem {
+  width: 100%;
+  position: relative;
+}
+.sapGanttLLItemSvg {
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+.sapGanttLLItemTxt {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 5px;
+  vertical-align: middle;
+}
+.sapGanttChartContainer .sapUiLocalBusyIndicator {
+  bottom: -48px;
+}
+
+/******************* FILE /UI5/sap/gantt/themes/sap_bluecrystal/library.less (Version 1.36.5) *******************/
+
+.sapGanttChartHeader {
+  height: 97px;
+}
+/* ------------------------------------------------ */
+/* Compact size */
+/* ------------------------------------------------ */
+.sapUiSizeCompact .sapGanttChartSvgCtn {
+  top: 68px;
+}
+
+/******************* FILE /Base/baseLib/custom8orange8bluecrystal/custom.less (Version 10.30.3.245729.0) *******************/
+
+
+/******************* FILE /Base/baseLib/custom8orange8bluecrystal/base.less (Version 10.30.3.245729.0) *******************/
+/******************* FILE /UI5/sap/ui/core/themes/custom8orange8bluecrystal/global.less (Version 1.36.6) *******************/
+/******************* FILE /UI5/sap/gantt/themes/custom8orange8bluecrystal/library.less (Version 1.36.5) *******************/
+
+
+.sapThemeMetaData-UI5-sap-gantt{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/gantt.custom8orange8bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.5.20160422193558", "Source": "1.36.5", "Engine": "1.16.1"}}');}

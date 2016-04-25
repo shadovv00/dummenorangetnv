@@ -1,0 +1,164 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.BayDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<Toolbar height="17%" class="orangeHeader">
+			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+				<items>
+					<Button type="Back" press="onPrevPage" text="Cancel"/>
+				</items>
+			</FlexBox>
+			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
+		</Toolbar>
+		<!--<Panel  width="100%" class="sapUiNoContentPadding">-->
+		<!--	<HBox width="100%" >-->
+		<!--		<FlexBox width="10%" height="100%" alignItems="Start" justifyContent="Start">-->
+		<!--			<items>-->
+		<!--				<Button type="Back" press="onPrevPage" text="Back"  class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>-->
+		<!--			</items>-->
+		<!--		</FlexBox>-->
+		<!--		<FlexBox width="80%" height="100%" alignItems="Center" justifyContent="Center" >-->
+		<!--			<items>-->
+		<!--				<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>-->
+		<!--			</items>-->
+		<!--		</FlexBox>-->
+		<!--	</HBox>-->
+		<!--</Panel>-->
+
+
+
+		<content>
+			<Bar >
+				<contentLeft>
+					<Label class = "left-data-panel sapUiTinyMarginBegin" text = "Date from:" ></Label>
+					<DatePicker  id="bayDetFilterDateFrom" width="8em" class = "sapUiSmallMarginBegin" valueFormat='yyyy-ww-u' displayFormat ='yyyy-ww-u'  change="onFilterDateChange"></DatePicker>
+					<Label class = "left-data-panel sapUiSmallMarginBegin" text = "Date to:"></Label>
+					<DatePicker id="bayDetFilterDateTo"  width="8em" class = "sapUiSmallMarginBegin" valueFormat='yyyy-ww-u' displayFormat ='yyyy-ww-u'  change="onFilterDateChange"></DatePicker>
+
+				</contentLeft>
+			</Bar>
+			<Bar >
+				<contentLeft>
+					<Label class="left-data-panel" text="GH-bay "></Label>
+					<Label id="bayDetSelectedBayNumber" class="right-data-panel sapUiTinyMarginBegin" text="{bayDetailModel>/Bay/GH_bay/}"></Label>
+					<Label class="left-data-panel sapUiMediumMarginBegin" text="m2: "></Label>
+					<Label id="bayDetSelectedBaySquare" class="right-data-panel sapUiTinyMarginBegin" text="{bayDetailModel>/Bay/square/} m2"></Label>
+					<Label class="left-data-panel sapUiMediumMarginBegin" text="Description: "></Label>
+					<Label id="bayDetSelectedBayDescription" class="right-data-panel sapUiTinyMarginBegin" text="{bayDetailModel>/Bay/description/} "></Label>
+				</contentLeft>
+			</Bar>
+			<Panel width="100%" class="orangePanel">
+				<!--<headerToolbar>-->
+				<!--	<Toolbar>-->
+				<!--		<Label class = "left-data-panel sapUiTinyMarginBegin" text = "GH-bay " ></Label>-->
+				<!--		<Label id="addPlantsSelectedBayNumber" class = "right-data-panel sapUiTinyMarginBegin sapUiTinyMarginEnd" text = "6"></Label>-->
+				<!--		<Label class = "left-data-panel sapUiMediumMarginBegin" text = "m2: "></Label>-->
+				<!--		<Label id="addPlantsSelectedBaySquare" class = "right-data-panel sapUiTinyMarginBegin" text = "75m2"></Label>-->
+				<!--	</Toolbar>-->
+				<!--</headerToolbar>-->
+				<content>
+					<HBox class = "sapUiSmallMarginTop sapUiSmallMarginBottom" width="100%">
+						<FlexBox  width="5%" justifyContent="Center">
+							<Text text="" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="19%">
+							<Text text="" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="8%" justifyContent="Center">
+							<Text text="%" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="10%" justifyContent="Center">
+							<Text text="Plants" textAlign="Center"  ></Text>
+			 			</FlexBox>
+						<FlexBox   width="6%" justifyContent="Center">
+							<Text text="p/m2:" textAlign="Center"  ></Text>
+			 			</FlexBox>
+						<FlexBox   width="11%" justifyContent="Center">
+							<Text text="Planted" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="6%" justifyContent="Center">
+							<Text text="root" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="6%" justifyContent="Center">
+							<Text text="VEG:" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="6%" justifyContent="Center">
+							<Text text="REA:" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="6%" justifyContent="Center">
+							<Text text="Harv" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="11%" justifyContent="Center">
+							<Text text="OOG" textAlign="Center" ></Text>
+			 			</FlexBox>
+						<FlexBox   width="6%" justifyContent="Center">
+							<Text text="Vaca" textAlign="Center" ></Text>
+			 			</FlexBox>
+					</HBox>
+					<List id="bayDetailListId"  />
+				</content>
+			</Panel>
+			<Bar >
+				<contentLeft>
+					<Text text="Comments:" class = " sapUiTinyMarginBegin"></Text>
+				</contentLeft>
+			</Bar>
+			<Panel  width="100%" class="orangePanel">
+				<!--<headerToolbar>-->
+				<!--	<Toolbar>-->
+				<!--		<Text text="Comments:" class = "sapUiTinyMarginTop"></Text>-->
+				<!--	</Toolbar>-->
+				<!--</headerToolbar>-->
+				<content>
+					<List  
+							items="{
+								path: 'bayDetailModel>/CommentsToBay',
+								sorter: {
+									path: 'date',
+									descending: false
+								}
+								}"
+							showNoData="false">
+						<CustomListItem class="comment-container">
+								<HBox  width="100%">
+									<FlexBox   width="9%" class = "sapUiSmallMarginTop " justifyContent="Center">
+										<Text text="{
+											        path: 'bayDetailModel>date',
+											        type: 'sap.ui.model.type.Date',
+											        formatOptions: {
+											          pattern: 'yyyy-ww-u'
+											        }
+										}"></Text>
+				 					</FlexBox>
+									<VBox   width="91%" justifyContent="Begin">
+										<TextArea value="{bayDetailModel>text}"  enabled='true' editable='false'  valueState="None" width="100%" height="auto"></TextArea>
+				 					</VBox>
+								</HBox>
+						</CustomListItem>					
+					</List>
+					<Toolbar height="auto">
+						<ToolbarSpacer/>
+							<Button id="addCommentButtonId" icon="sap-icon://sys-add" press="onAddComment" text="Add comment" iconFirst='false' class = "sapUiSmallMarginEnd "/>
+							<VBox visible='false' id="newCommentBox" class = "sapUiSmallMarginEnd " >
+								<TextArea value="" id="newCommentArea" width="53em" ></TextArea>
+								<HBox justifyContent="End">
+									<Button id="saveCommentButtonId" icon="sap-icon://accept" press="onSaveComment" text="Save comment" class = "sapUiSmallMarginEnd "/>
+									<Button id="cancelCommentButtonId" icon="sap-icon://decline" press="onCancelComment" text="Cancel comment" class = "sapUiSmallMarginEnd "/>
+								</HBox>
+							</VBox>
+					</Toolbar>
+	    			<HBox class = "sapUiSmallMarginTop">
+	 					<Label text="Vacant days:" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>
+						<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{
+														        path: '/dateEnd',
+														        type: 'sap.ui.model.type.Date',
+														        formatOptions: {
+														          pattern: 'yyyy-ww-u'
+														        }}" >
+						</Label>
+						<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />
+	       			</HBox>
+				</content>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

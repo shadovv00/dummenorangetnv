@@ -1,0 +1,14 @@
+{
+	"sEntity": "Theme",
+	"sId": "custom8orange8bluecrystal",
+	"sLabel": "Custom Orange Blue Crystal",
+	"oExtends": "UR.baseLib.sap_bluecrystal",
+	"aBuildFiles": [
+		"standards"
+	],
+	"aFiles": [
+		"base",
+		"standards"
+	],
+	"sTextDirections": "LTR"
+}
