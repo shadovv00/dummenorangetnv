@@ -7,7 +7,7 @@
 		<Toolbar height="10rem" class="orangeHeader">
 			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
 				<items>
-					<Button type="Back" press="onPrevPage" text="Home"/>
+					<Button type="Back" press="onPrevPage" text="Cancel"/>
 				</items>
 			</FlexBox>
 			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
@@ -26,7 +26,7 @@
 				<Button
 				    class="sap-custom-icon-adjust"
 				    icon="images/simple-leaf-favicon.ico" press="doEditing"/>
-				<Button icon="sap-icon://edit" press="goToEditor"/>
+				<Button icon="sap-icon://edit" press="doEditing"/>
 			</contentRight>
 		</Bar>
 		<cc:BayTable id="bay_table_id" items="{path: '/data'}">

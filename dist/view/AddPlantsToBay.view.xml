@@ -1,0 +1,119 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout"
+	xmlns:lForm="sap.ui.layout.form" controllerName="dummenorangetnv.controller.AddPlantsToBay" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<Toolbar height="17%" class="orangeHeader">
+			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+				<items>
+					<Button type="Back" press="onPrevPage" text="Cancel"/>
+				</items>
+			</FlexBox>
+			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
+		</Toolbar>
+		<!--<Panel  width="100%" class="sapUiNoContentPadding">-->
+		<!--	<HBox width="100%" >-->
+		<!--		<FlexBox width="10%" height="100%" alignItems="Start" justifyContent="Start">-->
+		<!--			<items>-->
+		<!--				<Button type="Back" press="onPrevPage" text="Back"  class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>-->
+		<!--			</items>-->
+		<!--		</FlexBox>-->
+		<!--		<FlexBox width="80%" height="100%" alignItems="Center" justifyContent="Center" >-->
+		<!--			<items>-->
+		<!--				<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>-->
+		<!--			</items>-->
+		<!--		</FlexBox>-->
+		<!--	</HBox>-->
+		<!--</Panel>		-->
+		<content>
+			<Bar>
+				<contentLeft>
+					<Label class="left-data-panel" text="Date:"></Label>
+					<Text id="addPlantsNowDate" class="sapUiTinyMarginBegin"
+						text="{ path: 'mainAddPlantModel>/dateToDay/', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-ww-u' } }"></Text>
+				</contentLeft>
+			</Bar>
+			<Bar >
+				<contentLeft>
+					<Label class="left-data-panel" text="GH-bay "></Label>
+					<Label id="addPlantsSelectedBayNumber" class="right-data-panel sapUiTinyMarginBegin" text="{mainAddPlantModel>/Bay/GH_bay/}"></Label>
+					<Label class="left-data-panel sapUiMediumMarginBegin" text="m2: "></Label>
+					<Label id="addPlantsSelectedBaySquare" class="right-data-panel sapUiTinyMarginBegin" text="{mainAddPlantModel>/Bay/square/} m2"></Label>
+					<Label class="left-data-panel sapUiMediumMarginBegin" text="Description: "></Label>
+					<Label id="addPlantsSelectedBayDescription" class="right-data-panel sapUiTinyMarginBegin" text="{mainAddPlantModel>/Bay/description/} "></Label>
+				</contentLeft>
+			</Bar>
+			
+			<Panel  width="100%" class="orangePanel">
+				<content>
+					<lForm:Form id="FormNewNomDog" minWidth="70%" maxContainerCols="2" editable="true">
+						<lForm:layout>
+							<lForm:ResponsiveGridLayout labelSpan="1" emptySpan="1" columns="1"/>
+						</lForm:layout>
+						<lForm:formContainers>
+							<lForm:FormContainer>
+								<lForm:formElements>
+									<lForm:FormElement label="Variety / Product form">
+										<lForm:fields>
+											<Select id="plantSelectorId" width="19em" class="sapUiSmallMarginBegin" change="onPlantChange"
+												items="{ path: 'mainAddPlantModel>/Plants', sorter: { path: 'id' } }">
+												<core:Item key="{mainAddPlantModel>id}" text="{mainAddPlantModel>id} {mainAddPlantModel>name}"/>
+											</Select>
+										</lForm:fields>
+									</lForm:FormElement>
+									<lForm:FormElement label="Number of plants">
+										<lForm:fields>
+											<HBox class="sapUiSmallMarginBegin">
+												<Input id="plantNumberId" value="0" textAlign="End" width="6em"></Input>
+												<Label text="Plants / m2: " class="sapUiSmallMarginTop sapUiSmallMarginBegin" width="6em"></Label>
+												<Input id="plantedSquareId" value="47" textAlign="End" width="5em"></Input>
+											</HBox>
+										</lForm:fields>
+									</lForm:FormElement>
+									<lForm:FormElement label="Plantdate">
+										<lForm:fields>
+											<DatePicker id="plantDatePickerId" width="8em" class="sapUiSmallMarginBegin" valueFormat='yyyy-ww-u' displayFormat='yyyy-ww-u'
+												dateValue="{mainAddPlantModel>/dateToDay}" change="onDataChange"></DatePicker>
+										</lForm:fields>
+									</lForm:FormElement>
+									<lForm:FormElement label="Growthplan: (week 10)">
+										<lForm:fields>
+											<HBox>
+												<VBox>
+													<Text text="Rooting: " class="sapUiSmallMarginEnd sapUiSmallMarginBegin" width="7em"></Text>
+													<Text text="Long days: " class="sapUiSmallMarginEnd sapUiSmallMarginBegin"></Text>
+													<Text text="Reaction: " class="sapUiSmallMarginEnd sapUiSmallMarginBegin"></Text>
+													<Text text="Harvest days: " class="sapUiSmallMarginEnd sapUiSmallMarginBegin"></Text>
+												</VBox>
+												<VBox>
+													<Input id="plantRootingDaysId" value="0" textAlign="End" width="5em" change="onDataChange"></Input>
+													<Input id="plantLongDaysId" value="12" textAlign="End" width="5em" change="onDataChange"></Input>
+													<Input id="plantReactionDaysId" value="54" textAlign="End" width="5em" change="onDataChange"></Input>
+													<Input id="plantHarvestDaysId" value="1" textAlign="End" width="5em" change="onDataChange"></Input>
+												</VBox>
+											</HBox>
+										</lForm:fields>
+									</lForm:FormElement>
+									<lForm:FormElement label="Expected harvest">
+										<lForm:fields>
+											<HBox>
+												<VBox>
+													<Text text="" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"></Text>
+													<Text text="Vacant days:" class="sapUiSmallMarginEnd sapUiSmallMarginBegin" width="7em"></Text>
+												</VBox>
+												<VBox>
+													<Text id="harvestExpectedDateId" class="sapUiTinyMarginBegin"
+														text="{ path: 'mainAddPlantModel>/dateEnd', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-ww-u' }}"></Text>
+													<Input id="plantVacantDaysId" value="0" textAlign="End" width="5em" change="onDataChange"></Input>
+												</VBox>
+											</HBox>
+										</lForm:fields>
+									</lForm:FormElement>
+								</lForm:formElements>
+							</lForm:FormContainer>
+						</lForm:formContainers>
+					</lForm:Form>
+					<Button icon="sap-icon://sys-add" press="onSavePlant" text="Add Plants" class="sapUiSmallMarginTop"/>
+				</content>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

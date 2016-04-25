@@ -73,17 +73,3 @@
 .bay-week-colour1 {
     background: #FFF5F0;
 }
-
-.panel-border {
-    border-style: solid;
-}
-.texts-font {
-     font-size: 130%;
-
-.sapMShellContent {
-    overflow: hidden;
-}
-.sapMShellBrandingBar {
-    display: none;
-
-}

@@ -5,9 +5,9 @@
 	        <VBox>
 			<CustomListItem  press="onGrower" type="Active" class="sapUiLargeMarginEnd sapUiResponsiveMargin">
 				<HBox>
-					<Image src="{selectedBay>/grower/imgUrl}" width="11em"  class="sapUiTinyMarginEnd"/>
-					<VBox width="75%" justifyContent="Center">
-						<Title text="{selectedBay>/grower/name}" level="H3"/>
+					<Image src="{selectedBay>/grower/imgUrl}" width="10em"  class="sapUiTinyMarginEnd"/>
+					<VBox width="75%">
+						<Title text="{selectedBay>/grower/name}"/>
 						<Text text="{selectedBay>/grower/address/street}"/>
 						<Text text="{selectedBay>/grower/address/city}"/>
 						<Text text="{selectedBay>/grower/phoneNumber}"/>
@@ -18,8 +18,8 @@
 			<VBox>
 			<CustomListItem press="onBay" type="Active" class="sapUiLargeMarginBegin sapUiResponsiveMargin">
 				<HBox>
-					<Image src="{selectedBay>/bay/imgUrl}" width="11em"  class="sapUiTinyMarginEnd"/>
-					<VBox justifyContent="Center"> 
+					<Image src="{selectedBay>/bay/imgUrl}" width="10em"  class="sapUiTinyMarginEnd"/>
+					<VBox>
 						<Title text="{selectedBay>/bay/name}"/>
 						<Text text="{selectedBay>/bay/address/street}"/>
 						<Text text="{selectedBay>/bay/address/city}"/>

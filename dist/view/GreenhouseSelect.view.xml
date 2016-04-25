@@ -32,12 +32,12 @@
 				<CustomListItem press="onBack" type="Active" class="sapUiSmallMarginBegin">
 					<HBox>
 						<Image src="{selectedGrower>/imgUrl}" width="95%"/>
-						<VBox justifyContent="Center">
-							<Label text="{selectedGrower>/name}" class="texts-font" design="Bold"/>
-							<Text text="{selectedGrower>/address/street}" class="texts-font"/>
-							<Text text="{selectedGrower>/address/city}" class="texts-font"/>
-							<Text text="{selectedGrower>/phoneNumber}" class="texts-font"/>
-								</VBox>
+						<VBox>
+							<Title text="{selectedGrower>/name}"/>
+							<Text text="{selectedGrower>/address/street}"/>
+							<Text text="{selectedGrower>/address/city}"/>
+							<Text text="{selectedGrower>/phoneNumber}"/>
+						</VBox>
 					</HBox>
 					<layoutData><l:SplitterLayoutData size="40%" resizable="false"/></layoutData>
 				</CustomListItem>
@@ -46,11 +46,11 @@
 						<CustomListItem press="onBaySelect" type="Navigation">
 							<HBox>
 								<Image src="{selectedGrower>imgUrl}" width="95%"/>
-								<VBox justifyContent="Center">
-							<Label text="{selectedGrower>name}" class="texts-font" design="Bold"/>
-							<Text text="{selectedGrower>address/street}" class="texts-font"/>
-							<Text text="{selectedGrower>address/city}" class="texts-font"/>
-							<Text text="{selectedGrower>phoneNumber}" class="texts-font"/>
+								<VBox>
+									<Title text="{selectedGrower>name}"/>
+									<Text text="{selectedGrower>address/street}"/>
+									<Text text="{selectedGrower>address/city}"/>
+									<Text text="{selectedGrower>phoneNumber}"/>
 								</VBox>
 							</HBox>
 						</CustomListItem>

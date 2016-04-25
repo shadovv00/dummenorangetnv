@@ -1,0 +1,105 @@
+{
+    "resources": [
+        {
+            "name": "images/cannabis-leaf-favicon.ico"
+        },
+        {
+            "name": "images/simple-leaf-favicon.ico"
+        },
+        {
+            "name": "images/flowers1.jpg"
+        },
+        {
+            "name": "images/tile-flower1-orange.jpg"
+        },
+        {
+            "name": "fragments/BayFilterDialog.fragment.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "view/GreenhouseSelect.view.xml"
+        },
+        {
+            "name": "view/CustomerSelect.view.xml"
+        },
+        {
+            "name": "view/BayOverview.view.xml"
+        },
+        {
+            "name": "view/BayDetailsHeader.view.xml"
+        },
+        {
+            "name": "view/mainview.view.xml"
+        },
+        {
+            "name": "view/BayDetails.view.xml"
+        },
+        {
+            "name": "view/AddPlantsToBay.view.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "controller/BayDetailsHeader.controller.js"
+        },
+        {
+            "name": "controller/BayOverview.controller.js"
+        },
+        {
+            "name": "controller/CustomerSelect.controller.js"
+        },
+        {
+            "name": "controller/mainview.controller.js"
+        },
+        {
+            "name": "controller/AddPlantsToBay.controller.js"
+        },
+        {
+            "name": "controller/GreenhouseSelect.controller.js"
+        },
+        {
+            "name": "controller/BayDetails.controller.js"
+        },
+        {
+            "name": "control/BayRow.js"
+        },
+        {
+            "name": "control/BayTable.js"
+        },
+        {
+            "name": "control/BayCell.js"
+        },
+        {
+            "name": "control/BayColumn.js"
+        },
+        {
+            "name": "control/BayRowGroup.js"
+        },
+        {
+            "name": "css/styleDetAdd.css"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}
