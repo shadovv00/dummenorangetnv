@@ -10,7 +10,7 @@ sap.ui.define([
 		_sDiscriptionValue: null,
 		_sPlanningType: null,
 
-		goBack: function(evnt) {
+		onPrevPage: function(evnt) {
 			var view = this.getView();
 			var app = view.getParent();
 			app.back();
@@ -369,6 +369,21 @@ sap.ui.define([
 		 */
 		onExit: function() {
 			this._oBayFilterDialog.destroy();
+		},
+		goToEditor: function() {
+		    var view = this.getView();
+			var app = view.getParent();
+			if (sap.ui.getCore().byId("BayEditorId")) {
+				app.to("BayEditorId");
+			} else {
+				var oBayEditorView = sap.ui.view({
+					id: "BayEditorId",
+					viewName: "dummenorangetnv.view.BayEditor",
+					type: sap.ui.core.mvc.ViewType.XML
+				});
+				app.addPage(oBayEditorView);
+				app.to(oBayEditorView);
+			}  
 		},
 
 		/**
