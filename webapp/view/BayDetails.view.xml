@@ -57,7 +57,7 @@
 				<!--</headerToolbar>-->
 				<content>
 					<HBox class = "sapUiSmallMarginTop sapUiSmallMarginBottom" width="100%">
-						<FlexBox  width="5%" justifyContent="Center">
+						<FlexBox  width="2%" justifyContent="Center">
 							<Text text="" textAlign="Center" ></Text>
 			 			</FlexBox>
 						<FlexBox   width="19%">
@@ -72,7 +72,7 @@
 						<FlexBox   width="6%" justifyContent="Center">
 							<Text text="p/m2:" textAlign="Center"  ></Text>
 			 			</FlexBox>
-						<FlexBox   width="11%" justifyContent="Center">
+						<FlexBox   width="12%" justifyContent="Center">
 							<Text text="Planted" textAlign="Center" ></Text>
 			 			</FlexBox>
 						<FlexBox   width="6%" justifyContent="Center">
@@ -87,7 +87,7 @@
 						<FlexBox   width="6%" justifyContent="Center">
 							<Text text="Harv" textAlign="Center" ></Text>
 			 			</FlexBox>
-						<FlexBox   width="11%" justifyContent="Center">
+						<FlexBox   width="12%" justifyContent="Center">
 							<Text text="OOG" textAlign="Center" ></Text>
 			 			</FlexBox>
 						<FlexBox   width="6%" justifyContent="Center">

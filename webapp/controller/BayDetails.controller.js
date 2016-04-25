@@ -223,7 +223,7 @@ sap.ui.define([
 								new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"5%",
+											width:"2%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: '', textAlign:"Center" })
@@ -257,14 +257,18 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"11%",
+											width:"12%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "83%", text: { path : "bayDetailModel>plantedDate",
+	                            				new sap.m.Text({ width: "70%", text: { path : "bayDetailModel>plantedDate",
 											        type: 'sap.ui.model.type.Date',
 											        formatOptions: {
 											          pattern: 'yyyy-ww-u'
 											        }}, textAlign:"End" }).addStyleClass("")
+	                            			// 	new sap.m.DatePicker({ width:"91%", dateValue: "{bayDetailModel>plantedDate}",
+	                            			// 	valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', editable: false,
+	                            			// 	change: function(){that.onDataChange(this,sId,oContext);}  
+	                            			// 	,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin "+dateTextColor)
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
@@ -296,10 +300,10 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"11%",
+											width:"12%",
 											justifyContent:"End",
 											items: [
-	                            				new sap.m.Text({ width: "83%", text: { path : "bayDetailModel>oog/",
+	                            				new sap.m.Text({ width: "70%", text: { path : "bayDetailModel>oog/",
 											        type: 'sap.ui.model.type.Date',
 											        formatOptions: {
 											          pattern: 'yyyy-ww-u'
@@ -357,7 +361,7 @@ sap.ui.define([
 								new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"5%",
+											width:"2%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.ui.core.Icon({ src: "sap-icon://decline", 
@@ -380,7 +384,7 @@ sap.ui.define([
 											justifyContent:'Center',
 											items: [
 	                            				new sap.m.Input({ width:"81%", value: oContext.getProperty("percent")+"%" ,
-	                            				change: function(){that.onPercentChange(this,sId,oContext);}  
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
 	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
 											]
 										}).addStyleClass(""),
@@ -389,7 +393,7 @@ sap.ui.define([
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({  width:"85%", value: oContext.getProperty("plants"),
-	                            				change: function(){that.onQuantityChange(this,sId,oContext);}  
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
 	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin "+quantityTextColor)
 											]
 										}).addStyleClass(""),
@@ -398,21 +402,28 @@ sap.ui.define([
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("square"),
-	                            				change: function(){that.onSquareChange(this,sId,oContext);}  
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
 	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"11%",
+											width:"12%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>plantedDate",
-											        type: 'sap.ui.model.type.Date',
-											        formatOptions: {
-											          pattern: 'yyyy-ww-u'
-											        }},
+	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>plantedDate",
+											     //   type: 'sap.ui.model.type.Date',
+											     //   formatOptions: {
+											     //     pattern: 'yyyy-ww-u'
+											     //   }},
+	               //             				change: function(){that.onDataChange(this,sId,oContext);}  
+	               //             				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin "+dateTextColor)
+	                            				new sap.m.DatePicker({ width:"91%", dateValue: "{bayDetailModel>plantedDate}",
+	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u',
 	                            				change: function(){that.onDataChange(this,sId,oContext);}  
-	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin "+dateTextColor)
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
+	                            				
+	                            				
+	                            				
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
@@ -452,16 +463,20 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"11%",
+											width:"12%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>oog/",
-											        type: 'sap.ui.model.type.Date',
-											        formatOptions: {
-											          pattern: 'yyyy-ww-u'
-											        }},
-	                            				change: function(){that.onOOGChange(this,sId,oContext);}  
-	                            				,   textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>oog/",
+											     //   type: 'sap.ui.model.type.Date',
+											     //   formatOptions: {
+											     //     pattern: 'yyyy-ww-u'
+											     //   }},
+	               //             				change: function(){that.onOOGChange(this,sId,oContext);}  
+	                            			// 	,   textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+	                            				new sap.m.DatePicker({ width:"90%", dateValue: "{bayDetailModel>oog}",
+	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u',
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
@@ -478,7 +493,7 @@ sap.ui.define([
 								, new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"5%",
+											width:"2%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: '', textAlign:"Center" })
@@ -505,7 +520,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"11%",
+											width:"12%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: 'Delivery date', textAlign:"Center" }).addStyleClass("")
@@ -533,18 +548,18 @@ sap.ui.define([
 											]
 										})
 									]
-								}).addStyleClass(" sapUiTinyMarginTop sapUiTinyMarginBottom")
+								}).addStyleClass(" sapUiTinyMarginTop")
 								, new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"5%",
+											width:"2%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: '', textAlign:"Center" })
 											]
 										}).addStyleClass(" "),
-										new sap.m.FlexBox({
-											width:"27%",
+										new sap.m.VBox({
+											width:"27%",justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("patStatus")+", "+oContext.getProperty("hcpStatus"), textAlign:"Begin" })
 											]
@@ -564,10 +579,10 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"11%",
+											width:"12%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width:"83%", text: { path : "bayDetailModel>deliveryDate",
+	                            				new sap.m.Text({ width:"70%", text: { path : "bayDetailModel>deliveryDate",
 											        type: 'sap.ui.model.type.Date',
 											        formatOptions: {
 											          pattern: 'yyyy-ww-u'
@@ -580,14 +595,14 @@ sap.ui.define([
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
 											width:"12%",
-											justifyContent:"Center",
+											justifyContent:"Center", alignItems:"Center",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("quantity"), textAlign:"Center" }).addStyleClass(quantityTextColor)
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
 											width:"12%",
-											justifyContent:"Center",
+											justifyContent:"Center", alignItems:"Center",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("trays"), textAlign:"Center" })
 											]
@@ -596,9 +611,9 @@ sap.ui.define([
 								// 			width:"17%",
 								// 			justifyContent:"Center",
 								// 			items: [
-        										new sap.m.VBox({
+        										new sap.m.FlexBox({
         											width:"11%",
-        											justifyContent:"End",
+        											justifyContent:"End", alignItems:"Center",
         											items: [
         	                            			// 	new sap.m.Text({ width: "80%",text: oContext.getProperty("availability"), textAlign:"Center" }).attachBrowserEvent("click",function(){alert("msg");})
         	                            				new sap.m.Text({ width: "100%", text: oContext.getProperty("availability")+"%", textAlign:"End" }).addStyleClass("")
@@ -606,10 +621,10 @@ sap.ui.define([
         										}),
 										new sap.m.FlexBox({
 											width:"6%",
-											justifyContent:"Start",
+											justifyContent:"Start",alignItems:"Center",
 											items: [
-	                            				new sap.m.Image({width:"15px", height:"15px", src: "images/cannabis-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
-	                            				,new sap.m.Image({width:"15px", height:"15px", src: "images/simple-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
+	                            				new sap.m.Image({width:"2em", height:"2em", src: "images/cannabis-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
+	                            				,new sap.m.Image({width:"2em", height:"2em", src: "images/simple-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
  											]
 										}).addStyleClass("")
 
@@ -657,46 +672,94 @@ sap.ui.define([
 		        console.log(inputIndex);
 		    }
 		});
-	    switch(inputIndex) {
-    //         case 5:
-    //             console.log(elThis.getValue());
-    //             console.log(new Date(elThis.getValue()));
-				// oContext.getModel().setProperty(oContext.getPath() + "/plantedDate", new Date(elThis.getValue()));
-    //         break;
-            case 6:
-				oContext.getModel().setProperty(oContext.getPath() + "/root", elThis.getValue());
-            break;
-            case 7:
-				oContext.getModel().setProperty(oContext.getPath() + "/veg", elThis.getValue());
-            break;
-            case 8:
-				oContext.getModel().setProperty(oContext.getPath() + "/rea", elThis.getValue());
-            break;
-    //         case 9:
-				// oContext.getModel().setProperty(oContext.getPath() + "/harv", elThis.getValue());
-    //         break;
-    //         case 11:
-				// oContext.getModel().setProperty(oContext.getPath() + "/vaca", elThis.getValue());
-    //         break;
-        }
-		// ourModel.submitChanges();
-	    oContext.getModel().refresh(true);
-	    
-		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
-	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
-	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
-	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));                         
-	    var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
-	    var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
-// 		console.log(plantedDate);
-		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
-		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
+		if (inputIndex<5){
+		    console.log("<5");
+    	        var baySquare=thisContr.getView().getModel("bayDetailModel").getData().Bay.square;
+    	    switch(inputIndex) {
+                case 2:
+    				oContext.getModel().setProperty(oContext.getPath() + "/percent", elThis.getValue().substring(0,elThis.getValue().length-1));
+            	    var percentageFullnes =	parseFloat(	oContext.getModel().getProperty(oContext.getPath() + "/percent"))/100;
+            	    var plantPerSquare =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/square"));
+            	    oContext.getModel().setProperty(oContext.getPath() + "/plants", Math.round(plantPerSquare*percentageFullnes*baySquare));
+                break;
+                case 3:
+    				oContext.getModel().setProperty(oContext.getPath() + "/plants", parseInt(elThis.getValue()));
+            	    var plantsQuantity =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/plants"));                         
+            	    var plantPerSquare =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/square"));
+            	    var percent=plantsQuantity*1000/(plantPerSquare*thisContr.getView().getModel("bayDetailModel").getData().Bay.square);
+            	    percent=Math.round(percent)/10;
+    				oContext.getModel().setProperty(oContext.getPath() + "/percent", percent);
+                break;
+                case 4:
+    				oContext.getModel().setProperty(oContext.getPath() + "/square", elThis.getValue());
+            	    var plantsQuantity =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/plants"));                         
+            	    var plantPerSquare =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/square"));
+            	    var percent=plantsQuantity*1000/(plantPerSquare*thisContr.getView().getModel("bayDetailModel").getData().Bay.square);
+            	    percent=Math.round(percent)/10;
+    				oContext.getModel().setProperty(oContext.getPath() + "/percent", percent);
+                break;
+            }
+		}else if(10>inputIndex){
+		    console.log("10>4");
+    	    switch(inputIndex) {
+                case 5:
+                    // console.log(elThis.getDateValue());
+                    // console.log(new Date(elThis.getDateValue()));
+    				oContext.getModel().setProperty(oContext.getPath() + "/plantedDate", new Date(elThis.getDateValue()));
+                break;
+                case 6:
+    				oContext.getModel().setProperty(oContext.getPath() + "/root", parseInt(elThis.getValue()));
+                break;
+                case 7:
+    				oContext.getModel().setProperty(oContext.getPath() + "/veg", parseInt(elThis.getValue()));
+                break;
+                case 8:
+    				oContext.getModel().setProperty(oContext.getPath() + "/rea", parseInt(elThis.getValue()));
+                break;
+                case 9:
+    				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
+            console.log(parseInt(elThis.getValue()));
+                break;
+                case 11:
+    				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
+                break;
+            }
+            console.log(plantedDate);
+    		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
+    	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
+    	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
+    	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));                         
+    	    var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
+    	    var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
+    		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
+            console.log(plantedDate);
+    		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
+
+		}else if (inputIndex>9){
+ 		    console.log(">9");
+   	    switch(inputIndex) {
+                case 10:
+    				oContext.getModel().setProperty(oContext.getPath() + "/oog", new Date(elThis.getDateValue()));
+                break;
+                case 11:
+    				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
+                break;
+            }
+		}
 
 
-
-	    
+    		// ourModel.submitChanges();
+    	    oContext.getModel().refresh(true);
 	},
 	
+	
+	onAvalilabilityChecking: function(elThis,sId,oContext){
+	   // console.log("checked");
+	   alert("in process");
+// 		this.getView().byId("addCommentButtonId").setVisible(false);
+// 		this.getView().byId("newCommentArea").setValue('');
+// 		this.getView().byId("newCommentBox").setVisible(true);
+	},		
 	
 	onAddComment: function(oEvent){
 		this.getView().byId("addCommentButtonId").setVisible(false);

@@ -10,10 +10,11 @@
 		<script id="sap-ui-bootstrap"
 			src="../../resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m, sap.me, sap.ui.commons"
-			data-sap-ui-theme="custom8orange8bluecrystal"
-			data-sap-ui-compatVersion="edge"
+			data-sap-ui-theme="custom1bluecrystal"
+              data-sap-ui-xx-bindingSyntax="complex"   
+              data-sap-ui-compatVersion="edge"
 			data-sap-ui-resourceroots='{"dummenorangetnv": ""}'
-            data-sap-ui-theme-roots='{"custom8orange8bluecrystal" : "/custom8orange8bluecrystal/UI5/"}'
+            data-sap-ui-theme-roots='{"custom1bluecrystal" : "/custom1bluecrystal/UI5/"}'
 			>
 		</script>
 
@@ -23,7 +24,8 @@
 		<script>
 			sap.ui.getCore().attachInit(function() {
 				new sap.m.Shell({
-				    backgroundImage: "images/flowers1.jpg",
+				    // backgroundImage: "images/flowers1.jpg",
+				    backgroundImage: "images/tile-flower1-orange.jpg",
 					app: new sap.ui.core.ComponentContainer({
 						height : "100%",
 						name : "dummenorangetnv",

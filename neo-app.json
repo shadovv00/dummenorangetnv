@@ -1,5 +1,6 @@
 {
   "welcomeFile": "/webapp/index.html",
+    "authenticationMethod": "none",
   "routes": [
     {
       "path": "/resources",
@@ -28,13 +29,29 @@
       "description": "Route for theme designer"
     },
     {
-      "path": "/custom8orange8bluecrystal",
+      "path": "/custom1bluecrystal",
       "target": {
         "type": "application",
-        "name": "custom8orange8bluecrystal"
+        "name": "custom1bluecrystal"
       },
       "description": "Route for theme"
     }
   ],
-  "sendWelcomeFileRedirect": true
+  "sendWelcomeFileRedirect": true,
+  "cacheControl": [
+    {
+      "directive": "private",
+      "maxAge": 0,
+      "path": "*html"
+    },
+    {
+      "directive": "private",
+      "maxAge": 0,
+      "path": "sap-ui-cachebuster-info.json"
+    },
+    {
+      "directive": "public",
+      "maxAge": 31536000
+    }
+  ]
 }

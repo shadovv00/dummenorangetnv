@@ -4,10 +4,10 @@
 		<pages>
 			<Page showHeader="false">
 				<content>
-					<!--<Button text="Customer select as grower" press="goToCustomerSelectAsGrower"/>-->
-					<!--<Button text="Customer select as grower advisor" press="goToCustomerSelectAsGrowerAdvisor"/>-->
-					<!--<Button text="Bay overview" press="goToBayOverview"/>-->
-					<!--<Button text="Bay details" press="goToBayDetails"/>-->
+					<Button text="Customer select as grower" press="goToCustomerSelectAsGrower"/>
+					<Button text="Customer select as grower advisor" press="goToCustomerSelectAsGrowerAdvisor"/>
+					<Button text="Bay overview" press="goToBayOverview"/>
+					<Button text="Bay details" press="goToBayDetails"/>
 					<!--<Button text="Add plants to a bay" press="goToAddPlantsToABay"/>-->
             		<Toolbar height="100%" class="orangeHeader" >
 					<!--<FlexBox height="100%" alignItems="Center" justifyContent="Start">-->
