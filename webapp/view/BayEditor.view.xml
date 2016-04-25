@@ -1,37 +1,30 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.BayOverview"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.BayEditor"
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ux="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:cc="dummenorangetnv.control" xmlns:c="sap.ui.commons">
 	<Page 
-	    title="BayOverview" 
+	    title="BayEditor" 
 	    enableScrolling="false"
 	    showHeader="false">
 		<Toolbar height="10rem" class="orangeHeader">
-			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
-				<items>
-					<Button type="Back" press="onPrevPage" text="Home"/>
-				</items>
-			</FlexBox>
+			<!--<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">-->
+			<!--	<items>-->
+			<!--		<Button type="Back" press="onPrevPage" text="Cancel"/>-->
+			<!--	</items>-->
+			<!--</FlexBox>-->
 			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
 		</Toolbar>
 		<Bar>
 			<contentLeft>
 				<Label text="Date:" class="sapUiSmallMarginBegin"/>
-				<DatePicker id="date_id" width="120px" placeholder=" " valueFormat="yyyy-MM-u" displayFormat="yyyy-ww-u"/>
-				<Button icon="sap-icon://filter" press="doFiltering"/>
-				<Button icon="sap-icon://print" press="printBay"/>
+				<Label  text="11.11.1111"></Label>
 			</contentLeft>
 			<contentRight>
-				<Button 
-				    class="sap-custom-icon-adjust"
-				    icon="images/cannabis-leaf-favicon.ico" press="doEditing"/>
-				<Button
-				    class="sap-custom-icon-adjust"
-				    icon="images/simple-leaf-favicon.ico" press="doEditing"/>
-				<Button icon="sap-icon://edit" press="goToEditor"/>
+				<Button icon="sap-icon://sys-cancel-2" press="onPrevPage"/>
+				<Button icon="sap-icon://sys-enter-2" press="onPrevPage"/>
 			</contentRight>
 		</Bar>
 		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
 			<cc:columns>
-				<cc:BayColumn text="GH-bay" />
+				<cc:BayColumn text="GH-bay" colspan="2"/>
 				<cc:BayColumn text="" />
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
@@ -53,9 +46,14 @@
 				        }">
 			    <cc:BayRow>
 					<cc:BayCell>
-						<ObjectNumber 
+					    <ObjectNumber 
 							number=""
 							emphasized="false"/>
+					</cc:BayCell>
+					<cc:BayCell>
+			            <Button 
+    			            icon="sap-icon://decline" 
+    			            press="deleteBayRow"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    rederror="{
@@ -66,72 +64,65 @@
 						<Text text="{name}" />
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{
-    							        path: 'percent',
-    							        type:'sap.ui.model.type.String',
-    							        formatter: '.formatPercent'
-							        }"
-							emphasized="false"
-							unit="%"/>
+				        <Input 
+				            value="{
+				                        path: 'percent',
+				                        formatter: '.formatPercent'
+				                   }"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{plants}"
-							state="{
-					                parts: [
-					                    {path: 'plants'},
-					                    {path: 'erp_plants'}
-					                ],
-							        formatter: '.formatplants'
-						        }"
-							emphasized="false"/>
+					    <Input 
+					        value="{plants}"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{density}"
-							emphasized="false"/>
-					</cc:BayCell>
-					<cc:BayCell
-					    rederror="{
-					               parts: [
-					                    {path: 'planted_date'},
-					                    {path: 'erp_planted_date'}
-					                ],
-							        formatter: '.formatPlantedDate'
-						        }">
-						<Text text="{planted_date}" />
+					    <Input 
+					        value="{density}"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{root}"
-							emphasized="false"/>
+					    <DatePicker
+					        width="120px"
+					        placeholder=" "
+					        valueFormat="yyyy-ww-u"
+					        displayFormat="yyyy-ww-u"
+					        dateValue="{
+					                        path: 'planted_date',
+					                        formatter: '.formatDate'
+					                    }"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{veg}"
-							emphasized="false"/>
+					    <Input 
+					        value="{root}"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{rea}"
-							emphasized="false"/>
+					    <Input 
+					        value="{veg}"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{horv}"
-							emphasized="false"/>
+					    <Input 
+					        value="{rea}"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<Text text="{oog_date}" />
+					    <Input 
+					        value="{horv}"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<ObjectNumber 
-							number="{vaca}"
-							emphasized="false"/>
+					    <DatePicker
+					        width="120px"
+					        placeholder=" "
+					        valueFormat="yyyy-MM-u"
+					        displayFormat="yyyy-ww-u"
+        			        dateValue="{
+            		                        path: 'oog_date',
+            		                        formatter: '.formatDate'
+            		                    }"/>
+					</cc:BayCell>
+					<cc:BayCell>
+					    <Input 
+					        value="{vaca}"/>
 					</cc:BayCell>
 				</cc:BayRow>
 				<cc:ftcells>
+				    <cc:BayCell />
 				    <cc:BayCell />
 			        <cc:BayCell>
 			            <c:ProgressIndicator 
@@ -148,13 +139,12 @@
 			        </cc:BayCell>
 			        <cc:BayCell
 			            colspan="9">
-			            <Text text="{comments}"/>
+			            <TextArea
+			                width="100%"
+			                rows="1"
+			                value="{comments}"/>
 			        </cc:BayCell>
-			        <cc:BayCell>
-			            <Button
-			                icon="sap-icon://navigation-right-arrow"
-			                press="goToDetailView"/>
-			        </cc:BayCell>
+			        <cc:BayCell />
 				</cc:ftcells>
 			</cc:BayRowGroup>
 		</cc:BayTable>

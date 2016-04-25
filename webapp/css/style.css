@@ -73,3 +73,9 @@
 .bay-week-colour1 {
     background: #FFF5F0;
 }
+.sapMShellContent {
+    overflow: hidden;
+}
+.sapMShellBrandingBar {
+    display: none;
+}

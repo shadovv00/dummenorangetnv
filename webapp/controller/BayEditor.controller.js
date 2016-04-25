@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("dummenorangetnv.controller.BayOverview", {
+	return Controller.extend("dummenorangetnv.controller.BayEditor", {
 
 		_oBayFilterDialog: null,
 		_sPlantName: null,
@@ -23,205 +23,20 @@ sap.ui.define([
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
 		onInit: function() {
-		    var weekcolor = [
-		            "#e6f2ff", "#cce5ff", "#b3d7ff", "#99caff",
-		            "#e6fffa", "#b3fff0", "#99ffeb", "#99ffeb"
-		        ];
-		    var weekcolor2types = ["#ffcbb3", "#ccffcc"];
 			var data;
-			var jsonModel = new sap.ui.model.json.JSONModel(data = {
-				data: [{
-					gh_bay: 5,
-					comments: "hike",
-					plant: [{
-						name: "001 Feeling green dark",
-						percent: 0.5,
-						plants: 16218,
-						erp_plants: 16218,
-						density: 47,
-						planted_date: "2016-01-5",
-						erp_planted_date: "2016-01-5",
-						root: 0,
-						veg: 12,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-1",
-						vaca: 1,
-						processed: false
-					}]
-				}, {
-					gh_bay: 6,
-					comments: "hike hike",
-					plant: [{
-						name: "001 Feeling green dark",
-						percent: 1.0,
-						plants: 32436,
-						erp_plants: 32435,
-						density: 47,
-						planted_date: "2016-01-6",
-						erp_planted_date: "2016-01-6",
-						root: 0,
-						veg: 12,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-2",
-						vaca: 1,
-						processed: true
-					}, {
-						name: "015 Grand cherry",
-						percent: 0.002,
-						plants: 102,
-						erp_plants: 102,
-						density: 50,
-						planted_date: "2016-01-6",
-						erp_planted_date: "2016-01-6",
-						root: 0,
-						veg: 12,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-7",
-						vaca: 3,
-						processed: true
-					}]
-				}, {
-					gh_bay: 7,
-					comments: "empty hike",
-					plant: []
-				}, {
-					gh_bay: 8,
-					comments: "hike 8",
-					plant: [{
-						name: "004 Talitha",
-						percent: 1.0,
-						plants: 32436,
-						erp_plants: 32436,
-						density: 45,
-						planted_date: "2016-01-7",
-						erp_planted_date: "2016-01-8",
-						root: 0,
-						veg: 13,
-						rea: 55,
-						horv: 1,
-						oog_date: "2016-10-3",
-						vaca: 1,
-						processed: true
-					}]
-				}, {
-					gh_bay: 9,
-					comments: "like 9",
-					plant: [{
-						name: "001 Feeling green dark",
-						percent: 1.0,
-						plants: 32436,
-						erp_plants: 32436,
-						density: 47,
-						planted_date: "2016-02-1",
-						erp_planted_date: "2016-02-1",
-						root: 0,
-						veg: 11,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-4",
-						vaca: 1,
-						processed: true
-					}]
-				}, {
-					gh_bay: 10,
-					comments: "obscure 10",
-					plant: [{
-						name: "001 Feeling green dark",
-						percent: 1.0,
-						plants: 32436,
-						erp_plants: 32436,
-						density: 47,
-						planted_date: "2016-02-2",
-						erp_planted_date: "2016-02-2",
-						root: 0,
-						veg: 11,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-5",
-						vaca: 1,
-						processed: true
-					}]
-				}, {
-					gh_bay: 11,
-					comments: "obscure 11 empty again",
-					plant: []
-				}, {
-					gh_bay: 12,
-					comments: "eventually 12",
-					plant: [{
-						name: "001 Feeling green dark",
-						percent: 0.3,
-						plants: 10436,
-						erp_plants: 10436,
-						density: 47,
-						planted_date: "2016-02-2",
-						erp_planted_date: "2016-02-2",
-						root: 0,
-						veg: 11,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-5",
-						vaca: 1,
-						processed: true
-					}, {
-						name: "001 Feeling green dark1",
-						percent: 0.26,
-						plants: 6436,
-						erp_plants: 6435,
-						density: 47,
-						planted_date: "2016-02-2",
-						erp_planted_date: "2016-02-2",
-						root: 0,
-						veg: 11,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-5",
-						vaca: 1,
-						processed: true
-					}, {
-						name: "001 Feeling DDD",
-						percent: 0.5,
-						plants: 16436,
-						erp_plants: 16436,
-						density: 47,
-						planted_date: "2016-02-2",
-						erp_planted_date: "2016-02-2",
-						root: 0,
-						veg: 11,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-5",
-						vaca: 1,
-						processed: true
-					}]
-				}, {
-					gh_bay: 13,
-					comments: "September",
-					plant: [{
-						name: "001 Feeling green dark",
-						percent: 1.0,
-						plants: 32436,
-						erp_plants: 32436,
-						density: 47,
-						planted_date: "2016-02-2",
-						erp_planted_date: "2016-02-2",
-						root: 0,
-						veg: 11,
-						rea: 54,
-						horv: 1,
-						oog_date: "2016-10-5",
-						vaca: 1,
-						processed: true
-					}]
-				}]
-			});
-			this.byId("date_id").setDateValue(new Date());
+			var jsonModel = new sap.ui.model.json.JSONModel();
+			jsonModel.loadData("mockdata/bay.json");
+// 			this.byId("date_id").setDateValue(new Date());
 			this.getView().setModel(jsonModel);
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
             this.getView().setModel(oSelectedBayModel,"selectedBay");
+		},
+		formatDate: function(date) {
+		    var aDateParts = date.split("-");
+		    var oDate = new Date();
+		    oDate.setFullYear(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
+		    console.log(date);
+		    return oDate;
 		},
 		formatOddWeek: function(date) {
 		    console.log(date);
@@ -233,7 +48,7 @@ sap.ui.define([
 		    }
 		},
 		formatPercent: function(value) {
-			return value * 100;
+			return (value * 100) + "%";
 		},
 		formatplants: function(plant, erp_plant) {
 		    if(+plant !== +erp_plant) {
@@ -339,21 +154,6 @@ sap.ui.define([
 		 */
 		onExit: function() {
 			this._oBayFilterDialog.destroy();
-		},
-		goToEditor: function() {
-		    var view = this.getView();
-			var app = view.getParent();
-			if (sap.ui.getCore().byId("BayEditorId")) {
-				app.to("BayEditorId");
-			} else {
-				var oBayEditorView = sap.ui.view({
-					id: "BayEditorId",
-					viewName: "dummenorangetnv.view.BayEditor",
-					type: sap.ui.core.mvc.ViewType.XML
-				});
-				app.addPage(oBayEditorView);
-				app.to(oBayEditorView);
-			}  
 		},
 
 		/**
