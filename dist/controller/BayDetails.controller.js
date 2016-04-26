@@ -754,7 +754,8 @@ sap.ui.define([
 	
 	
 	onAvalilabilityChecking: function(elThis,sId,oContext){
-	    console.log("checked");
+	   // console.log("checked");
+	   alert("in process");
 // 		this.getView().byId("addCommentButtonId").setVisible(false);
 // 		this.getView().byId("newCommentArea").setValue('');
 // 		this.getView().byId("newCommentBox").setVisible(true);

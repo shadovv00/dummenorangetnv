@@ -47,7 +47,6 @@ sap.ui.define([
 					oRM.renderControl(aRow[x]);
 				}
 			} else {
-			    console.dir(new BayCell());
 				oRM.renderControl(new BayRow({
 					ghbay: ghbay,
 					cells: [

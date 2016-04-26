@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:lForm="sap.ui.layout.form" xmlns:l="sap.ui.commons.layout">
+	<Dialog contentWidth="40%" contentHeight="25%">
+		<customHeader>
+			<Bar>
+				<contentRight>
+					<Button press="closePlantsAvilabDialog" icon="sap-icon://decline"/>
+				</contentRight>
+				<!--<contentLeft>-->
+				<!--	<Title text="Filter"/>-->
+				<!--</contentLeft>-->
+			</Bar>
+		</customHeader>
+		<content>
+			<Bar >
+				<contentLeft>
+					<Text text="Feeling green dark" id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
+				</contentLeft>
+			</Bar>		    
+		    <Table id="plantsAvailabilityTableId"
+            	items="{
+        			path: 'bayDetailModel>/AvailablePlants/1/'
+        		}">
+    		        <columns>
+        			<Column
+        				minScreenWidth="Tablet"
+        				demandPopin="true">
+        				<Text text="Week" />
+        			</Column>
+        			<Column
+        				minScreenWidth="Tablet"
+        				demandPopin="true"
+        				hAlign="Right">
+        				<Text text="available" />
+        			</Column>
+        		</columns>
+        		<items>
+        			<ColumnListItem>
+        				<cells>
+        					<Text
+        						text="{bayDetailModel>week}" />
+        					<Text
+        						text="{bayDetailModel>quantity}" />
+        				</cells>
+        			</ColumnListItem>
+        		</items>
+        	</Table>
+		</content>
+
+		<buttons>
+			<Button text="Close" press="closePlantsAvilabDialog" class="sapUiMediumMarginEnd"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
