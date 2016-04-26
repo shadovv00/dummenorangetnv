@@ -15,7 +15,7 @@
 		<Bar>
 			<contentLeft>
 				<Label text="Date:" class="sapUiSmallMarginBegin"/>
-				<DatePicker id="date_id" width="120px" placeholder=" " valueFormat="yyyy-MM-u" displayFormat="yyyy-ww-u"/>
+				<DatePicker id="date_id" width="120px" placeholder=" " valueFormat="yyyy-ww-u" displayFormat="yyyy-ww-u"/>
 				<Button icon="sap-icon://filter" press="doFiltering"/>
 				<Button icon="sap-icon://print" press="printBay"/>
 			</contentLeft>

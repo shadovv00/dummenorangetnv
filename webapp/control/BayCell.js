@@ -36,7 +36,6 @@ sap.ui.define([
 			oRM.writeStyles();
 			oRM.write(">");
 			if(+value) {
-			    console.log("val = " + value);
 			    oContent.setNumber(parseInt(value));
 			}
 			oRM.renderControl(oContent);

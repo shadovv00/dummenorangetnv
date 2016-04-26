@@ -15,7 +15,7 @@
 		<Bar>
 			<contentLeft>
 				<Label text="Date:" class="sapUiSmallMarginBegin"/>
-				<Label  text="11.11.1111"></Label>
+				<Label id="date_text_id" class="sap-custom-font-size" text="1970-01-01"></Label>
 			</contentLeft>
 			<contentRight>
 				<Button icon="sap-icon://sys-cancel-2" press="onPrevPage"/>

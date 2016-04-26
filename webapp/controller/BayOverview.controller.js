@@ -380,14 +380,19 @@ sap.ui.define([
 		goToEditor: function() {
 		    var view = this.getView();
 			var app = view.getParent();
+			var oBayEditorView;
+			var oDatePicker = this.byId("date_id");
 			if (sap.ui.getCore().byId("BayEditorId")) {
 				app.to("BayEditorId");
 			} else {
-				var oBayEditorView = sap.ui.view({
+			    oBayEditorView = sap.ui.view({
 					id: "BayEditorId",
 					viewName: "dummenorangetnv.view.BayEditor",
 					type: sap.ui.core.mvc.ViewType.XML
 				});
+				console.log(oBayEditorView);
+				console.log("current date > " + oDatePicker.getValue());
+				oBayEditorView.data("overview_date_str", oDatePicker.getValue());
 				app.addPage(oBayEditorView);
 				app.to(oBayEditorView);
 			}  
