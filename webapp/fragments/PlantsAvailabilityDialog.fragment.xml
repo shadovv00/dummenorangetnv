@@ -13,36 +13,23 @@
 		<content>
 			<Bar >
 				<contentLeft>
-					<Text text="Feeling green dark" id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
+					<Text  id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
 				</contentLeft>
 			</Bar>		    
-		    <Table id="plantsAvailabilityTableId"
-            	items="{
-        			path: 'bayDetailModel>/AvailablePlants/1/'
-        		}">
+		    <Table id="plantsAvailabilityTableId" >
     		        <columns>
-        			<Column
+        			<Column 
         				minScreenWidth="Tablet"
         				demandPopin="true">
         				<Text text="Week" />
         			</Column>
-        			<Column
+        			<Column 
         				minScreenWidth="Tablet"
         				demandPopin="true"
         				hAlign="Right">
         				<Text text="available" />
         			</Column>
         		</columns>
-        		<items>
-        			<ColumnListItem>
-        				<cells>
-        					<Text
-        						text="{bayDetailModel>week}" />
-        					<Text
-        						text="{bayDetailModel>quantity}" />
-        				</cells>
-        			</ColumnListItem>
-        		</items>
         	</Table>
 		</content>
 
