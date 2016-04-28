@@ -1,7 +1,7 @@
 {
 	"data": [{
 		"gh_bay": 5,
-		"comments": "hike",
+		"comments": "Opletten bij bemesten ...",
 		"plant": [{
 			"name": "001 Feeling green dark",
 			"percent": 0.5,
@@ -14,13 +14,13 @@
 			"veg": 12,
 			"rea": 54,
 			"horv": 1,
-			"oog_date": "2016-03-10",
+			"oog_date": "2016-03-07",
 			"vaca": 1,
 			"processed": false
 		}]
 	}, {
 		"gh_bay": 6,
-		"comments": "hike hike",
+		"comments": "",
 		"plant": [{
 			"name": "001 Feeling green dark",
 			"percent": 1.0,
@@ -48,13 +48,13 @@
 			"veg": 12,
 			"rea": 54,
 			"horv": 1,
-			"oog_date": "2016-03-13",
+			"oog_date": "2016-02-28",
 			"vaca": 3,
 			"processed": true
 		}]
 	}, {
 		"gh_bay": 7,
-		"comments": "empty hike",
+		"comments": "Grondrot, eerst vervangen daarna pas nieuw planten",
 		"plant": []
 	}, {
 		"gh_bay": 8,
@@ -65,8 +65,8 @@
 			"plants": 32436,
 			"erp_plants": 32436,
 			"density": 45,
-			"planted_date": "2016-01-10",
-			"erp_planted_date": "2016-01-09",
+			"planted_date": "2016-01-03",
+			"erp_planted_date": "2016-01-04",
 			"root": 0,
 			"veg": 13,
 			"rea": 55,
@@ -77,7 +77,7 @@
 		}]
 	}, {
 		"gh_bay": 9,
-		"comments": "like 9",
+		"comments": "",
 		"plant": [{
 			"name": "001 Feeling green dark",
 			"percent": 1.0,
@@ -96,7 +96,7 @@
 		}]
 	}, {
 		"gh_bay": 10,
-		"comments": "obscure 10",
+		"comments": "new comments 10",
 		"plant": [{
 			"name": "001 Feeling green dark",
 			"percent": 1.0,
@@ -115,7 +115,7 @@
 		}]
 	}, {
 		"gh_bay": 11,
-		"comments": "obscure 11 empty again",
+		"comments": "11 empty again",
 		"plant": []
 	}, {
 		"gh_bay": 12,

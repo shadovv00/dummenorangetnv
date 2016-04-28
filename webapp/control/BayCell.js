@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/core/Control",
+    "sap/ui/core/Control",
 	"sap/ui/commons/ProgressIndicator",
 	"sap/m/Button"
 ], function (Control, ProgressIndicator, Button) {
@@ -36,7 +36,6 @@ sap.ui.define([
 			oRM.writeStyles();
 			oRM.write(">");
 			if(+value) {
-			    console.log("val = " + value);
 			    oContent.setNumber(parseInt(value));
 			}
 			oRM.renderControl(oContent);

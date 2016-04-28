@@ -56,7 +56,7 @@ sap.ui.define([
 					phoneNumber: "06 12345678",
 					imgUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT-DndCxoheCTti3iAfgIOla-DYhif6kBFrIjscpBQXQR-yWPOf"
 				}]
-			}
+			};
 
 			this.oGrowerModel = new sap.ui.model.json.JSONModel(Grower);
 			this.oGrowerAdvisorModel = new sap.ui.model.json.JSONModel(GrowerAdvisor);
