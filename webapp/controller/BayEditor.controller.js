@@ -33,8 +33,7 @@ sap.ui.define([
 		},
 		formatDate: function(date) {
 		    var aDateParts = date.split("-");
-		    var oDate = new Date();
-		    oDate.setFullYear(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
+		    var oDate = new Date(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
 		    return oDate;
 		},
 		formatOddWeek: function(date) {
@@ -79,6 +78,9 @@ sap.ui.define([
 		formatProcessed: function(value) {
 // 			console.log("processed = " + value + " <> " + (typeof value));
 			return !value;
+		},
+		deleteBayRow: function(oEvent) {
+		    console.log(oEvent.getSource().getParent().getParent().destroy());
 		},
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.

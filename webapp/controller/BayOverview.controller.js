@@ -67,21 +67,18 @@ sap.ui.define([
 		        return -1;
 		    }
 		},
-		convertToYYYYwwdd: function(date) {
-		    Date.prototype.getWeek = function() {
-                var onejan = new Date(this.getFullYear(), 0, 1);
-                return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7) - 1;
-            };
-            var dataParts;
-		    if(typeof date === "string" && (dataParts = date.split("-")).length === 3) {
-		        var oDate = new Date(dataParts[0], dataParts[1] - 1, dataParts[2]);
-		        var day = oDate.getDay();
-		        var week = oDate.getWeek();
-		        if(day === 0) { day = 7; }
-		        if(week < 10) { week = "0" + week; }
-		        return dataParts[0] + "-" +week + "-" + day;
+		formatConvertStrToDate: function(date) {
+		    var dataParts;
+            if(typeof date === "string" && (dataParts = date.split("-")).length === 3) {
+                var oDate = new Date(dataParts[0], dataParts[1] - 1, dataParts[2]);
+                var oLocal = new sap.ui.core.Locale("nl-NL");
+                var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+                    pattern: "yyyy-ww-u"
+                }, oLocal);
+                var dateStr = dateFormat.format(oDate);
+		        return dateStr;
 		    } else {
-		        return 'no date';
+		        return "no date";
 		    }
 		},
 		formatPercent: function(value) {

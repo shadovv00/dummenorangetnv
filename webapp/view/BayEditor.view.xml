@@ -20,7 +20,7 @@
 		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
 			<cc:columns>
 				<cc:BayColumn text="GH-bay" colspan="2"/>
-				<cc:BayColumn text="" />
+				<cc:BayColumn text="" width="9rem"/>
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
 				<cc:BayColumn text="p/m2" />
@@ -105,7 +105,7 @@
 					    <DatePicker
 					        width="120px"
 					        placeholder=" "
-					        valueFormat="yyyy-MM-u"
+					        valueFormat="yyyy-ww-u"
 					        displayFormat="yyyy-ww-u"
         			        dateValue="{
             		                        path: 'oog_date',
