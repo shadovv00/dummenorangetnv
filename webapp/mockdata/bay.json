@@ -8,13 +8,13 @@
 			"plants": 16218,
 			"erp_plants": 16218,
 			"density": 47,
-			"planted_date": "2016-01-08",
-			"erp_planted_date": "2016-01-08",
+			"planted_date": "2016-01-01",
+			"erp_planted_date": "2016-01-01",
 			"root": 0,
 			"veg": 12,
 			"rea": 54,
 			"horv": 1,
-			"oog_date": "2016-03-07",
+			"oog_date": "2016-02-29",
 			"vaca": 1,
 			"processed": false
 		}]
@@ -27,13 +27,13 @@
 			"plants": 32436,
 			"erp_plants": 32435,
 			"density": 47,
-			"planted_date": "2016-01-09",
-			"erp_planted_date": "2016-01-09",
+			"planted_date": "2016-01-02",
+			"erp_planted_date": "2016-01-02",
 			"root": 0,
 			"veg": 12,
 			"rea": 54,
 			"horv": 1,
-			"oog_date": "2016-03-08",
+			"oog_date": "2016-03-01",
 			"vaca": 1,
 			"processed": true
 		}, {
@@ -42,8 +42,8 @@
 			"plants": 102,
 			"erp_plants": 102,
 			"density": 50,
-			"planted_date": "2016-01-09",
-			"erp_planted_date": "2016-01-09",
+			"planted_date": "2016-01-02",
+			"erp_planted_date": "2016-01-02",
 			"root": 0,
 			"veg": 12,
 			"rea": 54,
@@ -58,7 +58,7 @@
 		"plant": []
 	}, {
 		"gh_bay": 8,
-		"comments": "hike 8",
+		"comments": "some comment",
 		"plant": [{
 			"name": "004 Talitha",
 			"percent": 1.0,
@@ -66,12 +66,12 @@
 			"erp_plants": 32436,
 			"density": 45,
 			"planted_date": "2016-01-03",
-			"erp_planted_date": "2016-01-04",
+			"erp_planted_date": "2016-02-04",
 			"root": 0,
 			"veg": 13,
 			"rea": 55,
 			"horv": 1,
-			"oog_date": "2016-03-09",
+			"oog_date": "2016-03-02",
 			"vaca": 1,
 			"processed": true
 		}]
@@ -84,32 +84,32 @@
 			"plants": 32436,
 			"erp_plants": 32436,
 			"density": 47,
-			"planted_date": "2016-01-11",
-			"erp_planted_date": "2016-01-11",
+			"planted_date": "2016-01-04",
+			"erp_planted_date": "2016-01-04",
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
 			"horv": 1,
-			"oog_date": "2016-03-10",
+			"oog_date": "2016-03-03",
 			"vaca": 1,
 			"processed": true
 		}]
 	}, {
 		"gh_bay": 10,
-		"comments": "new comments 10",
+		"comments": "",
 		"plant": [{
 			"name": "001 Feeling green dark",
 			"percent": 1.0,
 			"plants": 32436,
 			"erp_plants": 32436,
 			"density": 47,
-			"planted_date": "2016-01-12",
-			"erp_planted_date": "2016-01-12",
+			"planted_date": "2016-01-05",
+			"erp_planted_date": "2016-01-05",
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
 			"horv": 1,
-			"oog_date": "2016-03-11",
+			"oog_date": "2016-03-04",
 			"vaca": 1,
 			"processed": true
 		}]

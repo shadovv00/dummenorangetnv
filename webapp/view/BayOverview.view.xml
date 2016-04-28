@@ -103,7 +103,7 @@
 					    <Text
 						    text="{
 						            path: 'planted_date',
-						            formatter: '.convertToYYYYwwdd'
+							        formatter: '.formatConvertStrToDate'
 						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
@@ -130,7 +130,7 @@
 						<Text
 						    text="{
 						            path: 'oog_date',
-						            formatter: '.convertToYYYYwwdd'
+						            formatter: '.formatConvertStrToDate'
 						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
