@@ -16,6 +16,9 @@
             "name": "fragments/BayFilterDialog.fragment.xml"
         },
         {
+            "name": "fragments/PlantsAvailabilityDialog.fragment.xml"
+        },
+        {
             "name": "i18n/i18n.properties",
             "raw": "i18n/i18n.properties"
         },

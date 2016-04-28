@@ -7,7 +7,7 @@
 		<Toolbar height="10rem" class="orangeHeader">
 			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
 				<items>
-					<Button type="Back" press="onPrevPage" text="Home"/>
+					<Button type="Back" press="onHomePage" text="Home"/>
 				</items>
 			</FlexBox>
 			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
@@ -20,9 +20,9 @@
 				<Button icon="sap-icon://print" press="printBay"/>
 			</contentLeft>
 			<contentRight>
-				<Button 
-				    class="sap-custom-icon-adjust"
-				    icon="images/cannabis-leaf-favicon.ico" press="doEditing"/>
+				<!--<Button -->
+				<!--    class="sap-custom-icon-adjust"-->
+				<!--    icon="images/cannabis-leaf-favicon.ico" press="doEditing"/>-->
 				<Button
 				    class="sap-custom-icon-adjust"
 				    icon="images/simple-leaf-favicon.ico" press="doEditing"/>

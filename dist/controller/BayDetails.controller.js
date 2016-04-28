@@ -136,6 +136,36 @@ sap.ui.define([
 					date: new Date(1450821600000)
 					}
 				],
+			AvailablePlants: [
+			        [					
+			            {
+    					week: 53,
+    					quantity: 1000
+    					},
+    					{
+    					week: 1,
+    					quantity: 0
+    					},
+    					{
+    					week: 2,
+    					quantity: 1000
+    					}
+                    ],
+			        [					
+			            {
+    					week: 53,
+    					quantity: 1000
+    					},
+    					{
+    					week: 1,
+    					quantity: 0
+    					},
+    					{
+    					week: 2,
+    					quantity: 0
+    					}
+                    ]                    
+				],
 			prevPage: ''	
 		},
 		
@@ -167,8 +197,8 @@ sap.ui.define([
 				var oModel = new sap.ui.model.json.JSONModel(this.addPlantsMockup);
 				this.getView().setModel(oModel,"bayDetailModel");
 				this.getView().getModel("bayDetailModel").getData().prevPage=sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId();
-				console.log(sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId());
-				console.log(this.getView().getModel("bayDetailModel").getData().prevPage);
+				// console.log(sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId());
+				// console.log(this.getView().getModel("bayDetailModel").getData().prevPage);
 
 				var oBayDetailList = this.getView().byId("bayDetailListId");
 				oBayDetailList.bindAggregation("items","bayDetailModel>/PlantsInBay",this.bayDetailListFactory.bind(this));
@@ -616,15 +646,15 @@ sap.ui.define([
         											justifyContent:"End", alignItems:"Center",
         											items: [
         	                            			// 	new sap.m.Text({ width: "80%",text: oContext.getProperty("availability"), textAlign:"Center" }).attachBrowserEvent("click",function(){alert("msg");})
-        	                            				new sap.m.Text({ width: "100%", text: oContext.getProperty("availability")+"%", textAlign:"End" }).addStyleClass("")
+        	                            				new sap.m.Text({ width: "100%", text: oContext.getProperty("availability"), textAlign:"End" }).addStyleClass("")
         											]
         										}),
 										new sap.m.FlexBox({
 											width:"6%",
 											justifyContent:"Start",alignItems:"Center",
 											items: [
-	                            				new sap.m.Image({width:"2em", height:"2em", src: "images/cannabis-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
-	                            				,new sap.m.Image({width:"2em", height:"2em", src: "images/simple-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
+	                            			// 	new sap.m.Image({width:"2em", height:"2em", src: "images/cannabis-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}}),
+	                            				new sap.m.Image({width:"2em", height:"2em", src: "images/simple-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}})
  											]
 										}).addStyleClass("")
 
@@ -666,14 +696,14 @@ sap.ui.define([
 // 		console.log(this.getView().byId(sId).getContent()[0].getItems()[0].getItems());
         var inputIndex;
 		$.each(thisContr.getView().byId(sId).getContent()[0].getItems()[0].getItems(), function (index, item) {
-		    console.log(item.getItems()[0].getId());
+		  //  console.log(item.getItems()[0].getId());
 		    if(item.getItems()[0].getId()==elThis.getId()){
 		        inputIndex=index;  
-		        console.log(inputIndex);
+		      //  console.log(inputIndex);
 		    }
 		});
 		if (inputIndex<5){
-		    console.log("<5");
+		  //  console.log("<5");
     	        var baySquare=thisContr.getView().getModel("bayDetailModel").getData().Bay.square;
     	    switch(inputIndex) {
                 case 2:
@@ -700,7 +730,7 @@ sap.ui.define([
                 break;
             }
 		}else if(10>inputIndex){
-		    console.log("10>4");
+		  //  console.log("10>4");
     	    switch(inputIndex) {
                 case 5:
                     // console.log(elThis.getDateValue());
@@ -718,13 +748,13 @@ sap.ui.define([
                 break;
                 case 9:
     				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
-            console.log(parseInt(elThis.getValue()));
+            // console.log(parseInt(elThis.getValue()));
                 break;
                 case 11:
     				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
                 break;
             }
-            console.log(plantedDate);
+            // console.log(plantedDate);
     		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
     	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
     	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
@@ -732,11 +762,11 @@ sap.ui.define([
     	    var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
     	    var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
     		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
-            console.log(plantedDate);
+            // console.log(plantedDate);
     		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
 
 		}else if (inputIndex>9){
- 		    console.log(">9");
+ 		 //   console.log(">9");
    	    switch(inputIndex) {
                 case 10:
     				oContext.getModel().setProperty(oContext.getPath() + "/oog", new Date(elThis.getDateValue()));
@@ -754,12 +784,31 @@ sap.ui.define([
 	
 	
 	onAvalilabilityChecking: function(elThis,sId,oContext){
+	    this.openPlantsAvilabDialog(elThis,sId,oContext);
 	   // console.log("checked");
-	   alert("in process");
+	   //alert("in process");
 // 		this.getView().byId("addCommentButtonId").setVisible(false);
 // 		this.getView().byId("newCommentArea").setValue('');
 // 		this.getView().byId("newCommentBox").setVisible(true);
-	},		
+	},	
+	
+	openPlantsAvilabDialog: function(elThis,sId,oContext) {
+	   // console.log(oContext.getModel().getProperty(oContext.getPath() + "/id"));
+		this.newPlantsAvilabDialog = sap.ui.xmlfragment("dummenorangetnv.fragments.PlantsAvailabilityDialog", this);
+		this.getView().addDependent(this.newPlantsAvilabDialog);
+		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this.newPlantsAvilabDialog);
+		this.newPlantsAvilabDialog.open();
+				// var oPlantsAvailabilityTable = this.getView().byId("plantsAvailabilityTableId");
+				// oPlantsAvailabilityTable.bindAggregation("items","bayDetailModel>/AvailablePlants/1/");
+		
+	},
+
+	closePlantsAvilabDialog: function(oEvent) {
+		this.newPlantsAvilabDialog.close();
+		this.newPlantsAvilabDialog.destroy();
+	},
+	
+	
 	
 	onAddComment: function(oEvent){
 		this.getView().byId("addCommentButtonId").setVisible(false);
