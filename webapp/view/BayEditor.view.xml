@@ -47,6 +47,7 @@
 					</cc:BayCell>
 					<cc:BayCell>
 			            <Button 
+			                type="Transparent"
     			            icon="sap-icon://decline" 
     			            press="deleteBayRow"/>
 					</cc:BayCell>
@@ -137,6 +138,7 @@
 			            <TextArea
 			                width="100%"
 			                rows="1"
+			                placeholder="Comments"
 			                value="{comments}"/>
 			        </cc:BayCell>
 			        <cc:BayCell />

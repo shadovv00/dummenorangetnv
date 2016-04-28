@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/core/Control",
+    "sap/ui/core/Control",
 	"sap/ui/commons/ProgressIndicator",
 	"sap/m/Button"
 ], function (Control, ProgressIndicator, Button) {
