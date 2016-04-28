@@ -5,11 +5,6 @@
 	    enableScrolling="false"
 	    showHeader="false">
 		<Toolbar height="10rem" class="orangeHeader">
-			<!--<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">-->
-			<!--	<items>-->
-			<!--		<Button type="Back" press="onPrevPage" text="Cancel"/>-->
-			<!--	</items>-->
-			<!--</FlexBox>-->
 			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
 		</Toolbar>
 		<Bar>

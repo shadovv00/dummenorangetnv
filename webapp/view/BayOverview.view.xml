@@ -100,7 +100,11 @@
 					                ],
 							        formatter: '.formatPlantedDate'
 						        }">
-						<Text text="{planted_date}" />
+					    <Text
+						    text="{
+						            path: 'planted_date',
+						            formatter: '.convertToYYYYwwdd'
+						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
@@ -123,7 +127,11 @@
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<Text text="{oog_date}" />
+						<Text
+						    text="{
+						            path: 'oog_date',
+						            formatter: '.convertToYYYYwwdd'
+						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
