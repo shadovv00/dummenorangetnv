@@ -6,8 +6,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true,
-    "lastBuildDateTime": "Tue, 26 Apr 2016 06:57:52 GMT"
+    "buildRequired": false,
+    "lastBuildDateTime": "Fri, 29 Apr 2016 05:15:28 GMT"
   },
   "generation": [
     {
@@ -38,6 +38,6 @@
   "hcpdeploy": {
     "account": "p1941590108trial",
     "name": "dummenorange",
-    "lastVersionWeTriedToDeploy": "1.0.0.3.6.3"
+    "lastVersionWeTriedToDeploy": "1.0.0.3.6.7"
   }
 }

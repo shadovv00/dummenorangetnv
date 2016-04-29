@@ -1,0 +1,189 @@
+{
+	"data": [{
+		"gh_bay": 5,
+		"comments": "Opletten bij bemesten ...",
+		"plant": [{
+			"name": "001 Feeling green dark",
+			"percent": 0.5,
+			"plants": 16218,
+			"erp_plants": 16218,
+			"density": 47,
+			"planted_date": "2016-01-01",
+			"erp_planted_date": "2016-01-01",
+			"root": 0,
+			"veg": 12,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-02-29",
+			"vaca": 1,
+			"processed": false
+		}]
+	}, {
+		"gh_bay": 6,
+		"comments": "",
+		"plant": [{
+			"name": "001 Feeling green dark",
+			"percent": 1.0,
+			"plants": 32436,
+			"erp_plants": 32435,
+			"density": 47,
+			"planted_date": "2016-01-02",
+			"erp_planted_date": "2016-01-02",
+			"root": 0,
+			"veg": 12,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-01",
+			"vaca": 1,
+			"processed": true
+		}, {
+			"name": "015 Grand cherry",
+			"percent": 0.002,
+			"plants": 102,
+			"erp_plants": 102,
+			"density": 50,
+			"planted_date": "2016-01-02",
+			"erp_planted_date": "2016-01-02",
+			"root": 0,
+			"veg": 12,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-02-28",
+			"vaca": 3,
+			"processed": true
+		}]
+	}, {
+		"gh_bay": 7,
+		"comments": "Grondrot, eerst vervangen daarna pas nieuw planten",
+		"plant": []
+	}, {
+		"gh_bay": 8,
+		"comments": "some comment",
+		"plant": [{
+			"name": "004 Talitha",
+			"percent": 1.0,
+			"plants": 32436,
+			"erp_plants": 32436,
+			"density": 45,
+			"planted_date": "2016-01-03",
+			"erp_planted_date": "2016-02-04",
+			"root": 0,
+			"veg": 13,
+			"rea": 55,
+			"horv": 1,
+			"oog_date": "2016-03-02",
+			"vaca": 1,
+			"processed": true
+		}]
+	}, {
+		"gh_bay": 9,
+		"comments": "",
+		"plant": [{
+			"name": "001 Feeling green dark",
+			"percent": 1.0,
+			"plants": 32436,
+			"erp_plants": 32436,
+			"density": 47,
+			"planted_date": "2016-01-04",
+			"erp_planted_date": "2016-01-04",
+			"root": 0,
+			"veg": 11,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-03",
+			"vaca": 1,
+			"processed": true
+		}]
+	}, {
+		"gh_bay": 10,
+		"comments": "",
+		"plant": [{
+			"name": "001 Feeling green dark",
+			"percent": 1.0,
+			"plants": 32436,
+			"erp_plants": 32436,
+			"density": 47,
+			"planted_date": "2016-01-05",
+			"erp_planted_date": "2016-01-05",
+			"root": 0,
+			"veg": 11,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-04",
+			"vaca": 1,
+			"processed": true
+		}]
+	}, {
+		"gh_bay": 11,
+		"comments": "11 empty again",
+		"plant": []
+	}, {
+		"gh_bay": 12,
+		"comments": "eventually 12",
+		"plant": [{
+			"name": "001 Feeling green dark",
+			"percent": 0.3,
+			"plants": 10436,
+			"erp_plants": 10436,
+			"density": 47,
+			"planted_date": "2016-01-12",
+			"erp_planted_date": "2016-01-12",
+			"root": 0,
+			"veg": 11,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-11",
+			"vaca": 1,
+			"processed": true
+		}, {
+			"name": "001 Feeling green dark1",
+			"percent": 0.26,
+			"plants": 6436,
+			"erp_plants": 6435,
+			"density": 47,
+			"planted_date": "2016-01-13",
+			"erp_planted_date": "2016-01-13",
+			"root": 0,
+			"veg": 11,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-12",
+			"vaca": 1,
+			"processed": true
+		}, {
+			"name": "001 Feeling DDD",
+			"percent": 0.5,
+			"plants": 16436,
+			"erp_plants": 16436,
+			"density": 47,
+			"planted_date": "2016-01-14",
+			"erp_planted_date": "2016-01-14",
+			"root": 0,
+			"veg": 11,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-13",
+			"vaca": 1,
+			"processed": true
+		}]
+	}, {
+		"gh_bay": 13,
+		"comments": "September",
+		"plant": [{
+			"name": "001 Feeling green dark",
+			"percent": 1.0,
+			"plants": 32436,
+			"erp_plants": 32436,
+			"density": 47,
+			"planted_date": "2016-01-15",
+			"erp_planted_date": "2016-01-15",
+			"root": 0,
+			"veg": 11,
+			"rea": 54,
+			"horv": 1,
+			"oog_date": "2016-03-14",
+			"vaca": 1,
+			"processed": true
+		}]
+	}]
+}

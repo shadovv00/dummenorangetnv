@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/suite/ui/generic/template.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/suite/ui/generic/template.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080527", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -35,12 +35,12 @@
 .sapUiMedia-Std-Tablet .sapSmartTemplatesObjectPage .sapSmartTemplatesObjectPageHeaderImage {
   height: 6rem;
   width: 6rem;
-  border: 1px solid #cccccc;
+  border: 1px solid #d7230f;
 }
 .sapUiMedia-Std-Phone .sapSmartTemplatesObjectPage .sapSmartTemplatesObjectPageHeaderImage {
   height: 3rem;
   width: 3rem;
-  border: 1px solid #cccccc;
+  border: 1px solid #d7230f;
 }
 .sapUiMedia-Std-Desktop .sapSmartTemplatesObjectPage .sapUxAPObjectPageContentObjectImage-Circle .sapSmartTemplatesObjectPageHeaderImage,
 .sapUiMedia-Std-Tablet .sapSmartTemplatesObjectPage .sapUxAPObjectPageContentObjectImage-Circle .sapSmartTemplatesObjectPageHeaderImage {
@@ -55,7 +55,7 @@
   margin-bottom: 0.5rem;
   padding-top: 0;
   padding-bottom: 0;
-  border: 1px solid #cccccc;
+  border: 1px solid #d7230f;
 }
 .sapSmartTemplatesObjectPage .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderContentItem.sapSmartTemplatesObjectPageHeaderImage {
   margin-right: 2rem;
@@ -198,8 +198,8 @@ html[dir="rtl"] .sapUiMedia-Std-Desktop .sapSmartTemplatesObjectPage .sapUxAPObj
   color: #666666;
 }
 .sapSmartTemplatesObjectPage .sapSmartTemplatesObjectPageContactsImage {
-  background-color: #f2f2f2;
-  color: #bfbfbf;
+  background-color: #f25240;
+  color: #bf1f0d;
 }
 
 /******************* FILE /Base/baseLib/custom1bluecrystal/custom.less (Version 10.30.3.245729.0) *******************/
@@ -210,4 +210,4 @@ html[dir="rtl"] .sapUiMedia-Std-Desktop .sapSmartTemplatesObjectPage .sapUxAPObj
 /******************* FILE /UI5/sap/suite/ui/generic/template/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-suite-ui-generic-template{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/suite/ui/generic/template.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-suite-ui-generic-template{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/suite/ui/generic/template.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080527", "Source": "1.36.6", "Engine": "1.16.1"}}');}

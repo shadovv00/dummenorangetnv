@@ -1,0 +1,125 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table"
+	controllerName="dummenorangetnv.controller.ApprovalPage" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<Toolbar>
+			<Button type="Back" press="onHome" text="Home" class="sapUiSmallMarginBegin"/>
+			<ToolbarSpacer/>
+			<Label text="Customer Representative" labelFor="plantSelectorId"/>
+			<Select id="plantSelectorId" items="{custRepes>/customerRepresentive}" width="20%" class="sapUiSmallMarginEnd" change="onPlantChange">
+				<core:Item key="{custRepes>id}" text="{custRepes>name}"/>
+			</Select>
+		</Toolbar>
+		<content>
+			<!--<Table id="tableId" items="{ -->
+			<!--    path:'bayModel>/bayData', -->
+			<!--	groupHeaderFactory: '.getGroupHeader'-->
+			<!--}" mode="SingleSelectMaster">-->
+			<!--	<columns>-->
+			<!--		<Column width="11rem">-->
+			<!--			<Label text="Bay"/>-->
+			<!--		</Column>-->
+			<!--		<Column width="11rem">-->
+			<!--			<Label text="Delivery"/>-->
+			<!--		</Column>-->
+			<!--		<Column width="6rem">-->
+			<!--			<Label text="Variety"/>-->
+			<!--		</Column>-->
+			<!--		<Column width="9rem">-->
+			<!--			<Label text="Change"/>-->
+			<!--		</Column>-->
+			<!--		<Column width="9rem">-->
+			<!--			<Label text="Old value"/>-->
+			<!--		</Column>-->
+			<!--		<Column width="12rem">-->
+			<!--			<Label text="New Value"/>-->
+			<!--		</Column>-->
+			<!--	</columns>-->
+			<!--	<items>-->
+			<!--		<ColumnListItem>-->
+			<!--			<cells>-->
+			<!--				<Text text="{bayModel>gh_bay}"/>-->
+			<!--				<Text text="{bayModel>planted_date}"/>-->
+			<!--				<Text text="{bayModel>name}"/>-->
+			<!--				<Text text="{bayModel>comments}"/>-->
+			<!--				<Text text="{bayModel>address/street}"/>-->
+			<!--				<Text text="{bayModel>comments}"/>-->
+			<!--			</cells>-->
+			<!--		</ColumnListItem>-->
+			<!--	</items>-->
+			<!--</Table>-->
+			<List id="ListId" items="{ path:'bayModel>/bayData',
+			                groupHeaderFactory: '.getGroupHeader' 
+			}" mode="MultiSelect"  >
+				<infoToolbar>
+					<Toolbar
+						visible="true"
+						id="idInfoToolbar" >
+					    <ToolbarSpacer width="2.5%"/>
+						<HBox width="93%">
+						     <FlexBox  width="21.5%" justifyContent="Start">
+							    <Text text="Bay" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			         <FlexBox  width="72%" justifyContent="Start">
+							    <Text text="Delivery" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			         <FlexBox  width="73%" justifyContent="Start">
+							    <Text text="Variety" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			         <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="Change" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			         <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="Old value" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			         <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="New value" textAlign="Center" ></Text>
+			 			    </FlexBox>
+						</HBox>
+					</Toolbar>
+					</infoToolbar>
+					<CustomListItem >
+					    <HBox>
+					        <!--<CheckBox/>-->
+					       <FlexBox  width="20%" justifyContent="Start">
+							    <Text text="{bayModel>gh_bay}" textAlign="Center" ></Text>
+			 			    </FlexBox>
+					
+					 <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="{bayModel>planted_date}" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			     <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="{bayModel>name}" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			     <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="{bayModel>comments}" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			     <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="{bayModel>address/street}" textAlign="Center" ></Text>
+			 			    </FlexBox>
+			 			     <FlexBox  width="70%" justifyContent="Start">
+							    <Text text="{bayModel>comments}" textAlign="Center" ></Text>
+			 			    </FlexBox>
+					
+						<!--<Text text="{bayModel>name}" width="2%"/>-->
+						<!--<Text text="{bayModel>comments}" width="2%"/>-->
+						<!--<Text text="{bayModel>address/street}" width="2%"/>-->
+						<!--<Text text="{bayModel>comments}" width="2%"/>-->
+						    </HBox>
+					</CustomListItem>
+			
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<HBox alignItems="Center">
+					<CheckBox/>
+					<Label text="Select / Deselect all"/>
+				</HBox>
+				<ToolbarSpacer/>
+				<Button text="Reject"/>
+				<!--<ToolbarSpacer width="1%"/>-->
+				<Button text="Approve"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

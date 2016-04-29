@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/ui/suite.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180206", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/ui/suite.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080531", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -21,9 +21,9 @@
 .sapUiTaskCircle {
   font-weight: bold;
   text-align: center;
-  border: 2px solid #bfbfbf;
+  border: 2px solid #bf1f0d;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-  background-color: #f2f2f2;
+  background-color: #ffaa72;
   color: #000000;
 }
 /* END "TaskCircle.less" */
@@ -32,15 +32,15 @@
 /* CSS for control sap.ui.suite/VerticalProgressIndicator.control */
 /* ============================================= */
 .sapUiVerticalProgressOuterContainer {
-  border: 2px solid #808080;
+  border: 2px solid #490c05;
   width: 31px;
   height: 58px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
-  background-color: #dddddd;
+  background-color: #ef2f19;
 }
 .sapUiVerticalProgressInnerContainer {
   position: relative;
-  background-color: #777777;
+  background-color: #370904;
 }
 
 /******************* FILE /Base/baseLib/sap_bluecrystal/base.less (Version 10.30.3.245729.0) *******************/
@@ -70,7 +70,7 @@
   color: #ffffff;
 }
 .sapUiTaskCircleColorGray {
-  background-color: #cccccc;
+  background-color: #d7230f;
   color: #444444;
 }
 /* END "TaskCircle.less" */
@@ -90,4 +90,4 @@
 /******************* FILE /UI5/sap/ui/suite/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-ui-suite{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/suite.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180206", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-ui-suite{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/suite.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080531", "Source": "1.36.6", "Engine": "1.16.1"}}');}

@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/landvisz.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.0.20160425180208", "Source": "1.36.0", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/landvisz.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.0.20160429080533", "Source": "1.36.0", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -2159,7 +2159,7 @@ height: 13px;
 .sapLandviszActionDisable {
   height: 100%;
   width: 100%;
-  background-color: #bfbfbf;
+  background-color: #a80e03;
   opacity: 0.7;
   cursor: default;
 }
@@ -2504,7 +2504,7 @@ height: 13px;
 /* CSS for control sap.landvisz/DeploymentType.control */
 /* ============================================= */
 .sapLandviszIconBorder {
-  border: 1px solid #999999;
+  border: 1px solid #771308;
 }
 /* END "DeploymentType.css" */
 /* START "EntityAction.css" */
@@ -2553,7 +2553,7 @@ height: 13px;
 .sapLandviszMiniNavigationSelected {
   background-color: #ffffff;
   height: 11px;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #a80e03;
 }
 .sapLandviszTechnicalSystem {
   border-top: 2px solid #008fd3 !important;
@@ -2566,8 +2566,8 @@ height: 13px;
 }
 .sapLandviszMiniNavigationNormal {
   height: 11px;
-  background-color: #bfbfbf;
-  border: 1px solid #e5e5e5;
+  background-color: #a80e03;
+  border: 1px solid #f03d28;
 }
 .sapLandviszMiniNavigationInDisplay {
   height: 11px;
@@ -2917,31 +2917,31 @@ height: 13px;
   width: 64.5em;
 }
 .sapLandviszActionBarSmallSize {
-  border: 0px solid #ccc0b8;
+  border: 0px solid #ccc1b8;
   float: Left;
   cursor: pointer;
   width: 21.2em;
 }
 .sapLandviszActionBarRegularSmallSize {
-  border: 0px solid #ccc0b8;
+  border: 0px solid #ccc1b8;
   float: Left;
   cursor: pointer;
   width: 31.5em;
 }
 .sapLandviszActionBarRegularSize {
-  border: 0px solid #ccc0b8;
+  border: 0px solid #ccc1b8;
   float: Left;
   cursor: pointer;
   width: 36.5em;
 }
 .sapLandviszActionBarMediumSize {
-  border: 0px solid #ccc0b8;
+  border: 0px solid #ccc1b8;
   float: left;
   cursor: pointer;
   width: 41em;
 }
 .sapLandviszActionBarLargeSize {
-  border: 0px solid #ccc0b8;
+  border: 0px solid #ccc1b8;
   float: Left;
   cursor: pointer;
   width: 62em;
@@ -3034,7 +3034,7 @@ height: 13px;
 }
 /*Small Size*/
 .sapLandviszLandscapeEntitySmallSize {
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   height: 13em;
   float: left;
   cursor: pointer;
@@ -3056,7 +3056,7 @@ height: 13px;
 }
 /*RegularSmall Size */
 .sapLandviszLandscapeEntityRegularSmallSize {
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   height: 19.5em;
   float: left;
   cursor: pointer;
@@ -3075,7 +3075,7 @@ height: 13px;
 }
 /*Regular Size*/
 .sapLandviszLandscapeEntityRegularSize {
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   height: 21.58em;
   float: left;
   cursor: pointer;
@@ -3094,7 +3094,7 @@ height: 13px;
 }
 /*Medium Size*/
 .sapLandviszLandscapeEntityMediumSize {
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   height: 25em;
   float: left;
   cursor: pointer;
@@ -3118,7 +3118,7 @@ height: 13px;
 }
 /*Large Size*/
 .sapLandviszLandscapeEntityLargeSize {
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   width: 62em;
   height: 38em;
   float: left;
@@ -3254,7 +3254,7 @@ height: 13px;
   cursor: default;
 }
 .sapLandviszActionBarMaximizeSize {
-  border: 0px solid #ccc0b8;
+  border: 0px solid #ccc1b8;
   float: Left;
   cursor: pointer;
 }
@@ -3271,7 +3271,7 @@ height: 13px;
   width: 100%;
 }
 .sapLandviszLandscapeEntityMaximizedSize {
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   float: left;
   cursor: pointer;
   background-color: #ffffff;
@@ -3367,7 +3367,7 @@ height: 13px;
   -moz-box-sizing: border-box;
   opacity: 1;
   position: relative;
-  border: 1px solid #999999;
+  border: 1px solid #771308;
   margin: auto;
 }
 .sapLandviszViewer_container_header {
@@ -3431,7 +3431,7 @@ height: 13px;
   height: 40px;
   font-size: 25px;
   text-align: center;
-  background-color: #808080;
+  background-color: #490c05;
   color: white;
   margin-top: 20px;
   margin-right: 20px;
@@ -3559,7 +3559,7 @@ height: 13px;
   background: url("../../../../../UI5/sap/landvisz/themes/sap_bluecrystal/img/framework/16x16/ArrowBar_down_hover.png");
 }
 .sapLandviszClv_container_frame_navigation .navigationNavigator {
-  background: #ffece6;
+  background: #f5ebe6;
   position: relative;
   opacity: .65;
   cursor: url("../../../../../UI5/sap/landvisz/themes/sap_bluecrystal/img/framework/24x24/drag_n_drop.cur"), pointer;
@@ -3596,13 +3596,13 @@ height: 13px;
 /* ============================================= */
 .sapLandviszLinearRowField {
   /*color: @sapUiTextColor; */
-  color: #808080;
-  border: 0px solid #808080;
+  color: #490c05;
+  border: 0px solid #490c05;
   margin-top: 5px;
   margin-left: 3px;
 }
 .sapLandviszLinearRowFieldSize {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #771308;
   font-family: Verdana, Arial, sans-serif;
 }
 .sapLandviszLinearRowFieldSmallSize {
@@ -3647,7 +3647,7 @@ height: 13px;
   width: 67.5%;
 }
 .sapLandviszLinearRowFieldSmallSize .dataLabel {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-weight: bold;
   font-size: 12px;
   width: 35%;
@@ -3679,7 +3679,7 @@ height: 13px;
   width: 62.5%;
 }
 .sapLandviszLinearRowFieldRegularSmallSize .dataLabel {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-weight: bold;
   font-size: 13px;
   width: 36%;
@@ -3697,7 +3697,7 @@ height: 13px;
 /* Regular*/
 .sapLandviszLinearRowFieldRegularSize .dataValue {
   margin-left: 5px;
-  color: #808080;
+  color: #490c05;
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -3707,7 +3707,7 @@ height: 13px;
 }
 .sapLandviszLinearRowFieldRegularSize .fullDataLabel {
   margin-left: 5px;
-  color: #808080;
+  color: #490c05;
   font-size: 14px;
   margin-top: 5px;
   width: 89%;
@@ -3717,7 +3717,7 @@ height: 13px;
 }
 .sapLandviszLinearRowFieldRegularSize .fullDataValue {
   margin-left: 5px;
-  color: #808080;
+  color: #490c05;
   font-size: 14px;
   margin-top: 5px;
   max-width: 86%;
@@ -3727,7 +3727,7 @@ height: 13px;
 }
 .sapLandviszLinearRowFieldRegularSize .fullDataLabelwithRightIcon {
   margin-left: 5px;
-  color: #808080;
+  color: #490c05;
   font-size: 14px;
   margin-top: 5px;
   width: 77.5%;
@@ -3737,7 +3737,7 @@ height: 13px;
 }
 .sapLandviszLinearRowFieldRegularSize .fullDataValuewithRightIcon {
   margin-left: 5px;
-  color: #808080;
+  color: #490c05;
   font-size: 14px;
   margin-top: 5px;
   width: 77.5%;
@@ -3746,9 +3746,9 @@ height: 13px;
   white-space: normal !important;
 }
 .sapLandviszLinearRowFieldRegularSize .dataLabel {
-  color: #808080;
+  color: #490c05;
   margin-left: 5px;
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-weight: bold;
   font-size: 14px;
   margin-top: 5px;
@@ -3768,7 +3768,7 @@ height: 13px;
   width: 56%;
 }
 .sapLandviszLinearRowFieldMediumSize .dataLabel {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-weight: bold;
   font-size: 14.5px;
   width: 40%;
@@ -3798,7 +3798,7 @@ height: 13px;
   width: 56%;
 }
 .sapLandviszLinearRowFieldLargeSize .dataLabel {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-weight: bold;
   font-size: 16.5px;
   margin-top: 5px;
@@ -3836,7 +3836,7 @@ height: 13px;
 /* CSS for control sap.landvisz/LongTextRenderer.control */
 /* ============================================= */
 .sapLandviszLongTextSizeCommon {
-  color: #808080;
+  color: #490c05;
   width: 97%;
   margin: 5px 0px 5px 5px;
   font-family: Verdana, Arial, sans-serif;
@@ -3879,7 +3879,7 @@ height: 13px;
   cursor: pointer;
 }
 .stateIconClass {
-  border: 1px solid #999999 !important;
+  border: 1px solid #771308 !important;
   cursor: default;
 }
 /* END "ModelingStatus.css" */
@@ -3898,7 +3898,7 @@ height: 13px;
   white-space: normal !important;
 }
 .sapLandviszNestedRowFieldSmallSize {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #771308;
   width: 100%;
   font-family: Verdana, Arial, sans-serif;
   margin-top: 5px;
@@ -3914,12 +3914,12 @@ height: 13px;
 .sapLandviszNestedRowFieldSmallSize .rowFieldinNestedRow {
   margin-left: 15px;
   width: 92%;
-  border-bottom: 0px solid #999999;
+  border-bottom: 0px solid #771308;
   margin-top: 0px;
 }
 /*RegularSmall*/
 .sapLandviszNestedRowFieldRegularSmallSize {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #771308;
   width: 100%;
   font-family: Verdana, Arial, sans-serif;
   margin-top: 5px;
@@ -3929,21 +3929,21 @@ height: 13px;
   width: 82%;
 }
 .sapLandviszNestedRowFieldRegularSmallSize .dataValue {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-size: 14px;
   width: 70%;
 }
 .sapLandviszNestedRowFieldRegularSmallSize .rowFieldinNestedRow {
   padding-left: 25px;
   width: 96%;
-  border-bottom: 0px solid #999999;
+  border-bottom: 0px solid #771308;
   margin-top: 0px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 /*Regular*/
 .sapLandviszNestedRowFieldRegularSize {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #771308;
   width: 100%;
   font-family: Verdana, Arial, sans-serif;
   margin-top: 5px;
@@ -3953,21 +3953,21 @@ height: 13px;
   width: 84%;
 }
 .sapLandviszNestedRowFieldRegularSize .dataValue {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-size: 14px;
   width: 76%;
 }
 .sapLandviszNestedRowFieldRegularSize .rowFieldinNestedRow {
   padding-left: 25px;
   width: 99%;
-  border-bottom: 0px solid #999999;
+  border-bottom: 0px solid #771308;
   margin-top: 0px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 /* Medium*/
 .sapLandviszNestedRowFieldMediumSize {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #771308;
   width: 100%;
   font-family: Verdana, Arial, sans-serif;
   margin-top: 5px;
@@ -3977,18 +3977,18 @@ height: 13px;
   width: 90%;
 }
 .sapLandviszNestedRowFieldMediumSize .dataValue {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-size: 14px;
   width: 83%;
 }
 .sapLandviszNestedRowFieldMediumSize .rowFieldinNestedRow {
   margin-left: 25px;
   width: 92%;
-  border-bottom: 0px solid #999999;
+  border-bottom: 0px solid #771308;
   margin-top: 0px;
 }
 .sapLandviszNestedRowFieldLargeSize {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #771308;
   width: 100%;
   font-family: Verdana, Arial, sans-serif;
   margin-top: 5px;
@@ -3998,14 +3998,14 @@ height: 13px;
   width: 91%;
 }
 .sapLandviszNestedRowFieldLargeSize .dataValue {
-  border: 0px solid #808080;
+  border: 0px solid #490c05;
   font-size: 16px;
   width: 83%;
 }
 .sapLandviszNestedRowFieldLargeSize .rowFieldinNestedRow {
   margin-left: 30px;
   width: 94%;
-  border-bottom: 0px solid #999999;
+  border-bottom: 0px solid #771308;
   margin-top: 0px;
 }
 .sapLandviszDataLabelIcon {
@@ -4073,7 +4073,7 @@ height: 13px;
   width: 60%;
   height: 80%;
   background-color: #fff;
-  border: 1px solid #808080;
+  border: 1px solid #490c05;
 }
 /* END "OptionSource.css" */
 /* START "SingleDataContainer.css" */
@@ -4095,7 +4095,7 @@ height: 13px;
   font-family: Arial, serif;
   overflow: hidden;
   background-color: white;
-  border: 1px solid #ccc0b8;
+  border: 1px solid #ccc1b8;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0;
@@ -4230,4 +4230,4 @@ height: 13px;
 /******************* FILE /UI5/sap/landvisz/themes/custom1bluecrystal/library.less (Version 1.36.0) *******************/
 
 
-.sapThemeMetaData-UI5-sap-landvisz{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/landvisz.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.0.20160425180208", "Source": "1.36.0", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-landvisz{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/landvisz.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.0.20160429080533", "Source": "1.36.0", "Engine": "1.16.1"}}');}

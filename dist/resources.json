@@ -50,6 +50,9 @@
             "name": "view/AddPlantsToBay.view.xml"
         },
         {
+            "name": "view/ApprovalPage.view.xml"
+        },
+        {
             "name": "view/BayEditor.view.xml"
         },
         {
@@ -78,6 +81,9 @@
         },
         {
             "name": "controller/BayDetails.controller.js"
+        },
+        {
+            "name": "controller/ApprovalPage.controller.js"
         },
         {
             "name": "controller/BayEditor.controller.js"

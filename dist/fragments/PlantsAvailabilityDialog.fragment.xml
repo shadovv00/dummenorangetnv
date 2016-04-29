@@ -5,44 +5,31 @@
 				<contentRight>
 					<Button press="closePlantsAvilabDialog" icon="sap-icon://decline"/>
 				</contentRight>
-				<!--<contentLeft>-->
-				<!--	<Title text="Filter"/>-->
-				<!--</contentLeft>-->
+				<contentLeft>
+					<!--<Title text="Filter"/>-->
+					<Text  id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
+				</contentLeft>
 			</Bar>
 		</customHeader>
 		<content>
-			<Bar >
-				<contentLeft>
-					<Text text="Feeling green dark" id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
-				</contentLeft>
-			</Bar>		    
-		    <Table id="plantsAvailabilityTableId"
-            	items="{
-        			path: 'bayDetailModel>/AvailablePlants/1/'
-        		}">
+			<!--<Bar >-->
+			<!--	<contentLeft>-->
+			<!--	</contentLeft>-->
+			<!--</Bar>		    -->
+		    <Table id="plantsAvailabilityTableId" >
     		        <columns>
-        			<Column
+        			<Column 
         				minScreenWidth="Tablet"
         				demandPopin="true">
-        				<Text text="Week" />
+        				<Label text="Week" />
         			</Column>
-        			<Column
+        			<Column 
         				minScreenWidth="Tablet"
         				demandPopin="true"
         				hAlign="Right">
-        				<Text text="available" />
+        				<Label text="available" />
         			</Column>
         		</columns>
-        		<items>
-        			<ColumnListItem>
-        				<cells>
-        					<Text
-        						text="{bayDetailModel>week}" />
-        					<Text
-        						text="{bayDetailModel>quantity}" />
-        				</cells>
-        			</ColumnListItem>
-        		</items>
         	</Table>
 		</content>
 

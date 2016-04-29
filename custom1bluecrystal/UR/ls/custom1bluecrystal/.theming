@@ -1,7 +1,7 @@
 {
 	"sEntity": "Theme",
 	"sId": "custom1bluecrystal",
-	"sLabel": "Custom Orange Blue Crystal",
+	"sLabel": "Custom Blue Crystal",
 	"oExtends": "UR.ls.sap_bluecrystal",
 	"aBuildFiles": [
 		"standards"
@@ -11,5 +11,5 @@
 		"standards",
 		"custom"
 	],
-	"sTextDirections": "LTR,RTL"
+	"sTextDirections": "LTR"
 }

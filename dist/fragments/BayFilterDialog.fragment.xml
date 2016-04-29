@@ -1,0 +1,84 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:lForm="sap.ui.layout.form" xmlns:l="sap.ui.commons.layout">
+	<Dialog contentWidth="40%" contentHeight="25%">
+		<customHeader>
+			<Bar>
+				<contentRight>
+					<Button press="onClose" icon="sap-icon://decline"/>
+				</contentRight>
+				<contentLeft>
+					<Title text="Filter"/>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<!--<lForm:Form id="FormNewNomDog" minWidth="100%" maxContainerCols="2" editable="true">-->
+		<!--	<lForm:layout>-->
+		<!--		<lForm:ResponsiveGridLayout labelSpan="m" emptySpan="1" columns="2"/>-->
+		<!--	</lForm:layout>-->
+		<!--	<lForm:formContainers>-->
+		<!--		<lForm:FormContainer>-->
+		<!--			<lForm:formElements>-->
+		<!--				<lForm:FormElement label="Variety / Product form">-->
+		<!--					<lForm:fields>-->
+		<!--						<Select id="selectId1" width="50%" items="{/data}" tooltip="Variety / product form">-->
+		<!--							<core:Item key="{name}" text="{name}"/>-->
+		<!--						</Select>-->
+		<!--					</lForm:fields>-->
+		<!--				</lForm:FormElement>-->
+		<!--			</lForm:formElements>-->
+		<!--		</lForm:FormContainer>-->
+		<!--	</lForm:formContainers>-->
+		<!--</lForm:Form>-->
+		<content>
+			<l:MatrixLayout columns="2" widths="40%,60%" id="myLayout" width="100%" layoutFixed="true">
+				<l:MatrixLayoutRow>
+					<l:MatrixLayoutCell>
+						<Label text="Variety / product form" labelFor="selectId1" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
+					<l:MatrixLayoutCell >
+						<Select id="plantSelectorId" items="{plants>/filterData}" width="90%" class="sapUiMediumMarginEnd" change="onPlantChange">
+							<core:Item key="{plants>name}" text="{plants>name}"/>
+						</Select>
+					</l:MatrixLayoutCell>
+				</l:MatrixLayoutRow>
+				<l:MatrixLayoutRow>
+					<l:MatrixLayoutCell>
+						<Label text="Bay Description" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
+					<l:MatrixLayoutCell><Input width="90%" class="sapUiMediumMarginEnd" change="onInput"/></l:MatrixLayoutCell>
+				</l:MatrixLayoutRow>
+				<l:MatrixLayoutRow>
+					<l:MatrixLayoutCell><Label text="Planningtype" class="sapUiMediumMarginBegin"/>
+					</l:MatrixLayoutCell>
+					<l:MatrixLayoutCell>
+						<Select id="PlanningtypeSelectorId"  width="90%" class="sapUiMediumMarginEnd" change="onPlanningtypChange">
+						    <items>
+							<core:Item key="-" text="-"/>
+							    <core:Item key="rooted" text="rooted"/>
+							        <core:Item key="unrooted" text="unrooted"/>
+							            </items>
+						</Select>
+					</l:MatrixLayoutCell>
+				</l:MatrixLayoutRow>
+			</l:MatrixLayout>
+		</content>
+		<!--<VBox>-->
+		<!--	<HBox>-->
+		<!--			<Label text="Variety / product form" labelFor="selectId1"/>-->
+		<!--		<Select id="selectId1" items="{/data}" tooltip="Variety / product form">-->
+		<!--			<core:Item key="{name}" text="{name}"/>-->
+		<!--		</Select>-->
+		<!--			</HBox>-->
+		<!--	<HBox>-->
+		<!--		<Label text="Bay Description"/>-->
+		<!--		<Input/>-->
+		<!--	</HBox>-->
+		<!--	<HBox>-->
+		<!--		<Label text="Planningtype"/>-->
+		<!--		<Select items="{/data}">-->
+		<!--			<core:Item key="{name}" text="{name}"/>-->
+		<!--		</Select>-->
+		<!--	</HBox>-->
+		<!--</VBox>-->
+		<buttons>
+			<Button text="Filter" press="onDataFilter" class="sapUiMediumMarginEnd"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

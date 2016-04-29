@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/ui/layout.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180200", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/ui/layout.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080524", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -305,20 +305,20 @@ CSS for control sap.m/FlexBox.control
   display: inline-block;
 }
 .sapUiFormLayout {
-  border: 1px solid #cccccc;
+  border: 1px solid #d7230f;
 }
 .sapUiFormLayout > .sapUiFormContainer {
   display: block;
 }
 .sapUiFormTitle {
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid #d7230f;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
   width: 100%;
   font-weight: bold;
-  color: #333333;
+  color: #050505;
   margin: 0;
 }
 .sapUiFormContainerTitle > .sapUiFormTitle {
@@ -326,7 +326,7 @@ CSS for control sap.m/FlexBox.control
   margin-bottom: 1rem;
 }
 .sapUiFormTitle.sapUiFormTitleEmph {
-  border-color: #fa3e05;
+  border-color: #a03906;
 }
 /* Title levels - can not use TextView CSS from commons, because also used in mobile */
 .sapUiFormTitleH1 {
@@ -349,7 +349,7 @@ CSS for control sap.m/FlexBox.control
 }
 .sapUiFormTitleH6 {
   font-size: 13px;
-  color: #333333;
+  color: #050505;
 }
 .sapUiFormTitle > img {
   vertical-align: middle;
@@ -2925,16 +2925,16 @@ html[dir=rtl][data-sap-ui-browser^=ed] .sapUiRLElementWithLabel > .sapUiRFLRow:f
   user-select: none;
 }
 .sapUiLoSplitter > .sapUiLoSplitterBar:focus {
-  outline: 1px dotted #be2f04;
+  outline: 1px dotted #652404;
   outline-offset: -1px;
 }
 .sapUiLoSplitter > .sapUiLoSplitterBar:hover {
-  background-color: #777777;
+  background-color: #370904;
   color: #ffffff;
   text-shadow: none;
 }
 .sapUiLoSplitter > .sapUiLoSplitterOverlay > .sapUiLoSplitterOverlayBar {
-  background-color: #fa3e05;
+  background-color: #a03906;
   color: #ffffff;
   text-shadow: none;
 }
@@ -3070,35 +3070,35 @@ html[data-sap-ui-browser^=ie] .sapUiLoSplitterH > .sapUiLoSplitterBar:focus::aft
 html[data-sap-ui-browser^=ie].sap-desktop .sapUiLoSplitterH > .sapUiLoSplitterBar:focus::after {
   height: 100%;
   width: 6px;
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
 }
 html[data-sap-ui-browser^=ie].sap-tablet .sapUiLoSplitterH > .sapUiLoSplitterBar:focus::after {
   height: 100%;
   width: 16px;
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
 }
 html[data-sap-ui-browser^=ie].sap-phone .sapUiLoSplitterH > .sapUiLoSplitterBar:focus::after {
   height: 100%;
   width: 1px;
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
 }
 html[data-sap-ui-browser^=ie].sap-desktop .sapUiLoSplitterV > .sapUiLoSplitterBar:focus::after {
   top: -6px;
   height: 6px;
   width: 100%;
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
 }
 html[data-sap-ui-browser^=ie].sap-tablet .sapUiLoSplitterV > .sapUiLoSplitterBar:focus::after {
   top: -16px;
   height: 16px;
   width: 100%;
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
 }
 html[data-sap-ui-browser^=ie].sap-phone .sapUiLoSplitterV > .sapUiLoSplitterBar:focus::after {
   top: -1px;
   height: 1px;
   width: 100%;
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
 }
 /* END "Splitter.less" */
 /* START "VerticalLayout.less" */
@@ -3310,7 +3310,7 @@ html[data-sap-ui-browser^="ie"] .sapUiVlt {
   border-width: 0.0625rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  color: #333333;
+  color: #050505;
   height: 3rem;
   line-height: 3rem;
 }
@@ -3330,7 +3330,7 @@ html[data-sap-ui-browser^="ie"] .sapUiVlt {
   line-height: 2rem;
 }
 .sapUiFormTitle.sapUiFormTitleEmph {
-  border-color: #cccccc;
+  border-color: #d7230f;
 }
 .sapUiFormTitle > .sapUiBtn {
   bottom: 0.25rem;
@@ -3674,15 +3674,15 @@ html[data-sap-ui-browser^="ff"] .sapUiSizeCompact .sapUiFormEdit.sapUiFormM .sap
   text-shadow: 1px 1px #ffffff;
 }
 .sapUiLoSplitter > .sapUiLoSplitterBar:hover {
-  background-color: #777777;
+  background-color: #370904;
   color: #ffffff;
 }
 .sapUiLoSplitterOverlay > .sapUiLoSplitterOverlayBar {
-  background-color: #fa3e05;
+  background-color: #a03906;
   color: #ffffff;
 }
 .sapUiLoSplitter > .sapUiLoSplitterBar:focus {
-  outline: 1px dotted #be2f04;
+  outline: 1px dotted #652404;
 }
 .sapUiBlockLayoutLightBackground .sapUiBlockLayoutRow:nth-child(4n + 1) .sapUiBlockLayoutCell:nth-child(odd) {
   background-color: #ffffff;
@@ -3717,4 +3717,4 @@ html[data-sap-ui-browser^="ff"] .sapUiSizeCompact .sapUiFormEdit.sapUiFormM .sap
 /******************* FILE /UI5/sap/ui/layout/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-ui-layout{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/layout.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180200", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-ui-layout{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/layout.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080524", "Source": "1.36.6", "Engine": "1.16.1"}}');}

@@ -14,8 +14,8 @@
 		</Toolbar>
 		<Bar>
 			<contentLeft>
-				<Label text="Date:" class="sapUiSmallMarginBegin"/>
-				<DatePicker id="date_id" width="120px" placeholder=" " valueFormat="yyyy-MM-u" displayFormat="yyyy-ww-u"/>
+				<Text text="Date:" class="sapUiSmallMarginBegin"/>
+				<DatePicker id="date_id" width="120px" placeholder=" " valueFormat="yyyy-ww-u" displayFormat="yyyy-ww-u"/>
 				<Button icon="sap-icon://filter" press="doFiltering"/>
 				<Button icon="sap-icon://print" press="printBay"/>
 			</contentLeft>
@@ -25,7 +25,7 @@
 				<!--    icon="images/cannabis-leaf-favicon.ico" press="doEditing"/>-->
 				<Button
 				    class="sap-custom-icon-adjust"
-				    icon="images/simple-leaf-favicon.ico" press="doEditing"/>
+				    icon="images/simple-leaf-favicon.ico" press="doEditing" />
 				<Button icon="sap-icon://edit" press="goToEditor"/>
 			</contentRight>
 		</Bar>
@@ -100,7 +100,11 @@
 					                ],
 							        formatter: '.formatPlantedDate'
 						        }">
-						<Text text="{planted_date}" />
+					    <Text
+						    text="{
+						            path: 'planted_date',
+							        formatter: '.formatConvertStrToDate'
+						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
@@ -123,7 +127,11 @@
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
-						<Text text="{oog_date}" />
+						<Text
+						    text="{
+						            path: 'oog_date',
+						            formatter: '.formatConvertStrToDate'
+						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 

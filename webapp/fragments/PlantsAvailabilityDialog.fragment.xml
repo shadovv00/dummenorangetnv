@@ -5,29 +5,29 @@
 				<contentRight>
 					<Button press="closePlantsAvilabDialog" icon="sap-icon://decline"/>
 				</contentRight>
-				<!--<contentLeft>-->
-				<!--	<Title text="Filter"/>-->
-				<!--</contentLeft>-->
+				<contentLeft>
+					<!--<Title text="Filter"/>-->
+					<Text  id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
+				</contentLeft>
 			</Bar>
 		</customHeader>
 		<content>
-			<Bar >
-				<contentLeft>
-					<Text  id="plantsAvailabilityNameId" class = " sapUiTinyMarginBegin"></Text>
-				</contentLeft>
-			</Bar>		    
+			<!--<Bar >-->
+			<!--	<contentLeft>-->
+			<!--	</contentLeft>-->
+			<!--</Bar>		    -->
 		    <Table id="plantsAvailabilityTableId" >
     		        <columns>
         			<Column 
         				minScreenWidth="Tablet"
         				demandPopin="true">
-        				<Text text="Week" />
+        				<Label text="Week" />
         			</Column>
         			<Column 
         				minScreenWidth="Tablet"
         				demandPopin="true"
         				hAlign="Right">
-        				<Text text="available" />
+        				<Label text="available" />
         			</Column>
         		</columns>
         	</Table>

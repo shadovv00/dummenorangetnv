@@ -115,7 +115,7 @@ sap.ui.define([
 					vaca: 0,
 					patStatus:'Synced with PAT',
 					hcpStatus:'In production',
-					deliveryDate: new Date(1477170000000),
+					deliveryDate: new Date(1477270000000),
 					quantity:102,
 					trays:'1',
 					availability:0,
@@ -137,35 +137,41 @@ sap.ui.define([
 					}
 				],
 			AvailablePlants: [
-			        [					
+			    {id: '001',
+			    availability:[					
 			            {
-    					week: 53,
+    					week: '53',
     					quantity: 1000
     					},
     					{
-    					week: 1,
+    					week: '01',
     					quantity: 0
     					},
     					{
-    					week: 2,
+    					week: '02',
     					quantity: 1000
     					}
-                    ],
-			        [					
+                    ]
+			        
+			    },    
+			    {id: '015',
+			    availability:[					
 			            {
-    					week: 53,
-    					quantity: 1000
+    					week: '53',
+    					quantity: 100
     					},
     					{
-    					week: 1,
+    					week: '01',
     					quantity: 0
     					},
     					{
-    					week: 2,
+    					week: '02',
     					quantity: 0
     					}
-                    ]                    
-				],
+                    ]
+			        
+			    }                    
+			],
 			prevPage: ''	
 		},
 		
@@ -372,9 +378,7 @@ sap.ui.define([
 				// } else {
 				// 	availabilityTextColor=" bayDetTextGreen";
 				// }
-				// 	patStatus:'Synced with PAT',
-				// 	hcpStatus:'In production',
-				
+
 				if (warningText.length>0){
 					var warningFieldContent=[
 						new sap.ui.core.Icon({ src: "sap-icon://alert", color: "red"}),
@@ -394,7 +398,7 @@ sap.ui.define([
 											width:"2%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.ui.core.Icon({ src: "sap-icon://decline", 
+	                            				new sap.ui.core.Icon({ src: "sap-icon://decline", color: "#541407",
 		                            				press: function(oEvent){
 																ourModel.setProperty(ourPath + "/deleted", true);
 																// ourModel.submitChanges();
@@ -448,7 +452,7 @@ sap.ui.define([
 	               //             				change: function(){that.onDataChange(this,sId,oContext);}  
 	               //             				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin "+dateTextColor)
 	                            				new sap.m.DatePicker({ width:"91%", dateValue: "{bayDetailModel>plantedDate}",
-	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u',
+	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
 	                            				change: function(){that.onDataChange(this,sId,oContext);}  
 	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
 	                            				
@@ -504,7 +508,7 @@ sap.ui.define([
 	               //             				change: function(){that.onOOGChange(this,sId,oContext);}  
 	                            			// 	,   textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
 	                            				new sap.m.DatePicker({ width:"90%", dateValue: "{bayDetailModel>oog}",
-	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u',
+	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
 	                            				change: function(){that.onDataChange(this,sId,oContext);}  
 	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
 											]
@@ -748,7 +752,6 @@ sap.ui.define([
                 break;
                 case 9:
     				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
-            // console.log(parseInt(elThis.getValue()));
                 break;
                 case 11:
     				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
@@ -759,22 +762,34 @@ sap.ui.define([
     	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
     	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
     	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));                         
-    	    var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
-    	    var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
+    	   // var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
+    	   // var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
     		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
             // console.log(plantedDate);
     		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
 
 		}else if (inputIndex>9){
  		 //   console.log(">9");
-   	    switch(inputIndex) {
-                case 10:
-    				oContext.getModel().setProperty(oContext.getPath() + "/oog", new Date(elThis.getDateValue()));
-                break;
-                case 11:
-    				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
-                break;
-            }
+       	    switch(inputIndex) {
+                    case 10:
+                        // elThis.setMinDate(new Date());
+            		    var oogDate=new Date(elThis.getDateValue());
+                // 		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
+                // 	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
+                // 	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
+                // 	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));
+                // 	    plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
+                // 	    console.log(plantedDate>oogDate);
+                // 	    if (plantedDate>oogDate){
+                // 	       	sap.m.MessageToast.show('Wrong date');
+                // 	    }else{
+               				oContext.getModel().setProperty(oContext.getPath() + "/oog", oogDate);
+                	   // }
+                    break;
+                    case 11:
+        				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
+                    break;
+                }
 		}
 
 
@@ -793,14 +808,30 @@ sap.ui.define([
 	},	
 	
 	openPlantsAvilabDialog: function(elThis,sId,oContext) {
-	   // console.log(oContext.getModel().getProperty(oContext.getPath() + "/id"));
 		this.newPlantsAvilabDialog = sap.ui.xmlfragment("dummenorangetnv.fragments.PlantsAvailabilityDialog", this);
 		this.getView().addDependent(this.newPlantsAvilabDialog);
 		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this.newPlantsAvilabDialog);
 		this.newPlantsAvilabDialog.open();
-				// var oPlantsAvailabilityTable = this.getView().byId("plantsAvailabilityTableId");
-				// oPlantsAvailabilityTable.bindAggregation("items","bayDetailModel>/AvailablePlants/1/");
+		sap.ui.getCore().byId("plantsAvailabilityNameId").setText(oContext.getModel().getProperty(oContext.getPath() + "/id")+" "+
+		                                                           oContext.getModel().getProperty(oContext.getPath() + "/name"));
 		
+		$.each(this.getView().getModel("bayDetailModel").getData().AvailablePlants, function (index, item) {
+		    if(item.id==oContext.getModel().getProperty(oContext.getPath() + "/id")){
+                var oTemplate = new sap.m.ColumnListItem({
+                    cells : [
+                        new sap.m.Text({
+                            text : "{bayDetailModel>week}",
+                            wrapping : false
+                        }),
+                        new sap.m.Text({
+                            text : "{bayDetailModel>quantity}",
+                            wrapping : false
+                        })
+                    ]
+                });
+                sap.ui.getCore().byId("plantsAvailabilityTableId").bindItems("bayDetailModel>/AvailablePlants/"+index+"/availability", oTemplate);
+		    }
+		});		
 	},
 
 	closePlantsAvilabDialog: function(oEvent) {

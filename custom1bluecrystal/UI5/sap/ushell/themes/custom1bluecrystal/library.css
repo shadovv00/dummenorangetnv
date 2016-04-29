@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/ushell.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180201", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/ushell.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080527", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -377,7 +377,7 @@ html {
   margin: 0;
   padding: 0.250rem 0;
   vertical-align: top;
-  border-right: 0.07rem solid #bfbfbf;
+  border-right: 0.07rem solid #bf1f0d;
 }
 #popoverContainer .sapMList {
   padding: 0.07rem;
@@ -1973,7 +1973,7 @@ img.sapUshellImageTile {
 .myToolBar {
   padding-left: 0;
   height: 100%;
-  border-bottom: 3px solid #dddddd;
+  border-bottom: 3px solid #ef2f19;
 }
 #notificationsView .sapMPanelContent {
   padding-top: 0;
@@ -2007,7 +2007,7 @@ img.sapUshellImageTile {
   color: #ffffff;
 }
 #sortingToolbar .sapMBtnTransparent {
-  color: #dddddd;
+  color: #ef2f19;
 }
 @media screen and (orientation: portrait) {
   .sapUiMedia-Std-Tablet .sapUshellNotificationsView {
@@ -2612,27 +2612,27 @@ input.sapUshellShellSearchBox[type="search"]:focus {
   background-color: #ffffff;
 }
 .sapUshellSearchFacetDialogSettingsContainer {
-  background-color: #fafafa;
+  background-color: #f5ffff;
 }
 .sapUshellSearchFacetDialogDetailPage .sapMIBar {
   background: transparent;
 }
 .sapUshellSearchFacetDialogDetailPage .sapMIBar.sapMHeader-CTX,
 .sapUshellSearchFacetDialogDetailPageString .sapMIBar.sapMHeader-CTX {
-  background-color: #fafafa;
+  background-color: #f5ffff;
   box-shadow: 0 0;
 }
 .sapUshellSearchFacetDialogDetailPage .sapMIBar .sapMSFF {
-  border-color: #bfbfbf;
+  border-color: #bf1f0d;
 }
 .sapUshellSearchFacetDialogDetailPage .sapMFocus > .sapMSFF {
-  border-color: #fa3e05;
+  border-color: #a03906;
 }
 .sapUshellSearchFacetDialogDetailPage :not(.sapMSFDisabled) > .sapMSFF:hover {
-  border-color: #fa3e05;
+  border-color: #a03906;
 }
 .sapUshellSearchFacetDialogDetailPage .sapMIBar .sapMBtnDefault:not(.sapMToggleBtnPressed) {
-  border-color: #bfbfbf;
+  border-color: #541407;
 }
 .sapUshellSearchFacetDialogDetailPage .sapMBtn:hover > .sapMBtnHoverable {
   border-color: #fb4006;
@@ -2641,7 +2641,7 @@ input.sapUshellShellSearchBox[type="search"]:focus {
   background: transparent;
 }
 .sapUshellSearchFacetDialogContainer .sapMSplitContainerDetail {
-  background: #fafafa;
+  background: #f5ffff;
 }
 /* END "SearchFacetDialog.less" */
 /* START "SearchFacetTabBar.less" */
@@ -3195,7 +3195,7 @@ rect.labelPadding {
   height: 100%;
   display: inline-block;
   vertical-align: middle;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #f03d28;
 }
 .sapUshellSearchResultListItem .sapUshellSearchResultListItem-content .sapUshellSearchResultListItem-main .sapUshellSearchResultListItem-attributes .sapUshellSearchResultListItem-RelatedObjectsToolbar {
   position: relative;
@@ -3237,7 +3237,7 @@ rect.labelPadding {
   display: block;
   width: auto;
   max-height: 3rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #f03d28;
 }
 .sapUshellSearchResultListItem .sapUshellSearchResultListItemButtonOuterContainer {
   display: table-cell;
@@ -3275,7 +3275,7 @@ rect.labelPadding {
   display: inline-block;
   bottom: 0;
   vertical-align: bottom;
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #f03d28;
 }
 .sapUshellSearchResultListItem .sapUshellSearchResultListItemButtonOuterContainer .sapUshellSearchResultListItemButtonInnerContainer .sapUshellSearchResultListItemButton {
   display: inline-block;
@@ -3690,13 +3690,13 @@ rect.labelPadding {
 .sapUshellShellHeadBegin .sapUshellShellHeadItm.sapUshellShellHeadItmSep:after {
   right: 0;
   border-right: 0.25rem solid transparent;
-  border-left: 0.07rem solid #808080;
+  border-left: 0.07rem solid #490c05;
 }
 .sapUshellShellHeadSeparator:before,
 .sapUshellShellHeadEnd .sapUshellShellHeadItm.sapUshellShellHeadItmSep:before {
   left: 0;
   border-left: 0.25rem solid transparent;
-  border-right: 0.07rem solid #808080;
+  border-right: 0.07rem solid #490c05;
 }
 .sapUshellShellHeadItm > span > img {
   margin-top: 0.4375rem;
@@ -4058,11 +4058,11 @@ rect.labelPadding {
   position: relative;
 }
 .sapUshellSpltContH .sapUshellSpltContPane {
-  border-right: 0.07rem solid #cccccc;
+  border-right: 0.07rem solid #d7230f;
   bottom: 0;
 }
 .sapUshellSpltContV .sapUshellSpltContPane {
-  border-bottom: 0.07rem solid #cccccc;
+  border-bottom: 0.07rem solid #d7230f;
   right: 0;
 }
 /* END "SplitContainer.less" */
@@ -4883,7 +4883,7 @@ html[dir=rtl] .sapUshellDashboardGroupsContainerItem.sapUshellDashboardGroupsCon
 }
 .sapUshellTile-placeholder {
   /* magic number @sapUshellTwoPixels for border used because explorer rounds number 0.125rem which cause bugs */
-  border: 0.13rem dashed #cccccc !important;
+  border: 0.13rem dashed #d7230f !important;
   background-color: transparent !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
@@ -5399,7 +5399,7 @@ html[dir=rtl] .sapUshellDashboardGroupsContainerItem.sapUshellDashboardGroupsCon
 }
 .sapUshellAnchorItemOverFlow.sapUshellAnchorItemOverFlowPressed {
   border: 0.0625rem solid #ffffff;
-  background-color: #fa3e05;
+  background-color: #a03906;
   color: #ffffff;
   opacity: 1;
 }
@@ -5428,7 +5428,7 @@ html[dir=rtl] .sapUshellDashboardGroupsContainerItem.sapUshellDashboardGroupsCon
   background: transparent;
 }
 .sapUshellAnchorItemsPopover .sapUshellGroupLI.sapUshellAnchorPopoverItemSelected {
-  background-color: #e6f2f9;
+  background-color: #fce8e6;
 }
 .sapUshellAnchorItemsPopover .sapUshellGroupLI.sapUshellAnchorPopoverItemNonSelected {
   background-color: #ffffff;
@@ -5447,7 +5447,7 @@ html[dir=rtl] .sapUshellDashboardGroupsContainerItem.sapUshellDashboardGroupsCon
 /* =============================================================== */
 /*Styles*/
 .sapUshellTechnicalInfoBox {
-  border: 0.07rem solid #bfbfbf;
+  border: 0.07rem solid #bf1f0d;
 }
 .sapUshellContactSupportHeaderInfoText {
   color: #666666;
@@ -5556,7 +5556,7 @@ note: these values are different than the ones specified in TileBase */
   color: #d14900;
 }
 .sapUshellRatingLabelFeedbackNeutralText {
-  color: #007cc0;
+  color: #dd1802;
 }
 .sapUshellFeedbackLayout .sapUshellFeedbackAppIcon {
   color: #fb531f;
@@ -5566,7 +5566,7 @@ note: these values are different than the ones specified in TileBase */
   font-size: 1rem;
 }
 .sapUshellEndUserFeedbackDialog #feedbackTechnicalInfoBox {
-  border-color: #bfbfbf;
+  border-color: #bf1f0d;
 }
 .sapUshellEndUserFeedbackDialog #ratingSelectionText {
   font-size: 1rem;
@@ -5580,7 +5580,7 @@ note: these values are different than the ones specified in TileBase */
 }
 .sapUshellEndUserFeedbackDialog #technicalDataLink {
   font-size: 0.875rem;
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapUshellEndUserFeedbackHeaderInfoText {
   color: #666666;
@@ -5620,15 +5620,15 @@ note: these values are different than the ones specified in TileBase */
 /* Styles */
 /* ============================================= */
 .sapUshellGroupList {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapUshellGroupItemList {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapUshellGroupListItem.sapMLIB,
 .sapUshellDefaultGroupItem.sapMLIB {
-  background-color: #f2f2f2;
-  border-bottom: 0.07rem solid #dddddd;
+  background-color: #f25240;
+  border-bottom: 0.07rem solid #ef2f19;
 }
 .sapUshellGroupListItem .sapMSLITitleOnly,
 .sapUshellDefaultGroupItem .sapMSLITitleOnly {
@@ -5686,10 +5686,10 @@ h6.sapUshellHeaderTile {
 /* CSS for control sap.ushell/HideGroupsButton.control sap_bluecrystal theme*/
 /* ======================================================================== */
 #sapUshellHideGroupsTable.sapUshellHideGroupsTable .sapUshellHideGroupsTableItem {
-  background-color: #e5e5e5;
+  background-color: #f03d28;
 }
 #sapUshellHideGroupsTable.sapUshellHideGroupsTable .sapUshellHideGroupsDisabledCell {
-  color: #8c8c8c;
+  color: #601007;
 }
 /* END "HideGroupsButton.less" */
 /* START "HistoryScreen.less" */
@@ -5697,17 +5697,17 @@ h6.sapUshellHeaderTile {
 #searchHistoryScreen .sapUshellHistoryScreenRecentSearches .sapMListUl,
 #searchContainerHistoryScreen .sapUshellHistoryScreenRecentSearches .sapMListUl,
 .sapMHistoryScreen .sapUshellHistoryScreenRecentSearches .sapMListUl {
-  border-bottom: 0.07rem solid #e5e5e5;
+  border-bottom: 0.07rem solid #f03d28;
   border-top: none;
 }
 #searchHistoryScreen .sapUshellHistoryScreenRecentSearches .sapMListUl .sapMSLITitleOnly,
 #searchContainerHistoryScreen .sapUshellHistoryScreenRecentSearches .sapMListUl .sapMSLITitleOnly,
 .sapMHistoryScreen .sapUshellHistoryScreenRecentSearches .sapMListUl .sapMSLITitleOnly {
-  color: #ff5c33;
+  color: #9e1200;
 }
 /* popup directly following sapUshellLoadingDialog */
 .sapUshellLoadingDialog {
-  background-color: #f2f2f2;
+  background-color: #f25240;
   /* standard for older browsers that do not support :not meta-selector */
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
@@ -5815,19 +5815,19 @@ h6.sapUshellHeaderTile {
   font-weight: normal;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeChild {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeChild .sapUshellNavTreeLink {
   color: #666666;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeParent {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeParent .sapUshellNavTreeLink {
   color: #666666;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeSingle {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeSingle .sapUshellNavTreeLink {
   color: #666666;
@@ -5841,7 +5841,7 @@ h6.sapUshellHeaderTile {
   font-weight: normal;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeItemSelected {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellNavTreeListItem.sapUshellNavTreeItemSelected .sapUshellNavTreeLink {
   color: #333333;
@@ -5881,7 +5881,7 @@ h6.sapUshellHeaderTile {
   background-color: transparent;
 }
 .sapCaUiPTDeleteButton.sapMBtnActive .sapUiIcon:before {
-  color: #fa3e05;
+  color: #a03906;
 }
 /*rgb(255, 255, 255, 1)*/
 .sapUshellTile.sapUshellPlusTile {
@@ -5943,9 +5943,9 @@ h6.sapUshellHeaderTile {
 /* END "Search.less" */
 /* START "SearchFacet.less" */
 .sapUshellSearchFacet hr {
-  color: #dddddd;
+  color: #ef2f19;
   /* old IE */
-  background-color: #dddddd;
+  background-color: #ef2f19;
   /* Modern Browsers */
 }
 .sapMListModeMultiSelect .sapMLIBSelected.sapUshellSearchFacetItem:not(:hover) {
@@ -6009,7 +6009,7 @@ h6.sapUshellHeaderTile {
 /************** ../base/Search.css ***************/
 /******** detail ********/
 .sapUshellSearchResultListItem {
-  border: 0.0652rem solid #e5e5e5;
+  border: 0.0652rem solid #f03d28;
   /*
 &.sapUshellSearchResultListItem-open {// background-color: @searchResultListSelectedBG;
 @media @searchPhoneSize {}
@@ -6023,7 +6023,7 @@ h6.sapUshellHeaderTile {
 }
 .sapUshellSearchResultListItem .sapUshellSearchResultListItem-main .sapUshellSearchResultListItem-title {
   font-size: 1.125rem;
-  color: #ff5c33;
+  color: #9e1200;
 }
 @media (max-width: 767px) {
   .sapUshellSearchResultListItem .sapUshellSearchResultListItem-main .sapUshellSearchResultListItem-title {
@@ -6073,10 +6073,10 @@ h6.sapUshellHeaderTile {
 }
 .sapUshellSearchResultListItem .sapUshellSearchResultListItemButtonOuterContainer {
   background-color: #ffffff;
-  color: #bfbfbf;
+  color: #bf1f0d;
 }
 .sapUshellSearchResultListItem .sapUshellSearchResultListItemButtonOuterContainer .sapUshellSearchResultListItemButtonSeparator {
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #f03d28;
 }
 .sapUshellSearchResultListItemButtonOuterContainer:focus {
   outline: 1px dotted #005483;
@@ -6105,13 +6105,13 @@ h6.sapUshellHeaderTile {
   box-shadow: 0 0 1.875rem 0.125rem rgba(0, 0, 0, 0.15);
 }
 .sapUshellShellFloatingAction .sapMBtnInner .sapUiIcon .sapUshellActive {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellShellFloatingAction .sapMBtnInner .sapUiIcon:hover {
   background-color: rgba(78, 85, 89, 0.96);
 }
 .sapUshellShellFloatingAction .sapMBtnInner .sapUiIcon:active {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellShellFloatingAction:focus > .sapMBtnInner.sapMFocusable {
   border: none;
@@ -6121,10 +6121,10 @@ h6.sapUshellHeaderTile {
   border: 0.13rem dotted #ffffff;
 }
 .sapUshellShellFloatingAction.sapUshellActive .sapUiIcon {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellShellFloatingAction.sapUshellActive .sapUiIcon:hover {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellShellFloatingAction.sapUshellActive .sapUiIcon:active {
   background-color: #006ca7;
@@ -6137,18 +6137,18 @@ h6.sapUshellHeaderTile {
   border: 0.07rem dotted #ffffff;
 }
 .sapUshellShellHeadBegin .sapUshellShellHeadItm.sapUshellShellHeadItmSep:after {
-  border-left: 0.07rem solid #d8d8d8;
+  border-left: 0.07rem solid #ef2710;
 }
 .sapUshellShellHeadAction:before,
 .sapUshellShellHeadEnd .sapUshellShellHeadItm.sapUshellShellHeadItmSep:before {
-  border-right: 0.07rem solid #d8d8d8;
+  border-right: 0.07rem solid #ef2710;
 }
 .sapUiMedia-Std-Desktop .sapUshellShellHeadItm:hover > span,
 .sapUiMedia-Std-Desktop .sapUshellShellHeadAction:hover > * {
   background-color: #eaeaea;
 }
 .sapUiMedia-Std-Desktop .sapUshellShellHeadItm.sapUshellShellHeadItmSel:hover > span {
-  background-color: #e13805;
+  background-color: #873005;
 }
 .sapUshellShellHeadItm > span {
   font-weight: normal;
@@ -6164,15 +6164,15 @@ h6.sapUshellHeaderTile {
   background-color: transparent;
 }
 .sapUshellShellHeadItmMarker > div:after {
-  border-bottom-color: #ffece6;
+  border-bottom-color: #f6ebe6;
   /*#E6F2F9*/
 }
 .sapUshellShellHeadItmMarker > div:before {
-  border-bottom-color: #dddddd;
+  border-bottom-color: #ef2f19;
 }
 .sapUshellShellHeadItm.sapUshellShellHeadItmSel:active > span,
 .sapUshellShellHeadItm.sapUshellShellHeadItmSel:active:hover > span {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellShellHeadItm:active > span,
 .sapUshellShellHeadItm.sapUshellShellHeadItmSel > span,
@@ -6183,7 +6183,7 @@ h6.sapUshellHeaderTile {
 .sapUiMedia-Std-Desktop .sapUshellShellHeadAction:hover:active > *,
 .sapUshellShellHeadAction:active > * {
   color: #ffffff;
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapUshellShellHeadItmSel > span {
   outline: 0.0625rem dotted #ffffff;
@@ -6193,7 +6193,7 @@ h6.sapUshellHeaderTile {
 .sapUshellShellHeadAction:focus .sapUshellShellHeadActionName,
 .sapUshellShellHeadAction:focus .sapUshellShellHeadActionImg,
 .sapUshellShellHeadItm:focus > span {
-  border-color: #be2f04;
+  border-color: #652404;
 }
 .sapUshellShellHeadAction:active:focus .sapUshellShellHeadActionExp,
 .sapUshellShellHeadAction:active:focus .sapUshellShellHeadActionName,
@@ -6227,7 +6227,7 @@ h6.sapUshellHeaderTile {
 }
 ._sapUshellShellSubHdr {
   /* Testpage only */
-  background-color: #ffece6;
+  background-color: #f6ebe6;
   color: #666666;
 }
 .sapUshellShell.sapUshellShellCurtainVisible .sapUshellShellHead,
@@ -6241,26 +6241,26 @@ h6.sapUshellHeaderTile {
 }
 .sapUshellShell .sapUshellShellHead > div,
 .sapUshellShell .sapUshellShellHead .sapUshellShellHeadEnd {
-  background-color: #f2f2f2;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f7f7f7', EndColorStr='#ededed',GradientType=0);
-  background: -ms-linear-gradient(top, #f7f7f7 0, #f2f2f2 33%, #f2f2f2 75%, #ededed 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7f7f7), color-stop(0.33, #f2f2f2), color-stop(0.75, #f2f2f2), color-stop(1, #ededed));
-  background-image: -webkit-linear-gradient(top, #f7f7f7 0, #f2f2f2 33%, #f2f2f2 75%, #ededed 100%);
-  background: linear-gradient(top, #f7f7f7 0, #f2f2f2 33%, #f2f2f2 75%, #ededed 100%);
-  -webkit-box-shadow: inset 0 -0.0625em #dddddd;
-  box-shadow: inset 0 -0.0625em #dddddd;
+  background-color: #f25240;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f35b4a', EndColorStr='#f14a37',GradientType=0);
+  background: -ms-linear-gradient(top, #f35b4a 0, #f25240 33%, #f25240 75%, #f14a37 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f35b4a), color-stop(0.33, #f25240), color-stop(0.75, #f25240), color-stop(1, #f14a37));
+  background-image: -webkit-linear-gradient(top, #f35b4a 0, #f25240 33%, #f25240 75%, #f14a37 100%);
+  background: linear-gradient(top, #f35b4a 0, #f25240 33%, #f25240 75%, #f14a37 100%);
+  -webkit-box-shadow: inset 0 -0.0625em #ef2f19;
+  box-shadow: inset 0 -0.0625em #ef2f19;
 }
 .sapUshellShellCurtain {
-  border-bottom: 0.07rem solid #dddddd;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.97) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.97) 100%);
-  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.97) 100%);
+  border-bottom: 0.07rem solid #ef2f19;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.97) 0%, rgba(242, 220, 210, 0.97) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.97) 0%, rgba(242, 220, 210, 0.97) 100%);
+  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.97) 0%, rgba(242, 220, 210, 0.97) 100%);
   background-attachment: fixed;
   background-repeat: repeat, no-repeat;
 }
 html[data-sap-ui-browser="ie8"] .sapUshellShellCurtain,
 html[data-sap-ui-browser="ie9"] .sapUshellShellCurtain {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff',GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f2dcd2',GradientType=0);
 }
 /* END "ShellLayout.less" */
 /* START "SplitContainer.less" */
@@ -6295,7 +6295,7 @@ html[data-sap-ui-browser="ie9"] .sapUshellShellCurtain {
   text-align: center;
 }
 .sapUshellTile footer > * {
-  background: #bfbfbf;
+  background: #bf1f0d;
 }
 .sapUshellTile footer > *.sapUshellCatalogPlusIcon {
   padding: 0;
@@ -6324,7 +6324,7 @@ html[data-sap-ui-browser="ie9"] .sapUshellShellCurtain {
   background-color: transparent;
 }
 .sap-desktop .sapUshellTile:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: 0.125rem;
   outline-offset: 0rem;
@@ -6376,7 +6376,7 @@ html[data-sap-ui-browser="ie9"] .sapUshellShellCurtain {
   color: #fb531f;
 }
 .sapUiMedia-Std-Desktop .sapUshellTileBase:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: 0.125rem;
   outline-offset: -0.125rem;
@@ -6739,7 +6739,7 @@ html[data-sap-ui-browser="ie9"] .sapUshellShellCurtain {
 /* CSS for control sap.ushell/UserPreferencesButton.control sap_bluecrystal theme */
 /* ============================================================================ */
 .sapUshellUserPrefUserIdentifier {
-  border-bottom: 0.07rem solid #e5e5e5;
+  border-bottom: 0.07rem solid #f03d28;
   background-color: #ffffff;
 }
 
@@ -6751,4 +6751,4 @@ html[data-sap-ui-browser="ie9"] .sapUshellShellCurtain {
 /******************* FILE /UI5/sap/ushell/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-ushell{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ushell.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180201", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-ushell{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ushell.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080527", "Source": "1.36.6", "Engine": "1.16.1"}}');}

@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/uxap.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180203", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/uxap.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080528", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -287,7 +287,7 @@ Compact
   background-color: transparent;
 }
 .sapUxAPBreadCrumbs .sapUxAPBreadCrumbsDots {
-  color: #ff5c33;
+  color: #9e1200;
   font-weight: normal;
   font-size: 0.875rem;
   text-decoration: none;
@@ -714,7 +714,7 @@ objectPageHeader Content
 }
 .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderSeparatorContainer .sapUxAPObjectPageHeaderSeparatorBefore {
   width: 1px;
-  background-color: #cccccc;
+  background-color: #d7230f;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -724,7 +724,7 @@ objectPageHeader Content
 }
 .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderSeparatorContainer .sapUxAPObjectPageHeaderSeparatorAfter {
   width: 1px;
-  background-color: #cccccc;
+  background-color: #d7230f;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -1216,7 +1216,7 @@ Common compact/cozy
 **********************************/
 .sapUxAPAnchorBar.sapMTB {
   border: none;
-  box-shadow: inset 0 -0.125rem #dddddd;
+  box-shadow: inset 0 -0.125rem #ef2f19;
   background: #f2f8fc;
 }
 /* L fullscreen paddings */
@@ -1250,7 +1250,7 @@ Common compact/cozy
   bottom: -1px;
 }
 .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnContent {
-  border-bottom: 0.125rem solid #b2b2b2;
+  border-bottom: 0.125rem solid #a71b0b;
 }
 .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnContent,
 .sapUxAPAnchorBar .sapUxAPAnchorBarButton.sapUxAPAnchorBarButtonSelected .sapMBtnIcon {
@@ -1288,7 +1288,7 @@ html[dir=rtl] .sapUxAPAnchorBar.sapUxAPAnchorBarScrollRight .anchorBarArrowRight
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f8fc', endColorstr='#00f2f8fc', GradientType=1);
   /* IE6-9 */
-  box-shadow: inset 0 -0.125rem #dddddd;
+  box-shadow: inset 0 -0.125rem #ef2f19;
 }
 .sapUxAPAnchorBar.sapUxAPAnchorBarScrollRight .anchorBarArrowRight,
 html[dir=rtl] .sapUxAPAnchorBar.sapUxAPAnchorBarScrollLeft .anchorBarArrowLeft {
@@ -1306,7 +1306,7 @@ html[dir=rtl] .sapUxAPAnchorBar.sapUxAPAnchorBarScrollLeft .anchorBarArrowLeft {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00f2f8fc', endColorstr='#f2f8fc', GradientType=1);
   /* IE6-9 */
-  box-shadow: inset 0 -0.125rem #dddddd;
+  box-shadow: inset 0 -0.125rem #ef2f19;
 }
 html[data-sap-ui-animation="on"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUxAPAnchorBarScrollLeft .anchorBarArrow .sapMBtn,
 html[data-sap-ui-animation="on"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUxAPAnchorBarScrollRight .anchorBarArrow .sapMBtn {
@@ -1334,16 +1334,16 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
   color: #000000;
 }
 .sapMPopover.sapUxAPAnchorBarPopover .sapMBtn.sapUxAPAnchorBarButton:focus {
-  background-color: #ffece6;
+  background-color: #f6ebe6;
 }
 .sapMPopover.sapUxAPAnchorBarPopover .sapMBtn.sapUxAPAnchorBarButton:hover {
-  background-color: #f0f0f0;
+  background-color: #e0ffff;
 }
 .sapMPopover.sapUxAPAnchorBarPopover {
   background-color: #ffffff;
   color: #000000;
   box-shadow: 0 12px 20px 0 rgba(100, 100, 100, 0.06);
-  border-color: #cccccc;
+  border-color: #d7230f;
 }
 /* override active button */
 .sapUxAPAnchorBar .sapUxAPAnchorBarButton .sapMBtnInner.sapMBtnActive {
@@ -1352,7 +1352,7 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
 /* END "AnchorBar.less" */
 /* START "BreadCrumbs.less" */
 .sapUxAPBreadCrumbs .sapMText:focus {
-  outline: 0.0625rem dotted #be2f04;
+  outline: 0.0625rem dotted #652404;
   outline-offset: 0.2rem;
 }
 .sapUxAPBreadCrumbs .sapMSlt {
@@ -1377,13 +1377,13 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
   background: transparent;
 }
 .sapUxAPHierarchicalSelect.sapMSltHoverable:not(.sapMSltPressed) > .sapMSltIcon:hover {
-  background: #eaeaea;
+  background: #fc4521;
 }
 .sapUxAPHierarchicalSelect.sapMSltPressed.sapMSltIconOnly:not(.sapMSltDisabled) {
   background: transparent;
 }
 .sapUxAPHierarchicalSelect.sapMSltPressed > .sapMSltIcon {
-  background: #fa3e05;
+  background: #a03906;
   color: #ffffff;
 }
 .sapUxAPHierarchicalSelect .sapMSltLabel,
@@ -1395,7 +1395,7 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
 }
 .sapUxAPHierarchicalSelect .sapMSltIcon {
   background: transparent;
-  color: #666666;
+  color: #ffffff;
 }
 /* mobile-only: appears in a dialog */
 .sapMSltPicker .sapUxAPHierarchicalSelect.sapMIBar.sapMHeader-CTX,
@@ -1408,7 +1408,7 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
   color: #666666;
 }
 .sapUxAPHierarchicalSelectFirstLevel.sapMSelectListItem:not(:first-child) {
-  border-top: 0.0625rem solid #e5e5e5;
+  border-top: 0.0625rem solid #f03d28;
 }
 .sapUxAPHierarchicalSelectFirstLevel.sapMSelectListItem {
   color: #333333;
@@ -1421,7 +1421,7 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
   font-size: 0.875rem;
 }
 .sapUxAPHierarchicalSelect .sapMSltPicker-CTX .sapMSelectList {
-  border: 1px solid #bfbfbf;
+  border: 1px solid #bf1f0d;
 }
 /* active */
 .sapUxAPHierarchicalSelectFirstLevel.sapMSelectListItem:active,
@@ -1430,31 +1430,31 @@ html[data-sap-ui-animation="off"].sapUiMedia-Std-Desktop .sapUxAPAnchorBar.sapUx
 }
 /* hover */
 .sapUxAPHierarchicalSelect .sapMSelectListItemSelected:hover {
-  background: #fee0d7;
+  background: #f1e2db;
 }
 /* styling needed to achieve underline of the select label on phone */
 .sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltLabel,
 .sap-phone .sapUxAPHierarchicalSelect .sapMSltLabel {
-  border-bottom: 0.125rem solid #999999;
+  border-bottom: 0.125rem solid #781408;
 }
 .sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltArrow,
 .sap-phone .sapUxAPHierarchicalSelect .sapMSltArrow {
-  box-shadow: inset 0 -0.125rem #dddddd;
+  box-shadow: inset 0 -0.125rem #ef2f19;
 }
 .sapUiMedia-Std-Phone .sapMSlt.sapUxAPHierarchicalSelect,
 .sap-phone .sapMSlt.sapUxAPHierarchicalSelect {
-  box-shadow: inset 0 -0.125rem #dddddd;
+  box-shadow: inset 0 -0.125rem #ef2f19;
 }
 /* styling needed to achieve underline of the select label on phone on Android 4.4.2
 (this is specific for webview (Fiori client) and Chrome browser) */
 html[data-sap-ui-browser^="cr4"].sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect .sapMSltLabel,
 html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLabel {
-  box-shadow: inset 0 -0.125rem #999999;
+  box-shadow: inset 0 -0.125rem #781408;
 }
 /* END "HierarchicalSelect.less" */
 /* START "IconTabBar.less" */
 .sapUxAPObjectPageNavigation .sapMITB {
-  box-shadow: inset 0 -0.0625rem #dddddd;
+  box-shadow: inset 0 -0.0625rem #ef2f19;
 }
 .sapUxAPObjectPageNavigation .sapMITB .sapMITH .sapMITBArrowScroll {
   top: 0;
@@ -1472,7 +1472,7 @@ html[data-sap-ui-browser^="cr4"].sap-phone .sapUxAPHierarchicalSelect .sapMSltLa
 }
 .sapUxAPObjectPageHeader.sapUxAPObjectPageHeaderDesign-Dark {
   background-image: url(../../../../../UI5/sap/uxap/themes/sap_bluecrystal/darkBackground.png);
-  background-color: #c06f0d;
+  background-color: #af7518;
   background-position: 0px -32px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1642,7 +1642,7 @@ html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapM
   color: #666666;
 }
 .sapUxAPObjectPageHeaderDetails.sapUxAPObjectPageHeaderDetailsDesign-Dark {
-  background-color: #c06f0d;
+  background-color: #af7518;
   background-image: url(../../../../../UI5/sap/uxap/themes/sap_bluecrystal/darkBackground.png);
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -1661,7 +1661,7 @@ html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapM
 }
 .sapUxAPObjectPageHeaderDetails.sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMLnk,
 .sapUxAPObjectPageHeaderDetails.sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMLnk:visited {
-  color: #ffffff;
+  color: #ff9284;
 }
 .sapUxAPObjectPageHeaderDetails.sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMOHTitleArrow {
   color: #ffffff;
@@ -1693,25 +1693,25 @@ html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapM
 /* END "ObjectPageLayout.less" */
 /* START "ObjectPageSection.less" */
 .sapUxAPObjectPageSectionHeader {
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 2px solid #f25240;
 }
 .sapUxAPObjectPageSectionTitle {
   color: #333333;
   font-size: 0.875rem;
   font-weight: bold;
-  border-bottom: 2px solid #999999;
+  border-bottom: 2px solid #781408;
 }
 .sapUxAPObjectPageSectionTitleUppercase {
   text-transform: uppercase;
 }
 .sapUxAPObjectPageSection:focus {
-  outline: 0.0625rem dotted #be2f04;
+  outline: 0.0625rem dotted #652404;
   outline-offset: -0.0625rem;
 }
 /* END "ObjectPageSection.less" */
 /* START "ObjectPageSubSection.less" */
 .sapUxAPObjectPageSubSection {
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 2px solid #f25240;
 }
 .sapUxAPObjectPageSection .sapUxAPObjectPageSubSection:last-child {
   border-bottom: none;
@@ -1726,7 +1726,7 @@ html.sap-desktop .sapUxAPObjectPageHeaderDetailsDesign-Dark .sapMBtn:focus .sapM
 }
 .sapUxAPObjectPageSubSection:focus,
 .sapUxAPObjectPageSubSectionHeaderTitle:focus {
-  outline: 0.0625rem dotted #be2f04;
+  outline: 0.0625rem dotted #652404;
   outline-offset: -0.0625rem;
 }
 /* IE ignores outline-offset. Use an overlay: */
@@ -1744,7 +1744,7 @@ html[data-sap-ui-browser^="ie"] .sapUxAPObjectPageSubSection:focus:before,
   position: absolute;
   left: 0;
   top: 0;
-  border: 0.0625rem dotted #be2f04;
+  border: 0.0625rem dotted #652404;
   pointer-events: none;
 }
 
@@ -1756,4 +1756,4 @@ html[data-sap-ui-browser^="ie"] .sapUxAPObjectPageSubSection:focus:before,
 /******************* FILE /UI5/sap/uxap/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-uxap{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/uxap.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180203", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-uxap{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/uxap.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080528", "Source": "1.36.6", "Engine": "1.16.1"}}');}

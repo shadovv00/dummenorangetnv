@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/uiext/inbox.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180201", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/uiext/inbox.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080526", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -281,7 +281,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxAddAttachmentTileLayout {
 }
 .sapUiExtInboxAttachmentAddLink {
   font-size: 15px;
-  color: #ff5c33;
+  color: #9e1200;
   display: inline-block;
   text-decoration: none;
   width: 170px;
@@ -346,7 +346,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxAttachmentTileLayout {
   white-space: nowrap;
   overflow: hidden;
   max-width: 160px;
-  color: #ff5c33;
+  color: #9e1200;
   display: inline-block;
   text-overflow: ellipsis;
   text-decoration: none;
@@ -403,7 +403,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxInlineFlexRow {
 /* CSS for control sap.uiext.inbox/InboxBusyIndicator.control */
 /* ============================================= */
 .sapUiextBusyContainer {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #f03d28;
   display: block;
   position: relative;
   margin-top: 10px;
@@ -416,8 +416,8 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxInlineFlexRow {
 /* CSS for controlsap.uiext.inbox/InboxComment.control */
 /* ============================================= */
 .sapuiextInboxCommentChunk {
-  border: 1px solid #cccccc;
-  background-color: #f2f2f2;
+  border: 1px solid #d7230f;
+  background-color: #f25240;
   display: block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -462,7 +462,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxInlineFlexRow {
 .sapuiextInboxCommentChunk > section > header {
   display: block;
   position: relative;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #d7230f;
 }
 .sapuiextInboxCommentChunk > section > header > a {
   right: 0;
@@ -558,20 +558,20 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxInlineFlexRow {
 /* CSS for controlsap.uiext.inbox/InboxTaskComments.control */
 /* ============================================= */
 .sapuiextInboxTaskCommentsChunk a {
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapuiextInboxTaskCommentsChunk a:focus,
 .sapuiextInboxTaskCommentsChunk a:active {
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapuiextInboxTaskCommentsChunk a:visited {
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapuiextInboxTaskCommentsChunk a:hover {
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapuiextInboxTaskComment {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapuiextInboxTaskCommentsChunk > section {
   display: block;
@@ -585,7 +585,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxInlineFlexRow {
   border: 1px solid blue;
 }
 .sapuiextInboxTaskCommentsChunk {
-  border-color: #e5e5e5;
+  border-color: #f03d28;
   padding: 0 6px 10px 0;
 }
 .sapuiextInboxTaskCommentsChunk a {
@@ -613,7 +613,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxInlineFlexRow {
   line-height: 24px;
 }
 html[data-sap-ui-browser="ie8"] .sapuiextInboxTaskCommentsChunk > section > header {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #f03d28;
   margin-top: 7px;
   padding-top: 0;
 }
@@ -744,7 +744,7 @@ html[data-sap-ui-browser*="ie"] .sapUiExtInboxAttachmentUplodBtns {
 .sapuiextIdxLayout_Tile:focus,
 .sapuiextIdxLayout_Tile:hover,
 .sapuiextIdxLayout_Tile:visited {
-  color: #fa3e05;
+  color: #a03906;
 }
 .sapuiextIdxLayout_Tile:hover {
   background-color: #F9F9F9;
@@ -1000,4 +1000,4 @@ font-family: Arial, Helvetica, sans-serif;*/
 /******************* FILE /UI5/sap/uiext/inbox/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-uiext-inbox{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/uiext/inbox.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180201", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-uiext-inbox{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/uiext/inbox.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080526", "Source": "1.36.6", "Engine": "1.16.1"}}');}

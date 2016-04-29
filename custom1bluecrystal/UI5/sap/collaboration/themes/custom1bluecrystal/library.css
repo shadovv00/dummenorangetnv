@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/collaboration.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160425180201", "Source": "1.36.3", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/collaboration.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160429080525", "Source": "1.36.3", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -77,7 +77,7 @@ the width in the browser. */
   width: 3.75rem;
   height: 3.75rem;
   border-style: solid;
-  border-color: #e5e5e5;
+  border-color: #f03d28;
   border-width: 1px;
   position: absolute;
   left: 0.5rem;
@@ -217,7 +217,7 @@ the width in the browser. */
   width: 40px;
   height: 40px;
   border-style: solid;
-  border-color: #e5e5e5;
+  border-color: #f03d28;
   border-width: 1px;
   position: absolute;
   left: 11px;
@@ -306,4 +306,4 @@ the width in the browser. */
 /******************* FILE /UI5/sap/collaboration/themes/custom1bluecrystal/library.less (Version 1.36.3) *******************/
 
 
-.sapThemeMetaData-UI5-sap-collaboration{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/collaboration.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160425180201", "Source": "1.36.3", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-collaboration{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/collaboration.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160429080525", "Source": "1.36.3", "Engine": "1.16.1"}}');}

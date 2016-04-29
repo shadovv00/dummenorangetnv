@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/ui/comp.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180201", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/ui/comp.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080533", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -732,13 +732,13 @@ padding: 3px;*/
   border-bottom-width: 0px;
 }
 .compValueHelpDialog .compVHDarkBackground {
-  border-color: #e5e5e5;
+  border-color: #f03d28;
   border-style: solid;
   border-top-width: 0.0625rem;
   border-left-width: 0px;
   border-right-width: 0px;
   border-bottom-width: 0px;
-  background-color: rgba(242, 242, 242, 0.8);
+  background-color: rgba(242, 82, 64, 0.8);
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -771,11 +771,11 @@ padding: 3px;*/
 .compValueHelpDialog .compVHTokensDiv:focus {
   border-radius: 5px;
   outline: none;
-  border: 0.0625rem dotted #be2f04;
+  border: 0.0625rem dotted #652404;
 }
 .compValueHelpDialog .compVHTokensDiv {
   border-width: 1px;
-  border-color: #bfbfbf;
+  border-color: #a80e03;
   border-style: solid;
   border-radius: 5px;
   padding-top: 0px;
@@ -839,16 +839,16 @@ padding: 3px;*/
   padding-right: 0rem;
 }
 .compValueHelpDialog .sapUiCompFilterBar {
-  background: #f2f2f2;
-  border-color: #e5e5e5;
+  background: #f25240;
+  border-color: #f03d28;
   border-style: solid;
-  background-color: rgba(242, 242, 242, 0);
+  background-color: rgba(242, 82, 64, 0);
   margin-bottom: 1rem;
 }
 /* Filterbar and Collective Search */
 .compValueHelpDialog .compVHSearch {
-  background: #f2f2f2;
-  border-color: #e5e5e5;
+  background: #f25240;
+  border-color: #f03d28;
   border-style: solid;
   border-left-width: 0rem;
   border-right-width: 0rem;
@@ -857,7 +857,7 @@ padding: 3px;*/
   margin-bottom: 1rem;
   margin-left: 0rem;
   padding-left: 2rem;
-  background-color: rgba(242, 242, 242, 0.8);
+  background-color: rgba(242, 82, 64, 0.8);
 }
 .compValueHelpDialog .compVHFilterBarPadding.sapUiCompFilterBarNonPhone.sapUiRespGrid.sapUiRespGridHSpace1 {
   padding-bottom: 1rem;
@@ -932,7 +932,7 @@ padding: 3px;*/
 }
 /* FilterBar adjustment */
 .compValueHelpDialog .sapUiCompFilterBar {
-  border-color: #e5e5e5;
+  border-color: #f03d28;
   border-style: solid;
   border-top-width: 0px;
   border-left-width: 0px;
@@ -1056,10 +1056,10 @@ html.sap-phone .compValueHelpDialog .sapUiCompFilterBar .sapUiFormResGridCont > 
   background-color: rgba(255, 255, 255, 0.6);
 }
 .sapUiCompFilterBarDialog {
-  background-color: #f7f7f7;
+  background-color: #f35b4a;
 }
 .sapUiCompAddRemoveFilterDialog {
-  background-color: #f7f7f7;
+  background-color: #f35b4a;
 }
 .sapUiCompFilterBarGroupListItem .sapMLabel {
   font-family: Arial, Helvetica, sans-serif;
@@ -1102,4 +1102,4 @@ html.sap-phone .compValueHelpDialog .sapUiCompFilterBar .sapUiFormResGridCont > 
 /******************* FILE /UI5/sap/ui/comp/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-ui-comp{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/comp.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180201", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-ui-comp{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/comp.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080533", "Source": "1.36.6", "Engine": "1.16.1"}}');}

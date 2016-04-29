@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/tnt.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/tnt.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080527", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -475,70 +475,70 @@ html[dir=rtl].sap-phone .sapUiSizeCompact .sapTntToolPageAsideCollapsed .sapTntT
 /* ============================================== */
 .sapTntNavLIGroup {
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIGroup > .sapUiIcon {
   color: #666666;
 }
 .sapTntNavLIGroup:not(.sapTntNavLIItemDisabled):hover {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #e0ffff;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIGroup:not(.sapTntNavLIItemDisabled):hover > .sapUiIcon {
   color: #666666;
 }
 .sapTntNavLIGroup:not(.sapTntNavLIItemDisabled):active {
-  background-color: #fa3e05;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #a03906;
+  border-bottom: 1px solid #f03d28;
   color: #ffffff;
 }
 .sapTntNavLIGroup:not(.sapTntNavLIItemDisabled):active > .sapUiIcon {
   color: #ffffff;
 }
 .sapTntNavLIItemSelected .sapTntNavLIGroup {
-  background-color: #ffece6;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #f6ebe6;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIItemSelected .sapTntNavLIGroup > .sapUiIcon {
   color: #666666;
 }
 .sapTntNavLIItemSelected .sapTntNavLIGroup:hover {
-  background-color: #fee0d7;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #f1e2db;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIItemSelected .sapTntNavLIGroup:hover > .sapUiIcon {
   color: #666666;
 }
 .sapTntNavLIGroupItem {
-  background-color: #fafafa;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #f35f4e;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIGroupItem:not(.sapTntNavLIItemDisabled):hover {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #e0ffff;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIGroupItem:not(.sapTntNavLIItemDisabled):active {
-  background-color: #fa3e05;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #a03906;
+  border-bottom: 1px solid #f03d28;
   color: #ffffff;
 }
 .sapTntNavLIItemSelected.sapTntNavLIGroupItem {
-  background-color: #ffece6;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #f6ebe6;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIItemSelected.sapTntNavLIGroupItem > .sapUiIcon {
   color: #666666;
 }
 .sapTntNavLIItemSelected.sapTntNavLIGroupItem:hover {
-  background-color: #fee0d7;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #f1e2db;
+  border-bottom: 1px solid #f03d28;
   color: #333333;
 }
 .sapTntNavLIItemSelected.sapTntNavLIGroupItem:hover > .sapUiIcon {
@@ -550,7 +550,7 @@ html[dir=rtl].sap-phone .sapUiSizeCompact .sapTntToolPageAsideCollapsed .sapTntT
 }
 .sapTntNavLI li:focus::before,
 .sapTntNavLIItem:focus::before {
-  border: 1px dotted #be2f04;
+  border: 1px dotted #652404;
   position: absolute;
   content: " ";
   top: 1px;
@@ -566,7 +566,7 @@ html[dir=rtl].sap-phone .sapUiSizeCompact .sapTntToolPageAsideCollapsed .sapTntT
 /* CSS for control sap.tnt/ToolHeader.control */
 /* ========================================== */
 .sapTntToolHeader.sapMTB {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapTntToolHeader.sapMTB .sapMBtnContent,
 .sapTntToolHeader.sapMTB .sapMBtnIcon,
@@ -598,23 +598,23 @@ CSS for control sap.tnt.SideNavigation
 /* Styles for layout with arrows
 ========================================================================== */
 .sapTntSideNavigationScrollIconUp {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #f03d28;
 }
 .sapTntSideNavigationScrollIconDown {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #f03d28;
 }
 .sapTntSideNavigationScrollIcon {
   color: #666666;
 }
 .sapTntSideNavigationScrollIcon:not(.sapTntSideNavigationScrollIconDisabled):hover {
-  background-color: #f0f0f0;
+  background-color: #e0ffff;
   color: #333333;
 }
 .sapTntSideNavigationScrollIcon:not(.sapTntSideNavigationScrollIconDisabled):hover > .sapUiIcon {
   color: #666666;
 }
 .sapTntSideNavigationScrollIcon:not(.sapTntSideNavigationScrollIconDisabled):active {
-  background-color: #fa3e05;
+  background-color: #a03906;
   color: #ffffff;
 }
 .sapTntSideNavigationScrollIcon:not(.sapTntSideNavigationScrollIconDisabled):active > .sapUiIcon {
@@ -629,4 +629,4 @@ CSS for control sap.tnt.SideNavigation
 /******************* FILE /UI5/sap/tnt/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-tnt{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/tnt.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-tnt{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/tnt.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080527", "Source": "1.36.6", "Engine": "1.16.1"}}');}

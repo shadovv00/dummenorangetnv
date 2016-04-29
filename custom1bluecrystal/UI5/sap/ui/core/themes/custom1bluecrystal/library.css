@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/ui/core.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180159", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/ui/core.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080523", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -14,7 +14,7 @@
 /* START "shared.less" */
 /* Shared CSS for 'base' theme */
 .sapUiBody {
-  background-color: #f2f2f2;
+  background-color: #f25240;
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -22,7 +22,7 @@
   /* to prevent touch highlight on the entire body */
 }
 .sapUiArea {
-  background-color: #f2f2f2;
+  background-color: #f25240;
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -37,7 +37,7 @@
   visibility: hidden;
   left: -10000px;
   top: -10000px;
-  background-color: #f2f2f2;
+  background-color: #f25240;
   /* repeat the body style in case the application adapts it */
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
@@ -120,7 +120,7 @@
   }
 }
 .sapUiOverlay {
-  background-color: rgba(242, 242, 242, 0.8);
+  background-color: rgba(242, 82, 64, 0.8);
   position: absolute;
   top: 0;
   left: 0;
@@ -374,7 +374,7 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL) {
   -webkit-font-smoothing: antialiased;
 }
 .sapUiLocalBusyIndicator {
-  background-color: rgba(242, 242, 242, 0.72);
+  background-color: rgba(255, 170, 114, 0.72);
   position: absolute;
   top: 0;
   left: 0;
@@ -863,13 +863,13 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL) {
 }
 .sapThemeBaseBG,
 .sapThemeBaseBG-asBackgroundColor {
-  background-color: #f2f2f2;
+  background-color: #ffaa72;
 }
 .sapThemeBaseBG-asBorderColor {
-  border-color: #f2f2f2;
+  border-color: #ffaa72;
 }
 .sapThemeBaseBG-asColor {
-  color: #f2f2f2;
+  color: #ffaa72;
 }
 .sapThemeBrand-asColor {
   color: #fb531f;
@@ -884,16 +884,16 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL) {
   outline-color: #fb531f;
 }
 .sapThemeHighlight-asColor {
-  color: #fa3e05;
+  color: #a03906;
 }
 .sapThemeHighlight-asBorderColor {
-  border-color: #fa3e05;
+  border-color: #a03906;
 }
 .sapThemeHighlight-asBackgroundColor {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapThemeHighlight-asOutlineColor {
-  outline-color: #fa3e05;
+  outline-color: #a03906;
 }
 /* END "parameterClasses.less" */
 /* START "ScrollBar.less" */
@@ -921,8 +921,8 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL) {
 /* END "Shadow.less" */
 /* START "TechnicalInfo.less" */
 .sapUiTInf {
-  border: 1px solid #cccccc;
-  background: #f2f2f2;
+  border: 1px solid #d7230f;
+  background: #f25240;
   padding: 6px;
 }
 .sapUiTInfCfg {
@@ -1016,7 +1016,7 @@ html.sap-tablet .sapUiSelectable {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #ffb98c;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
 }
@@ -1071,18 +1071,11 @@ html.sap-tablet .sapUiSelectable {
 .sapMH6Style {
   font-family: Arial, Helvetica, sans-serif !important;
   font-weight: normal !important;
-  color: #333333 !important;
+  color: #050505 !important;
   text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.5) !important;
 }
 /* Calculate the Background Variants */
 /* no transparency in IE9 filter string */
-.sapMShellGlobalInnerBackgroundMixin {
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-}
 /* Themeable Backgrounds */
 /********************************************************************************************************************************/
 /* Reset BackgroundColor, -Images to ensure proper display in ThemeDesigner (loads original and modified theme in the same page)*/
@@ -1112,63 +1105,24 @@ html[data-sap-ui-browser="ie9"] {
 .sapMGlobalBackgroundColor {
   /*Only legacy support: Use sapUiGlobalBackgroundColor instead*/
   background-color: #f2f2f2;
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
+  background-color: #ffaa72;
+  background-image: none;
 }
 html[data-sap-ui-browser="ie9"] .sapUiGlobalBackgroundColor,
 html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor {
   /*Only legacy support: Use sapUiGlobalBackgroundColor instead*/
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fce2df', EndColorStr='#f6e9db');
-  /* IE8+9 */
-}
-.sapMGlobalBackgroundColorStrong,
-.sapUiStrongBackgroundColor {
-  background-image: -moz-linear-gradient(top, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ea402a), color-stop(50%, #e13805), color-stop(100%, #c06f0d));
-  background-image: -webkit-linear-gradient(top, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-  background-image: -ms-linear-gradient(top, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-  background-image: linear-gradient(to bottom, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-}
-html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColorStrong,
-html[data-sap-ui-browser="ie9"] .sapUiStrongBackgroundColor {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ea402a', EndColorStr='#c06f0d');
-  /* IE8+9 */
+  filter: none;
 }
 .sapUiStrongBackgroundTextColor {
   color: #333333;
 }
 .sapMShellGlobalOuterBackground {
   background-color: #f2f2f2;
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -moz-linear-gradient(top, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ea402a), color-stop(50%, #e13805), color-stop(100%, #c06f0d));
-  background-image: -webkit-linear-gradient(top, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-  background-image: -ms-linear-gradient(top, #ea402a 0%, #e13805 50%, #c06f0d 100%);
-  background-image: linear-gradient(to bottom, #ea402a 0%, #e13805 50%, #c06f0d 100%);
+  background-color: #ffaa72;
+  background-image: none;
 }
 html[data-sap-ui-browser="ie9"] .sapMShellGlobalOuterBackground {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fce2df', EndColorStr='#f6e9db');
-  /* IE8+9 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ea402a', EndColorStr='#c06f0d');
-  /* IE8+9 */
-}
-.sapMShellGlobalInnerBackground {
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-}
-html[data-sap-ui-browser="ie9"] .sapMShellGlobalInnerBackground {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fce2df', EndColorStr='#f6e9db');
-  /* IE8+9 */
+  filter: none;
 }
 /* no standard background for nested elements */
 .sapUiGlobalBackgroundColor .sapUiGlobalBackgroundColor:not(.sapUiGlobalBackgroundColorForce),
@@ -1196,7 +1150,7 @@ html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor .sapMGlobalBackground
   bottom: 0;
   right: 0;
   opacity: 1;
-  background-image: url(../../../../../../Base/baseLib/custom1bluecrystal/);
+  background-image: none;
   background-repeat: repeat;
   background-position: left top;
   background-size: auto;
@@ -1210,8 +1164,12 @@ html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor .sapMGlobalBackground
   top: 0;
   bottom: 0;
   right: 0;
-  /* custom background image: do not display it here, only in main page background */
+  /* default background image: display it normally */
   background-image: none;
+  opacity: 1;
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: auto;
 }
 /* hide this background image if a background is configured somewhere above */
 .sapUiGlobalBackgroundColor * > .sapMGlobalBackgroundImage,
@@ -1233,35 +1191,24 @@ html[data-sap-ui-browser="ie9"] .sapMGlobalBackgroundColor .sapMGlobalBackground
 /* BODY Background Styling */
 .sapUiBodyBackground,
 .sapUiBody {
-  background-color: #f2f2f2;
-  /*.sapGlobalBackgroundColorMixinWithImage(@sapUiGlobalBackgroundImage);*/
-  /*Custom BG Image currently not supported*/
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
+  background-color: #ffaa72;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: auto;
 }
 .sapUiBody {
   background-attachment: fixed;
 }
 html[data-sap-ui-browser="ie9"] .sapUiBodyBackground {
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fce2df', EndColorStr='#f6e9db');
-  /* IE8+9 */
+  background-color: #ffaa72;
+  background-image: none;
+  filter: none;
 }
 html[data-sap-ui-browser="ie9"] {
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fce2df', EndColorStr='#f6e9db');
-  /* IE8+9 */
+  background-color: #ffaa72;
+  background-image: none;
+  filter: none;
   margin: 0;
   padding: 0;
 }
@@ -1274,8 +1221,11 @@ html[data-sap-ui-browser="ie9"] .sapUiBody:before {
   left: 0;
   bottom: 0;
   right: 0;
-  /* custom background image: do not display it here, only in main page background */
+  /* default background image: display it normally */
   background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: auto;
   opacity: 1;
 }
 /*
@@ -1295,13 +1245,9 @@ is not the HTML body tag
 */
 html[data-sap-ui-browser="ie9"] .sapUiBodyBackgroundIE9Layer1 {
   background-color: #f2f2f2;
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fce2df), color-stop(50%, #fbe1da), color-stop(100%, #f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fce2df', EndColorStr='#f6e9db');
-  /* IE8+9 */
+  background-color: #ffaa72;
+  background-image: none;
+  filter: none;
   margin: 0;
   padding: 0;
 }
@@ -1314,8 +1260,11 @@ html[data-sap-ui-browser="ie9"] .sapUiBodyBackgroundIE9Layer2 {
   left: 0;
   bottom: 0;
   right: 0;
-  /* custom background image: do not display it here, only in main page background */
+  /* default background image: display it normally */
   background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: auto;
   opacity: 1;
 }
 .sapUiOverlay {
@@ -1331,25 +1280,25 @@ html[data-sap-ui-browser="ie9"] .sapUiBodyBackgroundIE9Layer2 {
 /* START "BrowserScrollbar.less" */
 /****** IE ******/
 html[data-sap-ui-browser*="ie"] .sapUiBody {
-  scrollbar-face-color: #e6e6e6;
-  scrollbar-highlight-color: #e6e6e6;
-  scrollbar-shadow-color: #e6e6e6;
-  scrollbar-track-color: #f7f7f7;
+  scrollbar-face-color: #ef8e73;
+  scrollbar-highlight-color: #ef8e73;
+  scrollbar-shadow-color: #ef8e73;
+  scrollbar-track-color: #fcb299;
 }
 /****** Safari + Chrome on Desktop ******/
 .sap-desktop ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
-  background-color: #f7f7f7;
+  background-color: #fcb299;
 }
 .sap-desktop ::-webkit-scrollbar-thumb {
-  background-color: #e6e6e6;
+  background-color: #ef8e73;
 }
 .sap-desktop ::-webkit-scrollbar-thumb:hover {
-  background-color: #dedede;
+  background-color: #ed8365;
 }
 .sap-desktop ::-webkit-scrollbar-corner {
-  background-color: #f7f7f7;
+  background-color: #fcb299;
 }
 /* END "BrowserScrollbar.less" */
 /* START "BusyIndicator.less" */
@@ -1359,10 +1308,10 @@ html[data-sap-ui-browser*="ie"] .sapUiBody {
   -moz-background-size: 40% 5px;
   -webkit-background-size: 40% 5px;
   background-size: 40% 5px;
-  background-image: -moz-linear-gradient(left, rgba(250, 62, 5, 0), rgba(250, 62, 5, 0) 30%, #fa3e05 70%, rgba(250, 62, 5, 0));
-  background-image: -webkit-linear-gradient(left, rgba(250, 62, 5, 0), #fa3e05 30%, #fa3e05 70%, rgba(250, 62, 5, 0));
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(250, 62, 5, 0)), color-stop(0.3, #fa3e05), color-stop(0.7, #fa3e05), color-stop(1, rgba(250, 62, 5, 0)));
-  background-image: linear-gradient(left, rgba(250, 62, 5, 0), #fa3e05 30%, #fa3e05 70%, rgba(250, 62, 5, 0));
+  background-image: -moz-linear-gradient(left, rgba(160, 57, 6, 0), rgba(160, 57, 6, 0) 30%, #a03906 70%, rgba(160, 57, 6, 0));
+  background-image: -webkit-linear-gradient(left, rgba(160, 57, 6, 0), #a03906 30%, #a03906 70%, rgba(160, 57, 6, 0));
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(160, 57, 6, 0)), color-stop(0.3, #a03906), color-stop(0.7, #a03906), color-stop(1, rgba(160, 57, 6, 0)));
+  background-image: linear-gradient(left, rgba(160, 57, 6, 0), #a03906 30%, #a03906 70%, rgba(160, 57, 6, 0));
   /* IE is handled using a real bg image */
   background-repeat: no-repeat;
   -webkit-animation: slide 1.5s linear infinite;
@@ -1413,7 +1362,7 @@ html[data-sap-ui-browser^=ie] .sapUiBusy {
 /* END "DatePicker.less" */
 /* START "Icon.less" */
 .sapUiIcon:focus {
-  outline: 1px dashed #be2f04;
+  outline: 1px dashed #652404;
 }
 .sapMTB-Info-CTX > .sapUiIcon {
   width: 1rem;
@@ -1427,7 +1376,7 @@ html[data-sap-ui-browser^=ie] .sapUiBusy {
   padding-right: 0.5rem;
 }
 .sapUiIconColorNeutral {
-  color: #007cc0;
+  color: #dd1802;
 }
 .sapUiIconColorCritical {
   color: #d14900;
@@ -1439,7 +1388,7 @@ html[data-sap-ui-browser^=ie] .sapUiBusy {
   color: #cc1919;
 }
 .sapUiIconBGColorNeutral {
-  background-color: #007cc0;
+  background-color: #dd1802;
 }
 .sapUiIconBGColorCritical {
   background-color: #d14900;
@@ -1454,19 +1403,19 @@ html[data-sap-ui-browser^=ie] .sapUiBusy {
 /* START "parameterClasses.less" */
 /* mobile-specific CSS parameters */
 .sapThemePageBG {
-  background-color: #ffffff;
+  background-color: #ffb98c;
 }
 .sapThemePageBG-asColor {
-  color: #ffffff;
+  color: #ffb98c;
 }
 .sapThemeBarBG {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapThemeBarHeading {
-  color: #666666;
+  color: #ffffff;
 }
 .sapThemeBarText {
-  color: #666666;
+  color: #541407;
 }
 .sapThemeNegativeText {
   color: #cc1919;
@@ -1495,4 +1444,4 @@ html[data-sap-ui-browser^=ie] .sapUiBusy {
 /******************* FILE /UI5/sap/ui/core/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-ui-core{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/core.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180159", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-ui-core{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ui/core.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080523", "Source": "1.36.6", "Engine": "1.16.1"}}');}

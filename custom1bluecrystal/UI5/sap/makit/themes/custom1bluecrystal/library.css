@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/makit.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180208", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/makit.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080534", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -18,7 +18,7 @@ class at the moment. Will consider to change in the future release. */
 }
 .chart {
   color: #000000;
-  background: #f2f2f2;
+  background: #ffaa72;
 }
 .chart > * span.ui-btn-inner {
   padding: .1em 5px;
@@ -62,7 +62,7 @@ class at the moment. Will consider to change in the future release. */
 }
 .chart_value_bubble_outline {
   background: rgba(128, 128, 128, 0.2);
-  color: #e5e5e5;
+  color: #f03d28;
 }
 .chart_range_selector_text {
   font-size: 14px;
@@ -73,7 +73,7 @@ class at the moment. Will consider to change in the future release. */
   /*#707070;*/
 }
 .chart_table {
-  background: #f2f2f2;
+  background: #ffaa72;
   /* #FFFFFF */
   font-size: 14px;
   font-family: 'OpenSans-Regular', sans-serif;
@@ -81,19 +81,19 @@ class at the moment. Will consider to change in the future release. */
   /* #000000 */
 }
 .chart_table_dimension_title {
-  background: #d0d0d0;
+  background: #d0301e;
   /* #DDDDDD; */
 }
 .chart_table_row_header {
-  background: #d0d0d0;
+  background: #d0301e;
   /* #DDDDDD; */
 }
 .chart_table_column_headers {
-  background: #eaeaea;
+  background: #ea4a38;
   /* #F7F7F7; */
 }
 .chart_table_contents {
-  background: #eaeaea;
+  background: #ea4a38;
   /* #F7F7F7; */
 }
 .chart_table_highlight {
@@ -343,7 +343,7 @@ class at the moment. Will consider to change in the future release. */
 }
 .chart {
   color: #000000;
-  background: #f2f2f2;
+  background: #ffaa72;
 }
 .chart > * span.ui-btn-inner {
   padding: .1em 5px;
@@ -388,7 +388,7 @@ class at the moment. Will consider to change in the future release. */
 }
 .chart_value_bubble_outline {
   background: rgba(128, 128, 128, 0.2);
-  color: #e5e5e5;
+  color: #f03d28;
 }
 .chart_range_selector_text {
   font-size: 14px;
@@ -399,7 +399,7 @@ class at the moment. Will consider to change in the future release. */
   /*#707070;*/
 }
 .chart_table {
-  background: #f2f2f2;
+  background: #ffaa72;
   /* #FFFFFF */
   font-size: 14px;
   font-family: 'OpenSans-Regular', sans-serif;
@@ -407,19 +407,19 @@ class at the moment. Will consider to change in the future release. */
   /* #000000 */
 }
 .chart_table_dimension_title {
-  background: #d0d0d0;
+  background: #d0301e;
   /* #DDDDDD; */
 }
 .chart_table_row_header {
-  background: #d0d0d0;
+  background: #d0301e;
   /* #DDDDDD; */
 }
 .chart_table_column_headers {
-  background: #eaeaea;
+  background: #ea4a38;
   /* #F7F7F7; */
 }
 .chart_table_contents {
-  background: #eaeaea;
+  background: #ea4a38;
   /* #F7F7F7; */
 }
 .chart_table_highlight {
@@ -666,4 +666,4 @@ but they can't be removed (yet) because it's still used by the MAKit Chart objec
 /******************* FILE /UI5/sap/makit/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-makit{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/makit.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180208", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-makit{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/makit.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080534", "Source": "1.36.6", "Engine": "1.16.1"}}');}

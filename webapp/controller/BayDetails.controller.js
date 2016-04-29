@@ -398,7 +398,7 @@ sap.ui.define([
 											width:"2%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.ui.core.Icon({ src: "sap-icon://decline", 
+	                            				new sap.ui.core.Icon({ src: "sap-icon://decline", color: "#541407",
 		                            				press: function(oEvent){
 																ourModel.setProperty(ourPath + "/deleted", true);
 																// ourModel.submitChanges();

@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/ca/ui.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160425180205", "Source": "1.36.3", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/ca/ui.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160429080530", "Source": "1.36.3", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -180,7 +180,7 @@ html[data-sap-ui-browser="ie11"] .sapCaUiChart .sapVizChart {
 }
 .sapCaUiChartToolBar .sapMBtn.legendSmallIcon,
 .sapCaUiChartToolBar .sapMBtn.legendIcon {
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #ef2f19;
 }
 /* behavior S */
 .sapUiMedia-Std-Phone .sapCaUiChartToolBar .legendSmallIcon,
@@ -402,7 +402,7 @@ uncomment this class to fix a visualization issue with IE and Firefox. The bug a
 .sapCaUiFU .sapMCLI {
   margin-bottom: 0;
   border-bottom: 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #f03d28;
 }
 .sapCaUiFU {
   background-color: #ffffff;
@@ -508,7 +508,7 @@ html[data-sap-ui-browser^="ff"] .sapCaUiFileUploadFileSizeText {
   background: none;
 }
 .sapCaUiFileUploadEditIcon > .sapMBtnContent > .sapUiIcon {
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapCaUiFileUploadCancelIcon {
   font-size: 1.25em;
@@ -520,7 +520,7 @@ html[data-sap-ui-browser^="ff"] .sapCaUiFileUploadFileSizeText {
   background: none;
 }
 .sapCaUiFileUploadCancelIcon > .sapMBtnContent > .sapUiIcon {
-  color: #ff5c33;
+  color: #9e1200;
 }
 .sapCaUiFileUploadEditBox {
   margin-top: 1rem;
@@ -846,7 +846,7 @@ html[data-sap-ui-browser="ie9"] .sapCaUiFU input[type=file] {
 }
 .sapCaUiHorizontalBarChart .v-categoryaxisline,
 .sapCaUiHorizontalBarChart .v-valueaxisline {
-  stroke: #dddddd;
+  stroke: #ef2f19;
 }
 /* END "HorizontalBarChart.css" */
 /* START "InPlaceEdit.css" */
@@ -874,7 +874,7 @@ html[data-sap-ui-browser="ie9"] .sapCaUiFU input[type=file] {
 }
 .sapCaUiIpe:hover,
 .sapCaUiIpeFocus {
-  border-color: #fa3e05;
+  border-color: #a03906;
   cursor: text;
   outline: none;
 }
@@ -891,7 +891,7 @@ html[data-sap-ui-browser="ie9"] .sapCaUiFU input[type=file] {
   outline: none;
 }
 .sapCaUiIpeUndo {
-  background-color: #f0f0f0;
+  background-color: #fc4521;
 }
 .sapCaUiIpeEdit,
 .sapCaUiIpeEdit.sapCaUiIpeUndo {
@@ -901,7 +901,7 @@ html[data-sap-ui-browser="ie9"] .sapCaUiFU input[type=file] {
 /* success state */
 .sapCaUiIpeSucc,
 .sapCaUiIpeUndo.sapCaUiIpeSucc {
-  background-color: #ffe177;
+  background-color: #e0f1e7;
 }
 /* invalid state */
 .sapCaUiIpeErr,
@@ -958,7 +958,7 @@ html[data-sap-ui-browser="ie8"] .sapCaUiIpeLink > .sapCaUiIpeCont {
 }
 .sapCaUiIpeEdit > .sapUiBtnS.sapUiBtnLite {
   visibility: hidden;
-  border-color: #fa3e05;
+  border-color: #a03906;
   right: 0;
   top: 0;
   border-style: solid;
@@ -1536,7 +1536,7 @@ html[data-sap-ui-browser*='ie'] .sapCaUiOverviewTileTitle {
   background: #ffffff;
 }
 .sapCaUiOverlay .sapCaUiChartToolBar .iconBar {
-  background: #f2f2f2;
+  background: #f25240;
 }
 .sapCaUiOverlay .sapCaUiChartToolBar .sapMBar-CTX .sapMBtnContent > .sapUiIcon,
 .sapCaUiChartToolBar .sapMBar-CTX .sapMBtnContent > .sapUiIcon {
@@ -1619,7 +1619,7 @@ outline: 1px dotted @sapUiInvertedFocus;
   font-size: 0.875rem;
 }
 .sapCaUiFileUploadFileLoadedText {
-  color: #ff5c33;
+  color: #9e1200;
   font-size: 1rem;
 }
 .sapCaUiFileUploadItemIcon {
@@ -1695,11 +1695,11 @@ outline: 1px dotted @sapUiInvertedFocus;
 /* CSS for control sap.ca.ui/OverviewTile.control */
 /* ============================================= */
 .sapCaUiOverviewTile {
-  border: 0.0625rem solid #e5e5e5;
+  border: 0.0625rem solid #f03d28;
   background-color: #ffffff;
 }
 .sapCaUiOverviewTile.sapMTileActive {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapCaUiOverviewTileTitle {
   font-family: Arial, Helvetica, sans-serif;
@@ -1715,7 +1715,7 @@ outline: 1px dotted @sapUiInvertedFocus;
   color: #666666;
 }
 .sapCaUiOverviewTile:focus {
-  border: 0.0625rem dotted #be2f04;
+  border: 0.0625rem dotted #652404;
   outline: 0;
 }
 /* END "OverviewTile.css" */
@@ -1730,7 +1730,7 @@ outline: 1px dotted @sapUiInvertedFocus;
   border: none;
 }
 .sapCaUiPTDeleteButton.sapMBtnActive .sapUiIcon:before {
-  color: #fa3e05;
+  color: #a03906;
 }
 .sapCaUiPTDeleteButton .sapUiIcon {
   outline: none;
@@ -1744,4 +1744,4 @@ outline: 1px dotted @sapUiInvertedFocus;
 /******************* FILE /UI5/sap/ca/ui/themes/custom1bluecrystal/library.less (Version 1.36.3) *******************/
 
 
-.sapThemeMetaData-UI5-sap-ca-ui{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ca/ui.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160425180205", "Source": "1.36.3", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-ca-ui{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/ca/ui.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.3.20160429080530", "Source": "1.36.3", "Engine": "1.16.1"}}');}

@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/suite/ui/microchart.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/suite/ui/microchart.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080526", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -1221,7 +1221,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   color: #535b5f;
 }
 .sap-desktop .sapSuiteAmc:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: 1px;
 }
@@ -1234,7 +1234,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   font-family: Arial, Helvetica, sans-serif;
 }
 .sap-desktop .sapSuiteBMCContent:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: .0625rem;
 }
@@ -1252,7 +1252,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   left: -0.125rem;
   right: -0.125rem;
   bottom: -0.75rem;
-  border: 0.0625rem dotted #be2f04;
+  border: 0.0625rem dotted #652404;
 }
 .sapSuiteBMCBarValue.Neutral,
 .sapSuiteBMCBarValueMarker.Neutral,
@@ -1288,7 +1288,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
 }
 .sapSuiteBMCTargetBarValue {
   border-left: 0.0625rem solid #ffffff;
-  background-color: #454545;
+  background-color: #000000;
 }
 .sapSuiteBMCTargetValue {
   color: #333333;
@@ -1312,22 +1312,22 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   background-color: #ffffff;
 }
 .sapSuiteBMCBar.ExtraLight {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapSuiteBMCBar.Light {
-  background-color: #e5e5e5;
+  background-color: #f03d28;
 }
 .sapSuiteBMCBar.Medium {
-  background-color: #dddddd;
+  background-color: #ef2f19;
 }
 .sapSuiteBMCBar.MediumLight {
   background-color: #edefef;
 }
 .sapSuiteBMCBar.Dark {
-  background-color: #777777;
+  background-color: #370904;
 }
 .sapSuiteBMCBar.ExtraDark {
-  background-color: #333333;
+  background-color: #000000;
 }
 .sapSuiteBMCBar.Darkest {
   background-color: #000000;
@@ -1338,7 +1338,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
 /* END "BulletMicroChart.less" */
 /* START "ColumnMicroChart.less" */
 .sap-desktop .sapSuiteCmc:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: 1px;
 }
@@ -1374,7 +1374,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   outline: none;
 }
 .sap-desktop .sapSuiteCmcBar:focus {
-  border-color: #be2f04;
+  border-color: #652404;
   border-style: dotted;
   border-width: 1px;
 }
@@ -1419,7 +1419,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   font-size: 0.875rem;
 }
 .sap-desktop .sapSuiteCmpChartContent:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: 1px;
 }
@@ -1427,7 +1427,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   outline: none;
 }
 .sap-desktop .sapSuiteCmpChartBar:focus {
-  border-color: #be2f04;
+  border-color: #652404;
   border-style: dotted;
   border-width: 1px;
 }
@@ -1435,10 +1435,10 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   outline: none;
 }
 .sapSuiteCmpChartBarNegNoValue {
-  background-color: #e2e2e2;
+  background-color: #f03722;
 }
 .sapSuiteCmpChartBarNoValue {
-  background-color: #e2e2e2;
+  background-color: #f03722;
 }
 .sapSuiteCmpChartItemTitle {
   color: #666666;
@@ -1465,7 +1465,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   font-size: 0.75rem;
 }
 .sap-desktop .sapSuiteDmc:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: .0625rem;
 }
@@ -1504,7 +1504,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
   background-color: #000000;
 }
 .sapSuiteDmcBarInternal {
-  background-color: #777777;
+  background-color: #370904;
 }
 /* END "DeltaMicroChart.less" */
 /* START "HarveyBallMicroChart.less" */
@@ -1512,7 +1512,7 @@ html[dir=rtl] .suiteHBMCTtlSclCnt {
 /* CSS for sap.suite.ui.microchart/HarveyBallMicroChart.control for 'sap_bluecrystal' theme */
 /* ============================================================================================ */
 .sap-desktop .suiteHBMC:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: .0625rem;
 }
@@ -1601,7 +1601,7 @@ html[data-sap-ui-os^="bb"] .suiteHBMCTtl.M {
 /* CSS for sap.suite.ui.microchart/RadialMicroChart.control for 'sap_bluecrystal' theme */
 /* ============================================================================================ */
 .sap-desktop .sapSuiteUiMicroChartRMC:focus {
-  outline-color: #be2f04;
+  outline-color: #652404;
   outline-style: dotted;
   outline-width: 0.0625rem;
 }
@@ -1618,7 +1618,7 @@ html[data-sap-ui-os^="bb"] .suiteHBMCTtl.M {
   stroke-width: 0.25rem;
 }
 .sapSuiteUiMicroChartRMCPathIncomplete {
-  stroke: #e5e5e5;
+  stroke: #f03d28;
 }
 .sapSuiteUiMicroChartRMCPathGood {
   stroke: #61a656;
@@ -1657,4 +1657,4 @@ html[data-sap-ui-os^="bb"] .suiteHBMCTtl.M {
 /******************* FILE /UI5/sap/suite/ui/microchart/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-suite-ui-microchart{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/suite/ui/microchart.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-suite-ui-microchart{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/suite/ui/microchart.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080526", "Source": "1.36.6", "Engine": "1.16.1"}}');}

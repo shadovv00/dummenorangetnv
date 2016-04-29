@@ -2,7 +2,7 @@
 * Copyright (c) 2013 SAP AG, All Rights Reserved
 *
 * Theming Engine 1.16.1
-* data:{"Path": "UI5.sap/me.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}
+* data:{"Path": "UI5.sap/me.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080524", "Source": "1.36.6", "Engine": "1.16.1"}}
 */
 
 /******************* FILE /Base/baseLib/baseTheme/base.less (Version 10.30.3.245729.0) *******************/
@@ -282,11 +282,11 @@
   line-height: 3rem;
 }
 .sapMeCalendar > .sapMeCalendarPrevious:active {
-  background: #fa3e05;
+  background: #a03906;
   color: #ffffff;
 }
 .sapMeCalendar > .sapMeCalendarNext:active {
-  background: #fa3e05;
+  background: #a03906;
   color: #ffffff;
 }
 .sapMeCalendar > .sapMeCalendarMonth > div > .sapMeCalendarMonthDay {
@@ -340,7 +340,7 @@ Approval colors
   border-bottom: 0.063rem solid #ffffff;
   border-left: 0.063rem solid #ffffff;
   color: #666666;
-  background: #f2f2f2;
+  background: #f25240;
   vertical-align: top;
 }
 /* Today */
@@ -349,7 +349,7 @@ Approval colors
 }
 /* Today */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarDayNow:before {
-  border: 0.125rem solid #af2b04;
+  border: 0.125rem solid #561f03;
 }
 /* Today not in month*/
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarDayNow:before.sapMeCalendarDayNotInCurrentMonth {
@@ -357,36 +357,36 @@ Approval colors
 }
 /* Weekend (00) */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekendDay {
-  background: #e5e5e5;
+  background: #f03d28;
 }
 /* Weekend (00) not in current month */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarDayNotInCurrentMonth,
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekendDay.sapMeCalendarDayNotInCurrentMonth {
   background: #ffffff;
-  color: #dddddd;
+  color: #ef2f19;
 }
 /* Selected */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarSelected:not(.sapMeCalendarDayNotInCurrentMonth) {
-  background: #fa3e05;
+  background: #a03906;
   color: #ffffff;
 }
 /* 00 Selected */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekDay6.sapMeCalendarSelected:not(.sapMeCalendarDayNotInCurrentMonth,.sapMeCalendarType10),
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekDay0.sapMeCalendarSelected:not(.sapMeCalendarDayNotInCurrentMonth,.sapMeCalendarType10) {
-  background: #cccccc;
+  background: #d7230f;
 }
 /* Types */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType00 {
-  background: #e5e5e5;
+  background: #f03d28;
 }
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarSelected:not(.sapMeCalendarDayNotInCurrentMonth).sapMeCalendarType00 {
-  background: #cccccc;
+  background: #d7230f;
 }
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType01 {
-  background-color: #fee2da;
+  background-color: #f1e1da;
 }
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType04 {
-  background-color: #fee2da;
+  background-color: #f1e1da;
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
 }
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType06 {
@@ -398,7 +398,7 @@ Approval colors
 }
 /* Type 10 to force to be displayed as working day */
 .sapMeCalendarApproval > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType10 {
-  background: #f2f2f2;
+  background: #f25240;
 }
 /*
 Action colors
@@ -408,14 +408,14 @@ Action colors
   border-bottom: 0.063rem solid #ffffff;
   border-left: 0.063rem solid #ffffff;
   color: #666666;
-  background: #f2f2f2;
+  background: #f25240;
   vertical-align: top;
 }
 /* Today */
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarDayNow:not(.sapMeCalendarDayNotInCurrentMonth) {
   font-weight: bolder;
   font-size: 1.25rem;
-  color: #fa3e05;
+  color: #a03906;
 }
 /* Today not in month*/
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarDayNow:before.sapMeCalendarDayNotInCurrentMonth {
@@ -423,24 +423,24 @@ Action colors
 }
 /* Weekend (00) */
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekendDay {
-  background: #e5e5e5;
+  background: #f03d28;
 }
 /* Weekend (00) not in current month */
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarDayNotInCurrentMonth,
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekendDay.sapMeCalendarDayNotInCurrentMonth {
   background: #ffffff;
-  color: #dddddd;
+  color: #ef2f19;
 }
 /* Selected */
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarSelected:not(.sapMeCalendarDayNotInCurrentMonth) {
-  border: 0.125rem solid #fa3e05;
+  border: 0.125rem solid #a03906;
 }
 /* Types */
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType00 {
-  background: #e5e5e5;
+  background: #f03d28;
 }
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarSelected:not(.sapMeCalendarDayNotInCurrentMonth).sapMeCalendarType00 {
-  background: #cccccc;
+  background: #d7230f;
 }
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType01 {
   background-color: #cce8d8;
@@ -458,7 +458,7 @@ Action colors
 }
 /* Type 10 to force to be displayed as working day */
 .sapMeCalendarAction > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarType10 {
-  background: #f2f2f2;
+  background: #f25240;
 }
 /* END "Calendar.css" */
 /* START "CalendarLegend.css" */
@@ -470,13 +470,13 @@ Action colors
 }
 /* Approval Design*/
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForType00 {
-  background-color: #e5e5e5;
+  background-color: #f03d28;
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForType01 {
-  background-color: #fee2da;
+  background-color: #f1e1da;
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForType04 {
-  background-color: #fee2da;
+  background-color: #f1e1da;
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForType06 {
@@ -487,22 +487,22 @@ Action colors
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForToday {
-  border: 0.125rem solid #fa3e05;
+  border: 0.125rem solid #a03906;
   width: 0.875rem;
   height: 0.875rem;
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForSelected {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForSelected00 {
-  background-color: #cccccc;
+  background-color: #d7230f;
 }
 .sapMeCalendarLegendApproval .sapUIMeLegendColorForNormal {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 /* Action Design*/
 .sapMeCalendarLegendAction .sapUIMeLegendColorForType00 {
-  background-color: #e5e5e5;
+  background-color: #f03d28;
 }
 .sapMeCalendarLegendAction .sapUIMeLegendColorForType01 {
   background-color: #cce8d8;
@@ -519,18 +519,18 @@ Action colors
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
 }
 .sapMeCalendarLegendAction .sapUIMeLegendColorForToday {
-  border: 0.125rem solid #fa3e05;
+  border: 0.125rem solid #a03906;
   width: 0.875rem;
   height: 0.875rem;
 }
 .sapMeCalendarLegendAction .sapUIMeLegendColorForSelected {
-  background-color: #fa3e05;
+  background-color: #a03906;
 }
 .sapMeCalendarLegendAction .sapUIMeLegendColorForSelected00 {
-  background-color: #cccccc;
+  background-color: #d7230f;
 }
 .sapMeCalendarLegendAction .sapUIMeLegendColorForNormal {
-  background-color: #f2f2f2;
+  background-color: #f25240;
 }
 .sapUIMeLegendIcon {
   background-color: #ffffff;
@@ -545,21 +545,21 @@ Action colors
 }
 .sapMeOverlapCalendarCalendar > .sapMeCalendar > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay.sapMeCalendarWeekendDay.sapMeCalendarDayNotInCurrentMonth,
 .sapMeOverlapCalendarCalendar > .sapMeCalendar > .sapMeCalendarMonth > div.sapMeCalendarMonthDays > .sapMeCalendarMonthDay {
-  background: #f2f2f2;
+  background: #f25240;
   color: #666666;
 }
 /* Overlap Calendar Grid */
 .sapMeOverlapCalendarGrid {
-  border-bottom-color: #e5e5e5;
+  border-bottom-color: #f03d28;
 }
 .sapMeOverlapCalendarOverlapIndicator {
-  border-top-color: #e5e5e5;
-  border-bottom-color: #e5e5e5;
+  border-top-color: #f03d28;
+  border-bottom-color: #f03d28;
 }
 .sapMeOverlapCalendarDay {
   border-bottom-color: #ffffff;
   border-left-color: #ffffff;
-  background: #f2f2f2;
+  background: #f25240;
 }
 .sapMeOverlapCalendarHalfDay {
   border-bottom-color: #ffffff;
@@ -567,72 +567,72 @@ Action colors
 }
 .sapMeOverlapCalendarTypeHalfDayEnd {
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #f2f2f2));
-  background: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f2f2f2 50%);
-  background: -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f2f2f2 50%);
-  background: -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f2f2f2 50%);
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #f2f2f2 50%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #f25240));
+  background: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f25240 50%);
+  background: -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f25240 50%);
+  background: -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f25240 50%);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #f25240 50%);
 }
 .sapMeOverlapCalendarType00 {
-  background-color: #e5e5e5;
+  background-color: #f03d28;
   z-index: -2;
 }
 .sapMeOverlapCalendarType00HalfDayStart {
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #e5e5e5), color-stop(50%, rgba(255, 255, 255, 0)));
-  background: -webkit-linear-gradient(top left, #e5e5e5 50%, rgba(255, 255, 255, 0) 50%);
-  background: -moz-linear-gradient(top left, #e5e5e5 50%, rgba(255, 255, 255, 0) 50%);
-  background: -o-linear-gradient(top left, #e5e5e5 50%, rgba(255, 255, 255, 0) 50%);
-  background: linear-gradient(to bottom right, #e5e5e5 50%, rgba(255, 255, 255, 0) 50%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #f03d28), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(top left, #f03d28 50%, rgba(255, 255, 255, 0) 50%);
+  background: -moz-linear-gradient(top left, #f03d28 50%, rgba(255, 255, 255, 0) 50%);
+  background: -o-linear-gradient(top left, #f03d28 50%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(to bottom right, #f03d28 50%, rgba(255, 255, 255, 0) 50%);
 }
 .sapMeOverlapCalendarType00HalfDayEnd {
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #e5e5e5));
-  background: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #e5e5e5 50%);
-  background: -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #e5e5e5 50%);
-  background: -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #e5e5e5 50%);
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #e5e5e5 50%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #f03d28));
+  background: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f03d28 50%);
+  background: -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f03d28 50%);
+  background: -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f03d28 50%);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #f03d28 50%);
 }
 .sapMeOverlapCalendarType01 {
-  background-color: #fee2da;
+  background-color: #f1e1da;
 }
 .sapMeOverlapCalendarType01HalfDayStart {
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #fee2da), color-stop(50%, rgba(255, 255, 255, 0)));
-  background: -webkit-linear-gradient(top left, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
-  background: -moz-linear-gradient(top left, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
-  background: -o-linear-gradient(top left, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
-  background: linear-gradient(to bottom right, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #f1e1da), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(top left, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
+  background: -moz-linear-gradient(top left, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
+  background: -o-linear-gradient(top left, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(to bottom right, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
 }
 .sapMeOverlapCalendarType01HalfDayEnd {
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #fee2da));
-  background: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
-  background: -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
-  background: -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #f1e1da));
+  background: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
+  background: -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
+  background: -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
 }
 .sapMeOverlapCalendarType04 {
-  background-color: #fee2da;
+  background-color: #f1e1da;
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
 }
 .sapMeOverlapCalendarType04HalfDayStart {
   z-index: 1;
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-gradient(linear, left top, right bottom, color-stop(50%, #fee2da), color-stop(50%, rgba(255, 255, 255, 0)));
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-linear-gradient(top left, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -moz-linear-gradient(top left, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -o-linear-gradient(top left, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), linear-gradient(to bottom right, #fee2da 50%, rgba(255, 255, 255, 0) 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-gradient(linear, left top, right bottom, color-stop(50%, #f1e1da), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-linear-gradient(top left, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -moz-linear-gradient(top left, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -o-linear-gradient(top left, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), linear-gradient(to bottom right, #f1e1da 50%, rgba(255, 255, 255, 0) 50%);
 }
 .sapMeOverlapCalendarType04HalfDayEnd {
   z-index: 1;
   background-image: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #fee2da));
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
-  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #fee2da 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-gradient(linear, left top, right bottom, color-stop(53%, rgba(255, 255, 255, 0)), color-stop(50%, #f1e1da));
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -webkit-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -moz-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), -o-linear-gradient(top left, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
+  background: url(../../../../../UI5/sap/me/themes/sap_bluecrystal/img/bg_white_transparent.png), linear-gradient(to bottom right, rgba(255, 255, 255, 0) 53%, #f1e1da 50%);
 }
 .sapMeOverlapCalendarType06 {
   background-color: #fae2a6;
@@ -869,8 +869,8 @@ Action colors
   position: relative;
   padding: 0.125rem 0;
   margin-top: 0.750rem;
-  border-top: 1px solid #bfbfbf;
-  border-bottom: 1px solid #bfbfbf;
+  border-top: 1px solid #bf1f0d;
+  border-bottom: 1px solid #bf1f0d;
   background-color: #ffffff;
 }
 .sapUIMeTabContainerTabContentScrollable {
@@ -899,8 +899,8 @@ Action colors
   transform: rotate(45deg);
   background-color: #ffffff;
   z-index: 0;
-  border-top: 1px solid #bfbfbf;
-  border-left: 1px solid #bfbfbf;
+  border-top: 1px solid #bf1f0d;
+  border-left: 1px solid #bf1f0d;
 }
 .sap-phone .sapUIMeTabContainerButtons {
   margin-top: 1rem;
@@ -925,4 +925,4 @@ Action colors
 /******************* FILE /UI5/sap/me/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-me{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/me.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160425180202", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-me{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/me.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080524", "Source": "1.36.6", "Engine": "1.16.1"}}');}

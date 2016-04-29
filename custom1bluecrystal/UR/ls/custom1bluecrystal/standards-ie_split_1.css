@@ -60,7 +60,7 @@
   speak: none;
 }
 .urPiImgSuccess {
-  color: #007cc0;
+  color: #DD1802;
 }
 .urPiImgSuccess:before {
   content: '\E203';
@@ -82,7 +82,7 @@
 .lsPhInUnav:before {
   vertical-align: bottom;
   font-size: 0.8rem;
-  color: #ccc;
+  color: #fff;
   content: '\E1AD';
   speak: none;
 }
@@ -96,7 +96,7 @@
 .lsPhInSucc:before {
   vertical-align: bottom;
   font-size: 0.8rem;
-  color: #007cc0;
+  color: #DD1802;
   content: '\E203';
   speak: none;
 }
@@ -112,7 +112,7 @@
 }
 .lsPGBtnIcon.urPGHNxtItemDsbl,
 .lsPGBtnIcon.urPGHPrevItemDsbl {
-  color: #ccc;
+  color: #fff;
 }
 .lsFRABtnIcon {
   font-family: 'SAP-icons';
@@ -152,14 +152,14 @@
   padding-left: 8px;
 }
 .urTWhlFlat .urBtnMnuSectionDsbl {
-  border-color: #d9d9d9;
+  border-color: #aa5f3d;
 }
 .lsBtnTypeD,
 .lsBtnTypeD:hover,
 .urTWhlFlat .lsBtnTypeD:hover {
-  background-color: #fa3e05;
+  background-color: #A03906;
   color: #fff;
-  border-color: #fa3e05;
+  border-color: #A03906;
   background-image: none;
 }
 .lsBtnTypeD .lsBtnTypeDspl ,
@@ -181,19 +181,19 @@
   line-height: 1.3em;
 }
 .lsTxtLblColor {
-  color: #666;
+  color: #541407;
 }
 .lsLnkOvfl {
   line-height: normal;
 }
 ::-webkit-scrollbar {
-  background-color: #f8f8f8;
+  background-color: #FCB299;
   width: 16px;
   height: 16px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #e6e6e6;
-  border: 1px solid #a9a9a9;
+  background-color: #EF8E73;
+  border: 1px solid #a85640;
 }
 ::-webkit-scrollbar-thumb:horizontal {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/h_hdl.png');
@@ -206,55 +206,55 @@
   background-position: center;
 }
 ::-webkit-scrollbar-corner {
-  background-color: #f8f8f8;
+  background-color: #FCB299;
 }
 ::-webkit-scrollbar-button:horizontal:start:decrement {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_h_prev.gif');
-  background-color: #e6e6e6;
+  background-color: #EF8E73;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #a85640;
 }
 ::-webkit-scrollbar-button:horizontal:end:increment {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_h_next.gif');
-  background-color: #e6e6e6;
+  background-color: #EF8E73;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #a85640;
 }
 ::-webkit-scrollbar-button:vertical:start:decrement {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_v_prev.gif');
-  background-color: #e6e6e6;
+  background-color: #EF8E73;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #a85640;
 }
 ::-webkit-scrollbar-button:vertical:end:increment {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_v_next.gif');
-  background-color: #e6e6e6;
+  background-color: #EF8E73;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #a85640;
 }
 body {
-  scrollbar-base-color: #f8f8f8 !important;
-  scrollbar-face-color: #e6e6e6 !important;
-  scrollbar-3dlight-color: #f8f8f8 !important;
-  scrollbar-highlight-color: #f8f8f8 !important;
-  scrollbar-track-color: #f8f8f8 !important;
-  scrollbar-arrow-color: #666 !important;
-  scrollbar-shadow-color: #f8f8f8 !important;
-  scrollbar-darkshadow-color: #e6e6e6 !important;
+  scrollbar-base-color: #FCB299 !important;
+  scrollbar-face-color: #EF8E73 !important;
+  scrollbar-3dlight-color: #FCB299 !important;
+  scrollbar-highlight-color: #FCB299 !important;
+  scrollbar-track-color: #FCB299 !important;
+  scrollbar-arrow-color: #A01616 !important;
+  scrollbar-shadow-color: #FCB299 !important;
+  scrollbar-darkshadow-color: #7A2306 !important;
 }
 .urScrl {
-  scrollbar-base-color: #f8f8f8 !important;
-  scrollbar-face-color: #e6e6e6 !important;
-  scrollbar-3dlight-color: #f8f8f8 !important;
-  scrollbar-highlight-color: #f8f8f8 !important;
-  scrollbar-track-color: #f8f8f8 !important;
-  scrollbar-arrow-color: #666 !important;
-  scrollbar-shadow-color: #f8f8f8 !important;
-  scrollbar-darkshadow-color: #e6e6e6 !important;
+  scrollbar-base-color: #FCB299 !important;
+  scrollbar-face-color: #EF8E73 !important;
+  scrollbar-3dlight-color: #FCB299 !important;
+  scrollbar-highlight-color: #FCB299 !important;
+  scrollbar-track-color: #FCB299 !important;
+  scrollbar-arrow-color: #A01616 !important;
+  scrollbar-shadow-color: #FCB299 !important;
+  scrollbar-darkshadow-color: #7A2306 !important;
 }
 
 /**
@@ -290,47 +290,47 @@ body {
   background-color: #fff;
 }
 ::-webkit-scrollbar {
-  background-color: #f8f8f8;
+  background-color: #FCB299;
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #e6e6e6;
-  border: 1px solid #e6e6e6;
+  background-color: #EF8E73;
+  border: 1px solid #7A2306;
 }
 ::-webkit-scrollbar-button:horizontal:start:decrement {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_h_prev.gif');
-  background-color: #f8f8f8;
+  background-color: #FCB299;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #f8f8f8;
+  border: 1px solid #FCB299;
 }
 html[dir="rtl"] ::-webkit-scrollbar-button:horizontal:start:decrement {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_h_next.gif');
 }
 ::-webkit-scrollbar-button:horizontal:end:increment {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_h_next.gif');
-  background-color: #f8f8f8;
+  background-color: #FCB299;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #f8f8f8;
+  border: 1px solid #FCB299;
 }
 html[dir="rtl"] ::-webkit-scrollbar-button:horizontal:end:increment {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_h_prev.gif');
 }
 ::-webkit-scrollbar-button:vertical:start:decrement {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_v_prev.gif');
-  background-color: #f8f8f8;
+  background-color: #FCB299;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #f8f8f8;
+  border: 1px solid #FCB299;
 }
 ::-webkit-scrollbar-button:vertical:end:increment {
   background-image: url('../../../UR/baseLib/sap_goldreflection/img/scrollbar/ico12_v_next.gif');
-  background-color: #f8f8f8;
+  background-color: #FCB299;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid #f8f8f8;
+  border: 1px solid #FCB299;
 }
 .lsHdArCenter2 {
   border-bottom: 0 solid #fb531f !important;
@@ -419,20 +419,12 @@ html[data-sap-ls-system-useragent^="MSIE"] .lsToken {
   padding: 0px 0px 0px 7px;
 }
 .urBdyStd {
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fce2df), color-stop(50%,#fbe1da), color-stop(100%,#f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-attachment: fixed;
+  background-color: #FFAA72;
+  background-image: none;
 }
 .urBdyStd.urBdyShellStd {
-  background-image: -moz-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fce2df), color-stop(50%,#fbe1da), color-stop(100%,#f6e9db));
-  background-image: -webkit-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: -ms-linear-gradient(top, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-image: linear-gradient(to bottom, #fce2df 0%, #fbe1da 50%, #f6e9db 100%);
-  background-attachment: fixed;
+  background-color: #FFAA72;
+  background-image: none;
 }
 .urPgHT2 {
   border-top: 0 solid #fb531f;
@@ -444,20 +436,20 @@ urPgHIEmp2 .urTWhlFlat,
 .urPgHIEmp2 .urTWhlTrans,
 .urPgHIEmp2 .urTWhl {
   height: 2.5rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #f03d28;
 }
 .urEdf2TxtHv.urEdf2TxtRo,
 .lsEdf3HlpBtnRo.lsEdf3HlpBtnHv,
 .lsEdf3HlpBtnRo.urEdf2TxtHv {
   background-color: rgba(242,242,242,0.5);
-  border-color: #ccc !important;
+  border-color: #c11003 !important;
 }
 .lsEdf3HlpBtnRo.lsEdf3HlpBtnHvCoB {
   background-image: none;
 }
 .urPgHITrans .sapLsFPMMessageArea {
   min-height: 2.5rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #f03d28;
   background-color: #fff;
 }
 .sapLSStandalonePHHeader .lsPgHTLogo {
@@ -472,10 +464,10 @@ urPgHIEmp2 .urTWhlFlat,
 }
 .sapLSStandalonePHHeader.urPgHT2,
 .sapLSStandalonePHHeader.urPgHT2Small {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7 ), to(#ededed));
-  background: -moz-linear-gradient(center top, #f7f7f7 1px, #ededed 100%);
-  background: -ms-linear-gradient(center top, #f7f7f7 1px, #ededed 100%);
-  background-color: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f35b4a ), to(#f14936));
+  background: -moz-linear-gradient(center top, #f35b4a 1px, #f14936 100%);
+  background: -ms-linear-gradient(center top, #f35b4a 1px, #f14936 100%);
+  background-color: #f25240;
   border-top: 4px solid #fb531f;
 }
 .lsPnstLabelSel {
@@ -500,7 +492,7 @@ urPgHIEmp2 .urTWhlFlat,
   line-height: 0.75rem;
 }
 .lsCBImgStdDef {
-  border-color: #bfbfbf;
+  border-color: #A80E03;
   background-color: #fff;
 }
 .lsCBImgStdDsbl {
@@ -516,19 +508,19 @@ urPgHIEmp2 .urTWhlFlat,
 }
 .lsCBImgStdDef .lsRBImgSel,
 .lsCBImgStdDef .lsTriBImgInd {
-  background-color: #fa3e05;
+  background-color: #A03906;
 }
 .lsCBImgStdDefHv:hover,
 .urCLbl:hover .lsCBImgStdDefHv {
-  border-color: #fa3e05;
+  border-color: #A03906;
 }
 .lsCBImgStdRO {
-  border-color: #bfbfbf;
+  border-color: #A80E03;
   background-color: rgba(242,242,242,0.5);
 }
 .lsCBImgStdRO .lsRBImgSel,
 .lsCBImgStdRO .lsTriBImgInd {
-  background-color: #666;
+  background-color: #000;
 }
 .lsCBImgStdErr {
   border-color: #e52929;
@@ -597,7 +589,7 @@ urPgHIEmp2 .urTWhlFlat,
 }
 .lsCBImgStdDef .lsCBImgSel:before,
 .lsCBImgStdDef .lsTriBImgSel:before {
-  color: #fa3e05;
+  color: #A03906;
   content: '\E05B';
 }
 .lsCBImgStdErr .lsCBImgSel:before,
@@ -610,7 +602,7 @@ urPgHIEmp2 .urTWhlFlat,
 }
 .lsCBImgStdRO .lsCBImgSel:before,
 .lsCBImgStdRO .lsTriBImgSel:before {
-  color: #666;
+  color: #000;
 }
 .lsTriImgDspl {
   display: none;
@@ -647,7 +639,7 @@ urPgHIEmp2 .urTWhlFlat,
 .urST4Toolbar .urTWhlFlat,
 .urST4Toolbar .urTWhl,
 .urST4Toolbar .urTWhlEmph {
-  background-color: #f7f7f7;
+  background-color: #f35b4a;
 }
 .lsPnCntTbar .urTWhlEmph,
 .lsPnCntTbar .urTWhl,
@@ -707,7 +699,7 @@ html[dir="rtl"] .urPGHNxtItemDsbl {
   transform: rotate(180deg);
 }
 .lsTbsPanelDesign .lsTbsPanelCnt {
-  border-bottom: 2px solid #ddd !important;
+  border-bottom: 2px solid #ef2f19 !important;
   background-color: transparent;
   height: 2.33rem;
   vertical-align: middle;
@@ -777,7 +769,7 @@ html[dir="rtl"] .urPGHNxtItemDsbl {
 }
 html[data-sap-ls-system-userAgent^="MSIE9.0"],
 html[data-sap-ls-system-userAgent^="MSIE8.0"] {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fffce2df', EndColorStr='#fff6e9db');
+  filter: none;
 }
 .lsTbarLarge .urTLbl {
   display: inline-block;
@@ -800,7 +792,7 @@ html[data-sap-ls-system-userAgent^="MSIE8.0"] {
 .lsTwhlFooter .urLnkReportGl20,
 .lsTwhlFooter .urLnkReportGl20:hover,
 .lsTwhlFooter .urLnkChoice {
-  color: #fff !important;
+  color: #ff7c6b !important;
 }
 .lsTwhlFooter .urBtnStd,
 .lsTwhlFooter .urBtnStdNextStep,
@@ -836,8 +828,8 @@ html[data-sap-ls-system-userAgent^="MSIE8.0"] {
 .lsTwhlFooter .urBtnStdPrevStep:hover,
 .lsTwhlFooter .urBtnTgl:hover,
 .lsTwhlFooter .urBtnTgl:hover .urBtnCnt {
-  background-color: rgba(234,234,234,0.1) !important;
-  border-color: rgba(234,234,234,0.1) !important;
+  background-color: rgba(252,69,33,0.1) !important;
+  border-color: rgba(252,69,33,0.1) !important;
   color: #fff !important;
 }
 .lsTwhlFooter .urBtnStdDB {
@@ -847,7 +839,7 @@ html[data-sap-ls-system-userAgent^="MSIE8.0"] {
   color: #fff;
 }
 .lsTwhlFooter .lsTbarBtnOvfl .lsTbarOvflOpener {
-  color: #ccc;
+  color: #fff;
 }
 .lsTwhlFooter .urBtnStd .urCnHlp,
 .lsTwhlFooter .urBtnStd:hover .urCnHlp,
@@ -861,7 +853,7 @@ html[data-sap-ls-system-userAgent^="MSIE8.0"] {
   vertical-align: middle;
 }
 .lsTwhlFooter {
-  background-color: #363e43 !important;
+  background-color: #E24331 !important;
   opacity: 0.98;
   height: 2.5rem;
   box-sizing: border-box;
@@ -940,12 +932,12 @@ html[data-sap-ls-system-userAgent^="MSIE8.0"] {
   padding-top: 10px;
 }
 .urPrInNeutral {
-  background: -moz-linear-gradient(top,#fb511e 0,#e13805 100%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fb511e),color-stop(100%,#e13805));
-  background: -webkit-linear-gradient(top,#fb511e 0,#e13805 100%);
-  background: -ms-linear-gradient(top,#fb511e 0,#e13805 100%);
-  background: linear-gradient(to bottom,#fb511e 0,#e13805 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fb511e,endColorstr=#e13805,GradientType=0);
+  background: -moz-linear-gradient(top,#b94207 0,#873005 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#b94207),color-stop(100%,#873005));
+  background: -webkit-linear-gradient(top,#b94207 0,#873005 100%);
+  background: -ms-linear-gradient(top,#b94207 0,#873005 100%);
+  background: linear-gradient(to bottom,#b94207 0,#873005 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b94207,endColorstr=#873005,GradientType=0);
 }
 .urPrInValueCritical {
   background: -moz-linear-gradient(top,#eb5200 0,#b84000 100%);
