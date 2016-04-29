@@ -29,6 +29,8 @@
 				<Button icon="sap-icon://edit" press="goToEditor"/>
 			</contentRight>
 		</Bar>
+			<!--<Panel width="100%" class="orangePanel" height="100%">-->
+
 		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
 			<cc:columns>
 				<cc:BayColumn text="GH-bay" />
@@ -166,5 +168,6 @@
 				</cc:ftcells>
 			</cc:BayRowGroup>
 		</cc:BayTable>
+		<!--</Panel>-->
 	</Page>
 </mvc:View>
