@@ -11,8 +11,18 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"sourceTemplate": {
-			"id": "ui5template.basicSAPUI5ApplicationProject",
-			"version": "1.32.0"
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"dopa_persistence": {
+				"uri": "/destinations/DOdestination/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "webapp/localService/metadata.xml"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -29,12 +39,9 @@
 		"deviceTypes": {
 			"desktop": true,
 			"tablet": true,
-			"phone": true
+			"phone": false
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_bluecrystal"
-		]
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -60,14 +67,20 @@
 				"settings": {
 					"bundleName": "dummenorangetnv.i18n.i18n"
 				}
+			},
+			"odataModel": {
+				"dataSource": "dopa_persistence",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"useBatch": false,
+					"json": false
+				}
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		}
 	},
 	"sap.platform.hcp": {

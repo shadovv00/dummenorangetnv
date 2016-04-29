@@ -1,6 +1,6 @@
 {
   "welcomeFile": "/webapp/index.html",
-    "authenticationMethod": "none",
+  "authenticationMethod": "none",
   "routes": [
     {
       "path": "/resources",
@@ -35,10 +35,16 @@
         "name": "custom1bluecrystal"
       },
       "description": "Route for theme"
+    },
+    {
+      "path": "/destinations/DOdestination",
+      "target": {
+        "type": "destination",
+        "name": "DOdestination"
+      },
+      "description": "DOdestination"
     }
   ],
   "sendWelcomeFileRedirect": true,
-  "cacheControl": [
-
-  ]
+  "cacheControl": []
 }

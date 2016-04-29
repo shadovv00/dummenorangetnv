@@ -129,7 +129,7 @@
 											        }
 										}"></Text>
 				 					</FlexBox>
-									<VBox   width="91%" justifyContent="Begin">
+									<VBox   width="91%" >
 										<TextArea value="{bayDetailModel>text}"  enabled='true' editable='false'  valueState="None" width="100%" height="auto"></TextArea>
 				 					</VBox>
 								</HBox>

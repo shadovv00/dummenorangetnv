@@ -6,7 +6,7 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": false,
+    "buildRequired": true,
     "lastBuildDateTime": "Fri, 29 Apr 2016 07:00:10 GMT"
   },
   "generation": [
@@ -14,6 +14,11 @@
       "templateId": "ui5template.basicSAPUI5ApplicationProject",
       "templateVersion": "1.32.0",
       "dateTimeStamp": "Mon, 25 Apr 2016 08:25:12 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Fri, 29 Apr 2016 10:02:38 GMT"
     }
   ],
   "translation": {
@@ -39,5 +44,12 @@
     "account": "p1941590108trial",
     "name": "dummenorange",
     "lastVersionWeTriedToDeploy": "1.0.0.3.6.8"
+  },
+  "mockpreview": {
+    "mockUri": "/destinations/DOdestination",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
   }
 }
