@@ -24,9 +24,6 @@
 .bay-row-paddings {
 	padding: 0 1rem;
 }
-.bay-table-cell-paddings th, .bay-table-cell-paddings td {
-	padding: 0 0.7rem;
-}
 .bay-row-border-bottom td {
 	border-bottom: 2px solid black;
 }

@@ -5,7 +5,7 @@ sap.ui.define([
 	return Control.extend("dummenorangetnv.control.BayRow", {
 		metadata : {
 			properties : {
-				"ghbay": {type: "int", defaultValue: 0}
+				"ghbay": {type: "int", defaultValue: -1}
 			},
 			aggregations : {
 				"cells" : {type : "dummenorangetnv.control.BayCell", multiple : true, singularName : "cell"}
@@ -21,8 +21,8 @@ sap.ui.define([
 			
 			oRM.write("<tr");
 			oRM.writeControlData(oControl);
-			oRM.addClass("bay-row-height");
-			oRM.addClass("bay-row-paddings");
+// 			oRM.addClass("bay-row-height");
+// 			oRM.addClass("bay-row-paddings");
 			oRM.writeClasses();
 			oRM.write(">");
 			if(aCells[0]) {

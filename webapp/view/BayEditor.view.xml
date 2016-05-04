@@ -17,9 +17,11 @@
 				<Button icon="sap-icon://sys-enter-2" press="onPrevPage"/>
 			</contentRight>
 		</Bar>
-		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
+		<cc:BayTable
+		    id="bay_table_id"
+		    items="{path: '/data'}">
 			<cc:columns>
-				<cc:BayColumn text="GH-bay" colspan="2"/>
+				<cc:BayColumn text="GH-bay" colspan="2" />
 				<cc:BayColumn text="" width="9rem"/>
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
@@ -28,6 +30,7 @@
 				<cc:BayColumn text="root" />
 				<cc:BayColumn text="VEG" />
 				<cc:BayColumn text="REA" />
+				<cc:BayColumn text="KO" />
 				<cc:BayColumn text="Harv" />
 				<cc:BayColumn text="OOG" />
 				<cc:BayColumn text="Vaca" />
@@ -39,20 +42,22 @@
 			                path: 'plant/0/planted_date',
 					        formatter: '.formatOddWeek'
 				        }">
-			    <cc:BayRow>
+			    <cc:BayRow
+			        frstClmn="2">
 					<cc:BayCell>
-					    <ObjectNumber 
-							number=""
-							emphasized="false"/>
+					    <!--<Text-->
+					    <!--    text=""-->
+					    <!--    width="100px" />-->
 					</cc:BayCell>
 					<cc:BayCell>
-			            <!--<Button -->
-			            <!--    type="Transparent"-->
-    			        <!--    icon="sap-icon://decline" -->
-    			        <!--    press="deleteBayRow"/>-->
-    			        <core:Icon color="#541407"
-    			            src= "sap-icon://decline"
-    			            press="deleteBayRow"/>
+                    <!--<Button -->
+                    <!--    type="Transparent"-->
+                    <!--    icon="sap-icon://decline" -->
+                    <!--    press="deleteBayRow"/>-->
+                    <core:Icon
+                        color="#541407"
+                        src= "sap-icon://decline"
+                        press="deleteBayRow"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    rederror="{
@@ -102,6 +107,10 @@
 					</cc:BayCell>
 					<cc:BayCell>
 					    <Input 
+					        value="{ko}"/>
+					</cc:BayCell>
+					<cc:BayCell>
+					    <Input 
 					        value="{horv}"/>
 					</cc:BayCell>
 					<cc:BayCell>
@@ -120,32 +129,34 @@
 					        value="{vaca}"/>
 					</cc:BayCell>
 				</cc:BayRow>
-				<cc:ftcells>
-				    <cc:BayCell />
-				    <cc:BayCell />
-			        <cc:BayCell>
-			            <c:ProgressIndicator 
-			                class="progress-bar-text-middle"
-			                percentValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentInt'
-			                        }"
-			                height="4em"
-			                displayValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentFloat'
-			                        } %"/>
-			        </cc:BayCell>
-			        <cc:BayCell
-			            colspan="9">
-			            <TextArea
-			                width="100%"
-			                rows="1"
-			                placeholder="Comments"
-			                value="{comments}"/>
-			        </cc:BayCell>
-			        <cc:BayCell />
-				</cc:ftcells>
+				<cc:ftRows>
+                    <cc:BayRow>
+                        <cc:BayCell />
+                        <cc:BayCell />
+                        <cc:BayCell>
+                            <c:ProgressIndicator 
+                                class="progress-bar-text-middle"
+                                percentValue="{
+                                            path: 'plant',
+                                            formatter: '.calculatePercentInt'
+                                        }"
+                                height="4em"
+                                displayValue="{
+                                            path: 'plant',
+                                            formatter: '.calculatePercentFloat'
+                                        } %"/>
+                            </cc:BayCell>
+                            <cc:BayCell
+                                colspan="10">
+                                <TextArea
+                                    width="100%"
+                                    rows="1"
+                                    placeholder="Comments"
+                                    value="{comments}"/>
+                            </cc:BayCell>
+                        <cc:BayCell />
+                    </cc:BayRow>
+				</cc:ftRows>
 			</cc:BayRowGroup>
 		</cc:BayTable>
 	</Page>

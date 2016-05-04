@@ -33,13 +33,16 @@ sap.ui.define([
 			if(rederror) {
 			    oRM.addStyle("color", "red");
 			}
+			oRM.addStyle("font-size", "0.875rem");
 			oRM.writeStyles();
 			oRM.write(">");
-			if(+value) {
-			    oContent.setNumber(parseInt(value));
+			if(oContent) {
+			    oRM.renderControl(oContent);
+			} else {
+			    if(+value && +value !== -1) {
+    			    oRM.write(value);
+    			}
 			}
-			oRM.renderControl(oContent);
-			// oRM.write(value);
 			oRM.write("</td>");
 		}
 	});

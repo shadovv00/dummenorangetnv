@@ -17,7 +17,7 @@ sap.ui.define([
 		    
 			oRM.write("<th");
 			oRM.writeControlData(oControl);
-			oRM.addClass("bay-row-paddings");
+// 			oRM.addClass("bay-row-paddings");
 			oRM.addClass("bay-row-border-bottom");
 			oRM.writeClasses();
 			oRM.addStyle("width", oControl.getWidth());

@@ -6,7 +6,8 @@ sap.ui.define([
 	return Control.extend("dummenorangetnv.control.BayTable", {
 		metadata : {
 			properties: {
-				"width" : {type : "sap.ui.core.CSSSize", defaultValue : "99.9%"}
+				"width" : {type : "sap.ui.core.CSSSize", defaultValue : "99.9%"},
+				"minWidth" : {type : "sap.ui.core.CSSSize", defaultValue : "99.9%"}
 				// "height" : {type : "sap.ui.core.CSSSize", defaultValue : "100%"}	
 			},
 			aggregations : {
@@ -25,6 +26,8 @@ sap.ui.define([
 			var key, x;
 			var aColumns = oControl.getColumns();
 			var aBayRowGroups = oControl.getItems();
+			var width = oControl.getWidth();
+			var minWidth = oControl.getMinWidth();
 			
 			oRM.write("<div");
 			oRM.writeControlData(oControl);
@@ -35,9 +38,9 @@ sap.ui.define([
 			oRM.write("<table");
 			oRM.addClass("-visible-header-table");
 			oRM.addClass("bay-table");
-			oRM.addClass("bay-table-cell-paddings");
 			oRM.writeClasses();
-			oRM.addStyle("width", oControl.getWidth());
+			oRM.addStyle("width", width);
+			oRM.addStyle("min-width", minWidth);
 			oRM.writeStyles();
 			oRM.write(">");
 			oRM.write("<thead>");
@@ -61,7 +64,8 @@ sap.ui.define([
 			oRM.addClass("bay-table");
 			oRM.addClass("bay-table-cell-paddings");
 			oRM.writeClasses();
-			oRM.addStyle("width", oControl.getWidth());
+			oRM.addStyle("width", width);
+			oRM.addStyle("min-width", minWidth);
 			oRM.writeStyles();
 			oRM.write(">");
 			

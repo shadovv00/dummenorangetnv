@@ -20,9 +20,9 @@
 				<Button icon="sap-icon://print" press="printBay"/>
 			</contentLeft>
 			<contentRight>
-				<!--<Button -->
-				<!--    class="sap-custom-icon-adjust"-->
-				<!--    icon="images/cannabis-leaf-favicon.ico" press="doEditing"/>-->
+				<Button 
+				    class="sap-custom-icon-adjust"
+				    icon="images/cannabis-leaf-favicon.ico" press="addUser"/>
 				<Button
 				    class="sap-custom-icon-adjust"
 				    icon="images/simple-leaf-favicon.ico" press="doEditing" />
@@ -42,6 +42,7 @@
 				<cc:BayColumn text="root" />
 				<cc:BayColumn text="VEG" />
 				<cc:BayColumn text="REA" />
+			    <cc:BayColumn text="KO" />
 				<cc:BayColumn text="Harv" />
 				<cc:BayColumn text="OOG" />
 				<cc:BayColumn text="Vaca" />
@@ -53,11 +54,12 @@
 			                path: 'plant/0/planted_date',
 					        formatter: '.formatOddWeek'
 				        }">
-			    <cc:BayRow>
+			    <cc:BayRow
+			        class="bay-row-height">
 					<cc:BayCell>
-						<ObjectNumber 
-							number=""
-							emphasized="false"/>
+						<!--<ObjectNumber -->
+						<!--	number=""-->
+						<!--	emphasized="false"/>-->
 					</cc:BayCell>
 					<cc:BayCell
 					    rederror="{
@@ -125,6 +127,11 @@
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
+							number="{ko}"
+							emphasized="false"/>
+					</cc:BayCell>
+					<cc:BayCell>
+						<ObjectNumber 
 							number="{horv}"
 							emphasized="false"/>
 					</cc:BayCell>
@@ -141,31 +148,33 @@
 							emphasized="false"/>
 					</cc:BayCell>
 				</cc:BayRow>
-				<cc:ftcells>
-				    <cc:BayCell />
-			        <cc:BayCell>
-			            <c:ProgressIndicator 
-			                class="progress-bar-text-middle"
-			                percentValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentInt'
-			                        }"
-			                height="4em"
-			                displayValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentFloat'
-			                        } %"/>
-			        </cc:BayCell>
-			        <cc:BayCell
-			            colspan="9">
-			            <Text text="{comments}"/>
-			        </cc:BayCell>
-			        <cc:BayCell>
-			            <Button
-			                icon="sap-icon://navigation-right-arrow"
-			                press="goToDetailView"/>
-			        </cc:BayCell>
-				</cc:ftcells>
+				<cc:ftRows>
+				    <cc:BayRow>
+				        <cc:BayCell />
+    			        <cc:BayCell>
+    			            <c:ProgressIndicator 
+    			                class="progress-bar-text-middle"
+    			                percentValue="{
+        			                        path: 'plant',
+        			                        formatter: '.calculatePercentInt'
+    			                        }"
+    			                height="4em"
+    			                displayValue="{
+        			                        path: 'plant',
+        			                        formatter: '.calculatePercentFloat'
+    			                        } %"/>
+    			        </cc:BayCell>
+    			        <cc:BayCell
+    			            colspan="10">
+    			            <Text text="{comments}"/>
+    			        </cc:BayCell>
+    			        <cc:BayCell>
+    			            <Button
+    			                icon="sap-icon://navigation-right-arrow"
+    			                press="goToDetailView"/>
+    			        </cc:BayCell>
+				    </cc:BayRow>
+				</cc:ftRows>
 			</cc:BayRowGroup>
 		</cc:BayTable>
 		<!--</Panel>-->
