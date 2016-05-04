@@ -1288,7 +1288,7 @@ html[data-sap-ui-browser^="ie"] .sapMBtn:focus > .sapMToggleBtnPressed.sapMFocus
   background: #bf1f0d;
 }
 .sapMFooter-CTX > .sapMTBSeparator {
-  background: #ef958a;
+  background: #f43e1a;
 }
 /* END "ToolbarSeparator.less" */
 /* START "UploadCollection.less" */
@@ -1458,4 +1458,4 @@ html[data-sap-ui-browser^="ie"] .sapMBtn:focus > .sapMToggleBtnPressed.sapMFocus
 /******************* FILE /UI5/sap/m/themes/custom1bluecrystal/library.less (Version 1.36.6) *******************/
 
 
-.sapThemeMetaData-UI5-sap-m{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/m.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160429080523", "Source": "1.36.6", "Engine": "1.16.1"}}');}
+.sapThemeMetaData-UI5-sap-m{background-image: url('data:text/plain;utf-8,{"Path": "UI5.sap/m.custom1bluecrystal.library", "PathPattern": "/%frameworkId%/%libId%/themes/%themeId%/%fileId%.css", "IECssRuleLimitFiles": [], "Extends": ["sap_bluecrystal","base"], "Version": { "Build":"1.36.6.20160504103948", "Source": "1.36.6", "Engine": "1.16.1"}}');}
