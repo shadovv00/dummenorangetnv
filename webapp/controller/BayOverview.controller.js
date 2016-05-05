@@ -236,8 +236,6 @@ sap.ui.define([
 					viewName: "dummenorangetnv.view.BayEditor",
 					type: sap.ui.core.mvc.ViewType.XML
 				});
-				console.log(oBayEditorView);
-				console.log("current date > " + oDatePicker.getValue());
 				oBayEditorView.data("overview_date_str", oDatePicker.getValue());
 				app.addPage(oBayEditorView);
 				app.to(oBayEditorView);

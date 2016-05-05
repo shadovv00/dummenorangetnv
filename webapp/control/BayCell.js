@@ -9,7 +9,8 @@ sap.ui.define([
 			properties : {
 				"value": {type : "string", defaultValue : ""},
 				"colspan": {type : "int", defaultValue : 1},
-				"rederror": {type : "boolean", defaultValue: false}
+				"rederror": {type : "boolean", defaultValue: false},
+				"width" : {type : "sap.ui.core.CSSSize"}
 			},
 			aggregations : {
 				"content" : {type : "sap.ui.core.Control", multiple : false}
@@ -22,6 +23,8 @@ sap.ui.define([
 			var value = oControl.getValue();
 			var colspan = oControl.getColspan();
 			var rederror = oControl.getRederror();
+			var width = oControl.getWidth();
+			
 			var oContent = oControl.getContent();
 			
 			oRM.write("<td");
@@ -34,6 +37,7 @@ sap.ui.define([
 			    oRM.addStyle("color", "red");
 			}
 			oRM.addStyle("font-size", "0.875rem");
+			oRM.addStyle("width", width);
 			oRM.writeStyles();
 			oRM.write(">");
 			if(oContent) {

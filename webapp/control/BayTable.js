@@ -1,13 +1,12 @@
 sap.ui.define([
-	"sap/ui/core/Control",
-	"dummenorangetnv/control/BayRowGroup"
+    "sap/ui/core/Control",
+    "dummenorangetnv/control/BayRowGroup"
 ], function (Control, BayRowGroup) {
 	"use strict";
 	return Control.extend("dummenorangetnv.control.BayTable", {
 		metadata : {
 			properties: {
-				"width" : {type : "sap.ui.core.CSSSize", defaultValue : "99.9%"},
-				"minWidth" : {type : "sap.ui.core.CSSSize", defaultValue : "99.9%"}
+				"width" : {type : "sap.ui.core.CSSSize", defaultValue : "99.9%"}
 				// "height" : {type : "sap.ui.core.CSSSize", defaultValue : "100%"}	
 			},
 			aggregations : {
@@ -27,7 +26,6 @@ sap.ui.define([
 			var aColumns = oControl.getColumns();
 			var aBayRowGroups = oControl.getItems();
 			var width = oControl.getWidth();
-			var minWidth = oControl.getMinWidth();
 			
 			oRM.write("<div");
 			oRM.writeControlData(oControl);
@@ -35,17 +33,27 @@ sap.ui.define([
 			oRM.writeClasses();
 			oRM.write(">");
 			
+			oRM.write("<div");
+			oRM.addClass("bisible-header-wrapper");
+			oRM.writeClasses();
+			oRM.addStyle("width", "100%");
+			oRM.writeStyles();
+			oRM.write(">");
 			oRM.write("<table");
 			oRM.addClass("-visible-header-table");
 			oRM.addClass("bay-table");
+			oRM.addClass("sapMListModeNone");
+			oRM.addClass("sapMListShowSeparatorsAll");
+			oRM.addClass("sapMListTbl");
+			oRM.addClass("sapMListUl");
 			oRM.writeClasses();
 			oRM.addStyle("width", width);
-			oRM.addStyle("min-width", minWidth);
 			oRM.writeStyles();
 			oRM.write(">");
 			oRM.write("<thead>");
 			oRM.write("<tr");
 			oRM.addClass("-visible-header");
+			oRM.addClass("sapUiTableColHdrCnt");
 			oRM.addClass("bay-row");
 			oRM.writeClasses();
 			oRM.write(">");
@@ -55,6 +63,7 @@ sap.ui.define([
 			}
 			oRM.write("</tr></thead>");
 			oRM.write("</table>");
+			oRM.write("</div>");
 			
 			oRM.write("<div");
 			oRM.addClass("bay-table-inner-wrapper");
@@ -65,7 +74,6 @@ sap.ui.define([
 			oRM.addClass("bay-table-cell-paddings");
 			oRM.writeClasses();
 			oRM.addStyle("width", width);
-			oRM.addStyle("min-width", minWidth);
 			oRM.writeStyles();
 			oRM.write(">");
 			
@@ -77,7 +85,13 @@ sap.ui.define([
 				oRM.renderControl(aColumns[x]);
 			}
 			oRM.write("</tr></thead>");
+			var prevOddWeek = -1, currentOddWeek = -1;
 			for(x = 0; x < aBayRowGroups.length; x++) {
+			    currentOddWeek = aBayRowGroups[x].getOddweek();
+			    if(currentOddWeek === -1) {
+			        aBayRowGroups[x].setOddweek(prevOddWeek);
+			    }
+			    prevOddWeek = currentOddWeek;
 				oRM.renderControl(aBayRowGroups[x]);
 			}
 			oRM.write("</table>");
@@ -94,7 +108,7 @@ sap.ui.define([
 				jHeaderTr2 = jThisBay.find("tr.-visible-header");
 				jHeader1 = jHeaderTr1.find("th");
 				jHeader2 = jHeaderTr2.find("th");
-				if($(jTable2).width() !== $(jHeaderTr1).width()) {
+				if($(jTable2).width() !== $(jHeaderTr1).width() && $(jHeaderTr1).width()) {
 					$(jTable2).width($(jHeaderTr1).width());
 					for(var x = 1; x < jHeader1.length; x++) {
 						$(jHeader2[x]).width($(jHeader1[x]).width() + 1);

@@ -31,9 +31,12 @@
 		</Bar>
 			<!--<Panel width="100%" class="orangePanel" height="100%">-->
 
-		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
+		<cc:BayTable
+		    id="bay_table_id"
+		    items="{path: '/data'}"
+		    class="sapUiSmallMarginBeginEnd bay-table-border">
 			<cc:columns>
-				<cc:BayColumn text="GH-bay" />
+				<cc:BayColumn text="GH-bay" class="bay-table-cell"/>
 				<cc:BayColumn text="" />
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
@@ -56,12 +59,10 @@
 				        }">
 			    <cc:BayRow
 			        class="bay-row-height">
-					<cc:BayCell>
-						<!--<ObjectNumber -->
-						<!--	number=""-->
-						<!--	emphasized="false"/>-->
-					</cc:BayCell>
 					<cc:BayCell
+					    class="bay-table-cell" />
+					<cc:BayCell
+					    class="bay-table-cell"
 					    rederror="{
 					                path: 'processed',
 							        type:'sap.ui.model.type.Boolean',
@@ -148,10 +149,25 @@
 							emphasized="false"/>
 					</cc:BayCell>
 				</cc:BayRow>
+				<cc:emptyRow>
+				    <cc:BayRow
+				        class="bay-row-height">
+				        <cc:BayCell
+    			            class="bay-table-cell"/>
+    			        <cc:BayCell
+    			            colspan="12"
+    			            class="bay--empty-cell">
+    			            <Text
+    			                text="EMPTY"
+    			                textAlign="Center"/>
+    			        </cc:BayCell>
+				    </cc:BayRow>
+				</cc:emptyRow>
 				<cc:ftRows>
 				    <cc:BayRow>
 				        <cc:BayCell />
-    			        <cc:BayCell>
+    			        <cc:BayCell
+    			            class="bay-table-cell">
     			            <c:ProgressIndicator 
     			                class="progress-bar-text-middle"
     			                percentValue="{
