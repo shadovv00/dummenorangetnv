@@ -20,9 +20,9 @@
 				<Button icon="sap-icon://print" press="printBay"/>
 			</contentLeft>
 			<contentRight>
-				<Button 
-				    class="sap-custom-icon-adjust"
-				    icon="images/cannabis-leaf-favicon.ico" press="addUser"/>
+				<!--<Button -->
+				<!--    class="sap-custom-icon-adjust"-->
+				<!--    icon="images/cannabis-leaf-favicon.ico" press="addUser"/>-->
 				<Button
 				    class="sap-custom-icon-adjust"
 				    icon="images/simple-leaf-favicon.ico" press="doEditing" />
