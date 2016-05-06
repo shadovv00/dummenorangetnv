@@ -55,6 +55,7 @@ sap.ui.define([
 			var oBayData = {
 				bayData: [{
 					id: 1,
+					bayId: 1,
 					growerName: "Van Os Chrysanten C.V.",
 					address: {
 						street: "Harenwert 48",
@@ -81,6 +82,7 @@ sap.ui.define([
 
 				}, {
 					id: 1,
+					bayId: 1,
 					growerName: "Van Os Chrysanten C.V.",
 					address: {
 						street: "Harenwert 48",
@@ -104,6 +106,7 @@ sap.ui.define([
 					processed: true
 				}, {
 					id: 1,
+					bayId: 1,
 					growerName: "Van Os Chrysanten C.V.",
 					address: {
 						street: "Harenwert 48",
@@ -128,6 +131,7 @@ sap.ui.define([
 
 				}, {
 					id: 1,
+					bayId: 1,
 					growerName: "Van Os Chrysanten C.V.",
 					address: {
 						street: "Harenwert 48",
@@ -152,7 +156,8 @@ sap.ui.define([
 					processed: true
 
 				}, {
-					id: 2,
+					id: 1,
+					bayId: 2,
 					growerName: "Van Os Chrysanten C.V.",
 					address: {
 						street: "Aallaan 306",
@@ -177,6 +182,7 @@ sap.ui.define([
 
 				}, {
 					id: 2,
+					bayId: 1,
 					growerName: "Van Oranje",
 					address: {
 						street: "Aallaan 306",
@@ -201,6 +207,7 @@ sap.ui.define([
 					processed: true
 				}, {
 					id: 2,
+					bayId: 1,
 					growerName: "Van Oranje",
 					address: {
 						street: "Aallaan 306",
@@ -238,7 +245,7 @@ sap.ui.define([
 			//console.log(oBayModel);
 
 			this.getView().setModel(oBayModel, "bayModel");
-			console.log(this.getView().getModel("bayModel"));
+// 			console.log(this.getView().getModel("bayModel"));
 
 			var oCustomerRepresentiveModel = new sap.ui.model.json.JSONModel(oData);
 			this.getView().setModel(oCustomerRepresentiveModel, "custRepes");
@@ -246,7 +253,7 @@ sap.ui.define([
 		},
 
 		getGroupHeader: function(oGroup) {
-			return new sap.m.CustomListItem({
+			return new sap.m.CustomListItem(oGroup.id,{
 				content: [
 					new sap.m.HBox({
 						items : [
@@ -268,8 +275,17 @@ sap.ui.define([
 		// 			} );
 		// 		},
 
-		onRowSelect: function(oEvent) {
-
+		onSelectionChange: function(oEvent) {
+           var oList = oEvent.getSource();
+           	var aContexts = oList.getSelectedContexts(true);
+           		var sGrowerId = oContext.getProperty("id");
+				var sBayId = oContext.getProperty("bayId");
+              
+           	    	var oItem =oList.getSelectedItems().Id;
+           	// var oItem = oEvent.getParameters().listItem;
+           	
+            console.log(aContexts);
+            console.log(oItem);
 		},
 
 		/**
@@ -283,17 +299,21 @@ sap.ui.define([
 
 			var aBinding = oList.getBinding("items");
 			var aSorters = [];
+			 var i=0;
 
 			var fGrouper = function(oContext) {
 				//	var sStreet = oContext.getProperty("address/street");
 				var sGrowerName = oContext.getProperty("growerName");
 				var sStreet = oContext.getProperty("address/street");
-
+              
+              
+                
 				// 			var sKey = oContext.getProperty("growerName");
 				return {
 					// 	key: sGrowerName + sGrowerName,
 					key: sGrowerName + sStreet,
-					title: sGrowerName + " - " + sStreet
+					title: sGrowerName + " - " + sStreet,
+					id: "greenHouse" +  i++
 				};
 			}
 

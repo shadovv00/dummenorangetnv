@@ -24,7 +24,7 @@ sap.ui.define([
 		init: function() {},
 		renderer: function(oRM, oControl) {
 			var key, x;
-			var aRow = oControl.getRows();
+			var aRows = oControl.getRows();
 			var aFtCells = oControl.getFtcells();
 			var ghbay = oControl.getGhbay();
 			var oddweek = oControl.getOddweek();
@@ -41,10 +41,10 @@ sap.ui.define([
 			}
 			oRM.writeClasses();
 			oRM.write(">");
-			if(aRow.length) {
-			    aRow[0].setGhbay(ghbay);
-				for(x = 0; x < aRow.length; x++) {
-					oRM.renderControl(aRow[x]);
+			if(aRows.length) {
+			    aRows[0].setGhbay(ghbay);
+				for(x = 0; x < aRows.length; x++) {
+					oRM.renderControl(aRows[x]);
 				}
 			} else {
 				oRM.renderControl(new BayRow({

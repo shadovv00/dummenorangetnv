@@ -36,10 +36,23 @@ sap.ui.define([
 		    var oDate = new Date(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
 		    return oDate;
 		},
+// 		formatOddWeek: function(date) {
+// 		    var dataParts;
+// 		    if(typeof date === "string" && (dataParts = date.split("-")).length > 1) {
+// 		        return +dataParts[1]%2;
+// 		    } else {
+// 		        return -1;
+// 		    }
+// 		},
 		formatOddWeek: function(date) {
+		    Date.prototype.getWeek = function() {
+                var onejan = new Date(this.getFullYear(), 0, 1);
+                return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+            };
 		    var dataParts;
-		    if(typeof date === "string" && (dataParts = date.split("-")).length > 1) {
-		        return +dataParts[1]%2;
+		    if(typeof date === "string" && (dataParts = date.split("-")).length === 3) {
+		        var oDate = new Date(dataParts[0], dataParts[1] - 1, dataParts[2]);
+		        return +oDate.getWeek()%2;
 		    } else {
 		        return -1;
 		    }
