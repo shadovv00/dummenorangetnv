@@ -4,6 +4,28 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("dummenorangetnv.controller.BayOverview", {
+	    
+	    addUser: function() {
+            var oModel = this.getView().getModel("odataModel");
+            console.log(oModel);
+            // var sPath = "/Users";
+            // var oEntry = {};
+            // oEntry.GrowerProductionPlanPattern = "GrowerProductionPlanPattern1";
+            // oEntry.StartDatePlanning = false;
+            // oEntry.Username = "p1941590108";
+            
+            var sPath = "/GreenhouseBayDescriptions";
+            var oEntry = {};
+            // oEntry.Id = 2;
+            oEntry.Description = "BodjTest";
+            oEntry.Language = "en";
+            // oEntry.GreenhouseBayDetails = false;
+            oModel.create(sPath, oEntry, null, function() {
+                MessageToast.show("Create successful");
+            }, function() {
+                MessageToast.show("Create failed");
+            });
+	    },
 
 		_oBayFilterDialog: null,
 		_sPlantName: null,
@@ -214,8 +236,6 @@ sap.ui.define([
 					viewName: "dummenorangetnv.view.BayEditor",
 					type: sap.ui.core.mvc.ViewType.XML
 				});
-				console.log(oBayEditorView);
-				console.log("current date > " + oDatePicker.getValue());
 				oBayEditorView.data("overview_date_str", oDatePicker.getValue());
 				app.addPage(oBayEditorView);
 				app.to(oBayEditorView);

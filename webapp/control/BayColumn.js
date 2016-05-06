@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/core/Control"
+    "sap/ui/core/Control"
 ], function (Control) {
 	"use strict";
 	return Control.extend("dummenorangetnv.control.BayColumn", {
@@ -7,6 +7,7 @@ sap.ui.define([
 			properties : {
 				"text": {type : "string", defaultValue: ""},
 				"width": {type : "sap.ui.core.CSSSize"},
+				"minWidth": {type : "sap.ui.core.CSSSize"},
 				"colspan": {type: "int", defaultValue: 1}
 			}
 		},
@@ -14,13 +15,16 @@ sap.ui.define([
 		},
 		renderer : function (oRM, oControl) {
 		    var colspan = oControl.getColspan();
+		    var width = oControl.getWidth();
+		    var minWidth = oControl.getMinWidth();
 		    
 			oRM.write("<th");
 			oRM.writeControlData(oControl);
-			oRM.addClass("bay-row-paddings");
+			oRM.addClass("sapUiTableColHdrCnt");
 			oRM.addClass("bay-row-border-bottom");
 			oRM.writeClasses();
-			oRM.addStyle("width", oControl.getWidth());
+			oRM.addStyle("width", width);
+			oRM.addStyle("min-width", minWidth);
 			oRM.writeStyles();
 			if(colspan > 1) {
 			    oRM.write(" colspan='" + colspan + "' ");
