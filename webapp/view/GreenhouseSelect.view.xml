@@ -8,6 +8,7 @@
 			</Toolbar >		
 
 		<content>
+					<VBox>
 			<l:Splitter height="95%" class="sapUiSmallMarginTop">
 				<!--    <VBox height="100%">-->
 				<!--       <Button text="Home" press="onHome" icon="sap-icon://nav-back" class="sapUiSmallMarginBegin"/>-->
@@ -40,9 +41,9 @@
 					</HBox>
 					<layoutData><l:SplitterLayoutData size="40%" resizable="false"/></layoutData>
 				</CustomListItem>
-				<List id="BayListId" items="{selectedGrower>/bays}" includeItemInSelection="true" class="sapUiSmallMarginBeginEnd">
+				<List id="BayListId" items="{selectedGrower>/bays}" includeItemInSelection="true" class="">
 					<items>
-						<CustomListItem press="onBaySelect" type="Navigation" class=" sapUiSmallMarginBottom">
+						<CustomListItem press="onBaySelect" type="Navigation" class=" sapUiSmallMarginBottom sapUiSmallMarginBeginEnd">
 							<HBox>
 								<Image src="{selectedGrower>imgUrl}" width="95%"/>
 								<VBox justifyContent="Center">
@@ -57,6 +58,7 @@
 					<layoutData><l:SplitterLayoutData size="auto"/></layoutData>
 				</List>
 			</l:Splitter>
+					</VBox>
 		</content>
 	</Page>
 </mvc:View>
