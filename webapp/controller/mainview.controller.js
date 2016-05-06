@@ -62,7 +62,6 @@ sap.ui.define([
 			this.oGrowerAdvisorModel = new sap.ui.model.json.JSONModel(GrowerAdvisor);
 			var oModel = new sap.ui.model.json.JSONModel(oData);
 
-			
 			sap.ui.getCore().setModel(oModel, "growers");
 		},
 
@@ -78,8 +77,8 @@ sap.ui.define([
 					type: sap.ui.core.mvc.ViewType.XML
 
 				});
-			
-			 sap.ui.getCore().setModel(this.oGrowerModel, "logedGrower");
+
+				sap.ui.getCore().setModel(this.oGrowerModel, "logedGrower");
 
 				this.app.addPage(customerSelectPage);
 				this.app.to(customerSelectPage);
@@ -88,7 +87,6 @@ sap.ui.define([
 
 		goToCustomerSelectAsGrowerAdvisor: function(oEvent) {
 
-			
 			this.app = this.getView().byId("AppId");
 			if (sap.ui.getCore().byId("customerSelectPageId") !== undefined) {
 				this.app.to("customerSelectPageId");
@@ -99,7 +97,7 @@ sap.ui.define([
 					type: sap.ui.core.mvc.ViewType.XML
 
 				});
-			
+
 				sap.ui.getCore().setModel(this.oGrowerAdvisorModel, "logedAdvisorModel");
 
 				this.app.addPage(customerSelectPage);
@@ -119,15 +117,13 @@ sap.ui.define([
 					type: sap.ui.core.mvc.ViewType.XML
 
 				});
-			
-			 sap.ui.getCore().setModel(this.oGrowerModel, "logedGrower");
+
+				sap.ui.getCore().setModel(this.oGrowerModel, "logedGrower");
 
 				this.app.addPage(customerSelectPage);
 				this.app.to(customerSelectPage);
 			}
 		},
-
-
 
 		goToBayOverview: function(oEvent) {
 			this.app = this.getView().byId("AppId");
@@ -170,7 +166,53 @@ sap.ui.define([
 				this.app.addPage(greenhouseSelectPage);
 				this.app.to(greenhouseSelectPage);
 			}
-		}
+		},
+
+// 		onAdd: function(oEvent) {
+
+// 			var oModel = this.getView().getModel("odataModel");
+// 			var sPath = "/GreenhouseBays";
+// 			var oEntry = {};
+			
+// 			oEntry.Active = true;
+// 		//	oEntry.AddressId = "1";
+// 		//	oEntry.CustomerId = "1";
+// 		//	oEntry.GreenhouseBayId = "1";
+		
+// 			oEntry.M2 = 100.10;
+// 			oEntry.SortKey = 10;
+
+			
+			
+// // 		{	oEntry.GrowerProductionPlanPattern = "pattern2";
+// // 				oEntry.StartDatePlanning = new Date();
+// // 					oEntry.Username = "p1941886841";
+// // 			}
+				
+// // {		oEntry.DefaultM2 = 100.10;
+// // 	//	oEntry.AddressId = 1;
+// // 	//	oEntry.CustomerId = "1";
+// // 		oEntry.Username = "p1941876107";}
+		
+// // 			
+// 			console.log(oEntry);
+// 			oModel.create(sPath, oEntry, null, function() {
+// 				alert("successful");
+// 			}, function() {
+// 				alert("failed");
+// 			});
+// 			var sPath2 = "/GreenhouseBayDescriptions";
+// // 			var oEntry2 = {};
+// // 			oEntry.Description = true;
+// // 			oEntry.Id = "1";
+// // 			oEntry.CustomerId = "1";
+// // 			oEntry.GreenhouseBayId = "1";
+// 			// 			oEntry.M2 = 100.57;
+// 			// 			oEntry.SortKey = 1;
+// 			// 			oEntry.CustomerId = 3;
+// 			// 			oEntry.CustomerId = "1";
+
+// 		}
 
 	});
 
