@@ -27,13 +27,26 @@ sap.ui.define([
 			var jsonModel = new sap.ui.model.json.JSONModel();
 			jsonModel.loadData("mockdata/bay.json");
 // 			this.byId("date_id").setDateValue(new Date());
-			this.getView().setModel(jsonModel);
+            var mmm = this.getView().data("mmm");
+            console.log(mmm);
+            
+            var oCore = sap.ui.getCore();
+			var oModel = oCore.getModel("jm");
+			console.log(oModel);
+			this.getView().setModel(oModel);
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
             this.getView().setModel(oSelectedBayModel,"selectedBay");
 		},
 		formatDate: function(date) {
 		    var aDateParts = date.split("-");
 		    var oDate = new Date(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
+		    return oDate;
+		},
+		formatOOGDate: function(oogDate, plantedDate, root, veg, ko, rea, horv) {
+		    var aDateParts = plantedDate.split("-");
+		    var oDate = new Date(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
+		    var day = oDate.getDate();
+		    oDate.setDate(+day + root + veg + rea + ko);
 		    return oDate;
 		},
 // 		formatOddWeek: function(date) {
@@ -75,16 +88,20 @@ sap.ui.define([
 		    }
 		},
 		calculatePercentInt: function(data) {
-			var ttl = 0;
+			var entry, ttl = 0;
 			for (var x = 0; x < data.length; x++) {
-				ttl += +data[x]["percent"] * 100;
+			    entry = data[x];
+			    if(entry["deleted"]) continue;
+				ttl += entry["percent"] * 100;
 			}
 			return parseInt(ttl);
 		},
 		calculatePercentFloat: function(data) {
-			var ttl = 0;
+			var entry, ttl = 0;
 			for (var x = 0; x < data.length; x++) {
-				ttl += +data[x]["percent"] * 100;
+			    entry = data[x];
+			    if(entry["deleted"]) continue;
+				ttl += entry["percent"] * 100;
 			}
 			return ttl;
 		},
@@ -93,7 +110,55 @@ sap.ui.define([
 			return !value;
 		},
 		deleteBayRow: function(oEvent) {
-		    console.log(oEvent.getSource().getParent().getParent().destroy());
+		    var oControl = oEvent.getSource();
+		    var sBindingContext = oControl.getBindingContext();
+		    var sPath = sBindingContext.getPath();
+		    var oModel = sBindingContext.getModel();
+		    
+		    var sPathT = sPath + "/deleted";
+		    
+		    console.log(oModel.getProperty(sPathT));
+		    
+		    console.log(oModel.setProperty(sPathT, true, sBindingContext, true));
+		    console.log(sPathT);
+		    console.log(oModel.getProperty(sPathT));
+		    oModel.updateBindings(true);
+		},
+		changePercent: function(oEvent) {
+		    var oControl = oEvent.getSource();
+		    var sBindingContext = oControl.getBindingContext();
+		    var sPath = sBindingContext.getPath();
+		    var oModel = sBindingContext.getModel();
+		    var oValue = oControl.getValue();
+		    var valNum = Math.round((parseInt(oValue) / 100), 2);
+		    console.log("val = " + valNum);
+		    var sPathT = sPath;
+		    sPath = sPath + "/percent";
+		    oModel.setProperty(sPath, valNum, sBindingContext, true);
+		    oModel.updateBindings(true);
+		},
+		changePlantedDate: function(oEvent) {
+		    var oControl = oEvent.getSource();
+		    var sBindingContext = oControl.getBindingContext();
+		    var sPath = sBindingContext.getPath();
+		    var oModel = sBindingContext.getModel();
+		    var oDate = oControl.getDateValue();
+		    var dateStr = oDate.getFullYear() + "-" + (oDate.getMonth() + 1) + "-" + oDate.getDate();
+		    
+		    var sPathT = sPath;
+		    sPath = sPath + "/planted_date";
+		    oModel.setProperty(sPath, dateStr, sBindingContext, true);
+		},
+		changeRoot: function(oEvent) {
+		    var oControl = oEvent.getSource();
+		    var sBindingContext = oControl.getBindingContext();
+		    var sPath = sBindingContext.getPath();
+		    var oModel = sBindingContext.getModel();
+		    var oValue = oControl.getValue();
+		    
+		    var sPathT = sPath;
+		    sPath = sPath + "/root";
+		    oModel.setProperty(sPath, +oValue, sBindingContext, true);
 		},
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
