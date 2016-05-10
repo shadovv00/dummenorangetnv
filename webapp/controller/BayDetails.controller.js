@@ -50,6 +50,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
+					ok: 1,
 					harv: 1,
 					oog: new Date(1448748000000),
 					vaca: 0,
@@ -70,6 +71,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
+					ok: 1,
 					harv: 1,
 					oog: new Date(1466888400000),
 					vaca: 0,
@@ -90,6 +92,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
+					ok: 1,
 					harv: 1,
 					oog: new Date(1477170000000),
 					vaca: 0,
@@ -110,6 +113,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
+					ok: 1,
 					harv: 1,
 					oog: new Date(1477170000000),
 					vaca: 0,
@@ -259,14 +263,14 @@ sap.ui.define([
 								new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"2%",
+											width:"3%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: '', textAlign:"Center" })
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"19%",
+											width:"20%",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("id")+" "+oContext.getProperty("name"), textAlign:"Begin" })
 											]
@@ -275,11 +279,19 @@ sap.ui.define([
 											width:"8%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "78%", text: oContext.getProperty("percent")+"%", textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "77%", text: oContext.getProperty("percent")+"%", textAlign:"End" }).addStyleClass("")
+    								// 		new sap.m.FlexBox({
+    								// 			width:"81%",
+    								// 			justifyContent:"End",
+    								// 			items: [
+    	       //                     				new sap.m.Text({  text: oContext.getProperty("percent")+"%", textAlign:"End" }).addStyleClass("bayTextPadding")
+    	                            				
+    								// 			]
+    								// 		}).addStyleClass("")	                            				
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"10%",
+											width:"8%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({  width: "80%", text: oContext.getProperty("plants"), textAlign:"End" }).addStyleClass("")
@@ -289,14 +301,14 @@ sap.ui.define([
 											width:"6%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({  width: "69%", text: oContext.getProperty("square"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({  width: "68%", text: oContext.getProperty("square"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"12%",
+											width:"11%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "70%", text: { path : "bayDetailModel>plantedDate",
+	                            				new sap.m.Text({ width: "68%", text: { path : "bayDetailModel>plantedDate",
 											        type: 'sap.ui.model.type.Date',
 											        formatOptions: {
 											          pattern: 'yyyy-ww-u'
@@ -308,38 +320,45 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "69%", text: oContext.getProperty("root"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("root"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "69%", text: oContext.getProperty("veg"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("veg"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "69%", text: oContext.getProperty("rea"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("rea"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "69%", text: oContext.getProperty("harv"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("ok"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"12%",
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("harv"), textAlign:"End" }).addStyleClass("")
+											]
+										}).addStyleClass(""),										
+										new sap.m.VBox({
+											width:"11%",
 											justifyContent:"End",
 											items: [
-	                            				new sap.m.Text({ width: "70%", text: { path : "bayDetailModel>oog/",
+	                            				new sap.m.Text({ width: "68%", text: { path : "bayDetailModel>oog/",
 											        type: 'sap.ui.model.type.Date',
 											        formatOptions: {
 											          pattern: 'yyyy-ww-u'
@@ -347,10 +366,10 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "69%", text: oContext.getProperty("vaca"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("vaca"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass("")
 									]
@@ -395,7 +414,7 @@ sap.ui.define([
 								new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"2%",
+											width:"3%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.ui.core.Icon({ src: "sap-icon://decline", color: "#541407",
@@ -408,7 +427,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(" sapUiSmallMarginTop"),
 										new sap.m.FlexBox({
-											width:"19%",
+											width:"20%",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("id")+" "+oContext.getProperty("name"), textAlign:"Begin"}).addStyleClass("")
 											]
@@ -423,7 +442,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"10%",
+											width:"8%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({  width:"85%", value: oContext.getProperty("plants"),
@@ -441,7 +460,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"12%",
+											width:"11%",
 											justifyContent:"Center",
 											items: [
 	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>plantedDate",
@@ -461,7 +480,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("root"),
@@ -470,7 +489,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("veg"),
@@ -479,7 +498,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("rea"),
@@ -488,7 +507,16 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("ok"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("harv"),
@@ -497,7 +525,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"12%",
+											width:"11%",
 											justifyContent:"Center",
 											items: [
 	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>oog/",
@@ -514,7 +542,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:"5.5%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("vaca"), 
@@ -527,23 +555,16 @@ sap.ui.define([
 								, new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"2%",
+											width:"3%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: '', textAlign:"Center" })
 											]
 										}).addStyleClass(" "),
 										new sap.m.FlexBox({
-											width:"27%",
+											width:"36%",
 											items: [
 	                            				warningFieldContent
-											]
-										}).addStyleClass(""),
-										new sap.m.FlexBox({
-											width:"10%",
-											justifyContent:"End",
-											items: [
-	                            				new sap.m.Text({ text: '', textAlign:"Center" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
@@ -554,7 +575,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"12%",
+											width:"11%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: 'Delivery date', textAlign:"Center" }).addStyleClass("")
@@ -575,7 +596,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"17%",
+											width:"20%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: 'Availability this week', textAlign:"Center" })
@@ -586,23 +607,16 @@ sap.ui.define([
 								, new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"2%",
+											width:"3%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: '', textAlign:"Center" })
 											]
 										}).addStyleClass(" "),
 										new sap.m.VBox({
-											width:"27%",justifyContent:"Center",
+											width:"36%",justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("patStatus")+", "+oContext.getProperty("hcpStatus"), textAlign:"Begin" })
-											]
-										}).addStyleClass(""),
-										new sap.m.FlexBox({
-											width:"10%",
-											justifyContent:"End",
-											items: [
-	                            				new sap.m.Text({ text: '', textAlign:"Center" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
@@ -613,7 +627,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
-											width:"12%",
+											width:"11%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Text({ width:"70%", text: { path : "bayDetailModel>deliveryDate",
@@ -654,7 +668,7 @@ sap.ui.define([
         											]
         										}),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:"9%",
 											justifyContent:"Start",alignItems:"Center",
 											items: [
 	                            			// 	new sap.m.Image({width:"2em", height:"2em", src: "images/cannabis-leaf-favicon.ico", press:function(){that.onAvalilabilityChecking(this,sId,oContext);}}),
