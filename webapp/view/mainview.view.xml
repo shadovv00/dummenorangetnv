@@ -4,7 +4,7 @@
 		<pages>
 			<Page showHeader="false">
 				<content>
-					<!--<Button text="Customer select as grower" press="goToCustomerSelectAsGrower"/>-->
+					<!--<Button text="Add" press="onAdd"/>-->
 					<!--<Button text="Customer select as grower advisor" press="goToCustomerSelectAsGrowerAdvisor"/>-->
 					<!--<Button text="Bay overview" press="goToBayOverview"/>-->
 					<!--<Button text="Bay details" press="goToBayDetails"/>-->

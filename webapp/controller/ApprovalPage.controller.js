@@ -254,6 +254,7 @@ sap.ui.define([
 
 		getGroupHeader: function(oGroup) {
 			return new sap.m.CustomListItem(oGroup.id,{
+			    fieldGroupIds: oGroup.groupId,
 				content: [
 					new sap.m.HBox({
 						items : [
@@ -278,14 +279,33 @@ sap.ui.define([
 		onSelectionChange: function(oEvent) {
            var oList = oEvent.getSource();
            	var aContexts = oList.getSelectedContexts(true);
-           		var sGrowerId = oContext.getProperty("id");
-				var sBayId = oContext.getProperty("bayId");
-              
-           	    	var oItem =oList.getSelectedItems().Id;
+           	//	var sGrowerId = aContexts.getProperty("id");
+			//	var sBayId = aContexts.getProperty("bayId");
+                	var aItems =oList.getSelectedItems();
+           	    	console.log(aItems);
+           	    	for(var i=0; i < aItems.length; i++) {
+           	    	   var sId = aItems[i].getId();
+           	    	    console.log(sId);
+           	    	   if(sId.includes("groupHeader") ){
+           	    	       var groupId =  aItems[i].getFieldGroupIds()[0];
+           	    	       console.log(groupId);
+           	    	       var aGroupedItems =  oList.getControlsByFieldGroupId(groupId); 
+           	    	       for(var j=0; j < aGroupedItems.length; j++) {
+           	    	           if(aGroupedItems[j] instanceof sap.m.CustomListItem) 
+           	    	           console.log("true");
+           	    	               oList.setSelectedItem(aGroupedItems[j], true)
+           	    	       }
+           
+           	    	  }
+           	    	   
+           	    	   
+           	    	 
+           	    	}
+           	    	
            	// var oItem = oEvent.getParameters().listItem;
-           	
-            console.log(aContexts);
-            console.log(oItem);
+           	// console.log(aIds);
+            // console.log(aContexts);
+            
 		},
 
 		/**
@@ -305,6 +325,11 @@ sap.ui.define([
 				//	var sStreet = oContext.getProperty("address/street");
 				var sGrowerName = oContext.getProperty("growerName");
 				var sStreet = oContext.getProperty("address/street");
+				var sGrowerId = oContext.getProperty("id");
+				var sBayId = oContext.getProperty("bayId");
+				var sGroupId = sGrowerId + "" + sBayId;
+				i++;
+		
               
               
                 
@@ -313,7 +338,8 @@ sap.ui.define([
 					// 	key: sGrowerName + sGrowerName,
 					key: sGrowerName + sStreet,
 					title: sGrowerName + " - " + sStreet,
-					id: "greenHouse" +  i++
+					groupId: sGroupId,
+					id: "groupHeader"+i
 				};
 			}
 
