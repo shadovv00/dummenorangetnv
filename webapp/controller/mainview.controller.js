@@ -168,19 +168,19 @@ sap.ui.define([
 			}
 		},
 
-// 		onAdd: function(oEvent) {
+		onAdd: function(oEvent) {
 
-// 			var oModel = this.getView().getModel("odataModel");
-// 			var sPath = "/GreenhouseBays";
-// 			var oEntry = {};
+			var oModel = this.getView().getModel("odataModel");
+			var sPath = "/GreenhouseBays";
+			var oEntry = {};
 			
-// 			oEntry.Active = true;
-// 		//	oEntry.AddressId = "1";
-// 		//	oEntry.CustomerId = "1";
-// 		//	oEntry.GreenhouseBayId = "1";
+			oEntry.Active = true;
+			oEntry.AddressId = "1";
+			oEntry.CustomerId = "1";
+			oEntry.GreenhouseBayId = "1";
 		
-// 			oEntry.M2 = 100.10;
-// 			oEntry.SortKey = 10;
+			oEntry.M2 = 100.10;
+			oEntry.SortKey = 10;
 
 			
 			
@@ -195,12 +195,12 @@ sap.ui.define([
 // // 		oEntry.Username = "p1941876107";}
 		
 // // 			
-// 			console.log(oEntry);
-// 			oModel.create(sPath, oEntry, null, function() {
-// 				alert("successful");
-// 			}, function() {
-// 				alert("failed");
-// 			});
+			console.log(oEntry);
+			oModel.create(sPath, oEntry, null, function() {
+				alert("successful");
+			}, function() {
+				alert("failed");
+			});
 // 			var sPath2 = "/GreenhouseBayDescriptions";
 // // 			var oEntry2 = {};
 // // 			oEntry.Description = true;
@@ -212,7 +212,7 @@ sap.ui.define([
 // 			// 			oEntry.CustomerId = 3;
 // 			// 			oEntry.CustomerId = "1";
 
-// 		}
+		}
 
 	});
 

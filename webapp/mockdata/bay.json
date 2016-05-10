@@ -17,7 +17,8 @@
 			"horv": 1,
 			"oog_date": "2016-02-29",
 			"vaca": 1,
-			"processed": false
+			"processed": false,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 6,
@@ -37,7 +38,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-01",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}, {
 			"name": "015 Grand cherry",
 			"percent": 0.002,
@@ -53,7 +55,8 @@
 			"horv": 1,
 			"oog_date": "2016-02-28",
 			"vaca": 3,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 7,
@@ -77,7 +80,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-02",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 9,
@@ -97,7 +101,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-03",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 10,
@@ -117,7 +122,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-04",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 11,
@@ -141,7 +147,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-11",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}, {
 			"name": "001 Feeling green dark1",
 			"percent": 0.26,
@@ -157,7 +164,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-12",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}, {
 			"name": "001 Feeling DDD",
 			"percent": 0.5,
@@ -173,7 +181,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-13",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 13,
@@ -193,7 +202,8 @@
 			"horv": 1,
 			"oog_date": "2016-03-14",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}]
 }

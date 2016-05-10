@@ -22,6 +22,11 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			
+			var jsonModel = new sap.ui.model.json.JSONModel();
+			jsonModel.loadData("mockdata/bay.json");
+			var oCore = sap.ui.getCore();
+			oCore.setModel(jsonModel, "jm");
 		}
 	});
 

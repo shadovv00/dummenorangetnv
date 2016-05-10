@@ -131,7 +131,7 @@
 		<footer>
 			<Toolbar>
 				<HBox alignItems="Center">
-					<CheckBox/>
+					<CheckBox id="selectDeselectBoxId" select="onSelect"/>
 					<Label text="Select / Deselect all"/>
 				</HBox>
 				<ToolbarSpacer/>

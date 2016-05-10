@@ -36,7 +36,7 @@
 		    items="{path: '/data'}"
 		    class="sapUiSmallMarginBeginEnd bay-table-border">
 			<cc:columns>
-				<cc:BayColumn text="GH-bay" class="bay-table-cell"/>
+				<cc:BayColumn text="GH-bay" class="bay-table-cell" width="3em"/>
 				<cc:BayColumn text="" />
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
@@ -52,7 +52,10 @@
 			</cc:columns>
 			<cc:BayRowGroup
 				ghbay="{gh_bay}"
-				rows="{plant}"
+				rows="{
+				        path: 'plant',
+    		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
+				    }"
 				oddweek="{
 			                path: 'plant/0/planted_date',
 					        formatter: '.formatOddWeek'
@@ -139,9 +142,17 @@
 					<cc:BayCell>
 						<Text
 						    text="{
-						            path: 'oog_date',
-						            formatter: '.formatConvertStrToDate'
-						      }" />
+    		                        parts: [
+			                            {path: 'oog_date'},
+			                            {path: 'planted_date'},
+			                            {path: 'root'},
+			                            {path: 'veg'},
+			                            {path: 'ko'},
+			                            {path: 'rea'},
+			                            {path: 'horv'}
+			                        ],
+    		                        formatter: '.formatOOGDate'
+    		                    }"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 

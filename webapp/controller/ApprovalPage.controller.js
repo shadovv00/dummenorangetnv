@@ -245,7 +245,7 @@ sap.ui.define([
 			//console.log(oBayModel);
 
 			this.getView().setModel(oBayModel, "bayModel");
-// 			console.log(this.getView().getModel("bayModel"));
+			// 			console.log(this.getView().getModel("bayModel"));
 
 			var oCustomerRepresentiveModel = new sap.ui.model.json.JSONModel(oData);
 			this.getView().setModel(oCustomerRepresentiveModel, "custRepes");
@@ -253,17 +253,17 @@ sap.ui.define([
 		},
 
 		getGroupHeader: function(oGroup) {
-			return new sap.m.CustomListItem(oGroup.id,{
-			    fieldGroupIds: oGroup.groupId,
+			return new sap.m.CustomListItem(oGroup.id, {
+				fieldGroupIds: oGroup.groupId,
 				content: [
 					new sap.m.HBox({
-						items : [
-						  //  new sap.m.CheckBox(),
+						items: [
+							//  new sap.m.CheckBox(),
 							new sap.m.Text({
 								text: oGroup.title
 							})
 						],
-						 alignItems: "Center"
+						alignItems: "Center"
 					})
 				]
 			});
@@ -277,35 +277,70 @@ sap.ui.define([
 		// 		},
 
 		onSelectionChange: function(oEvent) {
-           var oList = oEvent.getSource();
-           	var aContexts = oList.getSelectedContexts(true);
-           	//	var sGrowerId = aContexts.getProperty("id");
-			//	var sBayId = aContexts.getProperty("bayId");
-                	var aItems =oList.getSelectedItems();
-           	    	console.log(aItems);
-           	    	for(var i=0; i < aItems.length; i++) {
-           	    	   var sId = aItems[i].getId();
-           	    	    console.log(sId);
-           	    	   if(sId.includes("groupHeader") ){
-           	    	       var groupId =  aItems[i].getFieldGroupIds()[0];
-           	    	       console.log(groupId);
-           	    	       var aGroupedItems =  oList.getControlsByFieldGroupId(groupId); 
-           	    	       for(var j=0; j < aGroupedItems.length; j++) {
-           	    	           if(aGroupedItems[j] instanceof sap.m.CustomListItem) 
-           	    	           console.log("true");
-           	    	               oList.setSelectedItem(aGroupedItems[j], true)
-           	    	       }
-           
-           	    	  }
-           	    	   
-           	    	   
-           	    	 
-           	    	}
-           	    	
-           	// var oItem = oEvent.getParameters().listItem;
-           	// console.log(aIds);
-            // console.log(aContexts);
-            
+			var oList = oEvent.getSource();
+
+			var oItem = oEvent.getParameters().listItem;
+			console.log(oItem);
+			console.log(oItem.getId());
+			var groupId = oItem.getFieldGroupIds()[0];
+			var aGroupedItems = oList.getControlsByFieldGroupId(groupId);
+			if (oItem.getId().includes("groupHeader")) {
+				if (oItem.isSelected()) {
+
+					for (var j = 0; j < aGroupedItems.length; j++) {
+						if (aGroupedItems[j] instanceof sap.m.CustomListItem)
+							oList.setSelectedItem(aGroupedItems[j], true);
+					}
+				}else{
+				    	for (var j = 0; j < aGroupedItems.length; j++) {
+						if (aGroupedItems[j] instanceof sap.m.CustomListItem)
+							oList.setSelectedItem(aGroupedItems[j], false);
+					}
+				} 
+				// 			{
+				// 			//  		if(!oItem.isSelected()) {
+
+				// 			//  		    var groupId = oItem.getFieldGroupIds()[0];
+				// 			//  		    var aGroupedItems = oList.getControlsByFieldGroupId(groupId);
+				// 			//  		    for (var j = 0; j < aGroupedItems.length; j++) {
+				// 			// 		if (aGroupedItems[j].getId().includes("groupHeader") && aGroupedItems[j].isSelected() )
+				// 			// 			oList.setSelectedItem(aGroupedItems[j], true)
+				// 			// 	}
+				// 			//  		}
+
+				// // 			var aItems = oList.getSelectedItems();
+
+				// 			// 			console.log(aItems);
+				// // 			for (var i = 0; i < aItems.length; i++) {
+
+				// // 				var sId = aItems[i].getId();
+				// // 				console.log(sId);
+				// // 				if (sId.includes("groupHeader")) {
+
+				// // 					var groupId = aItems[i].getFieldGroupIds()[0];
+				// // 					console.log(groupId);
+				// // 					var aGroupedItems = oList.getControlsByFieldGroupId(groupId);
+				// // 					for (var j = 0; j < aGroupedItems.length; j++) {
+				// // 						if (aGroupedItems[j] instanceof sap.m.CustomListItem)
+				// // 							oList.setSelectedItem(aGroupedItems[j], true)
+				// // 					}
+
+				// // 				}
+
+				// // 			}
+
+				// 			// var oItem = oEvent.getParameters().listItem;
+				// 			// console.log(aIds);
+				// 			// console.log(aContexts);
+				// 			}
+
+			} else {
+
+				for (var j = 0; j < aGroupedItems.length; j++) {
+					if (aGroupedItems[j].getId().includes("groupHeader"))
+						oList.setSelectedItem(aGroupedItems[j], false);
+				}
+			}
 		},
 
 		/**
@@ -319,7 +354,7 @@ sap.ui.define([
 
 			var aBinding = oList.getBinding("items");
 			var aSorters = [];
-			 var i=0;
+			var i = 0;
 
 			var fGrouper = function(oContext) {
 				//	var sStreet = oContext.getProperty("address/street");
@@ -329,17 +364,14 @@ sap.ui.define([
 				var sBayId = oContext.getProperty("bayId");
 				var sGroupId = sGrowerId + "" + sBayId;
 				i++;
-		
-              
-              
-                
+
 				// 			var sKey = oContext.getProperty("growerName");
 				return {
 					// 	key: sGrowerName + sGrowerName,
 					key: sGrowerName + sStreet,
 					title: sGrowerName + " - " + sStreet,
 					groupId: sGroupId,
-					id: "groupHeader"+i
+					id: "groupHeader" + i
 				};
 			}
 
@@ -349,6 +381,17 @@ sap.ui.define([
 
 			aBinding.sort(aSorters);
 
+		},
+
+		onSelect: function() {
+		    var oList = this.getView().byId("ListId");
+		    var oCBox = this.getView().byId("selectDeselectBoxId");
+		    
+
+		    if(oCBox.getSelected())
+		    	oList.selectAll();
+		    	else
+		    	oList.removeSelections();
 		}
 
 		/**
