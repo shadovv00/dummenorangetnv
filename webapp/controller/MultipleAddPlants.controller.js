@@ -17,14 +17,14 @@ sap.ui.define([
         			"plants": 32436,
         			"erp_plants": 32435,
         			"density": 47,
-        			"planted_date": "2016-01-02",
-        			"erp_planted_date": "2016-01-02",
+        			"planted_date": new Date(),
+        			"erp_planted_date": new Date(),
         			"root": 0,
         			"veg": 12,
         			"rea": 54,
         			"ko": 10,
-        			"horv": 1,
-        			"oog_date": "2016-03-01",
+        			"harv": 1,
+        			"oog_date": new Date(),
         			"vaca": 1,
         			"processed": true
         		    }, {
@@ -34,14 +34,14 @@ sap.ui.define([
         			"plants": 102,
         			"erp_plants": 102,
         			"density": 50,
-        			"planted_date": "2016-01-02",
-        			"erp_planted_date": "2016-01-02",
+        			"planted_date": new Date(),
+        			"erp_planted_date": new Date(),
         			"root": 0,
         			"veg": 12,
         			"rea": 54,
         			"ko": 10,
-        			"horv": 1,
-        			"oog_date": "2016-02-28",
+        			"harv": 1,
+        			"oog_date": new Date(),
         			"vaca": 3,
         			"processed": true
         		    }]
@@ -57,15 +57,15 @@ sap.ui.define([
             			"plants": 32436,
             			"erp_plants": 32435,
             			"density": 47,
-            			"planted_date": "2016-01-02",
-            			"erp_planted_date": "2016-01-02",
-            			"root": 0,
-            			"veg": 12,
-            			"rea": 54,
-            			"ko": 10,
-            			"horv": 1,
-            			"oog_date": "2016-03-01",
-            			"vaca": 1,
+        			"planted_date": new Date(),
+        			"erp_planted_date": new Date(),
+        			"root": 0,
+        			"veg": 12,
+        			"rea": 54,
+        			"ko": 10,
+        			"harv": 1,
+        			"oog_date": new Date(),
+        			"vaca": 1,
             			"processed": true
             		    }]
             		},
@@ -111,6 +111,9 @@ sap.ui.define([
 		 * @memberOf dummenorangetnv.view.MultipleAddPlants
 		 */
 			onInit: function() {
+				var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
+				this.getView().setModel(oSelectedBayModel,"selectedBay");
+
 				var oModel = new sap.ui.model.json.JSONModel(this.addPlantsMockup);
 				this.getView().setModel(oModel,"multiAddModel");
 				this.getView().getModel("multiAddModel").getData().prevPage=sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId();
@@ -141,7 +144,9 @@ sap.ui.define([
 				// 		new sap.m.Text({ text: warningText, textAlign:"Begin" }).addStyleClass("bayDetTextRed sapUiTinyMarginBegin")
 				// 		];
 				// }
-				
+				var localList=new sap.m.List({width:"100%", showNoData: false});
+				localList.bindAggregation("items","multiAddModel>"+ourPath+"/plant",that.plantsAddToBaysListFactory.bind(that));
+
 				
 				oUIControl = new sap.m.CustomListItem(sId, {
 					width: "100%",
@@ -158,17 +163,25 @@ sap.ui.define([
     	                            	        	new sap.m.Text({ text: oContext.getProperty("gh_bay"), textAlign:"Center"}).addStyleClass("")
     											]
     										}).addStyleClass("")
-    								// 		,new sap.m.List.bindAggregation("items","multiAddModel>/Bays",this.multiAddToBaysListFactory.bind(this))
+    										,
+   										new sap.m.VBox({
+    											width:"99%",
+    								// 			justifyContent:"Start",
+    											items: [
+    	                            	        	localList
+    											]
+    										}).addStyleClass("")
 
     									    
     									]
     								}),
         						    new sap.m.ProgressIndicator({
         						        width: "20%",
+        						        height: "16px",
         						        percentValue: oContext.getProperty("percent")*100,
         						        displayValue: oContext.getProperty("percent")*100+" %"
         						      //  ,state: "Success" 
-        						    })
+        						    }).addStyleClass("sapUiSmallMarginTop")
 							]	
 						}).addStyleClass("sapUiSmallMarginTop sapUiTinyMarginBottom")
 					]
@@ -177,10 +190,154 @@ sap.ui.define([
 			// oUIControl.setType(sap.m.ListType.Active);
 			// oUIControl.attachPress(this.onItemSelected, this);
 			return oUIControl;
-		}
+		},
+		
+		plantsAddToBaysListFactory : function(sId,oContext) {
+// 			var ourModel=oContext.getModel();
+			var ourPath=oContext.getPath();
+// 			var dateToDay=new Date();
+			var oUIControl = null;
+// 			var that=this;
+				oUIControl = new sap.m.CustomListItem(sId, {
+					width: "100%",
+					content:[
+								new sap.m.HBox({
+									items: [
+										new sap.m.HBox({
+											width:"4%",
+											justifyContent:"Center",
+											items: [
+											    new sap.m.CheckBox()
+											]
+										}).addStyleClass(" "),
+										new sap.m.FlexBox({
+											width:"11%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.DatePicker({ width:"91%", dateValue: "{multiAddModel>planted_date}",
+	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
+											]
+										}).addStyleClass(""),
+
+										new sap.m.FlexBox({
+											width:"18%",
+											items: [
+	                            				new sap.m.Text({ text: oContext.getProperty("id")+" "+oContext.getProperty("name"), textAlign:"Begin"}).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(" sapUiSmallMarginTop "),
+										new sap.m.FlexBox({
+											width:"8%",
+											justifyContent:'Center',
+											items: [
+	                            				new sap.m.Input({ width:"81%", value: oContext.getProperty("percent")+"%" ,
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"8%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({  width:"85%", value: oContext.getProperty("plants"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"6%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("density"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("root"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("veg"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("rea"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("ko"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("harv"),
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"11%",
+											justifyContent:"Center",
+											items: [
+	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>oog/",
+											     //   type: 'sap.ui.model.type.Date',
+											     //   formatOptions: {
+											     //     pattern: 'yyyy-ww-u'
+											     //   }},
+	               //             				change: function(){that.onOOGChange(this,sId,oContext);}  
+	                            			// 	,   textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+	                            				new sap.m.DatePicker({ width:"90%", dateValue: "{multiAddModel>oog_date}",
+	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
+											]
+										}).addStyleClass(""),
+										new sap.m.FlexBox({
+											width:"5.5%",
+											justifyContent:"Center",
+											items: [
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("vaca"), 
+	                            				change: function(){that.onDataChange(this,sId,oContext);}  
+	                            				, textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
+											]
+										}).addStyleClass("")
+									]
+								})
+					]
+				}).addStyleClass(" bayDetGrayBackGround");
+		
+			return oUIControl;
+		}		
 
 
-
+	,onPrevPage: function(oEvent){
+		var app=this.getView().getParent();
+		app.to(app.getPreviousPage().getId());	
+	}
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).

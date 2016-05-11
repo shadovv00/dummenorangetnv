@@ -168,6 +168,22 @@ sap.ui.define([
 			}
 		},
 
+		goToMultiAddPlants: function(oEvent) {
+			var app = this.getView().byId("AppId");
+			if (sap.ui.getCore().byId("multiAddPlantsPageId") !== undefined) {
+				app.to("multiAddPlantsPageId");
+			} else {
+				var greenhouseSelectPage = sap.ui.view({
+					id: "multiAddPlantsPageId",
+					viewName: "dummenorangetnv.view.MultipleAddPlants",
+					type: sap.ui.core.mvc.ViewType.XML
+				});
+				app.addPage(greenhouseSelectPage);
+				app.to(greenhouseSelectPage);
+			}
+		},
+
+
 		onAdd: function(oEvent) {
 
 			var oModel = this.getView().getModel("odataModel");
