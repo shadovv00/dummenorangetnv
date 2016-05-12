@@ -6,7 +6,7 @@
 				<!--<Image src="{selectedBay>/grower/imgUrl}" width="11em"  class="sapUiTinyMarginEnd"/>-->
 				<core:Icon src="sap-icon://person-placeholder" size="820%"/>
 				<VBox width="75%" justifyContent="Center" class="sapUiTinyMarginBegin">
-					<Title text="{selectedBay>/grower/name}" level="H3"/>
+					<Title text="{selectedBay>/grower/id} {selectedBay>/grower/name}" level="H3"/>
 					<Text text="{selectedBay>/grower/address/street}"/>
 					<Text text="{selectedBay>/grower/address/city}"/>
 					<Text text="{selectedBay>/grower/phoneNumber}"/>
@@ -19,7 +19,7 @@
 					<!--<Image src="{selectedBay>/bay/imgUrl}" width="11em"  class="sapUiTinyMarginEnd"/>-->
 					<core:Icon src="sap-icon://addresses" size="820%"/>
 					<VBox justifyContent="Center" class="sapUiTinyMarginBegin">
-						<Title text="{selectedBay>/bay/name}"/>
+						<Title text="{selectedBay>/bay/id} {selectedBay>/bay/name}"/>
 						<Text text="{selectedBay>/bay/address/street}"/>
 						<Text text="{selectedBay>/bay/address/city}"/>
 						<Text text="{selectedBay>/bay/phoneNumber}"/>

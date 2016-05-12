@@ -5,8 +5,8 @@
 			<Button type="Back" press="onHome" text="Home" class="sapUiSmallMarginBegin"/>
 			<ToolbarSpacer/>
 			<Label text="Customer Representative" labelFor="plantSelectorId"/>
-			<Select id="plantSelectorId" items="{custRepes>/customerRepresentive}" width="20%" class="sapUiSmallMarginEnd" change="onPlantChange">
-				<core:Item key="{custRepes>id}" text="{custRepes>name}"/>
+			<Select id="custRepresSelectorId" items="{custRepesNameList>/List}" width="20%" class="sapUiSmallMarginEnd" change="onCustRepresChange">
+				<core:Item key="{custRepesNameList>name}" text="{custRepesNameList>name}"/>
 			</Select>
 		</Toolbar>
 		<content>
@@ -48,7 +48,7 @@
 			<!--	</items>-->
 			<!--</Table>-->
 			
-			<List id="ListId" items="{ path:'bayModel>/bayData', groupHeaderFactory: '.getGroupHeader' }" mode="MultiSelect" selectionChange="onSelectionChange" >
+			<List id="ListId" items="{ path:'custRepres>/bayData', groupHeaderFactory: '.getGroupHeader' }" mode="MultiSelect" selectionChange="onSelectionChange" >
 				<infoToolbar>
 					<Toolbar visible="true" id="idInfoToolbar">
 				<ToolbarSpacer width = "33px"/>
@@ -89,26 +89,26 @@
 						<!--<Text text="New value"/>-->
 					</Toolbar>
 				</infoToolbar>
-				<CustomListItem fieldGroupIds="{bayModel>id}{bayModel>bayId}" >
+				<CustomListItem fieldGroupIds="{custRepres>id}{custRepres>bayId}" >
 					<HBox>
 				
 						<FlexBox width="20%" justifyContent="Start">
-							<Text text="{bayModel>gh_bay}" textAlign="Center"></Text>
+							<Text text="{custRepres>gh_bay}" textAlign="Center"></Text>
 						</FlexBox>
 						<FlexBox width="70%" justifyContent="Start">
-							<Text text="{bayModel>planted_date}" textAlign="Center"></Text>
+							<Text text="{custRepres>planted_date}" textAlign="Center"></Text>
 						</FlexBox>
 						<FlexBox width="70%" justifyContent="Start">
-							<Text text="{bayModel>name}" textAlign="Center"></Text>
+							<Text text="{custRepres>name}" textAlign="Center"></Text>
 						</FlexBox>
 						<FlexBox width="70%" justifyContent="Start">
-							<Text text="{bayModel>comments}" textAlign="Center"></Text>
+							<Text text="{custRepres>comments}" textAlign="Center"></Text>
 						</FlexBox>
 						<FlexBox width="70%" justifyContent="Start">
-							<Text text="{bayModel>address/street}" textAlign="Center"></Text>
+							<Text text="{custRepres>address/street}" textAlign="Center"></Text>
 						</FlexBox>
 						<FlexBox width="70%" justifyContent="Start">
-							<Text text="{bayModel>comments}" textAlign="Center"></Text>
+							<Text text="{custRepres>comments}" textAlign="Center"></Text>
 						</FlexBox>
 						</HBox>
 					<!--<Toolbar>-->
@@ -135,9 +135,9 @@
 					<Label text="Select / Deselect all"/>
 				</HBox>
 				<ToolbarSpacer/>
-				<Button text="Reject"/>
+				<Button text="Reject" press="onReject" />
 				<!--<ToolbarSpacer width="1%"/>-->
-				<Button text="Approve"/>
+				<Button text="Approve"  press="onApprove"/>
 			</Toolbar>
 		</footer>
 	</Page>

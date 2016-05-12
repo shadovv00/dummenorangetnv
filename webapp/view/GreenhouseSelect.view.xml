@@ -32,7 +32,7 @@
 							<core:Icon src="sap-icon://person-placeholder" size="1000%"/>
 							<!--<Image src="{selectedGrower>/imgUrl}" width="230px"/>-->
 							<VBox justifyContent="Center" class="sapUiSmallMarginBegin">
-								<Label text="{selectedGrower>/name}" class="texts-font" design="Bold"/>
+								<Label text="{selectedGrower>/id} {selectedGrower>/name}" class="texts-font" design="Bold"/>
 								<Text text="{selectedGrower>/address/street}" class="texts-font"/>
 								<Text text="{selectedGrower>/address/city}" class="texts-font"/>
 								<Text text="{selectedGrower>/phoneNumber}" class="texts-font"/>
@@ -48,7 +48,7 @@
 									<core:Icon src="sap-icon://addresses" size="1000%"/>
 									<!--<Image src="{selectedGrower>imgUrl}" width="230px"/>-->
 									<VBox justifyContent="Center" class="sapUiSmallMarginBegin">
-										<Label text="{selectedGrower>name}" class="texts-font" design="Bold"/>
+										<Label text="{selectedGrower>id} {selectedGrower>name}" class="texts-font" design="Bold"/>
 										<Text text="{selectedGrower>address/street}" class="texts-font"/>
 										<Text text="{selectedGrower>address/city}" class="texts-font"/>
 										<Text text="{selectedGrower>phoneNumber}" class="texts-font"/>
