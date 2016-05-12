@@ -1,0 +1,548 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="1.0"
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="dopa_persistence"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="PlanningTypeDescription">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="40"/>
+                <Property Name="Id" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="true" MaxLength="2"/>
+                <Property Name="PlanningType" Type="Edm.Int64" Nullable="true"/>
+                <NavigationProperty Name="PlanningTypeDetails" Relationship="dopa_persistence.PlanningTypeDescription_PlanningType_Many_One0" FromRole="PlanningTypeDescription" ToRole="PlanningType"/>
+            </EntityType>
+            <EntityType Name="Availability">
+                <Key>
+                    <PropertyRef Name="ArticleId"/>
+                    <PropertyRef Name="FormId"/>
+                    <PropertyRef Name="Week"/>
+                    <PropertyRef Name="Year"/>
+                </Key>
+                <Property Name="ArticleId" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="FormId" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Week" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Year" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Quantity" Type="Edm.Double" Nullable="true"/>
+                <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="10"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="true" MaxLength="10"/>
+                <NavigationProperty Name="ArticleDetails" Relationship="dopa_persistence.Availability_Article_Many_One0" FromRole="Availability" ToRole="Article"/>
+            </EntityType>
+            <EntityType Name="OrderHeader">
+                <Key>
+                    <PropertyRef Name="PatOrderId"/>
+                </Key>
+                <Property Name="CompanyId" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CustomerId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DeliveryAddressId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="DeliveryWeek" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DeliveryYear" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="ForeignOrderId" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="OrderDate" Type="Edm.DateTime" Nullable="true"/>
+                <Property Name="PatOrderId" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="4"/>
+                <Property Name="Text" Type="Edm.String" Nullable="true" MaxLength="1000"/>
+                <Property Name="UserId" Type="Edm.String" Nullable="true" MaxLength="10"/>
+                <NavigationProperty Name="OrderPositionDetails" Relationship="dopa_persistence.OrderHeader_OrderPosition_One_Many0" FromRole="OrderHeader" ToRole="OrderPosition"/>
+            </EntityType>
+            <EntityType Name="PlanningTypeActivity">
+                <Key>
+                    <PropertyRef Name="PlanningTypeActivityId"/>
+                </Key>
+                <Property Name="PlanDate" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="PlanningType" Type="Edm.Int64" Nullable="true"/>
+                <Property Name="PlanningTypeActivityId" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="SortKey" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="Wait" Type="Edm.Boolean" Nullable="true"/>
+                <NavigationProperty Name="PlanningTypeActivityDescriptionDetails" Relationship="dopa_persistence.PlanningTypeActivity_PlanningTypeActivityDescription_One_Many0" FromRole="PlanningTypeActivity" ToRole="PlanningTypeActivityDescription"/>
+                <NavigationProperty Name="PlanningTypeDetails" Relationship="dopa_persistence.PlanningTypeActivity_PlanningType_Many_One0" FromRole="PlanningTypeActivity" ToRole="PlanningType"/>
+            </EntityType>
+            <EntityType Name="DeliveryAddress">
+                <Key>
+                    <PropertyRef Name="AddressId"/>
+                    <PropertyRef Name="CustomerId"/>
+                </Key>
+                <Property Name="DefaultM2" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="3"/>
+                <Property Name="AddressId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Username" Type="Edm.String" Nullable="true" MaxLength="255"/>
+            </EntityType>
+            <EntityType Name="Customer">
+                <Key>
+                    <PropertyRef Name="CustomerId"/>
+                </Key>
+                <Property Name="Active" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CustomerId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Email" Type="Edm.String" Nullable="true" MaxLength="250"/>
+                <Property Name="Fax" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Mobile" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <NavigationProperty Name="AddressDetails" Relationship="dopa_persistence.Customer_Address_One_Many0" FromRole="Customer" ToRole="Address"/>
+            </EntityType>
+            <EntityType Name="User">
+                <Key>
+                    <PropertyRef Name="Username"/>
+                </Key>
+                <Property Name="GrowerProductionPlanPattern" Type="Edm.String" Nullable="true" MaxLength="255"/>
+                <Property Name="StartDatePlanning" Type="Edm.DateTime" Nullable="false"/>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="255"/>
+            </EntityType>
+            <EntityType Name="GreenhouseBayDescription">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="40"/>
+                <Property Name="Id" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="true" MaxLength="2"/>
+                <NavigationProperty Name="GreenhouseBayDetails" Relationship="dopa_persistence.GreenhouseBayDescription_GreenhouseBay_Many_One0" FromRole="GreenhouseBayDescription" ToRole="GreenhouseBay"/>
+            </EntityType>
+            <EntityType Name="GreenhouseBayType">
+                <Key>
+                    <PropertyRef Name="GreenhouseBayTypeId"/>
+                </Key>
+                <Property Name="GreenhouseBayTypeId" Type="Edm.Int64" Nullable="false"/>
+                <NavigationProperty Name="GreenhouseBayTypeDescriptionDetails" Relationship="dopa_persistence.GreenhouseBayType_GreenhouseBayTypeDescription_One_Many0" FromRole="GreenhouseBayType" ToRole="GreenhouseBayTypeDescription"/>
+            </EntityType>
+            <EntityType Name="GreenhouseBayTypeDescription">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="40"/>
+                <Property Name="GreenhouseBayType" Type="Edm.Int64" Nullable="true"/>
+                <Property Name="Id" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="true" MaxLength="2"/>
+                <NavigationProperty Name="GreenhouseBayTypeDetails" Relationship="dopa_persistence.GreenhouseBayType_GreenhouseBayTypeDescription_One_Many0" FromRole="GreenhouseBayTypeDescription" ToRole="GreenhouseBayType"/>
+            </EntityType>
+            <EntityType Name="ProductionPlan">
+                <Key>
+                    <PropertyRef Name="AddressId"/>
+                    <PropertyRef Name="CustomerId"/>
+                    <PropertyRef Name="GreenhouseBayId"/>
+                    <PropertyRef Name="OrderId"/>
+                </Key>
+                <Property Name="Company" Type="Edm.String" Nullable="true" MaxLength="20"/>
+                <Property Name="DaysActivity01" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity02" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity03" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity04" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity05" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity06" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity07" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity08" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity09" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DaysActivity10" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="M2" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="3"/>
+                <Property Name="Percentage" Type="Edm.Decimal" Nullable="true" Precision="7" Scale="3"/>
+                <Property Name="AddressId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="GreenhouseBayId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="OrderId" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="QuantityApproved" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="QuantityDelivered" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="QuantityPlanned" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="StartDate" Type="Edm.DateTime" Nullable="true" Precision="13"/>
+                <Property Name="StartDateApproved" Type="Edm.DateTime" Nullable="true" Precision="13"/>
+                <Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="20"/>
+                <NavigationProperty Name="ArticleDetails" Relationship="dopa_persistence.ProductionPlan_Article_One_One0" FromRole="ProductionPlan" ToRole="Article"/>
+                <NavigationProperty Name="GeneralSequenceNumberDetails" Relationship="dopa_persistence.ProductionPlan_GeneralSequenceNumber_One_One0" FromRole="ProductionPlan" ToRole="GeneralSequenceNumber"/>
+                <NavigationProperty Name="GeneralSequenceNumberDetails1" Relationship="dopa_persistence.ProductionPlan_GeneralSequenceNumber_One_One1" FromRole="ProductionPlan" ToRole="GeneralSequenceNumber"/>
+                <NavigationProperty Name="OrderHeaderDetails" Relationship="dopa_persistence.ProductionPlan_OrderHeader_One_One0" FromRole="ProductionPlan" ToRole="OrderHeader"/>
+                <NavigationProperty Name="OrderPositionDetails" Relationship="dopa_persistence.ProductionPlan_OrderPosition_One_One0" FromRole="ProductionPlan" ToRole="OrderPosition"/>
+            </EntityType>
+            <EntityType Name="OrderPosition">
+                <Key>
+                    <PropertyRef Name="PatPositionId"/>
+                </Key>
+                <Property Name="ArticleId" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="ConfirmedQuantity" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DeliveryWeek" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="DeliveryYear" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="Editable" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="ForeignPositionId" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="FormId" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="OrderHeader" Type="Edm.String" Nullable="true" MaxLength="18"/>
+                <Property Name="OrderedQuantity" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="PatPositionId" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="StatusId" Type="Edm.String" Nullable="true" MaxLength="4"/>
+                <Property Name="StatusTypeId" Type="Edm.String" Nullable="true" MaxLength="4"/>
+                <Property Name="Text" Type="Edm.String" Nullable="true" MaxLength="250"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="true" MaxLength="10"/>
+                <NavigationProperty Name="OrderHeaderDetails" Relationship="dopa_persistence.OrderHeader_OrderPosition_One_Many0" FromRole="OrderPosition" ToRole="OrderHeader"/>
+            </EntityType>
+            <EntityType Name="Address">
+                <Key>
+                    <PropertyRef Name="AddressId"/>
+                </Key>
+                <Property Name="AddressId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="City" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="ContactPerson" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="true" MaxLength="10"/>
+                <Property Name="Mobile" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Name" Type="Edm.String" Nullable="true" MaxLength="250"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Postbox" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="PostboxFromPostcode" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Postcode" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="State" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Street" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <Property Name="Type" Type="Edm.String" Nullable="true" MaxLength="80"/>
+                <NavigationProperty Name="CustomerDetails" Relationship="dopa_persistence.Customer_Address_One_Many0" FromRole="Address" ToRole="Customer"/>
+            </EntityType>
+            <EntityType Name="PlanningType">
+                <Key>
+                    <PropertyRef Name="PlanningTypeId"/>
+                </Key>
+                <Property Name="PlanningTypeId" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="WeeksAvailabilityAfter" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="WeeksAvailabilityBefore" Type="Edm.Int32" Nullable="true"/>
+                <NavigationProperty Name="PlanningTypeActivityDetails" Relationship="dopa_persistence.PlanningTypeActivity_PlanningType_Many_One0" FromRole="PlanningType" ToRole="PlanningTypeActivity"/>
+                <NavigationProperty Name="PlanningTypeDescriptionDetails" Relationship="dopa_persistence.PlanningTypeDescription_PlanningType_Many_One0" FromRole="PlanningType" ToRole="PlanningTypeDescription"/>
+            </EntityType>
+            <EntityType Name="VarietyBasePlan">
+                <Key>
+                    <PropertyRef Name="StartWeek"/>
+                    <PropertyRef Name="VarietyBasePlanId"/>
+                </Key>
+                <Property Name="Days" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="PlantDensity" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="3"/>
+                <Property Name="StartWeek" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="VarietyBasePlanId" Type="Edm.Int64" Nullable="false"/>
+                <NavigationProperty Name="ArticleDetails" Relationship="dopa_persistence.VarietyBasePlan_Article_One_One0" FromRole="VarietyBasePlan" ToRole="Article"/>
+                <NavigationProperty Name="GreenhouseBayTypeDetails" Relationship="dopa_persistence.VarietyBasePlan_GreenhouseBayType_One_One0" FromRole="VarietyBasePlan" ToRole="GreenhouseBayType"/>
+                <NavigationProperty Name="PlanningTypeDetails" Relationship="dopa_persistence.VarietyBasePlan_PlanningType_One_One0" FromRole="VarietyBasePlan" ToRole="PlanningType"/>
+                <NavigationProperty Name="PlanningTypeActivityDetails" Relationship="dopa_persistence.VarietyBasePlan_PlanningTypeActivity_One_One0" FromRole="VarietyBasePlan" ToRole="PlanningTypeActivity"/>
+            </EntityType>
+            <EntityType Name="GeneralSequenceNumber">
+                <Key>
+                    <PropertyRef Name="Number"/>
+                </Key>
+                <Property Name="Number" Type="Edm.Int64" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="GreenhouseBay">
+                <Key>
+                    <PropertyRef Name="AddressId"/>
+                    <PropertyRef Name="CustomerId"/>
+                    <PropertyRef Name="GreenhouseBayId"/>
+                </Key>
+                <Property Name="Active" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="AddressId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="GreenhouseBayId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="M2" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="3"/>
+                <Property Name="SortKey" Type="Edm.Int32" Nullable="true"/>
+                <NavigationProperty Name="GreenhouseBayDescriptionDetails" Relationship="dopa_persistence.GreenhouseBayDescription_GreenhouseBay_Many_One0" FromRole="GreenhouseBay" ToRole="GreenhouseBayDescription"/>
+            </EntityType>
+            <EntityType Name="CustomerVarietyBasePlan">
+                <Key>
+                    <PropertyRef Name="CustomerVarietyBasePlanId"/>
+                    <PropertyRef Name="StartWeek"/>
+                </Key>
+                <Property Name="Company" Type="Edm.String" Nullable="true" MaxLength="20"/>
+                <Property Name="CustomerVarietyBasePlanId" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="StartWeek" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Days" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="PlantDensity" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="3"/>
+                <NavigationProperty Name="AddressDetails" Relationship="dopa_persistence.CustomerVarietyBasePlan_Address_One_One0" FromRole="CustomerVarietyBasePlan" ToRole="Address"/>
+                <NavigationProperty Name="ArticleDetails" Relationship="dopa_persistence.CustomerVarietyBasePlan_Article_One_One0" FromRole="CustomerVarietyBasePlan" ToRole="Article"/>
+                <NavigationProperty Name="CustomerDetails" Relationship="dopa_persistence.CustomerVarietyBasePlan_Customer_One_One0" FromRole="CustomerVarietyBasePlan" ToRole="Customer"/>
+                <NavigationProperty Name="PlanningTypeDetails" Relationship="dopa_persistence.CustomerVarietyBasePlan_PlanningType_One_One0" FromRole="CustomerVarietyBasePlan" ToRole="PlanningType"/>
+                <NavigationProperty Name="PlanningTypeActivityDetails" Relationship="dopa_persistence.CustomerVarietyBasePlan_PlanningTypeActivity_One_One0" FromRole="CustomerVarietyBasePlan" ToRole="PlanningTypeActivity"/>
+            </EntityType>
+            <EntityType Name="PlanningTypeActivityDescription">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" Nullable="true" MaxLength="40"/>
+                <Property Name="Id" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Language" Type="Edm.String" Nullable="true" MaxLength="2"/>
+                <Property Name="PlanningTypeActivity" Type="Edm.Int64" Nullable="true"/>
+                <NavigationProperty Name="PlanningTypeActivityDetails" Relationship="dopa_persistence.PlanningTypeActivity_PlanningTypeActivityDescription_One_Many0" FromRole="PlanningTypeActivityDescription" ToRole="PlanningTypeActivity"/>
+            </EntityType>
+            <EntityType Name="ServiceLog">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="CrudType" Type="Edm.String" Nullable="true" MaxLength="255"/>
+                <Property Name="Date" Type="Edm.DateTime" Nullable="false"/>
+                <Property Name="Id" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Table" Type="Edm.String" Nullable="true" MaxLength="255"/>
+                <Property Name="Username" Type="Edm.String" Nullable="true" MaxLength="255"/>
+                <Property Name="Value" Type="Edm.String" Nullable="true" MaxLength="255"/>
+            </EntityType>
+            <EntityType Name="Article">
+                <Key>
+                    <PropertyRef Name="ArticleId"/>
+                    <PropertyRef Name="FormId"/>
+                    <PropertyRef Name="ProductionDeviceId"/>
+                </Key>
+                <Property Name="Active" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="ArticleId" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="FormId" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="ProductionDeviceId" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="Department" Type="Edm.String" Nullable="true" MaxLength="8"/>
+                <Property Name="FormName" Type="Edm.String" Nullable="true" MaxLength="100"/>
+                <Property Name="Locked" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="Name" Type="Edm.String" Nullable="true" MaxLength="90"/>
+                <Property Name="PackingUnit" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="ProductGroupId" Type="Edm.String" Nullable="true" MaxLength="6"/>
+                <Property Name="ProductionDevideName" Type="Edm.String" Nullable="true" MaxLength="40"/>
+                <Property Name="ProductionUnit" Type="Edm.Int32" Nullable="true"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="true" MaxLength="10"/>
+                <NavigationProperty Name="AvailabilityDetails" Relationship="dopa_persistence.Availability_Article_Many_One0" FromRole="Article" ToRole="Availability"/>
+            </EntityType>
+            <Association Name="PlanningTypeDescription_PlanningType_Many_One0">
+                <End Type="dopa_persistence.PlanningTypeDescription" Multiplicity="*" Role="PlanningTypeDescription"/>
+                <End Type="dopa_persistence.PlanningType" Multiplicity="1" Role="PlanningType"/>
+                <ReferentialConstraint>
+                    <Principal Role="PlanningType">
+                        <PropertyRef Name="PlanningTypeId"/>
+                    </Principal>
+                    <Dependent Role="PlanningTypeDescription">
+                        <PropertyRef Name="PlanningType"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PlanningTypeActivity_PlanningType_Many_One0">
+                <End Type="dopa_persistence.PlanningTypeActivity" Multiplicity="*" Role="PlanningTypeActivity"/>
+                <End Type="dopa_persistence.PlanningType" Multiplicity="1" Role="PlanningType"/>
+                <ReferentialConstraint>
+                    <Principal Role="PlanningType">
+                        <PropertyRef Name="PlanningTypeId"/>
+                    </Principal>
+                    <Dependent Role="PlanningTypeActivity">
+                        <PropertyRef Name="PlanningType"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="GreenhouseBayType_GreenhouseBayTypeDescription_One_Many0">
+                <End Type="dopa_persistence.GreenhouseBayType" Multiplicity="1" Role="GreenhouseBayType"/>
+                <End Type="dopa_persistence.GreenhouseBayTypeDescription" Multiplicity="*" Role="GreenhouseBayTypeDescription"/>
+                <ReferentialConstraint>
+                    <Principal Role="GreenhouseBayType">
+                        <PropertyRef Name="GreenhouseBayTypeId"/>
+                    </Principal>
+                    <Dependent Role="GreenhouseBayTypeDescription">
+                        <PropertyRef Name="GreenhouseBayType"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="OrderHeader_OrderPosition_One_Many0">
+                <End Type="dopa_persistence.OrderHeader" Multiplicity="1" Role="OrderHeader"/>
+                <End Type="dopa_persistence.OrderPosition" Multiplicity="*" Role="OrderPosition"/>
+                <ReferentialConstraint>
+                    <Principal Role="OrderHeader">
+                        <PropertyRef Name="PatOrderId"/>
+                    </Principal>
+                    <Dependent Role="OrderPosition">
+                        <PropertyRef Name="OrderHeader"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Customer_Address_One_Many0">
+                <End Type="dopa_persistence.Customer" Multiplicity="1" Role="Customer"/>
+                <End Type="dopa_persistence.Address" Multiplicity="*" Role="Address"/>
+                <ReferentialConstraint>
+                    <Principal Role="Customer">
+                        <PropertyRef Name="CustomerId"/>
+                    </Principal>
+                    <Dependent Role="Address">
+                        <PropertyRef Name="Customer"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PlanningTypeActivity_PlanningTypeActivityDescription_One_Many0">
+                <End Type="dopa_persistence.PlanningTypeActivity" Multiplicity="1" Role="PlanningTypeActivity"/>
+                <End Type="dopa_persistence.PlanningTypeActivityDescription" Multiplicity="*" Role="PlanningTypeActivityDescription"/>
+                <ReferentialConstraint>
+                    <Principal Role="PlanningTypeActivity">
+                        <PropertyRef Name="PlanningTypeActivityId"/>
+                    </Principal>
+                    <Dependent Role="PlanningTypeActivityDescription">
+                        <PropertyRef Name="PlanningTypeActivity"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="GreenhouseBayDescription_GreenhouseBay_Many_One0">
+                <End Type="dopa_persistence.GreenhouseBayDescription" Multiplicity="*" Role="GreenhouseBayDescription"/>
+                <End Type="dopa_persistence.GreenhouseBay" Multiplicity="1" Role="GreenhouseBay"/>
+            </Association>
+            <Association Name="VarietyBasePlan_GreenhouseBayType_One_One0">
+                <End Type="dopa_persistence.VarietyBasePlan" Multiplicity="1" Role="VarietyBasePlan"/>
+                <End Type="dopa_persistence.GreenhouseBayType" Multiplicity="1" Role="GreenhouseBayType"/>
+            </Association>
+            <Association Name="ProductionPlan_OrderPosition_One_One0">
+                <End Type="dopa_persistence.ProductionPlan" Multiplicity="1" Role="ProductionPlan"/>
+                <End Type="dopa_persistence.OrderPosition" Multiplicity="1" Role="OrderPosition"/>
+            </Association>
+            <Association Name="Availability_Article_Many_One0">
+                <End Type="dopa_persistence.Availability" Multiplicity="*" Role="Availability"/>
+                <End Type="dopa_persistence.Article" Multiplicity="1" Role="Article"/>
+            </Association>
+            <Association Name="VarietyBasePlan_PlanningTypeActivity_One_One0">
+                <End Type="dopa_persistence.VarietyBasePlan" Multiplicity="1" Role="VarietyBasePlan"/>
+                <End Type="dopa_persistence.PlanningTypeActivity" Multiplicity="1" Role="PlanningTypeActivity"/>
+            </Association>
+            <Association Name="ProductionPlan_Article_One_One0">
+                <End Type="dopa_persistence.ProductionPlan" Multiplicity="1" Role="ProductionPlan"/>
+                <End Type="dopa_persistence.Article" Multiplicity="1" Role="Article"/>
+            </Association>
+            <Association Name="VarietyBasePlan_Article_One_One0">
+                <End Type="dopa_persistence.VarietyBasePlan" Multiplicity="1" Role="VarietyBasePlan"/>
+                <End Type="dopa_persistence.Article" Multiplicity="1" Role="Article"/>
+            </Association>
+            <Association Name="CustomerVarietyBasePlan_PlanningTypeActivity_One_One0">
+                <End Type="dopa_persistence.CustomerVarietyBasePlan" Multiplicity="1" Role="CustomerVarietyBasePlan"/>
+                <End Type="dopa_persistence.PlanningTypeActivity" Multiplicity="1" Role="PlanningTypeActivity"/>
+            </Association>
+            <Association Name="CustomerVarietyBasePlan_Address_One_One0">
+                <End Type="dopa_persistence.CustomerVarietyBasePlan" Multiplicity="1" Role="CustomerVarietyBasePlan"/>
+                <End Type="dopa_persistence.Address" Multiplicity="1" Role="Address"/>
+            </Association>
+            <Association Name="ProductionPlan_GeneralSequenceNumber_One_One1">
+                <End Type="dopa_persistence.ProductionPlan" Multiplicity="1" Role="ProductionPlan"/>
+                <End Type="dopa_persistence.GeneralSequenceNumber" Multiplicity="1" Role="GeneralSequenceNumber"/>
+            </Association>
+            <Association Name="CustomerVarietyBasePlan_Customer_One_One0">
+                <End Type="dopa_persistence.CustomerVarietyBasePlan" Multiplicity="1" Role="CustomerVarietyBasePlan"/>
+                <End Type="dopa_persistence.Customer" Multiplicity="1" Role="Customer"/>
+            </Association>
+            <Association Name="ProductionPlan_GeneralSequenceNumber_One_One0">
+                <End Type="dopa_persistence.ProductionPlan" Multiplicity="1" Role="ProductionPlan"/>
+                <End Type="dopa_persistence.GeneralSequenceNumber" Multiplicity="1" Role="GeneralSequenceNumber"/>
+            </Association>
+            <Association Name="CustomerVarietyBasePlan_PlanningType_One_One0">
+                <End Type="dopa_persistence.CustomerVarietyBasePlan" Multiplicity="1" Role="CustomerVarietyBasePlan"/>
+                <End Type="dopa_persistence.PlanningType" Multiplicity="1" Role="PlanningType"/>
+            </Association>
+            <Association Name="ProductionPlan_OrderHeader_One_One0">
+                <End Type="dopa_persistence.ProductionPlan" Multiplicity="1" Role="ProductionPlan"/>
+                <End Type="dopa_persistence.OrderHeader" Multiplicity="1" Role="OrderHeader"/>
+            </Association>
+            <Association Name="VarietyBasePlan_PlanningType_One_One0">
+                <End Type="dopa_persistence.VarietyBasePlan" Multiplicity="1" Role="VarietyBasePlan"/>
+                <End Type="dopa_persistence.PlanningType" Multiplicity="1" Role="PlanningType"/>
+            </Association>
+            <Association Name="CustomerVarietyBasePlan_Article_One_One0">
+                <End Type="dopa_persistence.CustomerVarietyBasePlan" Multiplicity="1" Role="CustomerVarietyBasePlan"/>
+                <End Type="dopa_persistence.Article" Multiplicity="1" Role="Article"/>
+            </Association>
+            <EntityContainer Name="dopa_persistenceContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="PlanningTypeDescriptions" EntityType="dopa_persistence.PlanningTypeDescription"/>
+                <EntitySet Name="Availabilitys" EntityType="dopa_persistence.Availability"/>
+                <EntitySet Name="OrderHeaders" EntityType="dopa_persistence.OrderHeader"/>
+                <EntitySet Name="PlanningTypeActivitys" EntityType="dopa_persistence.PlanningTypeActivity"/>
+                <EntitySet Name="DeliveryAddresss" EntityType="dopa_persistence.DeliveryAddress"/>
+                <EntitySet Name="Customers" EntityType="dopa_persistence.Customer"/>
+                <EntitySet Name="Users" EntityType="dopa_persistence.User"/>
+                <EntitySet Name="GreenhouseBayDescriptions" EntityType="dopa_persistence.GreenhouseBayDescription"/>
+                <EntitySet Name="GreenhouseBayTypes" EntityType="dopa_persistence.GreenhouseBayType"/>
+                <EntitySet Name="GreenhouseBayTypeDescriptions" EntityType="dopa_persistence.GreenhouseBayTypeDescription"/>
+                <EntitySet Name="ProductionPlans" EntityType="dopa_persistence.ProductionPlan"/>
+                <EntitySet Name="OrderPositions" EntityType="dopa_persistence.OrderPosition"/>
+                <EntitySet Name="Addresss" EntityType="dopa_persistence.Address"/>
+                <EntitySet Name="PlanningTypes" EntityType="dopa_persistence.PlanningType"/>
+                <EntitySet Name="VarietyBasePlans" EntityType="dopa_persistence.VarietyBasePlan"/>
+                <EntitySet Name="GeneralSequenceNumbers" EntityType="dopa_persistence.GeneralSequenceNumber"/>
+                <EntitySet Name="GreenhouseBays" EntityType="dopa_persistence.GreenhouseBay"/>
+                <EntitySet Name="CustomerVarietyBasePlans" EntityType="dopa_persistence.CustomerVarietyBasePlan"/>
+                <EntitySet Name="PlanningTypeActivityDescriptions" EntityType="dopa_persistence.PlanningTypeActivityDescription"/>
+                <EntitySet Name="ServiceLogs" EntityType="dopa_persistence.ServiceLog"/>
+                <EntitySet Name="Articles" EntityType="dopa_persistence.Article"/>
+                <AssociationSet Name="PlanningTypeDescription_PlanningType_Many_One0Set" Association="dopa_persistence.PlanningTypeDescription_PlanningType_Many_One0">
+                    <End EntitySet="PlanningTypeDescriptions" Role="PlanningTypeDescription"/>
+                    <End EntitySet="PlanningTypes" Role="PlanningType"/>
+                </AssociationSet>
+                <AssociationSet Name="PlanningTypeActivity_PlanningType_Many_One0Set" Association="dopa_persistence.PlanningTypeActivity_PlanningType_Many_One0">
+                    <End EntitySet="PlanningTypeActivitys" Role="PlanningTypeActivity"/>
+                    <End EntitySet="PlanningTypes" Role="PlanningType"/>
+                </AssociationSet>
+                <AssociationSet Name="GreenhouseBayType_GreenhouseBayTypeDescription_One_Many0Set" Association="dopa_persistence.GreenhouseBayType_GreenhouseBayTypeDescription_One_Many0">
+                    <End EntitySet="GreenhouseBayTypes" Role="GreenhouseBayType"/>
+                    <End EntitySet="GreenhouseBayTypeDescriptions" Role="GreenhouseBayTypeDescription"/>
+                </AssociationSet>
+                <AssociationSet Name="OrderHeader_OrderPosition_One_Many0Set" Association="dopa_persistence.OrderHeader_OrderPosition_One_Many0">
+                    <End EntitySet="OrderHeaders" Role="OrderHeader"/>
+                    <End EntitySet="OrderPositions" Role="OrderPosition"/>
+                </AssociationSet>
+                <AssociationSet Name="Customer_Address_One_Many0Set" Association="dopa_persistence.Customer_Address_One_Many0">
+                    <End EntitySet="Customers" Role="Customer"/>
+                    <End EntitySet="Addresss" Role="Address"/>
+                </AssociationSet>
+                <AssociationSet Name="PlanningTypeActivity_PlanningTypeActivityDescription_One_Many0Set" Association="dopa_persistence.PlanningTypeActivity_PlanningTypeActivityDescription_One_Many0">
+                    <End EntitySet="PlanningTypeActivitys" Role="PlanningTypeActivity"/>
+                    <End EntitySet="PlanningTypeActivityDescriptions" Role="PlanningTypeActivityDescription"/>
+                </AssociationSet>
+                <AssociationSet Name="GreenhouseBayDescription_GreenhouseBay_Many_One0Set" Association="dopa_persistence.GreenhouseBayDescription_GreenhouseBay_Many_One0">
+                    <End EntitySet="GreenhouseBayDescriptions" Role="GreenhouseBayDescription"/>
+                    <End EntitySet="GreenhouseBays" Role="GreenhouseBay"/>
+                </AssociationSet>
+                <AssociationSet Name="VarietyBasePlan_GreenhouseBayType_One_One0Set" Association="dopa_persistence.VarietyBasePlan_GreenhouseBayType_One_One0">
+                    <End EntitySet="VarietyBasePlans" Role="VarietyBasePlan"/>
+                    <End EntitySet="GreenhouseBayTypes" Role="GreenhouseBayType"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductionPlan_OrderPosition_One_One0Set" Association="dopa_persistence.ProductionPlan_OrderPosition_One_One0">
+                    <End EntitySet="ProductionPlans" Role="ProductionPlan"/>
+                    <End EntitySet="OrderPositions" Role="OrderPosition"/>
+                </AssociationSet>
+                <AssociationSet Name="Availability_Article_Many_One0Set" Association="dopa_persistence.Availability_Article_Many_One0">
+                    <End EntitySet="Availabilitys" Role="Availability"/>
+                    <End EntitySet="Articles" Role="Article"/>
+                </AssociationSet>
+                <AssociationSet Name="VarietyBasePlan_PlanningTypeActivity_One_One0Set" Association="dopa_persistence.VarietyBasePlan_PlanningTypeActivity_One_One0">
+                    <End EntitySet="VarietyBasePlans" Role="VarietyBasePlan"/>
+                    <End EntitySet="PlanningTypeActivitys" Role="PlanningTypeActivity"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductionPlan_Article_One_One0Set" Association="dopa_persistence.ProductionPlan_Article_One_One0">
+                    <End EntitySet="ProductionPlans" Role="ProductionPlan"/>
+                    <End EntitySet="Articles" Role="Article"/>
+                </AssociationSet>
+                <AssociationSet Name="VarietyBasePlan_Article_One_One0Set" Association="dopa_persistence.VarietyBasePlan_Article_One_One0">
+                    <End EntitySet="VarietyBasePlans" Role="VarietyBasePlan"/>
+                    <End EntitySet="Articles" Role="Article"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerVarietyBasePlan_PlanningTypeActivity_One_One0Set" Association="dopa_persistence.CustomerVarietyBasePlan_PlanningTypeActivity_One_One0">
+                    <End EntitySet="CustomerVarietyBasePlans" Role="CustomerVarietyBasePlan"/>
+                    <End EntitySet="PlanningTypeActivitys" Role="PlanningTypeActivity"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerVarietyBasePlan_Address_One_One0Set" Association="dopa_persistence.CustomerVarietyBasePlan_Address_One_One0">
+                    <End EntitySet="CustomerVarietyBasePlans" Role="CustomerVarietyBasePlan"/>
+                    <End EntitySet="Addresss" Role="Address"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductionPlan_GeneralSequenceNumber_One_One1Set" Association="dopa_persistence.ProductionPlan_GeneralSequenceNumber_One_One1">
+                    <End EntitySet="ProductionPlans" Role="ProductionPlan"/>
+                    <End EntitySet="GeneralSequenceNumbers" Role="GeneralSequenceNumber"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerVarietyBasePlan_Customer_One_One0Set" Association="dopa_persistence.CustomerVarietyBasePlan_Customer_One_One0">
+                    <End EntitySet="CustomerVarietyBasePlans" Role="CustomerVarietyBasePlan"/>
+                    <End EntitySet="Customers" Role="Customer"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductionPlan_GeneralSequenceNumber_One_One0Set" Association="dopa_persistence.ProductionPlan_GeneralSequenceNumber_One_One0">
+                    <End EntitySet="ProductionPlans" Role="ProductionPlan"/>
+                    <End EntitySet="GeneralSequenceNumbers" Role="GeneralSequenceNumber"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerVarietyBasePlan_PlanningType_One_One0Set" Association="dopa_persistence.CustomerVarietyBasePlan_PlanningType_One_One0">
+                    <End EntitySet="CustomerVarietyBasePlans" Role="CustomerVarietyBasePlan"/>
+                    <End EntitySet="PlanningTypes" Role="PlanningType"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductionPlan_OrderHeader_One_One0Set" Association="dopa_persistence.ProductionPlan_OrderHeader_One_One0">
+                    <End EntitySet="ProductionPlans" Role="ProductionPlan"/>
+                    <End EntitySet="OrderHeaders" Role="OrderHeader"/>
+                </AssociationSet>
+                <AssociationSet Name="VarietyBasePlan_PlanningType_One_One0Set" Association="dopa_persistence.VarietyBasePlan_PlanningType_One_One0">
+                    <End EntitySet="VarietyBasePlans" Role="VarietyBasePlan"/>
+                    <End EntitySet="PlanningTypes" Role="PlanningType"/>
+                </AssociationSet>
+                <AssociationSet Name="CustomerVarietyBasePlan_Article_One_One0Set" Association="dopa_persistence.CustomerVarietyBasePlan_Article_One_One0">
+                    <End EntitySet="CustomerVarietyBasePlans" Role="CustomerVarietyBasePlan"/>
+                    <End EntitySet="Articles" Role="Article"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

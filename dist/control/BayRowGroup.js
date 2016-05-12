@@ -17,7 +17,8 @@ sap.ui.define([
 			},
 			aggregations : {
 				"rows" : {type : "dummenorangetnv.control.BayRow", multiple : true, singularName : "row"},
-				"ftcells" : {type : "dummenorangetnv.control.BayCell", multiple : true, singularName : "ftcell"}
+				"ftRows" : {type : "dummenorangetnv.control.BayRow", multiple : true, singularName : "ftrow"},
+				"emptyRow" : {type : "dummenorangetnv.control.BayRow", multiple : false}
 			},
 			defaultAggregation: "rows"
 		},
@@ -25,7 +26,8 @@ sap.ui.define([
 		renderer: function(oRM, oControl) {
 			var key, x;
 			var aRows = oControl.getRows();
-			var aFtCells = oControl.getFtcells();
+			var aFtRows = oControl.getFtRows();
+			var aEmptyRow = oControl.getEmptyRow();
 			var ghbay = oControl.getGhbay();
 			var oddweek = oControl.getOddweek();
 			var ttlPercent = 0;
@@ -46,34 +48,13 @@ sap.ui.define([
 				for(x = 0; x < aRows.length; x++) {
 					oRM.renderControl(aRows[x]);
 				}
-			} else {
-				oRM.renderControl(new BayRow({
-					ghbay: ghbay,
-					cells: [
-					    new BayCell({
-					        content: new ObjectNumber({
-					            number: ghbay,
-					            emphasized: false
-					        })
-					    }),
-					    new BayCell({
-					        colspan: 11,
-					        content: new Text({
-					            text: "EMPTY",
-					            textAlign: sap.ui.core.TextAlign.Center
-					        })
-					    }).addStyleClass("-bay-empty-cell")]
-				}));
+			} else if(aEmptyRow) {
+			    aEmptyRow.setGhbay(ghbay);
+			    oRM.renderControl(aEmptyRow);
 			}
-			oRM.write("<tr");
-// 			oRM.addClass("bay-row-height");
-			oRM.addClass("bay-row-paddings");
-			oRM.writeClasses();
-			oRM.write(">");
-			for(x = 0; x < aFtCells.length; x++) {
-			    oRM.renderControl(aFtCells[x]);
+			for(x = 0; x < aFtRows.length; x++) {
+			    oRM.renderControl(aFtRows[x]);
 			}
-			oRM.write("</tr>");
 			oRM.write("</tbody>");
 		}
 	});

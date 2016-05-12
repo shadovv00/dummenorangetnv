@@ -187,15 +187,6 @@ sap.ui.define([
 		 * @memberOf dummenorangetnv.view.AddPlantsToBay
 		 */
 			onInit: function() {
-		  //  console.log(new Date('2016-42-7'));
-		  //  console.log(Date.parse('2016-42-7'));
-		  //  var tDate=new Date();
-		  //  tDate.setYear(2016);
-		  //  tDate.setWeeks(42);
-		  //  tDate.setDay(2);
-		  //  console.log(tDate);
-
-
 				this.getView().byId("bayDetFilterDateFrom").setDateValue(new Date());
 				var toDate = new Date();
 				toDate.setDate(toDate.getDate()+210);
@@ -207,17 +198,9 @@ sap.ui.define([
 				var oModel = new sap.ui.model.json.JSONModel(this.addPlantsMockup);
 				this.getView().setModel(oModel,"bayDetailModel");
 				this.getView().getModel("bayDetailModel").getData().prevPage=sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId();
-				// console.log(sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId());
-				// console.log(this.getView().getModel("bayDetailModel").getData().prevPage);
 
 				var oBayDetailList = this.getView().byId("bayDetailListId");
 				oBayDetailList.bindAggregation("items","bayDetailModel>/PlantsInBay",this.bayDetailListFactory.bind(this));
-
-				// var filterNotDeleted = new sap.ui.model.Filter("deleted", sap.ui.model.FilterOperator.EQ, false);
-				// var filterDateFrom = new sap.ui.model.Filter("oog", sap.ui.model.FilterOperator.GE, new Date(this.getView().byId("bayDetFilterDateFrom").getDateValue()));
-				// var filterDateTo =new sap.ui.model.Filter("plantedDate", sap.ui.model.FilterOperator.LE, new Date(this.getView().byId("bayDetFilterDateTo").getDateValue()));
-				// var sorter=new sap.ui.model.Sorter("plantedDate", false);
-				// oBayDetailList.getBinding("items").filter([filterNotDeleted,filterDateFrom,filterDateTo]).sort(sorter);
 
 				this.onFilterDateChange();
 			},
@@ -528,13 +511,6 @@ sap.ui.define([
 											width:"11%",
 											justifyContent:"Center",
 											items: [
-	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>oog/",
-											     //   type: 'sap.ui.model.type.Date',
-											     //   formatOptions: {
-											     //     pattern: 'yyyy-ww-u'
-											     //   }},
-	               //             				change: function(){that.onOOGChange(this,sId,oContext);}  
-	                            			// 	,   textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
 	                            				new sap.m.DatePicker({ width:"90%", dateValue: "{bayDetailModel>oog}",
 	                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
 	                            				change: function(){that.onDataChange(this,sId,oContext);}  
@@ -717,11 +693,9 @@ sap.ui.define([
 		  //  console.log(item.getItems()[0].getId());
 		    if(item.getItems()[0].getId()==elThis.getId()){
 		        inputIndex=index;  
-		      //  console.log(inputIndex);
 		    }
 		});
 		if (inputIndex<5){
-		  //  console.log("<5");
     	        var baySquare=thisContr.getView().getModel("bayDetailModel").getData().Bay.square;
     	    switch(inputIndex) {
                 case 2:
@@ -747,8 +721,7 @@ sap.ui.define([
     				oContext.getModel().setProperty(oContext.getPath() + "/percent", percent);
                 break;
             }
-		}else if(11>inputIndex){
-		  //  console.log("10>4");
+		}else if(10>inputIndex){
     	    switch(inputIndex) {
                 case 5:
                     // console.log(elThis.getDateValue());
@@ -767,15 +740,7 @@ sap.ui.define([
                 case 9:
     				oContext.getModel().setProperty(oContext.getPath() + "/ko", parseInt(elThis.getValue()));
                 break;
-                case 10:
-    				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
-                break;
-                
-        //         case 12:
-    				// oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
-        //         break;
             }
-            // console.log(plantedDate);
     		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
     	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
     	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
@@ -784,19 +749,21 @@ sap.ui.define([
     	   // var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
     	   // var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
     		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+shortDays+reactionDays);
-            // console.log(plantedDate);
     		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
 
-		}else if (inputIndex>10){
+		}else if (inputIndex>9){
        	    switch(inputIndex) {
-                    case 11:
-            		    var oogDate=new Date(elThis.getDateValue());
-               				oContext.getModel().setProperty(oContext.getPath() + "/oog", oogDate);
-                    break;
-                    case 12:
-        				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
-                    break;
-                }
+                case 10:
+    				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
+                break;
+                case 11:
+        		  //  var oogDate=new Date(elThis.getDateValue());
+           				oContext.getModel().setProperty(oContext.getPath() + "/oog", new Date(elThis.getDateValue()));
+                break;
+                case 12:
+    				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
+                break;
+            }
 		}
     		// ourModel.submitChanges();
     	    oContext.getModel().refresh(true);
@@ -892,22 +859,23 @@ sap.ui.define([
 			app.addPage(addPlantsToBayPage);
 		} 
 		app.to("addPlantsToBayPageId");
-	},
-		goToMultiAddPlants: function(oEvent) {
-			this.app = this.getView().byId("AppId");
-			if (sap.ui.getCore().byId("multiAddPlantsPageId") !== undefined) {
-				this.app.to("multiAddPlantsPageId");
-			} else {
-				var greenhouseSelectPage = sap.ui.view({
-					id: "multiAddPlantsPageId",
-					viewName: "dummenorangetnv.view.MultipleAddPlants",
-					type: sap.ui.core.mvc.ViewType.XML
-				});
-				this.app.addPage(greenhouseSelectPage);
-				this.app.to(greenhouseSelectPage);
-			}
-		}
+	}
 	
+// 	,goToMultiAddPlants: function(oEvent) {
+// 		this.app = this.getView().byId("AppId");
+// 		if (sap.ui.getCore().byId("multiAddPlantsPageId") !== undefined) {
+// 			this.app.to("multiAddPlantsPageId");
+// 		} else {
+// 			var greenhouseSelectPage = sap.ui.view({
+// 				id: "multiAddPlantsPageId",
+// 				viewName: "dummenorangetnv.view.MultipleAddPlants",
+// 				type: sap.ui.core.mvc.ViewType.XML
+// 			});
+// 			this.app.addPage(greenhouseSelectPage);
+// 			this.app.to(greenhouseSelectPage);
+// 		}
+// 	}
+
 	
 	// onDeletePlant: function(){
 	// }

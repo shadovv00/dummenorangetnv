@@ -31,6 +31,13 @@
 			"name": "custom1bluecrystal"
 		},
 		"description": "Route for theme"
+	}, {
+		"path": "/destinations/DOdestination",
+		"target": {
+			"type": "destination",
+			"name": "DOdestination"
+		},
+		"description": "DOdestination"
 	}],
 	"sendWelcomeFileRedirect": true,
 	"cacheControl": []

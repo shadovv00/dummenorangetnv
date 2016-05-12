@@ -12,11 +12,13 @@
 			"erp_planted_date": "2016-01-01",
 			"root": 0,
 			"veg": 12,
+			"ko": 10,
 			"rea": 54,
 			"horv": 1,
 			"oog_date": "2016-02-29",
 			"vaca": 1,
-			"processed": false
+			"processed": false,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 6,
@@ -32,10 +34,12 @@
 			"root": 0,
 			"veg": 12,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-01",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}, {
 			"name": "015 Grand cherry",
 			"percent": 0.002,
@@ -47,10 +51,12 @@
 			"root": 0,
 			"veg": 12,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-02-28",
 			"vaca": 3,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 7,
@@ -70,10 +76,12 @@
 			"root": 0,
 			"veg": 13,
 			"rea": 55,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-02",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 9,
@@ -89,10 +97,12 @@
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-03",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 10,
@@ -108,10 +118,12 @@
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-04",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 11,
@@ -131,10 +143,12 @@
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-11",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}, {
 			"name": "001 Feeling green dark1",
 			"percent": 0.26,
@@ -146,10 +160,12 @@
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-12",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}, {
 			"name": "001 Feeling DDD",
 			"percent": 0.5,
@@ -161,10 +177,12 @@
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-13",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}, {
 		"gh_bay": 13,
@@ -180,10 +198,12 @@
 			"root": 0,
 			"veg": 11,
 			"rea": 54,
+			"ko": 10,
 			"horv": 1,
 			"oog_date": "2016-03-14",
 			"vaca": 1,
-			"processed": true
+			"processed": true,
+			"deleted": false
 		}]
 	}]
 }

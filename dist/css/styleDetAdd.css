@@ -23,3 +23,21 @@
 .sapMPopover{
     color: #541407!important;
 }
+
+
+@media (min-width: 100px) { 
+    .bayScrollVBox{
+        width: 1250px;
+    }
+}
+
+@media (min-width: 1250px) { 
+    .bayScrollVBox{
+        width: 100%;
+    }
+}
+
+
+.bayTextPadding{
+    padding-right:16px;
+}
