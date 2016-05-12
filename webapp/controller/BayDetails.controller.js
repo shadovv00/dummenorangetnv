@@ -50,7 +50,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
-					ok: 1,
+					ko: 1,
 					harv: 1,
 					oog: new Date(1448748000000),
 					vaca: 0,
@@ -71,7 +71,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
-					ok: 1,
+					ko: 1,
 					harv: 1,
 					oog: new Date(1466888400000),
 					vaca: 0,
@@ -92,7 +92,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
-					ok: 1,
+					ko: 1,
 					harv: 1,
 					oog: new Date(1477170000000),
 					vaca: 0,
@@ -113,7 +113,7 @@ sap.ui.define([
 					root: 0,
 					veg: 12,
 					rea: 54,
-					ok: 1,
+					ko: 1,
 					harv: 1,
 					oog: new Date(1477170000000),
 					vaca: 0,
@@ -344,7 +344,7 @@ sap.ui.define([
 											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("ok"), textAlign:"End" }).addStyleClass("")
+	                            				new sap.m.Text({ width: "68%", text: oContext.getProperty("ko"), textAlign:"End" }).addStyleClass("")
 											]
 										}).addStyleClass(""),
 										new sap.m.VBox({
@@ -510,7 +510,7 @@ sap.ui.define([
 											width:"5.5%",
 											justifyContent:"Center",
 											items: [
-	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("ok"),
+	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("ko"),
 	                            				change: function(){that.onDataChange(this,sId,oContext);}  
 	                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin")
 											]
@@ -747,7 +747,7 @@ sap.ui.define([
     				oContext.getModel().setProperty(oContext.getPath() + "/percent", percent);
                 break;
             }
-		}else if(10>inputIndex){
+		}else if(11>inputIndex){
 		  //  console.log("10>4");
     	    switch(inputIndex) {
                 case 5:
@@ -765,48 +765,39 @@ sap.ui.define([
     				oContext.getModel().setProperty(oContext.getPath() + "/rea", parseInt(elThis.getValue()));
                 break;
                 case 9:
+    				oContext.getModel().setProperty(oContext.getPath() + "/ko", parseInt(elThis.getValue()));
+                break;
+                case 10:
     				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
                 break;
-                case 11:
-    				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
-                break;
+                
+        //         case 12:
+    				// oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
+        //         break;
             }
             // console.log(plantedDate);
     		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
     	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
     	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
+    	    var shortDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/ko"));                         
     	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));                         
     	   // var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
     	   // var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
-    		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
+    		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+shortDays+reactionDays);
             // console.log(plantedDate);
     		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
 
-		}else if (inputIndex>9){
- 		 //   console.log(">9");
+		}else if (inputIndex>10){
        	    switch(inputIndex) {
-                    case 10:
-                        // elThis.setMinDate(new Date());
-            		    var oogDate=new Date(elThis.getDateValue());
-                // 		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
-                // 	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
-                // 	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
-                // 	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));
-                // 	    plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+reactionDays);
-                // 	    console.log(plantedDate>oogDate);
-                // 	    if (plantedDate>oogDate){
-                // 	       	sap.m.MessageToast.show('Wrong date');
-                // 	    }else{
-               				oContext.getModel().setProperty(oContext.getPath() + "/oog", oogDate);
-                	   // }
-                    break;
                     case 11:
+            		    var oogDate=new Date(elThis.getDateValue());
+               				oContext.getModel().setProperty(oContext.getPath() + "/oog", oogDate);
+                    break;
+                    case 12:
         				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
                     break;
                 }
 		}
-
-
     		// ourModel.submitChanges();
     	    oContext.getModel().refresh(true);
 	},
@@ -901,7 +892,22 @@ sap.ui.define([
 			app.addPage(addPlantsToBayPage);
 		} 
 		app.to("addPlantsToBayPageId");
-	}
+	},
+		goToMultiAddPlants: function(oEvent) {
+			this.app = this.getView().byId("AppId");
+			if (sap.ui.getCore().byId("multiAddPlantsPageId") !== undefined) {
+				this.app.to("multiAddPlantsPageId");
+			} else {
+				var greenhouseSelectPage = sap.ui.view({
+					id: "multiAddPlantsPageId",
+					viewName: "dummenorangetnv.view.MultipleAddPlants",
+					type: sap.ui.core.mvc.ViewType.XML
+				});
+				this.app.addPage(greenhouseSelectPage);
+				this.app.to(greenhouseSelectPage);
+			}
+		}
+	
 	
 	// onDeletePlant: function(){
 	// }

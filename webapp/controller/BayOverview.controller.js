@@ -282,7 +282,24 @@ sap.ui.define([
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
-		onAfterRendering: function() {}
+		onAfterRendering: function() {},
+		
+		
+		goToMultiAddPlants: function(oEvent) {
+		    var view = this.getView();
+			var app = view.getParent();
+			if (sap.ui.getCore().byId("multiAddPlantsPageId") !== undefined) {
+				app.to("multiAddPlantsPageId");
+			} else {
+				var greenhouseSelectPage = sap.ui.view({
+					id: "multiAddPlantsPageId",
+					viewName: "dummenorangetnv.view.MultipleAddPlants",
+					type: sap.ui.core.mvc.ViewType.XML
+				});
+				app.addPage(greenhouseSelectPage);
+				app.to(greenhouseSelectPage);
+			}
+		}
 
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.

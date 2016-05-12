@@ -1,0 +1,102 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.MultipleAddPlants"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<Toolbar height="17%" class="orangeHeader">
+			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+				<items>
+					<Button type="Back" press="onPrevPage" text="Back"/>
+				</items>
+			</FlexBox>
+			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
+		</Toolbar>
+		<content>
+			<Panel width="100%" class="orangePanel">
+				<!--<headerToolbar>-->
+				<!--	<Toolbar>-->
+				<!--		<Label class = "left-data-panel sapUiTinyMarginBegin" text = "GH-bay " ></Label>-->
+				<!--		<Label id="addPlantsSelectedBayNumber" class = "right-data-panel sapUiTinyMarginBegin sapUiTinyMarginEnd" text = "6"></Label>-->
+				<!--		<Label class = "left-data-panel sapUiMediumMarginBegin" text = "m2: "></Label>-->
+				<!--		<Label id="addPlantsSelectedBaySquare" class = "right-data-panel sapUiTinyMarginBegin" text = "75m2"></Label>-->
+				<!--	</Toolbar>-->
+				<!--</headerToolbar>-->
+				<content>
+				    <ScrollContainer horizontal="true">
+				        <content>
+				            <VBox class="bayScrollVBox">
+            				    <HBox class = "sapUiSmallMarginTop sapUiSmallMarginBottom">
+            						<FlexBox  width="5%" justifyContent="Start">
+            							<Text text="Bay" textAlign="Begin" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="11%" justifyContent="Center">
+            							<Text text="Planted" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="18%">
+            							<Text text="" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="8%" justifyContent="Center">
+            							<Text text="%" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="8%" justifyContent="Center">
+            							<Text text="Plants" textAlign="Center"  ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="6%" justifyContent="Center">
+            							<Text text="p/m2:" textAlign="Center"  ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="root" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="VEG:" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="REA:" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="KO" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="Harv" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="11%" justifyContent="Center">
+            							<Text text="OOG" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="Vaca" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            					</HBox>
+
+            					<List id="multiAddToBaysListId">
+            		<!--				<CustomListItem >-->
+            		<!--				    <VBox>-->
+            		<!--				        <HBox>-->
+    										<!--<Text text="{multiAddModel>gh_bay}"></Text>            						            -->
+            						            <!--<List>-->
+            						                
+            						            <!--</List>-->
+            		<!--				        </HBox>-->
+            		<!--				    </VBox>-->
+            		<!--				</CustomListItem>            					    -->
+            					</List>
+				            </VBox>
+				        </content>
+				    </ScrollContainer>
+				</content>
+			</Panel>		    
+		</content>
+		<footer>
+			<Bar >
+				<contentLeft>
+				    <CheckBox text="Select/Deselect all"></CheckBox>
+				</contentLeft>
+				<contentMiddle>
+	   				<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Select plants" />
+	   				<Button icon="sap-icon://survey" press="onAddingPlant" text="Copy last round" />
+				</contentMiddle>
+				<contentRight>
+	   				<Button icon="sap-icon://sys-cancel" press="onAddingPlant" text="Cancel" />
+	   				<Button icon="sap-icon://sys-enter" press="onAddingPlant" text="Apply plan" />
+				</contentRight>
+			</Bar>		    
+		</footer>
+	</Page>
+</mvc:View>

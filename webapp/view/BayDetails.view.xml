@@ -88,10 +88,10 @@
             							<Text text="REA:" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
-            							<Text text="Harv" textAlign="Center" ></Text>
+            							<Text text="KO" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
-            							<Text text="OK" textAlign="Center" ></Text>
+            							<Text text="Harv" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="11%" justifyContent="Center">
             							<Text text="OOG" textAlign="Center" ></Text>
@@ -155,19 +155,34 @@
 								</HBox>
 							</VBox>
 					</Toolbar>
-	    			<HBox class = "sapUiSmallMarginTop">
-	 					<Label text="Vacant days:" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>
-						<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{
-														        path: '/dateEnd',
-														        type: 'sap.ui.model.type.Date',
-														        formatOptions: {
-														          pattern: 'yyyy-ww-u'
-														        }}" >
-						</Label>
-						<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />
-	       			</HBox>
+	    	<!--		<HBox class = "sapUiSmallMarginTop">-->
+	 				<!--	<Label text="Vacant days:" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>-->
+						<!--<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{-->
+						<!--								        path: '/dateEnd',-->
+						<!--								        type: 'sap.ui.model.type.Date',-->
+						<!--								        formatOptions: {-->
+						<!--								          pattern: 'yyyy-ww-u'-->
+						<!--								        }}" >-->
+						<!--</Label>-->
+						<!--<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />-->
+	     <!--  			</HBox>-->
 				</content>
 			</Panel>
 		</content>
+		<footer>
+		    <Toolbar>
+    			<HBox class = "">
+    				<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{
+    												        path: 'bayDetailModel>/dateEnd',
+    												        type: 'sap.ui.model.type.Date',
+    												        formatOptions: {
+    												          pattern: 'yyyy-ww-u'
+    												        }}" >
+    				</Label>
+     				<Label text="Empty" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>
+    				<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />
+       			</HBox>
+		    </Toolbar>
+		</footer>
 	</Page>
 </mvc:View>
