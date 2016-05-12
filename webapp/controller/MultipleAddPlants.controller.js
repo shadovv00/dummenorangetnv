@@ -129,7 +129,7 @@ sap.ui.define([
 			var dateToDay=new Date();
 			var oUIControl = null;
 			var that=this;
-			console.log(oContext);
+// 			console.log(oContext);
 // 			console.log(oContext.getProperty("plantedDate")< dateToDay);
 				// var warningText="";
 				// var nameTextColor, quantityTextColor, dateTextColor, availabilityTextColor;
@@ -146,33 +146,36 @@ sap.ui.define([
 				// }
 				var localList;
 				if (oContext.getProperty("plant").length<1){
-   			    	localList = 
-   	// 		    	new sap.m.CustomListItem({
-    // 					width: "100%",
-    // 					content:[
-							new sap.m.HBox({
-								items: [
-									new sap.m.HBox({
-										width:"4%",
-										justifyContent:"Center",
-										items: [
-										    new sap.m.CheckBox()
-										]
-									}).addStyleClass(" ")
-									,new sap.m.FlexBox({
-										width:"11%",
-										justifyContent:"Center",
-										items: [
-                            				new sap.m.DatePicker({ width:"91%", dateValue: oContext.getProperty("planted_date"),
-                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
-                            				change: function(){that.onDataChange(this,sId,oContext);}  
-                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
-										]
-									}).addStyleClass("")
-								]
-							});
-    // 					]
-    // 				}).addStyleClass(" bayDetGrayBackGround no-buttom-border");
+				    localList=
+				    new sap.m.List({width:"100%", showNoData: false, 
+				        items:[
+           			    	new sap.m.CustomListItem({
+            					width: "100%",
+            					content:[
+        							new sap.m.HBox({
+        								items: [
+        									new sap.m.HBox({
+        										width:"4%",
+        										justifyContent:"Center",
+        										items: [
+        										    new sap.m.CheckBox()
+        										]
+        									}).addStyleClass(" ")
+        									,new sap.m.FlexBox({
+        										width:"11%",
+        										justifyContent:"Center",
+        										items: [
+                                    				new sap.m.DatePicker({ width:"91%", dateValue: oContext.getProperty("planted_date"),
+                                    				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
+                                    				change: function(){that.onDataChange(this,sId,oContext);}  
+                                    				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
+        										]
+        									}).addStyleClass("")
+        								]
+        							})
+            					]
+            				}).addStyleClass(" bayDetGrayBackGround no-buttom-border")
+				        ] });
 
 				} else {
 				    localList=new sap.m.List({width:"100%", showNoData: false });

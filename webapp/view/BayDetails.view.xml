@@ -1,7 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.BayDetails"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page showHeader="false">
-		<Toolbar height="17%" class="orangeHeader">
+		<Toolbar height="21%" class="orangeHeader">
 			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
 				<items>
 					<Button type="Back" press="onPrevPage" text="Cancel"/>
