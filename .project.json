@@ -7,7 +7,7 @@
     "targetFolder": "dist",
     "sourceFolder": "webapp",
     "buildRequired": true,
-    "lastBuildDateTime": "Fri, 29 Apr 2016 07:00:10 GMT"
+    "lastBuildDateTime": "Wed, 11 May 2016 01:07:00 GMT"
   },
   "generation": [
     {
@@ -18,7 +18,7 @@
     {
       "templateId": "servicecatalog.connectivityComponent",
       "templateVersion": "0.0.0",
-      "dateTimeStamp": "Fri, 29 Apr 2016 10:02:38 GMT"
+      "dateTimeStamp": "Wed, 11 May 2016 15:02:16 GMT"
     },
     {
       "templateId": "ui5template.basicSAPUI5ApplicationComponent",
@@ -48,7 +48,7 @@
   "hcpdeploy": {
     "account": "p1941590108trial",
     "name": "dummenorange",
-    "lastVersionWeTriedToDeploy": "1.0.0.3.6.8"
+    "lastVersionWeTriedToDeploy": "1.0.0.3.6.9"
   },
   "mockpreview": {
     "mockUri": "/destinations/DOdestination",

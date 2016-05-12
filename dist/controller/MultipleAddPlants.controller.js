@@ -120,6 +120,7 @@ sap.ui.define([
 
 				var multiAddToBaysList = this.getView().byId("multiAddToBaysListId");
 				multiAddToBaysList.bindAggregation("items","multiAddModel>/Bays",this.multiAddToBaysListFactory.bind(this));
+
 		
 			},
 
@@ -129,8 +130,7 @@ sap.ui.define([
 			var dateToDay=new Date();
 			var oUIControl = null;
 			var that=this;
-			console.log(oContext);
-// 			console.log(oContext.getProperty("plantedDate")< dateToDay);
+			// console.log(oContext.getProperty("plantedDate")< dateToDay);
 				// var warningText="";
 				// var nameTextColor, quantityTextColor, dateTextColor, availabilityTextColor;
 
@@ -144,40 +144,9 @@ sap.ui.define([
 				// 		new sap.m.Text({ text: warningText, textAlign:"Begin" }).addStyleClass("bayDetTextRed sapUiTinyMarginBegin")
 				// 		];
 				// }
-				var localList;
-				if (oContext.getProperty("plant").length<1){
-   			    	localList = 
-   	// 		    	new sap.m.CustomListItem({
-    // 					width: "100%",
-    // 					content:[
-							new sap.m.HBox({
-								items: [
-									new sap.m.HBox({
-										width:"4%",
-										justifyContent:"Center",
-										items: [
-										    new sap.m.CheckBox()
-										]
-									}).addStyleClass(" ")
-									,new sap.m.FlexBox({
-										width:"11%",
-										justifyContent:"Center",
-										items: [
-                            				new sap.m.DatePicker({ width:"91%", dateValue: oContext.getProperty("planted_date"),
-                            				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
-                            				change: function(){that.onDataChange(this,sId,oContext);}  
-                            				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
-										]
-									}).addStyleClass("")
-								]
-							});
-    // 					]
-    // 				}).addStyleClass(" bayDetGrayBackGround no-buttom-border");
+				var localList=new sap.m.List({width:"100%", showNoData: false});
+				localList.bindAggregation("items","multiAddModel>"+ourPath+"/plant",that.plantsAddToBaysListFactory.bind(that));
 
-				} else {
-				    localList=new sap.m.List({width:"100%", showNoData: false });
-				    localList.bindAggregation("items","multiAddModel>"+ourPath+"/plant",that.plantsAddToBaysListFactory.bind(that));
-				}
 				
 				oUIControl = new sap.m.CustomListItem(sId, {
 					width: "100%",
@@ -191,11 +160,11 @@ sap.ui.define([
     											width:"1%",
     											justifyContent:"Center",
     											items: [
-    	                            	        	new sap.m.Text({ text: oContext.getProperty("gh_bay"), textAlign:"Center"}).addStyleClass("sapUiSmallMarginTop")
+    	                            	        	new sap.m.Text({ text: oContext.getProperty("gh_bay"), textAlign:"Center"}).addStyleClass("")
     											]
     										}).addStyleClass("")
     										,
-   										    new sap.m.VBox({
+   										new sap.m.VBox({
     											width:"99%",
     								// 			justifyContent:"Start",
     											items: [
@@ -228,7 +197,7 @@ sap.ui.define([
 			var ourPath=oContext.getPath();
 // 			var dateToDay=new Date();
 			var oUIControl = null;
-			var that=this;
+// 			var that=this;
 				oUIControl = new sap.m.CustomListItem(sId, {
 					width: "100%",
 					content:[
@@ -359,7 +328,7 @@ sap.ui.define([
 									]
 								})
 					]
-				}).addStyleClass(" bayDetGrayBackGround no-buttom-border");
+				}).addStyleClass(" bayDetGrayBackGround");
 		
 			return oUIControl;
 		}		

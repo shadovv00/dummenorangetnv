@@ -4,6 +4,28 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("dummenorangetnv.controller.BayOverview", {
+	    
+	    addUser: function() {
+            var oModel = this.getView().getModel("odataModel");
+            console.log(oModel);
+            // var sPath = "/Users";
+            // var oEntry = {};
+            // oEntry.GrowerProductionPlanPattern = "GrowerProductionPlanPattern1";
+            // oEntry.StartDatePlanning = false;
+            // oEntry.Username = "p1941590108";
+            
+            var sPath = "/GreenhouseBayDescriptions";
+            var oEntry = {};
+            // oEntry.Id = 2;
+            oEntry.Description = "BodjTest";
+            oEntry.Language = "en";
+            // oEntry.GreenhouseBayDetails = false;
+            oModel.create(sPath, oEntry, null, function() {
+                MessageToast.show("Create successful");
+            }, function() {
+                MessageToast.show("Create failed");
+            });
+	    },
 
 		_oBayFilterDialog: null,
 		_sPlantName: null,
@@ -23,7 +45,7 @@ sap.ui.define([
 			app.to("__page0");
 // 			view.destroy();
 		},
-
+        _mmm: null,
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
@@ -32,8 +54,14 @@ sap.ui.define([
 		onInit: function() {
 		    var jsonModel = new sap.ui.model.json.JSONModel();
 			jsonModel.loadData("mockdata/bay.json");
+			this._mmm = jsonModel;
 			this.byId("date_id").setDateValue(new Date());
-			this.getView().setModel(jsonModel);
+			
+			var oCore = sap.ui.getCore();
+			var oModel = oCore.getModel("jm");
+			console.log(oModel);
+			this.getView().setModel(oModel);
+// 			this.getView().setModel(jsonModel);
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
             this.getView().setModel(oSelectedBayModel,"selectedBay");
             
@@ -67,6 +95,21 @@ sap.ui.define([
 		        return -1;
 		    }
 		},
+		formatOOGDate: function(oogDate, plantedDate, root, veg, ko, rea, horv) {
+		    Date.prototype.getWeek = function() {
+                var onejan = new Date(this.getFullYear(), 0, 1);
+                return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+            };
+		    var aDateParts = plantedDate.split("-");
+		    var oDate = new Date(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
+		    var day = oDate.getDate();
+		    oDate.setDate(+day + root + veg + rea + ko);
+		    var week = oDate.getWeek();
+		    var weekStr = week < 10 ? "0" + week : week;
+		    var day = oDate.getDay();
+		    var dayStr = day === 0 ? 7 : day;
+		    return oDate.getFullYear() + "-" + weekStr + "-" + dayStr;
+		},
 		formatConvertStrToDate: function(date) {
 		    var dataParts;
             if(typeof date === "string" && (dataParts = date.split("-")).length === 3) {
@@ -99,16 +142,20 @@ sap.ui.define([
 		    }
 		},
 		calculatePercentInt: function(data) {
-			var ttl = 0;
+			var entry, ttl = 0;
 			for (var x = 0; x < data.length; x++) {
-				ttl += +data[x]["percent"] * 100;
+			    entry = data[x];
+			    if(entry["deleted"]) continue;
+				ttl += entry["percent"] * 100;
 			}
 			return parseInt(ttl);
 		},
 		calculatePercentFloat: function(data) {
-			var ttl = 0;
+			var entry, ttl = 0;
 			for (var x = 0; x < data.length; x++) {
-				ttl += +data[x]["percent"] * 100;
+			    entry = data[x];
+			    if(entry["deleted"]) continue;
+				ttl += entry["percent"] * 100;
 			}
 			return ttl;
 		},
@@ -214,9 +261,8 @@ sap.ui.define([
 					viewName: "dummenorangetnv.view.BayEditor",
 					type: sap.ui.core.mvc.ViewType.XML
 				});
-				console.log(oBayEditorView);
-				console.log("current date > " + oDatePicker.getValue());
 				oBayEditorView.data("overview_date_str", oDatePicker.getValue());
+				oBayEditorView.data("mmm", this._mmm);
 				app.addPage(oBayEditorView);
 				app.to(oBayEditorView);
 			}  
@@ -236,7 +282,24 @@ sap.ui.define([
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
-		onAfterRendering: function() {}
+		onAfterRendering: function() {},
+		
+		
+		goToMultiAddPlants: function(oEvent) {
+		    var view = this.getView();
+			var app = view.getParent();
+			if (sap.ui.getCore().byId("multiAddPlantsPageId") !== undefined) {
+				app.to("multiAddPlantsPageId");
+			} else {
+				var greenhouseSelectPage = sap.ui.view({
+					id: "multiAddPlantsPageId",
+					viewName: "dummenorangetnv.view.MultipleAddPlants",
+					type: sap.ui.core.mvc.ViewType.XML
+				});
+				app.addPage(greenhouseSelectPage);
+				app.to(greenhouseSelectPage);
+			}
+		}
 
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.

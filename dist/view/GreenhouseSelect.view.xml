@@ -1,62 +1,65 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
 	controllerName="dummenorangetnv.controller.GreenhouseSelect" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page showHeader="false">
-				<Toolbar class="sapUiTinyMarginTopBottom sapUiSmallMarginBegin">
-			
-			    <Button text="Home" press="onHome" type="Back" class="sapUiSmallMarginBegin"/>
-				    	<ToolbarSpacer width="4.5%"/>
-			</Toolbar >		
-
+		<Toolbar class="sapUiTinyMarginTopBottom sapUiSmallMarginBegin">
+			<Button text="Home" press="onHome" type="Back"/>
+			<ToolbarSpacer width="4.5%"/>
+		</Toolbar >
 		<content>
-			<l:Splitter height="95%" class="sapUiSmallMarginTop">
-				<!--    <VBox height="100%">-->
-				<!--       <Button text="Home" press="onHome" icon="sap-icon://nav-back" class="sapUiSmallMarginBegin"/>-->
-				<!--	<FlexBox alignItems="Center" justifyContent="Start" height="100%">-->
-				<!--		<items>-->
-				<!--			<CustomListItem press="onBack" type="Active" class="sapUiSmallMarginBegin">-->
-				<!--				<HBox>-->
-				<!--					<Image src="{selectedGrower>/imgUrl}" width="95%"/>-->
-				<!--					<VBox>-->
-				<!--						<Title text="{selectedGrower>/name}"/>-->
-				<!--						<Text text="{selectedGrower>/address/street}"/>-->
-				<!--						<Text text="{selectedGrower>/address/city}"/>-->
-				<!--						<Text text="{selectedGrower>/phoneNumber}"/>-->
-				<!--					</VBox>-->
-				<!--				</HBox>-->
-				<!--			</CustomListItem>-->
-				<!--		</items>-->
-				<!--					</FlexBox>-->
-				<!--		<layoutData><l:SplitterLayoutData size="40%" resizable="false"/></layoutData>-->
-				<!--</VBox>-->
-				<CustomListItem press="onBack" type="Active" class="sapUiSmallMarginBegin ">
-					<HBox>
-						<Image src="{selectedGrower>/imgUrl}" width="95%"/>
-						<VBox justifyContent="Center">
-							<Label text="{selectedGrower>/name}" class="texts-font" design="Bold"/>
-							<Text text="{selectedGrower>/address/street}" class="texts-font"/>
-							<Text text="{selectedGrower>/address/city}" class="texts-font"/>
-							<Text text="{selectedGrower>/phoneNumber}" class="texts-font"/>
-								</VBox>
-					</HBox>
-					<layoutData><l:SplitterLayoutData size="40%" resizable="false"/></layoutData>
-				</CustomListItem>
-				<List id="BayListId" items="{selectedGrower>/bays}" includeItemInSelection="true" class="sapUiSmallMarginBeginEnd">
-					<items>
-						<CustomListItem press="onBaySelect" type="Navigation" class=" sapUiSmallMarginBottom">
-							<HBox>
-								<Image src="{selectedGrower>imgUrl}" width="95%"/>
-								<VBox justifyContent="Center">
-							<Label text="{selectedGrower>name}" class="texts-font" design="Bold"/>
-							<Text text="{selectedGrower>address/street}" class="texts-font"/>
-							<Text text="{selectedGrower>address/city}" class="texts-font"/>
-							<Text text="{selectedGrower>phoneNumber}" class="texts-font"/>
-								</VBox>
-							</HBox>
-						</CustomListItem>
-					</items>
-					<layoutData><l:SplitterLayoutData size="auto"/></layoutData>
-				</List>
-			</l:Splitter>
+			<VBox>
+				<l:Splitter height="95%" class="sapUiSmallMarginTop">
+					<!--    <VBox height="100%">-->
+					<!--       <Button text="Home" press="onHome" icon="sap-icon://nav-back" class="sapUiSmallMarginBegin"/>-->
+					<!--	<FlexBox alignItems="Center" justifyContent="Start" height="100%">-->
+					<!--		<items>-->
+					<!--			<CustomListItem press="onBack" type="Active" class="sapUiSmallMarginBegin">-->
+					<!--				<HBox>-->
+					<!--					<Image src="{selectedGrower>/imgUrl}" width="95%"/>-->
+					<!--					<VBox>-->
+					<!--						<Title text="{selectedGrower>/name}"/>-->
+					<!--						<Text text="{selectedGrower>/address/street}"/>-->
+					<!--						<Text text="{selectedGrower>/address/city}"/>-->
+					<!--						<Text text="{selectedGrower>/phoneNumber}"/>-->
+					<!--					</VBox>-->
+					<!--				</HBox>-->
+					<!--			</CustomListItem>-->
+					<!--		</items>-->
+					<!--					</FlexBox>-->
+					<!--		<layoutData><l:SplitterLayoutData size="40%" resizable="false"/></layoutData>-->
+					<!--</VBox>-->
+					<CustomListItem press="onBack" type="Active" class="sapUiSmallMarginBegin ">
+						<HBox wrap="Wrap">
+							<core:Icon src="sap-icon://person-placeholder" size="1000%"/>
+							<!--<Image src="{selectedGrower>/imgUrl}" width="230px"/>-->
+							<VBox justifyContent="Center" class="sapUiSmallMarginBegin">
+								<Label text="{selectedGrower>/name}" class="texts-font" design="Bold"/>
+								<Text text="{selectedGrower>/address/street}" class="texts-font"/>
+								<Text text="{selectedGrower>/address/city}" class="texts-font"/>
+								<Text text="{selectedGrower>/phoneNumber}" class="texts-font"/>
+							</VBox>
+						</HBox>
+						<layoutData><l:SplitterLayoutData size="40%" resizable="false"/></layoutData>
+					</CustomListItem>
+					<List id="BayListId" items="{selectedGrower>/bays}" includeItemInSelection="true" class="">
+						<items>
+							<CustomListItem press="onBaySelect" type="Navigation" class=" sapUiSmallMarginBottom sapUiSmallMarginBeginEnd">
+							    
+								<HBox wrap="WrapReverse">
+									<core:Icon src="sap-icon://addresses" size="1000%"/>
+									<!--<Image src="{selectedGrower>imgUrl}" width="230px"/>-->
+									<VBox justifyContent="Center" class="sapUiSmallMarginBegin">
+										<Label text="{selectedGrower>name}" class="texts-font" design="Bold"/>
+										<Text text="{selectedGrower>address/street}" class="texts-font"/>
+										<Text text="{selectedGrower>address/city}" class="texts-font"/>
+										<Text text="{selectedGrower>phoneNumber}" class="texts-font"/>
+									</VBox>
+								</HBox>
+							</CustomListItem>
+						</items>
+						<layoutData><l:SplitterLayoutData size="auto"/></layoutData>
+					</List>
+				</l:Splitter>
+			</VBox>
 		</content>
 	</Page>
 </mvc:View>
