@@ -743,33 +743,67 @@ sap.ui.define([
 				oList.removeSelections();
 		},
 		onReject: function() {
+		var oList = this.getView().byId("ListId");
+			var aItems = oList.getSelectedItems();
+			console.log(aItems);
+			if (aItems.length == 0) {
+				sap.m.MessageToast.show("Please select items to reject");
+			} else {
+				var oModel = this.getView().getModel("custRepres");
+				var oData = oModel.getData();
+				console.log(oData);
+				for (var i = 0; i < aItems.length; i++) {
+					var oItem = aItems[i];
+
+					if (oItem.getId().includes("groupHeader"))
+						oList.removeItem(oItem);
+					else {
+
+						console.log(oItem);
+						var sPath = oItem.oBindingContexts.custRepres.sPath;
+						console.log(sPath);
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						console.log(idx);
+						oData.bayData.splice(idx, 1);
+					}
+
+				}
+				oList.removeSelections(true);
+				oModel.refresh();
+
+			}
+		},
+		onApprove: function() {
 			var oList = this.getView().byId("ListId");
 			var aItems = oList.getSelectedItems();
 			console.log(aItems);
 			if (aItems.length == 0) {
-			    sap.m.MessageToast.show("Please select items to reject");
+				sap.m.MessageToast.show("Please select items to reject");
 			} else {
+				var oModel = this.getView().getModel("custRepres");
+				var oData = oModel.getData();
+				console.log(oData);
 				for (var i = 0; i < aItems.length; i++) {
 					var oItem = aItems[i];
-					oList.removeItem(oItem);
-                  }
-			}
-			oList.removeSelections();
 
-		},
-		onApprove: function() {
-		    var oList = this.getView().byId("ListId");
-			var aItems = oList.getSelectedItems();
-			console.log(aItems);
-			if (aItems.length == 0) {
-			    sap.m.MessageToast.show("Please select items to reject");
-			} else {
-				for (var i = 0; i < aItems.length; i++) {
-					var oItem = aItems[i];
-					oList.removeItem(oItem);
-                  }
+					if (oItem.getId().includes("groupHeader"))
+						oList.removeItem(oItem);
+					else {
+
+						console.log(oItem);
+						var sPath = oItem.oBindingContexts.custRepres.sPath;
+						console.log(sPath);
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						console.log(idx);
+						oData.bayData.splice(idx, 1);
+					}
+
+				}
+				oList.removeSelections(true);
+				oModel.refresh();
+
 			}
-			oList.removeSelections();
+
 		}
 
 		/**
