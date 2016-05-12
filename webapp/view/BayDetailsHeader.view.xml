@@ -1,7 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.BayDetailsHeader"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<HBox justifyContent="Center">
-		<CustomListItem press="onGrower" type="Active" class="sapUiLargeMarginEnd  bayDetGrayBackGround sapUiTinyMarginTop">
+		<CustomListItem press="onGrower" type="Active" class="sapUiLargeMarginEnd  bayDetGrayBackGround sapUiTinyMarginTop no-buttom-border">
 			<HBox>
 				<!--<Image src="{selectedBay>/grower/imgUrl}" width="11em"  class="sapUiTinyMarginEnd"/>-->
 				<core:Icon src="sap-icon://person-placeholder" size="820%"/>
@@ -14,7 +14,7 @@
 			</HBox>
 		</CustomListItem>
 
-			<CustomListItem press="onBay" type="Active" class="sapUiLargeMarginBegin  bayDetGrayBackGround sapUiTinyMarginTop">
+			<CustomListItem press="onBay" type="Active" class="sapUiLargeMarginBegin  bayDetGrayBackGround sapUiTinyMarginTop no-buttom-border">
 				<HBox>
 					<!--<Image src="{selectedBay>/bay/imgUrl}" width="11em"  class="sapUiTinyMarginEnd"/>-->
 					<core:Icon src="sap-icon://addresses" size="820%"/>
