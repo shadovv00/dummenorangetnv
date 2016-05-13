@@ -17,10 +17,15 @@
 				<Button icon="sap-icon://sys-enter-2" press="onPrevPage"/>
 			</contentRight>
 		</Bar>
-		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
+		<cc:BayTable
+		    id="bay_table_id"
+		    items="{
+    		        path: '/data'
+		        }"
+		    class="sapUiSmallMarginBeginEnd bay-table-border">
 			<cc:columns>
-				<cc:BayColumn text="GH-bay" colspan="2"/>
-				<cc:BayColumn text="" width="9rem"/>
+				<cc:BayColumn text="GH-bay" colspan="2" class="bay-table-cell"/>
+				<cc:BayColumn text="" minWidth="9rem"/>
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
 				<cc:BayColumn text="p/m2" />
@@ -28,56 +33,63 @@
 				<cc:BayColumn text="root" />
 				<cc:BayColumn text="VEG" />
 				<cc:BayColumn text="REA" />
+				<cc:BayColumn text="KO" />
 				<cc:BayColumn text="Harv" />
 				<cc:BayColumn text="OOG" />
 				<cc:BayColumn text="Vaca" />
 			</cc:columns>
 			<cc:BayRowGroup
 				ghbay="{gh_bay}"
-				rows="{plant}"
+				rows="{
+				        path: 'plant',
+    		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
+				    }"
 				oddweek="{
 			                path: 'plant/0/planted_date',
 					        formatter: '.formatOddWeek'
 				        }">
-			    <cc:BayRow>
-					<cc:BayCell>
-					    <ObjectNumber 
-							number=""
-							emphasized="false"/>
-					</cc:BayCell>
-					<cc:BayCell>
-			            <!--<Button -->
-			            <!--    type="Transparent"-->
-    			        <!--    icon="sap-icon://decline" -->
-    			        <!--    press="deleteBayRow"/>-->
-    			        <core:Icon color="#541407"
-    			            src= "sap-icon://decline"
-    			            press="deleteBayRow"/>
-					</cc:BayCell>
+			    <cc:BayRow
+			        frstClmn="2">
 					<cc:BayCell
+					    class="bay-table-cell"/>
+					<cc:BayCell
+					    class="bay-table-cell">
+                        <core:Icon
+                            color="#541407"
+                            src= "sap-icon://decline"
+                            press="deleteBayRow"/>
+    				</cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell"
 					    rederror="{
 					                path: 'processed',
 							        type:'sap.ui.model.type.Boolean',
 							        formatter: '.formatProcessed'
 						        }">
-						<Text text="{name}" />
+						<Text
+						    text="{name}"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 				        <Input 
 				            value="{
 				                        path: 'percent',
 				                        formatter: '.formatPercent'
-				                   }"/>
+				                   }"
+			                liveChange="changePercent"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <Input 
 					        value="{plants}"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <Input 
 					        value="{density}"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <DatePicker
 					        width="120px"
 					        placeholder=" "
@@ -86,66 +98,105 @@
 					        dateValue="{
 					                        path: 'planted_date',
 					                        formatter: '.formatDate'
-					                    }"/>
+					                    }"
+				            change="changePlantedDate"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <Input 
-					        value="{root}"/>
+					        value="{root}"
+					        liveChange="changeRoot"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <Input 
 					        value="{veg}"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <Input 
 					        value="{rea}"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
+					    <Input 
+					        value="{ko}"/>
+					</cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <Input 
 					        value="{horv}"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    class="bay-table-cell2">
 					    <DatePicker
 					        width="120px"
 					        placeholder=" "
 					        valueFormat="yyyy-ww-u"
 					        displayFormat="yyyy-ww-u"
         			        dateValue="{
-            		                        path: 'oog_date',
-            		                        formatter: '.formatDate'
+            		                        parts: [
+					                            {path: 'oog_date'},
+					                            {path: 'planted_date'},
+					                            {path: 'root'},
+					                            {path: 'veg'},
+					                            {path: 'ko'},
+					                            {path: 'rea'},
+					                            {path: 'horv'}
+					                        ],
+            		                        formatter: '.formatOOGDate'
             		                    }"/>
 					</cc:BayCell>
-					<cc:BayCell>
+					<cc:BayCell
+					    width="3rem"
+					    class="bay-table-cell2">
 					    <Input 
 					        value="{vaca}"/>
 					</cc:BayCell>
 				</cc:BayRow>
-				<cc:ftcells>
-				    <cc:BayCell />
-				    <cc:BayCell />
-			        <cc:BayCell>
-			            <c:ProgressIndicator 
-			                class="progress-bar-text-middle"
-			                percentValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentInt'
-			                        }"
-			                height="4em"
-			                displayValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentFloat'
-			                        } %"/>
-			        </cc:BayCell>
-			        <cc:BayCell
-			            colspan="9">
-			            <TextArea
-			                width="100%"
-			                rows="1"
-			                placeholder="Comments"
-			                value="{comments}"/>
-			        </cc:BayCell>
-			        <cc:BayCell />
-				</cc:ftcells>
+				<cc:emptyRow>
+				    <cc:BayRow
+				        class="bay-row-height">
+				        <cc:BayCell
+    			            class="bay-table-cell"/>
+    			        <cc:BayCell
+    			            colspan="13"
+    			            class="bay--empty-cell">
+    			            <Text
+    			                text="EMPTY"
+    			                textAlign="Center"/>
+    			        </cc:BayCell>
+				    </cc:BayRow>
+				</cc:emptyRow>
+				<cc:ftRows>
+                    <cc:BayRow>
+                        <cc:BayCell />
+                        <cc:BayCell />
+                        <cc:BayCell
+                            class="bay-table-cell">
+                            <c:ProgressIndicator 
+                                class="progress-bar-text-middle"
+                                percentValue="{
+                                            path: 'plant',
+                                            formatter: '.calculatePercentInt'
+                                        }"
+                                height="4em"
+                                displayValue="{
+                                            path: 'plant',
+                                            formatter: '.calculatePercentFloat'
+                                        } %"/>
+                            </cc:BayCell>
+                            <cc:BayCell
+                                class="bay-table-cell2"
+                                colspan="10">
+                                <TextArea
+                                    width="100%"
+                                    placeholder="Comments"
+                                    value="{comments}"/>
+                            </cc:BayCell>
+                        <cc:BayCell />
+                    </cc:BayRow>
+				</cc:ftRows>
 			</cc:BayRowGroup>
 		</cc:BayTable>
 	</Page>

@@ -22,18 +22,21 @@
 			<contentRight>
 				<!--<Button -->
 				<!--    class="sap-custom-icon-adjust"-->
-				<!--    icon="images/cannabis-leaf-favicon.ico" press="doEditing"/>-->
+				<!--    icon="images/cannabis-leaf-favicon.ico" press="addUser"/>-->
 				<Button
 				    class="sap-custom-icon-adjust"
-				    icon="images/simple-leaf-favicon.ico" press="doEditing" />
+				    icon="images/simple-leaf-favicon.ico" press="goToMultiAddPlants" />
 				<Button icon="sap-icon://edit" press="goToEditor"/>
 			</contentRight>
 		</Bar>
 			<!--<Panel width="100%" class="orangePanel" height="100%">-->
 
-		<cc:BayTable id="bay_table_id" items="{path: '/data'}">
+		<cc:BayTable
+		    id="bay_table_id"
+		    items="{path: '/data'}"
+		    class="sapUiSmallMarginBeginEnd bay-table-border">
 			<cc:columns>
-				<cc:BayColumn text="GH-bay" />
+				<cc:BayColumn text="GH-bay" class="bay-table-cell" width="3em"/>
 				<cc:BayColumn text="" />
 				<cc:BayColumn text="%" />
 				<cc:BayColumn text="Plants" />
@@ -42,24 +45,27 @@
 				<cc:BayColumn text="root" />
 				<cc:BayColumn text="VEG" />
 				<cc:BayColumn text="REA" />
+			    <cc:BayColumn text="KO" />
 				<cc:BayColumn text="Harv" />
 				<cc:BayColumn text="OOG" />
 				<cc:BayColumn text="Vaca" />
 			</cc:columns>
 			<cc:BayRowGroup
 				ghbay="{gh_bay}"
-				rows="{plant}"
+				rows="{
+				        path: 'plant',
+    		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
+				    }"
 				oddweek="{
 			                path: 'plant/0/planted_date',
 					        formatter: '.formatOddWeek'
 				        }">
-			    <cc:BayRow>
-					<cc:BayCell>
-						<ObjectNumber 
-							number=""
-							emphasized="false"/>
-					</cc:BayCell>
+			    <cc:BayRow
+			        class="bay-row-height">
 					<cc:BayCell
+					    class="bay-table-cell" />
+					<cc:BayCell
+					    class="bay-table-cell"
 					    rederror="{
 					                path: 'processed',
 							        type:'sap.ui.model.type.Boolean',
@@ -125,15 +131,28 @@
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
+							number="{ko}"
+							emphasized="false"/>
+					</cc:BayCell>
+					<cc:BayCell>
+						<ObjectNumber 
 							number="{horv}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<Text
 						    text="{
-						            path: 'oog_date',
-						            formatter: '.formatConvertStrToDate'
-						      }" />
+    		                        parts: [
+			                            {path: 'oog_date'},
+			                            {path: 'planted_date'},
+			                            {path: 'root'},
+			                            {path: 'veg'},
+			                            {path: 'ko'},
+			                            {path: 'rea'},
+			                            {path: 'horv'}
+			                        ],
+    		                        formatter: '.formatOOGDate'
+    		                    }"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
@@ -141,31 +160,48 @@
 							emphasized="false"/>
 					</cc:BayCell>
 				</cc:BayRow>
-				<cc:ftcells>
-				    <cc:BayCell />
-			        <cc:BayCell>
-			            <c:ProgressIndicator 
-			                class="progress-bar-text-middle"
-			                percentValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentInt'
-			                        }"
-			                height="4em"
-			                displayValue="{
-    			                        path: 'plant',
-    			                        formatter: '.calculatePercentFloat'
-			                        } %"/>
-			        </cc:BayCell>
-			        <cc:BayCell
-			            colspan="9">
-			            <Text text="{comments}"/>
-			        </cc:BayCell>
-			        <cc:BayCell>
-			            <Button
-			                icon="sap-icon://navigation-right-arrow"
-			                press="goToDetailView"/>
-			        </cc:BayCell>
-				</cc:ftcells>
+				<cc:emptyRow>
+				    <cc:BayRow
+				        class="bay-row-height">
+				        <cc:BayCell
+    			            class="bay-table-cell"/>
+    			        <cc:BayCell
+    			            colspan="12"
+    			            class="bay--empty-cell">
+    			            <Text
+    			                text="EMPTY"
+    			                textAlign="Center"/>
+    			        </cc:BayCell>
+				    </cc:BayRow>
+				</cc:emptyRow>
+				<cc:ftRows>
+				    <cc:BayRow>
+				        <cc:BayCell />
+    			        <cc:BayCell
+    			            class="bay-table-cell">
+    			            <c:ProgressIndicator 
+    			                class="progress-bar-text-middle"
+    			                percentValue="{
+        			                        path: 'plant',
+        			                        formatter: '.calculatePercentInt'
+    			                        }"
+    			                height="4em"
+    			                displayValue="{
+        			                        path: 'plant',
+        			                        formatter: '.calculatePercentFloat'
+    			                        } %"/>
+    			        </cc:BayCell>
+    			        <cc:BayCell
+    			            colspan="10">
+    			            <Text text="{comments}"/>
+    			        </cc:BayCell>
+    			        <cc:BayCell>
+    			            <Button
+    			                icon="sap-icon://navigation-right-arrow"
+    			                press="goToDetailView"/>
+    			        </cc:BayCell>
+				    </cc:BayRow>
+				</cc:ftRows>
 			</cc:BayRowGroup>
 		</cc:BayTable>
 		<!--</Panel>-->

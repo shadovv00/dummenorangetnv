@@ -41,3 +41,7 @@
 .bayTextPadding{
     padding-right:16px;
 }
+
+.no-buttom-border{
+    border-bottom: 0px;
+}

@@ -34,23 +34,373 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf dummenorangetnv.view.ApprovalPage
 		 */
+
+		onCustRepresChange: function(oEvent) {
+			var sCusrRepresName = oEvent.getSource().getSelectedKey();
+			console.log(sCusrRepresName);
+			console.log(this.oData.customerRepresentive[0].name);
+			var that = this;
+
+			$.each(that.oData.customerRepresentive, function(index) {
+				console.log("EACH");
+				if (that.oData.customerRepresentive[index].name === sCusrRepresName) {
+					console.log("IF");
+					that.getView().getModel("custRepres").setData(that.oData.customerRepresentive[index], false);
+				}
+
+			});
+
+			// 		    {	var aFilters = [];
+			// 			// update list binding
+			// 			var obayList = this.getView().byId("ListId");
+			// 			var aListItems = obayList.getItems();
+
+			// 			    var oCustRepresFilter = new sap.ui.model.Filter("custRepes>/id", sap.ui.model.FilterOperator.EQ, this.sCusrRepresId);
+			// 			    console.log(oCustRepresFilter);
+			// 			    aFilters.push(oDiscriptionFilter);
+			// 			    obayList.getBinding("items").filter(aFilters);
+
+			// 		    }
+		},
+
 		onInit: function() {
 
-			var oData = {
+			var aCustomerRepresentiveList = {
+				List: [{
+						name: "Peter"
+					}, {
+						name: "Ted"
+					}, {
+						name: "John"
+					}
+
+				]
+			};
+			var aCustomerRepresentiveListModel = new sap.ui.model.json.JSONModel(aCustomerRepresentiveList);
+			this.getView().setModel(aCustomerRepresentiveListModel, "custRepesNameList");
+
+			this.oData = {
 				customerRepresentive: [{
 					id: 1,
 					name: "Peter",
-					role: "Approver"
+					role: "Approver",
+					bayData: [{
+						id: 1,
+						bayId: 1,
+						growerName: "Van Os Chrysanten C.V.",
+						address: {
+							street: "Harenwert 48",
+							city: "1000 AA Maasland"
+						},
+
+						gh_bay: 5,
+						comments: "hike",
+
+						name: "001 Feeling green dark",
+						percent: 0.5,
+						plants: 16218,
+						erp_plants: 16218,
+						density: 47,
+						planted_date: "2016-01-5",
+						erp_planted_date: "2016-01-5",
+						root: 0,
+						veg: 12,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-1",
+						vaca: 1,
+						processed: false
+
+					}, {
+						id: 1,
+						bayId: 1,
+						growerName: "Van Os Chrysanten C.V.",
+						address: {
+							street: "Harenwert 48",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 6,
+						comments: "hike hike",
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32435,
+						density: 47,
+						planted_date: "2016-01-6",
+						erp_planted_date: "2016-01-6",
+						root: 0,
+						veg: 12,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-2",
+						vaca: 1,
+						processed: true
+					}, {
+						id: 1,
+						bayId: 1,
+						growerName: "Van Os Chrysanten C.V.",
+						address: {
+							street: "Harenwert 48",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 8,
+						comments: "hike 8",
+						name: "004 Talitha",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 45,
+						planted_date: "2016-01-7",
+						erp_planted_date: "2016-01-8",
+						root: 0,
+						veg: 13,
+						rea: 55,
+						horv: 1,
+						oog_date: "2016-10-3",
+						vaca: 1,
+						processed: true
+
+					}, {
+						id: 1,
+						bayId: 1,
+						growerName: "Van Os Chrysanten C.V.",
+						address: {
+							street: "Harenwert 48",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 9,
+						comments: "like 9",
+
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 47,
+						planted_date: "2016-02-1",
+						erp_planted_date: "2016-02-1",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-4",
+						vaca: 1,
+						processed: true
+
+					}, {
+						id: 1,
+						bayId: 2,
+						growerName: "Van Os Chrysanten C.V.",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 10,
+						comments: "obscure 10",
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+
+					}, {
+						id: 2,
+						bayId: 1,
+						growerName: "Van Oranje",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 12,
+						comments: "eventually 12",
+
+						name: "001 Feeling green dark",
+						percent: 0.3,
+						plants: 10436,
+						erp_plants: 10436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+					}, {
+						id: 2,
+						bayId: 1,
+						growerName: "Van Oranje",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 13,
+						comments: "September",
+
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+					}]
 				}, {
 					id: 2,
 					name: "Ted",
-					role: "Approver"
+					role: "Approver",
+					bayData: [{
+
+						id: 1,
+						bayId: 2,
+						growerName: "Van Os Chrysanten C.V.",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 10,
+						comments: "obscure 10",
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+
+					}, {
+						id: 2,
+						bayId: 1,
+						growerName: "Van Oranje",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 12,
+						comments: "eventually 12",
+
+						name: "001 Feeling green dark",
+						percent: 0.3,
+						plants: 10436,
+						erp_plants: 10436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+					}, {
+						id: 2,
+						bayId: 1,
+						growerName: "Van Oranje",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 13,
+						comments: "September",
+
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+					}]
 				}, {
 					id: 1,
 					name: "John",
-					role: "Approver"
+					role: "Approver",
+					bayData: [{
+						id: 2,
+						bayId: 1,
+						growerName: "Van Oranje",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 12,
+						comments: "eventually 12",
+
+						name: "001 Feeling green dark",
+						percent: 0.3,
+						plants: 10436,
+						erp_plants: 10436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+					}, {
+						id: 2,
+						bayId: 1,
+						growerName: "Van Oranje",
+						address: {
+							street: "Aallaan 306",
+							city: "1000 AA Maasland"
+						},
+						gh_bay: 13,
+						comments: "September",
+
+						name: "001 Feeling green dark",
+						percent: 1.0,
+						plants: 32436,
+						erp_plants: 32436,
+						density: 47,
+						planted_date: "2016-02-2",
+						erp_planted_date: "2016-02-2",
+						root: 0,
+						veg: 11,
+						rea: 54,
+						horv: 1,
+						oog_date: "2016-10-5",
+						vaca: 1,
+						processed: true
+					}]
 				}]
 			};
+			console.log(this.oData.customerRepresentive[0]);
 
 			var oBayData = {
 				bayData: [{
@@ -241,14 +591,14 @@ sap.ui.define([
 			//             });
 			//             console.log(aGrouped);
 
-			var oBayModel = new sap.ui.model.json.JSONModel(oBayData);
 			//console.log(oBayModel);
 
-			this.getView().setModel(oBayModel, "bayModel");
+			// 			this.getView().setModel(oBayModel, "bayModel");
 			// 			console.log(this.getView().getModel("bayModel"));
 
-			var oCustomerRepresentiveModel = new sap.ui.model.json.JSONModel(oData);
-			this.getView().setModel(oCustomerRepresentiveModel, "custRepes");
+			var oCustomerRepresentiveModel = new sap.ui.model.json.JSONModel(this.oData.customerRepresentive[0]);
+			console.log(oCustomerRepresentiveModel);
+			this.getView().setModel(oCustomerRepresentiveModel, "custRepres");
 
 		},
 
@@ -291,12 +641,12 @@ sap.ui.define([
 						if (aGroupedItems[j] instanceof sap.m.CustomListItem)
 							oList.setSelectedItem(aGroupedItems[j], true);
 					}
-				}else{
-				    	for (var j = 0; j < aGroupedItems.length; j++) {
+				} else {
+					for (var j = 0; j < aGroupedItems.length; j++) {
 						if (aGroupedItems[j] instanceof sap.m.CustomListItem)
 							oList.setSelectedItem(aGroupedItems[j], false);
 					}
-				} 
+				}
 				// 			{
 				// 			//  		if(!oItem.isSelected()) {
 
@@ -384,14 +734,76 @@ sap.ui.define([
 		},
 
 		onSelect: function() {
-		    var oList = this.getView().byId("ListId");
-		    var oCBox = this.getView().byId("selectDeselectBoxId");
-		    
+			var oList = this.getView().byId("ListId");
+			var oCBox = this.getView().byId("selectDeselectBoxId");
 
-		    if(oCBox.getSelected())
-		    	oList.selectAll();
-		    	else
-		    	oList.removeSelections();
+			if (oCBox.getSelected())
+				oList.selectAll();
+			else
+				oList.removeSelections();
+		},
+		onReject: function() {
+		var oList = this.getView().byId("ListId");
+			var aItems = oList.getSelectedItems();
+			console.log(aItems);
+			if (aItems.length == 0) {
+				sap.m.MessageToast.show("Please select items to reject");
+			} else {
+				var oModel = this.getView().getModel("custRepres");
+				var oData = oModel.getData();
+				console.log(oData);
+				for (var i = 0; i < aItems.length; i++) {
+					var oItem = aItems[i];
+
+					if (oItem.getId().includes("groupHeader"))
+						oList.removeItem(oItem);
+					else {
+
+						console.log(oItem);
+						var sPath = oItem.oBindingContexts.custRepres.sPath;
+						console.log(sPath);
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						console.log(idx);
+						oData.bayData.splice(idx, 1);
+					}
+
+				}
+				oList.removeSelections(true);
+				oModel.refresh();
+
+			}
+		},
+		onApprove: function() {
+			var oList = this.getView().byId("ListId");
+			var aItems = oList.getSelectedItems();
+			console.log(aItems);
+			if (aItems.length == 0) {
+				sap.m.MessageToast.show("Please select items to reject");
+			} else {
+				var oModel = this.getView().getModel("custRepres");
+				var oData = oModel.getData();
+				console.log(oData);
+				for (var i = 0; i < aItems.length; i++) {
+					var oItem = aItems[i];
+
+					if (oItem.getId().includes("groupHeader"))
+						oList.removeItem(oItem);
+					else {
+
+						console.log(oItem);
+						var sPath = oItem.oBindingContexts.custRepres.sPath;
+						console.log(sPath);
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						console.log(idx);
+						oData.bayData.splice(idx, 1);
+					}
+
+				}
+				oList.removeSelections(true);
+				oModel.refresh();
+
+			}
+
 		}
 
 		/**

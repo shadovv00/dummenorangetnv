@@ -1,6 +1,6 @@
 /* Enter your custom styles here */
 .bay-table-outer-wrapper {
-	background: #fff;
+	/*background: #fff;*/
     position: absolute;
     top: 13rem;
     left: 0;
@@ -18,14 +18,26 @@
 .bay-table {
 	border-collapse: collapse;
 }
+.bay-table-border {
+    margin: 0.7rem;
+    border: 2px solid #F35B4A;
+}
 .bay-row-height {
 	line-height: 3em;
+}
+.bisible-header-wrapper {
+    width: 100%;
+    height: 3rem;
+    background: #F35B4A;
 }
 .bay-row-paddings {
 	padding: 0 1rem;
 }
-.bay-table-cell-paddings th, .bay-table-cell-paddings td {
-	padding: 0 0.7rem;
+.bay-table-cell {
+	padding: 0 0.7em;
+}
+.bay-table-cell2 {
+	padding: 0 0.3em;
 }
 .bay-row-border-bottom td {
 	border-bottom: 2px solid black;
@@ -38,7 +50,6 @@
 .-visible-header-table {
 	/*background: white;*/
 	position: absolute;
-	border-bottom: 1px solid #ccc;
 	z-index: 2;
 }
 .-invisible-header {
@@ -54,7 +65,7 @@
 .sapUiProgIndBorder {
 	border: 1px solid #000000 !important;
 }
-.-bay-empty-cell {
+.bay--empty-cell {
     text-align: center;
     font-weight: bold;
 }

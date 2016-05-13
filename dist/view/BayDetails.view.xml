@@ -56,45 +56,54 @@
 				<!--	</Toolbar>-->
 				<!--</headerToolbar>-->
 				<content>
-					<HBox class = "sapUiSmallMarginTop sapUiSmallMarginBottom" width="100%">
-						<FlexBox  width="2%" justifyContent="Center">
-							<Text text="" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="19%">
-							<Text text="" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="8%" justifyContent="Center">
-							<Text text="%" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="10%" justifyContent="Center">
-							<Text text="Plants" textAlign="Center"  ></Text>
-			 			</FlexBox>
-						<FlexBox   width="6%" justifyContent="Center">
-							<Text text="p/m2:" textAlign="Center"  ></Text>
-			 			</FlexBox>
-						<FlexBox   width="12%" justifyContent="Center">
-							<Text text="Planted" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="6%" justifyContent="Center">
-							<Text text="root" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="6%" justifyContent="Center">
-							<Text text="VEG:" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="6%" justifyContent="Center">
-							<Text text="REA:" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="6%" justifyContent="Center">
-							<Text text="Harv" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="12%" justifyContent="Center">
-							<Text text="OOG" textAlign="Center" ></Text>
-			 			</FlexBox>
-						<FlexBox   width="6%" justifyContent="Center">
-							<Text text="Vaca" textAlign="Center" ></Text>
-			 			</FlexBox>
-					</HBox>
-					<List id="bayDetailListId"  />
+				    <ScrollContainer horizontal="true">
+				        <content>
+				            <VBox class="bayScrollVBox">
+            				    <HBox class = "sapUiSmallMarginTop sapUiSmallMarginBottom">
+            						<FlexBox  width="3%" justifyContent="Center">
+            							<Text text="" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="20%">
+            							<Text text="" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="8%" justifyContent="Center">
+            							<Text text="%" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="8%" justifyContent="Center">
+            							<Text text="Plants" textAlign="Center"  ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="6%" justifyContent="Center">
+            							<Text text="p/m2:" textAlign="Center"  ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="11%" justifyContent="Center">
+            							<Text text="Planted" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="root" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="VEG:" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="REA:" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="KO" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="Harv" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="11%" justifyContent="Center">
+            							<Text text="OOG" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            						<FlexBox   width="5.5%" justifyContent="Center">
+            							<Text text="Vaca" textAlign="Center" ></Text>
+            			 			</FlexBox>
+            					</HBox>
+            					<List id="bayDetailListId"  />
+				            </VBox>
+				        </content>
+				    </ScrollContainer>
 				</content>
 			</Panel>
 			<Bar >
@@ -129,7 +138,7 @@
 											        }
 										}"></Text>
 				 					</FlexBox>
-									<VBox   width="91%" >
+									<VBox   width="91%">
 										<TextArea value="{bayDetailModel>text}"  enabled='true' editable='false'  valueState="None" width="100%" height="auto"></TextArea>
 				 					</VBox>
 								</HBox>
@@ -146,19 +155,34 @@
 								</HBox>
 							</VBox>
 					</Toolbar>
-	    			<HBox class = "sapUiSmallMarginTop">
-	 					<Label text="Vacant days:" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>
-						<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{
-														        path: '/dateEnd',
-														        type: 'sap.ui.model.type.Date',
-														        formatOptions: {
-														          pattern: 'yyyy-ww-u'
-														        }}" >
-						</Label>
-						<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />
-	       			</HBox>
+	    	<!--		<HBox class = "sapUiSmallMarginTop">-->
+	 				<!--	<Label text="Vacant days:" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>-->
+						<!--<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{-->
+						<!--								        path: '/dateEnd',-->
+						<!--								        type: 'sap.ui.model.type.Date',-->
+						<!--								        formatOptions: {-->
+						<!--								          pattern: 'yyyy-ww-u'-->
+						<!--								        }}" >-->
+						<!--</Label>-->
+						<!--<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />-->
+	     <!--  			</HBox>-->
 				</content>
 			</Panel>
 		</content>
+		<footer>
+		    <Toolbar>
+    			<HBox class = "">
+    				<Label id="harvestExpectedDateId" class = "sapUiSmallMarginEnd sapUiTinyMarginBegin sapUiSmallMarginTop" text="{
+    												        path: 'bayDetailModel>/dateEnd',
+    												        type: 'sap.ui.model.type.Date',
+    												        formatOptions: {
+    												          pattern: 'yyyy-ww-u'
+    												        }}" >
+    				</Label>
+     				<Label text="Empty" class = "sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiSmallMarginTop" width="7em"></Label>
+    				<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Add new Plants" />
+       			</HBox>
+		    </Toolbar>
+		</footer>
 	</Page>
 </mvc:View>

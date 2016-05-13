@@ -299,6 +299,22 @@ sap.ui.define([
 				app.addPage(greenhouseSelectPage);
 				app.to(greenhouseSelectPage);
 			}
+		},
+		onDateChange: function(oEvent) {
+		   var oDate = oEvent.getParameters().value;
+		   console.log(oDate);
+		   
+		   var aFilters = [];
+		   
+		   var oFilter1 = new sap.ui.model.Filter("planted_date", sap.ui.model.FilterOperator.GT, oDate);
+		     var oFilter2 = new sap.ui.model.Filter("planted_date", sap.ui.model.FilterOperator.GT, oDate);
+		     aFilters.push(oFilter1);
+		   
+		   	var obayTable = this.getView().byId("bay_table_id");
+		   	for (var x = 0; x < aTableItems.length; x++) {
+				    //	console.log(aTableItems[x]);
+					aTableItems[x].getBinding("rows").filter(aFilters);
+				}
 		}
 
 		/**

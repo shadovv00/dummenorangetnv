@@ -47,72 +47,91 @@
 			<!--		</ColumnListItem>-->
 			<!--	</items>-->
 			<!--</Table>-->
-			<List id="ListId" items="{ path:'bayModel>/bayData',
-			                groupHeaderFactory: '.getGroupHeader' 
-			}" mode="MultiSelect"  >
+			
+			<List id="ListId" items="{ path:'bayModel>/bayData', groupHeaderFactory: '.getGroupHeader' }" mode="MultiSelect" selectionChange="onSelectionChange" >
 				<infoToolbar>
-					<Toolbar
-						visible="true"
-						id="idInfoToolbar" >
-					    <ToolbarSpacer width="2.5%"/>
-						<HBox width="93%">
-						     <FlexBox  width="21.5%" justifyContent="Start">
-							    <Text text="Bay" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			         <FlexBox  width="72%" justifyContent="Start">
-							    <Text text="Delivery" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			         <FlexBox  width="73%" justifyContent="Start">
-							    <Text text="Variety" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			         <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="Change" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			         <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="Old value" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			         <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="New value" textAlign="Center" ></Text>
-			 			    </FlexBox>
-						</HBox>
-					</Toolbar>
-					</infoToolbar>
-					<CustomListItem >
-					    <HBox>
-					        <!--<CheckBox/>-->
-					       <FlexBox  width="20%" justifyContent="Start">
-							    <Text text="{bayModel>gh_bay}" textAlign="Center" ></Text>
-			 			    </FlexBox>
+					<Toolbar visible="true" id="idInfoToolbar">
+				<ToolbarSpacer width = "33px"/>
+					    <HBox width = "100%">
+					        
+						<FlexBox width="20%" justifyContent="Start">
+							<Text text="Bay" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="Delivery" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="Variety" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="Change" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="Old value" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="New value" textAlign="Center"></Text>
+						</FlexBox>
+					        </HBox>
 					
-					 <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="{bayModel>planted_date}" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			     <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="{bayModel>name}" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			     <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="{bayModel>comments}" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			     <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="{bayModel>address/street}" textAlign="Center" ></Text>
-			 			    </FlexBox>
-			 			     <FlexBox  width="70%" justifyContent="Start">
-							    <Text text="{bayModel>comments}" textAlign="Center" ></Text>
-			 			    </FlexBox>
+					    
+						<!--<ToolbarSpacer width="2%"/>-->
+						<!--<Text text="Bay" width="auto"/>-->
+						<!--<ToolbarSpacer width="2%"/>-->
+						<!--<Text text="Delivery"/>-->
+						<!--<ToolbarSpacer width="12.5%"/>-->
+						<!--<Text text="Variety"/>-->
+						<!--<ToolbarSpacer width="13.5%"/>-->
+						<!--<Text text="Change"/>-->
+						<!--<ToolbarSpacer width="13.5%"/>-->
+						<!--<Text text="Old value"/>-->
+						<!--<ToolbarSpacer width="12.3%"/>-->
+						<!--<Text text="New value"/>-->
+					</Toolbar>
+				</infoToolbar>
+				<CustomListItem fieldGroupIds="{bayModel>id}{bayModel>bayId}" >
+					<HBox>
+				
+						<FlexBox width="20%" justifyContent="Start">
+							<Text text="{bayModel>gh_bay}" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="{bayModel>planted_date}" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="{bayModel>name}" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="{bayModel>comments}" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="{bayModel>address/street}" textAlign="Center"></Text>
+						</FlexBox>
+						<FlexBox width="70%" justifyContent="Start">
+							<Text text="{bayModel>comments}" textAlign="Center"></Text>
+						</FlexBox>
+						</HBox>
+					<!--<Toolbar>-->
+					<!--    <Text text="{bayModel>gh_bay}" textAlign="Center"/>-->
+					<!--     <Text text="{bayModel>planted_date}" textAlign="Center"/>-->
+					<!--    <Text text="{bayModel>name}" width="2%"/>-->
+					<!--	<Text text="{bayModel>comments}" width="2%"/>-->
+					<!--	<Text text="{bayModel>address/street}" width="2%"/>-->
+					<!--	<Text text="{bayModel>comments}" width="2%"/>-->
+					<!--</Toolbar>-->
 					
 						<!--<Text text="{bayModel>name}" width="2%"/>-->
 						<!--<Text text="{bayModel>comments}" width="2%"/>-->
 						<!--<Text text="{bayModel>address/street}" width="2%"/>-->
 						<!--<Text text="{bayModel>comments}" width="2%"/>-->
-						    </HBox>
-					</CustomListItem>
-			
+				
+				</CustomListItem>
 			</List>
 		</content>
 		<footer>
 			<Toolbar>
 				<HBox alignItems="Center">
-					<CheckBox/>
+					<CheckBox id="selectDeselectBoxId" select="onSelect"/>
 					<Label text="Select / Deselect all"/>
 				</HBox>
 				<ToolbarSpacer/>
