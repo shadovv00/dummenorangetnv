@@ -25,9 +25,19 @@
 .bay-row-height {
 	line-height: 3em;
 }
-.bisible-header-wrapper {
+.visible-header-wrapper {
     width: 100%;
     height: 3rem;
+    background: #F35B4A;
+}
+.visible-header-scroll-part {
+    border-left: 1px solid #EF8E73;
+    border-bottom: 1px solid #EF8E73;
+    right: 0;
+    position: absolute;
+    width: 1rem;
+    height: 3rem;
+    z-index: 2;
     background: #F35B4A;
 }
 .bay-row-paddings {
@@ -38,6 +48,9 @@
 }
 .bay-table-cell2 {
 	padding: 0 0.3em;
+}
+.bay-table-cell2 .sapMInputBaseInner {
+    padding: 0 0.2rem;
 }
 .bay-row-border-bottom td {
 	border-bottom: 2px solid black;

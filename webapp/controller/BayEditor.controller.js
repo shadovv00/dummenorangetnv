@@ -46,7 +46,21 @@ sap.ui.define([
 		    var aDateParts = plantedDate.split("-");
 		    var oDate = new Date(aDateParts[0], aDateParts[1] - 1, aDateParts[2]);
 		    var day = oDate.getDate();
-		    oDate.setDate(+day + root + veg + rea + ko);
+		    
+		    var rootInt = parseInt(root);
+		    var vegInt = parseInt(veg);
+		    var koInt = parseInt(ko);
+		    var reaInt = parseInt(rea);
+		    var horvInt = parseInt(horv);
+		    
+		    rootInt = isNaN(rootInt) ? 0 : rootInt;
+		    vegInt = isNaN(vegInt) ? 0 : vegInt;
+		    koInt = isNaN(koInt) ? 0 : koInt;
+		    reaInt = isNaN(reaInt) ? 0 : reaInt;
+		    horvInt = isNaN(horvInt) ? 0 : horvInt;
+		    
+		    var daySum = rootInt + vegInt + koInt + reaInt + horvInt;
+		    oDate.setDate(daySum);
 		    return oDate;
 		},
 // 		formatOddWeek: function(date) {
@@ -72,6 +86,10 @@ sap.ui.define([
 		},
 		formatPercent: function(value) {
 			return (value * 100) + "%";
+		},
+		formatPlants: function(percent, square, density, plants) {
+		    var maxPlants = square * density;
+		    return maxPlants * percent;
 		},
 		formatplants: function(plant, erp_plant) {
 		    if(+plant !== +erp_plant) {
@@ -117,11 +135,10 @@ sap.ui.define([
 		    
 		    var sPathT = sPath + "/deleted";
 		    
-		    console.log(oModel.getProperty(sPathT));
-		    
-		    console.log(oModel.setProperty(sPathT, true, sBindingContext, true));
-		    console.log(sPathT);
-		    console.log(oModel.getProperty(sPathT));
+		  //  console.log(oModel.getProperty(sPathT));
+		    oModel.setProperty(sPathT, true, sBindingContext, true);
+		  //  console.log(sPathT);
+		  //  console.log(oModel.getProperty(sPathT));
 		    oModel.updateBindings(true);
 		},
 		changePercent: function(oEvent) {
@@ -130,11 +147,10 @@ sap.ui.define([
 		    var sPath = sBindingContext.getPath();
 		    var oModel = sBindingContext.getModel();
 		    var oValue = oControl.getValue();
-		    var valNum = Math.round((parseInt(oValue) / 100), 2);
-		    console.log("val = " + valNum);
+		    var valNum = (parseFloat(oValue) / 100).toFixed(4);
 		    var sPathT = sPath;
 		    sPath = sPath + "/percent";
-		    oModel.setProperty(sPath, valNum, sBindingContext, true);
+		    oModel.setProperty(sPath, +valNum, sBindingContext, true);
 		    oModel.updateBindings(true);
 		},
 		changePlantedDate: function(oEvent) {

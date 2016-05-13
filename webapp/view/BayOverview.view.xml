@@ -33,7 +33,10 @@
 
 		<cc:BayTable
 		    id="bay_table_id"
-		    items="{path: '/data'}"
+		    minWidth="1050px"
+		    items="{
+		        path: '/data'
+		    }"
 		    class="sapUiSmallMarginBeginEnd bay-table-border">
 			<cc:columns>
 				<cc:BayColumn text="GH-bay" class="bay-table-cell" width="3em"/>
@@ -54,6 +57,7 @@
 				ghbay="{gh_bay}"
 				rows="{
 				        path: 'plant',
+		                templateShareable: true,
     		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
 				    }"
 				oddweek="{
@@ -204,6 +208,5 @@
 				</cc:ftRows>
 			</cc:BayRowGroup>
 		</cc:BayTable>
-		<!--</Panel>-->
 	</Page>
 </mvc:View>
