@@ -79,7 +79,7 @@
             							<Text text="Planted" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
-            							<Text text="root" textAlign="Center" ></Text>
+            							<Text text="ROOT" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
             							<Text text="VEG:" textAlign="Center" ></Text>
@@ -91,7 +91,7 @@
             							<Text text="KO" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
-            							<Text text="Harv" textAlign="Center" ></Text>
+            							<Text text="HARV" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="11%" justifyContent="Center">
             							<Text text="OOG" textAlign="Center" ></Text>

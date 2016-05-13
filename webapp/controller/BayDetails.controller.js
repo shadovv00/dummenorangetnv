@@ -189,7 +189,7 @@ sap.ui.define([
 			onInit: function() {
 				this.getView().byId("bayDetFilterDateFrom").setDateValue(new Date());
 				var toDate = new Date();
-				toDate.setDate(toDate.getDate()+210);
+				toDate.setFullYear(toDate.getFullYear()+1);
 				this.getView().byId("bayDetFilterDateTo").setDateValue(toDate);
 
 				var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
