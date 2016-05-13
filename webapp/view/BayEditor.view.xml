@@ -19,10 +19,13 @@
 		</Bar>
 		<cc:BayTable
 		    id="bay_table_id"
+		    minWidth="1050px"
 		    items="{
     		        path: '/data'
 		        }"
-		    class="sapUiSmallMarginBeginEnd bay-table-border">
+		    class="sapUiSmallMarginBeginEnd bay-table-border"
+		    template="BayColumn"
+		    templateShareable="true">
 			<cc:columns>
 				<cc:BayColumn text="GH-bay" colspan="2" class="bay-table-cell"/>
 				<cc:BayColumn text="" minWidth="9rem"/>
@@ -40,8 +43,10 @@
 			</cc:columns>
 			<cc:BayRowGroup
 				ghbay="{gh_bay}"
+				square="{square}"
 				rows="{
 				        path: 'plant',
+				        templateShareable: true,
     		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
 				    }"
 				oddweek="{
@@ -60,6 +65,7 @@
                             press="deleteBayRow"/>
     				</cc:BayCell>
 					<cc:BayCell
+					    width="220px"
 					    class="bay-table-cell"
 					    rederror="{
 					                path: 'processed',
@@ -70,28 +76,42 @@
 						    text="{name}"/>
 					</cc:BayCell>
 					<cc:BayCell
+					    width="70px"
 					    class="bay-table-cell2">
-				        <Input 
+				        <Input
+				            maxLength="7"
 				            value="{
 				                        path: 'percent',
 				                        formatter: '.formatPercent'
 				                   }"
-			                liveChange="changePercent"/>
+			                change="changePercent"
+			                submit="changePercent"/>
+					</cc:BayCell>
+					<cc:BayCell
+				    	width="60px"
+					    class="bay-table-cell2">
+					    <Input
+					        maxLength="7"
+					        value="{
+				                        parts: [
+				                            {path: 'percent'},
+				                            {path: 'square'},
+				                            {path: 'density'},
+				                            {path: 'plants'}
+				                        ],
+				                        formatter: '.formatPlants'
+				                   }" />
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
-					    <Input 
-					        value="{plants}"/>
-					</cc:BayCell>
-					<cc:BayCell
-					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
 					        value="{density}"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
 					    <DatePicker
-					        width="120px"
+					        width="100px"
 					        placeholder=" "
 					        valueFormat="yyyy-ww-u"
 					        displayFormat="yyyy-ww-u"
@@ -103,34 +123,46 @@
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
+					        type="Number"
 					        value="{root}"
-					        liveChange="changeRoot"/>
+					        fieldWidth="30px"
+					        change="changeRoot"
+					        submit="changeRoot"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
+					        type="Number"
 					        value="{veg}"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
+					        type="Number"
 					        value="{rea}"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
+					        type="Number"
 					        value="{ko}"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
+					        type="Number"
 					        value="{horv}"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    class="bay-table-cell2">
 					    <DatePicker
-					        width="120px"
+					        width="100px"
 					        placeholder=" "
 					        valueFormat="yyyy-ww-u"
 					        displayFormat="yyyy-ww-u"
@@ -150,7 +182,9 @@
 					<cc:BayCell
 					    width="3rem"
 					    class="bay-table-cell2">
-					    <Input 
+					    <Input
+					        maxLength="3"
+					        type="Number"
 					        value="{vaca}"/>
 					</cc:BayCell>
 				</cc:BayRow>

@@ -1,9 +1,11 @@
 {
 	"data": [{
 		"gh_bay": 5,
+		"square": 345,
 		"comments": "Opletten bij bemesten ...",
 		"plant": [{
 			"name": "001 Feeling green dark",
+			"square": 345,
 			"percent": 0.5,
 			"plants": 16218,
 			"erp_plants": 16218,
@@ -22,9 +24,11 @@
 		}]
 	}, {
 		"gh_bay": 6,
+		"square": 690,
 		"comments": "",
 		"plant": [{
 			"name": "001 Feeling green dark",
+			"square": 690,
 			"percent": 1.0,
 			"plants": 32436,
 			"erp_plants": 32435,
@@ -42,6 +46,7 @@
 			"deleted": false
 		}, {
 			"name": "015 Grand cherry",
+			"square": 690,
 			"percent": 0.002,
 			"plants": 102,
 			"erp_plants": 102,
@@ -60,13 +65,16 @@
 		}]
 	}, {
 		"gh_bay": 7,
+		"square": 690,
 		"comments": "Grondrot, eerst vervangen daarna pas nieuw planten",
 		"plant": []
 	}, {
 		"gh_bay": 8,
+		"square": 720.8,
 		"comments": "some comment",
 		"plant": [{
 			"name": "004 Talitha",
+			"square": 720.8,
 			"percent": 1.0,
 			"plants": 32436,
 			"erp_plants": 32436,
@@ -85,9 +93,11 @@
 		}]
 	}, {
 		"gh_bay": 9,
+		"square": 690.13,
 		"comments": "",
 		"plant": [{
 			"name": "001 Feeling green dark",
+			"square": 690.13,
 			"percent": 1.0,
 			"plants": 32436,
 			"erp_plants": 32436,
@@ -106,9 +116,11 @@
 		}]
 	}, {
 		"gh_bay": 10,
+		"square": 690.13,
 		"comments": "",
 		"plant": [{
 			"name": "001 Feeling green dark",
+			"square": 690.13,
 			"percent": 1.0,
 			"plants": 32436,
 			"erp_plants": 32436,
@@ -127,16 +139,19 @@
 		}]
 	}, {
 		"gh_bay": 11,
+		"square": 690.13,
 		"comments": "11 empty again",
 		"plant": []
 	}, {
 		"gh_bay": 12,
+		"square": 589,
 		"comments": "eventually 12",
 		"plant": [{
 			"name": "001 Feeling green dark",
+			"square": 589,
 			"percent": 0.3,
-			"plants": 10436,
-			"erp_plants": 10436,
+			"plants": 8305,
+			"erp_plants": 8305,
 			"density": 47,
 			"planted_date": "2016-01-12",
 			"erp_planted_date": "2016-01-12",
@@ -151,9 +166,10 @@
 			"deleted": false
 		}, {
 			"name": "001 Feeling green dark1",
+			"square": 589,
 			"percent": 0.26,
-			"plants": 6436,
-			"erp_plants": 6435,
+			"plants": 7199,
+			"erp_plants": 7198,
 			"density": 47,
 			"planted_date": "2016-01-13",
 			"erp_planted_date": "2016-01-13",
@@ -168,9 +184,10 @@
 			"deleted": false
 		}, {
 			"name": "001 Feeling DDD",
+			"square": 589,
 			"percent": 0.5,
-			"plants": 16436,
-			"erp_plants": 16436,
+			"plants": 13841,
+			"erp_plants": 13841,
 			"density": 47,
 			"planted_date": "2016-01-14",
 			"erp_planted_date": "2016-01-14",
@@ -186,9 +203,11 @@
 		}]
 	}, {
 		"gh_bay": 13,
+		"square": 690.13,
 		"comments": "September",
 		"plant": [{
 			"name": "001 Feeling green dark",
+			"square": 690.13,
 			"percent": 1.0,
 			"plants": 32436,
 			"erp_plants": 32436,

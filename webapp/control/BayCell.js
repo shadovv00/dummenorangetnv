@@ -8,6 +8,7 @@ sap.ui.define([
 		metadata : {
 			properties : {
 				"value": {type : "string", defaultValue : ""},
+				"square": {type: "number", defaultValue: -1},
 				"colspan": {type : "int", defaultValue : 1},
 				"rederror": {type : "boolean", defaultValue: false},
 				"width" : {type : "sap.ui.core.CSSSize"}
@@ -24,6 +25,7 @@ sap.ui.define([
 			var colspan = oControl.getColspan();
 			var rederror = oControl.getRederror();
 			var width = oControl.getWidth();
+			var square = oControl.getSquare();
 			
 			var oContent = oControl.getContent();
 			
