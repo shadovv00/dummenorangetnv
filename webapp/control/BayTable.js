@@ -120,8 +120,8 @@ sap.ui.define([
 			var oThisBay = this, jThisBay;
 			var jHeader1, jHeader2, jHeaderTr1, jHeaderTr2, jTable2, jTableWrapper;
 			var shiftNum = 100, prevPos = 0, currPos, diffrencePos = 0;
-			if(oThisBay.sId) {
-				jThisBay = $("#" + oThisBay.sId);
+			jThisBay = oThisBay.$();
+			if(jThisBay) {
 				jTable2 = jThisBay.find("table.-visible-header-table");
 				jHeaderTr1 = jThisBay.find("tr.-invisible-header");
 				jHeaderTr2 = jThisBay.find("tr.-visible-header");
