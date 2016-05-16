@@ -140,14 +140,14 @@ sap.ui.define([
             					content:[
         							new sap.m.HBox({
         								items: [
-        									new sap.m.HBox({
-        										width:"4%",
-        										justifyContent:"Center",
-        										items: [
-        										    new sap.m.CheckBox()
-        										]
-        									}).addStyleClass(" ")
-        									,new sap.m.FlexBox({
+        								// 	new sap.m.HBox({
+        								// 		width:"4%",
+        								// 		justifyContent:"Center",
+        								// 		items: [
+        								// 		    new sap.m.CheckBox()
+        								// 		]
+        								// 	}).addStyleClass(" ")
+        									new sap.m.FlexBox({
         										width:"11%",
         										justifyContent:"Center",
         										items: [
@@ -184,8 +184,15 @@ sap.ui.define([
     											]
     										}).addStyleClass("")
     										,
+    										new sap.m.HBox({
+    											width:"4%",
+    											justifyContent:"Center",
+    											items: [
+    											    new sap.m.CheckBox()
+    											]
+    										}).addStyleClass(" "),
    										    new sap.m.VBox({
-    											width:"99%",
+    											width:"95%",
     								// 			justifyContent:"Start",
     											items: [
     	                            	        	localList
@@ -223,13 +230,6 @@ sap.ui.define([
 					content:[
 								new sap.m.HBox({
 									items: [
-										new sap.m.HBox({
-											width:"4%",
-											justifyContent:"Center",
-											items: [
-											    new sap.m.CheckBox()
-											]
-										}).addStyleClass(" "),
 										new sap.m.FlexBox({
 											width:"11%",
 											justifyContent:"Center",
