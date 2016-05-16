@@ -46,6 +46,7 @@ sap.ui.define([
 			if(aRows.length) {
 			    aRows[0].setGhbay(ghbay);
 				for(x = 0; x < aRows.length; x++) {
+				    aRows[x].addStyleClass("just-for-arrow-navigation");
 					oRM.renderControl(aRows[x]);
 				}
 			} else if(aEmptyRow) {
