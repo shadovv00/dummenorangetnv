@@ -77,7 +77,8 @@
 					</cc:BayCell>
 					<cc:BayCell
 					    width="70px"
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 				        <Input
 				            maxLength="7"
 				            value="{

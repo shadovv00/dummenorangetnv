@@ -90,7 +90,11 @@ sap.ui.define([
 			oRM.writeStyles();
 			oRM.write(">");
 			
-			oRM.write("<thead><tr");
+			oRM.write("<thead");
+			oRM.addClass("thead-invisible-header");
+			oRM.writeClasses();
+			oRM.write(">");
+			oRM.write("<tr");
 			oRM.addClass("-invisible-header");
 			oRM.writeClasses();
 			oRM.write(">");

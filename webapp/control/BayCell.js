@@ -16,7 +16,10 @@ sap.ui.define([
 			aggregations : {
 				"content" : {type : "sap.ui.core.Control", multiple : false}
 			},
-			defaultAggregation: "content"
+			defaultAggregation: "content",
+			events  : {
+                "onFocus" : {enablePreventDefault : false}
+            }
 		},
 		init : function () {
 		},
@@ -43,6 +46,11 @@ sap.ui.define([
 			oRM.writeStyles();
 			oRM.write(">");
 			if(oContent) {
+			    oContent.attachBrowserEvent("click", function() {
+			        console.log("dd");
+			        oControl.fireOnFocus();
+			    });
+			    
 			    oRM.renderControl(oContent);
 			} else {
 			    if(+value && +value !== -1) {

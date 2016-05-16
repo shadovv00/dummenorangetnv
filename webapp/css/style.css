@@ -65,8 +65,10 @@
 	position: absolute;
 	z-index: 2;
 }
-.-invisible-header {
+.thead-invisible-header {
 	visibility: hidden;
+}
+.-invisible-header {
 	line-height: 0px;
 }
 .bay-row {

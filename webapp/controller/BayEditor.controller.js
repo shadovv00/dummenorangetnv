@@ -176,6 +176,10 @@ sap.ui.define([
 		    sPath = sPath + "/root";
 		    oModel.setProperty(sPath, +oValue, sBindingContext, true);
 		},
+		onInputFocus: function(oEvent) {
+		    console.log(oEvent.getSource());
+		    console.log("dsdsd");
+		},
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
 		 * @memberOf dummenorangetnv.view.BayOverview
@@ -199,7 +203,9 @@ sap.ui.define([
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
-		onAfterRendering: function() {}
+		onAfterRendering: function() {
+		    
+		}
 
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
