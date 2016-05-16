@@ -57,6 +57,18 @@ sap.ui.define([
 			    oRM.renderControl(aFtRows[x]);
 			}
 			oRM.write("</tbody>");
+		},
+		onAfterRendering: function() {
+		    var jGroup = this.$();
+		    var jPrevGroup = jGroup.prev();
+		    var oddweek = this.getOddweek();
+		    if(jPrevGroup[0] && oddweek !== -1) {
+		        if(jPrevGroup.hasClass("bay-week-colour0")) {
+		            this.addStyleClass("bay-week-colour0");
+		        } else if(jPrevGroup.hasClass("bay-week-colour1")) {
+		            this.addStyleClass("bay-week-colour1");
+		        }
+		    }
 		}
 	});
 });
