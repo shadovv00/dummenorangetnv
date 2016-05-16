@@ -89,8 +89,8 @@
 				    <CheckBox text="Select/Deselect all"></CheckBox>
 				</contentLeft>
 				<contentMiddle>
-	   				<Button icon="sap-icon://sys-add" press="onAddingPlant" text="Select plants" />
-	   				<Button icon="sap-icon://survey" press="onAddingPlant" text="Copy last round" />
+	   				<Button icon="sap-icon://sys-add" press="openMultiPlantsAddDialog" text="Select plants" />
+	   				<Button icon="sap-icon://survey" press="onCopyLastRound" text="Copy last round" />
 				</contentMiddle>
 				<contentRight>
 	   				<Button icon="sap-icon://sys-cancel" press="onAddingPlant" text="Cancel" />

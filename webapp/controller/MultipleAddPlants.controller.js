@@ -7,8 +7,46 @@ sap.ui.define([
 		addPlantsMockup: {
 		    Bays: [
         		{"gh_bay": 1,
+               		"comments": "",
+        		    "percent": 0,
+    				"square": 75,
+    				"description": 'left',
+           			"planted_date": new Date(),
+            		"plant": []
+
+        		},
+           		{"gh_bay": 2,
+               		"comments": "",
+        		    "percent": 0,
+    				"square": 1000,
+    				"description": 'left',
+           			"planted_date": new Date(),
+            		"plant": []
+
+            		},
+           		{"gh_bay": 3,
+           		    "comments": "",
+        		    "percent": 0,
+    				"square": 300,
+    				"description": 'left',
+           			"planted_date": new Date(),
+            		"plant": []
+            		},
+           		{"gh_bay": 4,
+            		"comments": "",
+        		    "percent": 0,
+    				"square": 75,
+    				"description": 'left',
+           			"planted_date": new Date(),
+            		"plant": []
+            		}
+		        ],
+		    LastRoundBays: [
+        		{"gh_bay": 1,
         		"comments": "",
         		"percent": 1.0,
+				"square": 75,
+				"description": 'left',
     			"planted_date": new Date(),
         		"plant": [{
             		"id":"001",
@@ -49,6 +87,8 @@ sap.ui.define([
            		{"gh_bay": 2,
             		"comments": "",
         		    "percent": 0.5,
+				"square": 1000,
+				"description": 'left',
            			"planted_date": new Date(),
             		"plant": [{
             		    "id":"001",
@@ -72,16 +112,21 @@ sap.ui.define([
            		{"gh_bay": 3,
             		"comments": "",
         		    "percent": 0,
+				"square": 75,
+				"description": 'left',
            			"planted_date": new Date(),
             		"plant": []
             		},
            		{"gh_bay": 4,
             		"comments": "",
         		    "percent": 0,
+				"square": 75,
+				"description": 'left',
            			"planted_date": new Date(),
             		"plant": []
             		}
 		        ],
+
 			dateToDay : new Date(),
 			dateEnd : new Date(),
 			Plants: [
@@ -231,7 +276,7 @@ sap.ui.define([
 								new sap.m.HBox({
 									items: [
 										new sap.m.FlexBox({
-											width:"11%",
+											width:11/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.DatePicker({ width:"91%", dateValue: "{multiAddModel>planted_date}",
@@ -242,13 +287,13 @@ sap.ui.define([
 										}).addStyleClass(""),
 
 										new sap.m.FlexBox({
-											width:"18%",
+											width:18/0.95+"%",
 											items: [
 	                            				new sap.m.Text({ text: oContext.getProperty("id")+" "+oContext.getProperty("name"), textAlign:"Begin"}).addStyleClass("sapUiTinyMarginBegin")
 											]
 										}).addStyleClass(" sapUiSmallMarginTop "),
 										new sap.m.FlexBox({
-											width:"8%",
+											width:8/0.95+"%",
 											justifyContent:'Center',
 											items: [
 	                            				new sap.m.Input({ width:"81%", value: oContext.getProperty("percent")+"%" ,
@@ -257,7 +302,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"8%",
+											width:8/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({  width:"85%", value: oContext.getProperty("plants"),
@@ -266,7 +311,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"6%",
+											width:6/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("density"),
@@ -275,7 +320,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"5.5%",
+											width:5.5/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("root"),
@@ -284,7 +329,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"5.5%",
+											width:5.5/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("veg"),
@@ -293,7 +338,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"5.5%",
+											width:5.5/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("rea"),
@@ -302,7 +347,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"5.5%",
+											width:5.5/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("ko"),
@@ -311,7 +356,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"5.5%",
+											width:5.5/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("harv"),
@@ -320,7 +365,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"11%",
+											width:11/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	               //             				new sap.m.Input({ width:"86%", value: { path : "bayDetailModel>oog/",
@@ -337,7 +382,7 @@ sap.ui.define([
 											]
 										}).addStyleClass(""),
 										new sap.m.FlexBox({
-											width:"5.5%",
+											width:5.5/0.95+"%",
 											justifyContent:"Center",
 											items: [
 	                            				new sap.m.Input({ width:"75%", value: oContext.getProperty("vaca"), 
@@ -355,15 +400,21 @@ sap.ui.define([
 
 	,onDataChange: function(elThis,sId,oContext){
 	    var thisContr=this;
+	    var thisBayPath=oContext.getPath().substring(0,oContext.getPath().indexOf("/plant"));
 // 		console.log(this);
 // 		console.log(elThis);
 // 		console.log(sId);
-		console.log(oContext);
+// 		console.log(oContext);
+// 		console.log(oContext.getPath().indexOf("/plant"));
+// 		console.log(oContext.getPath().substring(0,oContext.getPath().indexOf("/plant")));
 // 		console.log(elThis.getBinding());
 //      console.log(elThis.getValue());
 // 		console.log(this.getView().byId(sId).getContent()[0].getItems());
 // 		console.log(this.getView().byId(sId).getContent()[0].getItems()[0].getItems());
         var inputIndex;
+        if (elThis.getValue()==''){
+            elThis.setValue(0);
+        }
 		$.each(thisContr.getView().byId(sId).getContent()[0].getItems(), function (index, item) {
 		  //  console.log(item.getItems()[0].getId());
 		    if(item.getItems()[0].getId()==elThis.getId()){
@@ -371,80 +422,129 @@ sap.ui.define([
 		        console.log(index);
 		    }
 		});
-		if (2<inputIndex<6){
-    	        var baySquare=thisContr.getView().getModel("multiAddModel").getData().Bay.square;
+		if ((1<inputIndex)&&(inputIndex<5)){
+    	        var baySquare=thisContr.getView().getModel("multiAddModel").getProperty(thisBayPath + "/square");
     	    switch(inputIndex) {
-                case 3:
-    				oContext.getModel().setProperty(oContext.getPath() + "/percent", elThis.getValue().substring(0,elThis.getValue().length-1));
+                case 2:
+    				oContext.getModel().setProperty(oContext.getPath() + "/percent", parseFloat(elThis.getValue()));
             	    var percentageFullnes =	parseFloat(	oContext.getModel().getProperty(oContext.getPath() + "/percent"))/100;
             	    var plantPerSquare =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/density"));
             	    oContext.getModel().setProperty(oContext.getPath() + "/plants", Math.round(plantPerSquare*percentageFullnes*baySquare));
                 break;
-                case 4:
+                case 3:
     				oContext.getModel().setProperty(oContext.getPath() + "/plants", parseInt(elThis.getValue()));
             	    var plantsQuantity =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/plants"));                         
             	    var plantPerSquare =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/density"));
-            	    var percent=plantsQuantity*1000/(plantPerSquare*thisContr.getView().getModel("bayDetailModel").getData().Bay.square);
+            	    var percent=plantsQuantity*1000/(plantPerSquare*baySquare);
             	    percent=Math.round(percent)/10;
     				oContext.getModel().setProperty(oContext.getPath() + "/percent", percent);
                 break;
-                case 5:
-    				oContext.getModel().setProperty(oContext.getPath() + "/square", elThis.getValue());
+                case 4:
+    				oContext.getModel().setProperty(oContext.getPath() + "/density", elThis.getValue());
             	    var plantsQuantity =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/plants"));                         
             	    var plantPerSquare =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/density"));
-            	    var percent=plantsQuantity*1000/(plantPerSquare*thisContr.getView().getModel("bayDetailModel").getData().Bay.square);
+            	    var percent=plantsQuantity*1000/(plantPerSquare*baySquare);
             	    percent=Math.round(percent)/10;
     				oContext.getModel().setProperty(oContext.getPath() + "/percent", percent);
                 break;
             }
-		}else if(10>inputIndex){
-    	    switch(inputIndex) {
-                case 5:
-                    // console.log(elThis.getDateValue());
-                    // console.log(new Date(elThis.getDateValue()));
-    				oContext.getModel().setProperty(oContext.getPath() + "/plantedDate", new Date(elThis.getDateValue()));
-                break;
-                case 6:
-    				oContext.getModel().setProperty(oContext.getPath() + "/root", parseInt(elThis.getValue()));
-                break;
-                case 7:
-    				oContext.getModel().setProperty(oContext.getPath() + "/veg", parseInt(elThis.getValue()));
-                break;
-                case 8:
-    				oContext.getModel().setProperty(oContext.getPath() + "/rea", parseInt(elThis.getValue()));
-                break;
-                case 9:
-    				oContext.getModel().setProperty(oContext.getPath() + "/ko", parseInt(elThis.getValue()));
-                break;
-            }
-    		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/plantedDate"));
-    	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
-    	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
-    	    var shortDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/ko"));                         
-    	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));                         
-    	   // var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
-    	   // var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
-    		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+shortDays+reactionDays);
-    		oContext.getModel().setProperty(oContext.getPath() + "/oog", plantedDate);
-
-		}else if (inputIndex>9){
-       	    switch(inputIndex) {
-                case 10:
-    				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
-                break;
-                case 11:
-        		  //  var oogDate=new Date(elThis.getDateValue());
-           				oContext.getModel().setProperty(oContext.getPath() + "/oog", new Date(elThis.getDateValue()));
-                break;
-                case 12:
-    				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
-                break;
-            }
+            var bayPercent=0;
+    		$.each(oContext.getModel().getProperty(thisBayPath + "/plant"), function (index, item) {
+    		    bayPercent+=item.percent;
+    		});    
+    	    bayPercent=Math.round(bayPercent*10)/1000;
+    		oContext.getModel().setProperty(thisBayPath + "/percent", bayPercent);
+            
+		}else {
+		    if(inputIndex==0||9>inputIndex){
+        	    switch(inputIndex) {
+                    case 0:
+                        // console.log(elThis.getDateValue());
+                        // console.log(new Date(elThis.getDateValue()));
+        				oContext.getModel().setProperty(oContext.getPath() + "/planted_date", new Date(elThis.getDateValue()));
+                    break;
+                    case 5:
+        				oContext.getModel().setProperty(oContext.getPath() + "/root", parseInt(elThis.getValue()));
+                    break;
+                    case 6:
+        				oContext.getModel().setProperty(oContext.getPath() + "/veg", parseInt(elThis.getValue()));
+                    break;
+                    case 7:
+        				oContext.getModel().setProperty(oContext.getPath() + "/rea", parseInt(elThis.getValue()));
+                    break;
+                    case 8:
+        				oContext.getModel().setProperty(oContext.getPath() + "/ko", parseInt(elThis.getValue()));
+                    break;
+                }
+        		var plantedDate =	new Date(	oContext.getModel().getProperty(oContext.getPath() + "/planted_date"));
+        		console.log(plantedDate);
+        	    var rootingDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/root"));                         
+        	    var longDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/veg"));                         
+        	    var shortDays =		parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/ko"));                         
+        	    var reactionDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/rea"));                         
+        	   // var harvestDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/harv"));                         
+        	   // var vacantDays =	parseInt(	oContext.getModel().getProperty(oContext.getPath() + "/vaca"));         
+        		plantedDate.setDate(plantedDate.getDate()+rootingDays+longDays+shortDays+reactionDays);
+        		console.log(plantedDate);
+        		oContext.getModel().setProperty(oContext.getPath() + "/oog_date", plantedDate);
+    
+    		}else if (inputIndex>8){
+           	    switch(inputIndex) {
+                    case 9:
+        				oContext.getModel().setProperty(oContext.getPath() + "/harv", parseInt(elThis.getValue()));
+                    break;
+                    case 10:
+            		  //  var oogDate=new Date(elThis.getDateValue());
+               				oContext.getModel().setProperty(oContext.getPath() + "/oog_date", new Date(elThis.getDateValue()));
+                    break;
+                    case 11:
+        				oContext.getModel().setProperty(oContext.getPath() + "/vaca", parseInt(elThis.getValue()));
+                    break;
+                }
+    		}
 		}
     		// ourModel.submitChanges();
     	    oContext.getModel().refresh(true);
 	}
 
+    ,onCopyLastRound:function(sId,oContext) {
+        var thisModel=this.getView().getModel("multiAddModel");
+        thisModel.setProperty("/Bays",$.extend(true, {}, thisModel.getProperty("/LastRoundBays")));
+        this.getView().getModel("multiAddModel").refresh(true);
+
+    }
+
+	,openMultiPlantsAddDialog: function(elThis,sId,oContext) {
+		this.newMultiPlantsAddDialog = sap.ui.xmlfragment("dummenorangetnv.fragments.MultipleAddPlantsDialog", this);
+		this.getView().addDependent(this.newMultiPlantsAddDialog);
+		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this.newMultiPlantsAddDialog);
+		this.newMultiPlantsAddDialog.open();
+// 		sap.ui.getCore().byId("plantsAvailabilityNameId").setText(oContext.getModel().getProperty(oContext.getPath() + "/id")+" "+
+// 		                                                           oContext.getModel().getProperty(oContext.getPath() + "/name"));
+		
+// 		$.each(this.getView().getModel("bayDetailModel").getData().AvailablePlants, function (index, item) {
+// 		    if(item.id==oContext.getModel().getProperty(oContext.getPath() + "/id")){
+//                 var oTemplate = new sap.m.ColumnListItem({
+//                     cells : [
+//                         new sap.m.Text({
+//                             text : "{bayDetailModel>week}",
+//                             wrapping : false
+//                         }),
+//                         new sap.m.Text({
+//                             text : "{bayDetailModel>quantity}",
+//                             wrapping : false
+//                         })
+//                     ]
+//                 });
+//                 sap.ui.getCore().byId("plantsAvailabilityTableId").bindItems("bayDetailModel>/AvailablePlants/"+index+"/availability", oTemplate);
+// 		    }
+// 		});		
+	}
+
+	,closeMultiPlantsAddAvilabDialog: function(oEvent) {
+		this.newMultiPlantsAddDialog.close();
+		this.newMultiPlantsAddDialog.destroy();
+	}
 
 
 	,onPrevPage: function(oEvent){
