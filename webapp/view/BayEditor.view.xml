@@ -33,11 +33,11 @@
 				<cc:BayColumn text="Plants" />
 				<cc:BayColumn text="p/m2" />
 				<cc:BayColumn text="Planted" />
-				<cc:BayColumn text="root" />
+				<cc:BayColumn text="ROOT" />
 				<cc:BayColumn text="VEG" />
 				<cc:BayColumn text="REA" />
 				<cc:BayColumn text="KO" />
-				<cc:BayColumn text="Harv" />
+				<cc:BayColumn text="HARV" />
 				<cc:BayColumn text="OOG" />
 				<cc:BayColumn text="Vaca" />
 			</cc:columns>
