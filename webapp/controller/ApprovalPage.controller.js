@@ -36,7 +36,12 @@ sap.ui.define([
 		 */
 
 		onCustRepresChange: function(oEvent) {
-			var sCusrRepresName = oEvent.getSource().getSelectedKey();
+		    
+		    var oList = this.getView().byId("ListId");
+		    
+        	var oCBox = this.getView().byId("selectDeselectBoxId");
+            
+             var sCusrRepresName = oEvent.getSource().getSelectedKey();
 			console.log(sCusrRepresName);
 			console.log(this.oData.customerRepresentive[0].name);
 			var that = this;
@@ -49,20 +54,14 @@ sap.ui.define([
 				}
 
 			});
-
-			// 		    {	var aFilters = [];
-			// 			// update list binding
-			// 			var obayList = this.getView().byId("ListId");
-			// 			var aListItems = obayList.getItems();
-
-			// 			    var oCustRepresFilter = new sap.ui.model.Filter("custRepes>/id", sap.ui.model.FilterOperator.EQ, this.sCusrRepresId);
-			// 			    console.log(oCustRepresFilter);
-			// 			    aFilters.push(oDiscriptionFilter);
-			// 			    obayList.getBinding("items").filter(aFilters);
-
-			// 		    }
-		},
-
+			 console.log(oList.getItems());
+                 var bItems = oList.getItems().length > 0 ? true:false;
+                 console.log(bItems);
+                oCBox.setEnabled(bItems);
+			},
+		
+	
+     
 		onInit: function() {
 
 			var aCustomerRepresentiveList = {
@@ -402,186 +401,186 @@ sap.ui.define([
 			};
 			console.log(this.oData.customerRepresentive[0]);
 
-			var oBayData = {
-				bayData: [{
-					id: 1,
-					bayId: 1,
-					growerName: "Van Os Chrysanten C.V.",
-					address: {
-						street: "Harenwert 48",
-						city: "1000 AA Maasland"
-					},
+// 			var oBayData = {
+// 				bayData: [{
+// 					id: 1,
+// 					bayId: 1,
+// 					growerName: "Van Os Chrysanten C.V.",
+// 					address: {
+// 						street: "Harenwert 48",
+// 						city: "1000 AA Maasland"
+// 					},
 
-					gh_bay: 5,
-					comments: "hike",
+// 					gh_bay: 5,
+// 					comments: "hike",
 
-					name: "001 Feeling green dark",
-					percent: 0.5,
-					plants: 16218,
-					erp_plants: 16218,
-					density: 47,
-					planted_date: "2016-01-5",
-					erp_planted_date: "2016-01-5",
-					root: 0,
-					veg: 12,
-					rea: 54,
-					horv: 1,
-					oog_date: "2016-10-1",
-					vaca: 1,
-					processed: false
+// 					name: "001 Feeling green dark",
+// 					percent: 0.5,
+// 					plants: 16218,
+// 					erp_plants: 16218,
+// 					density: 47,
+// 					planted_date: "2016-01-5",
+// 					erp_planted_date: "2016-01-5",
+// 					root: 0,
+// 					veg: 12,
+// 					rea: 54,
+// 					horv: 1,
+// 					oog_date: "2016-10-1",
+// 					vaca: 1,
+// 					processed: false
 
-				}, {
-					id: 1,
-					bayId: 1,
-					growerName: "Van Os Chrysanten C.V.",
-					address: {
-						street: "Harenwert 48",
-						city: "1000 AA Maasland"
-					},
-					gh_bay: 6,
-					comments: "hike hike",
-					name: "001 Feeling green dark",
-					percent: 1.0,
-					plants: 32436,
-					erp_plants: 32435,
-					density: 47,
-					planted_date: "2016-01-6",
-					erp_planted_date: "2016-01-6",
-					root: 0,
-					veg: 12,
-					rea: 54,
-					horv: 1,
-					oog_date: "2016-10-2",
-					vaca: 1,
-					processed: true
-				}, {
-					id: 1,
-					bayId: 1,
-					growerName: "Van Os Chrysanten C.V.",
-					address: {
-						street: "Harenwert 48",
-						city: "1000 AA Maasland"
-					},
-					gh_bay: 8,
-					comments: "hike 8",
-					name: "004 Talitha",
-					percent: 1.0,
-					plants: 32436,
-					erp_plants: 32436,
-					density: 45,
-					planted_date: "2016-01-7",
-					erp_planted_date: "2016-01-8",
-					root: 0,
-					veg: 13,
-					rea: 55,
-					horv: 1,
-					oog_date: "2016-10-3",
-					vaca: 1,
-					processed: true
+// 				}, {
+// 					id: 1,
+// 					bayId: 1,
+// 					growerName: "Van Os Chrysanten C.V.",
+// 					address: {
+// 						street: "Harenwert 48",
+// 						city: "1000 AA Maasland"
+// 					},
+// 					gh_bay: 6,
+// 					comments: "hike hike",
+// 					name: "001 Feeling green dark",
+// 					percent: 1.0,
+// 					plants: 32436,
+// 					erp_plants: 32435,
+// 					density: 47,
+// 					planted_date: "2016-01-6",
+// 					erp_planted_date: "2016-01-6",
+// 					root: 0,
+// 					veg: 12,
+// 					rea: 54,
+// 					horv: 1,
+// 					oog_date: "2016-10-2",
+// 					vaca: 1,
+// 					processed: true
+// 				}, {
+// 					id: 1,
+// 					bayId: 1,
+// 					growerName: "Van Os Chrysanten C.V.",
+// 					address: {
+// 						street: "Harenwert 48",
+// 						city: "1000 AA Maasland"
+// 					},
+// 					gh_bay: 8,
+// 					comments: "hike 8",
+// 					name: "004 Talitha",
+// 					percent: 1.0,
+// 					plants: 32436,
+// 					erp_plants: 32436,
+// 					density: 45,
+// 					planted_date: "2016-01-7",
+// 					erp_planted_date: "2016-01-8",
+// 					root: 0,
+// 					veg: 13,
+// 					rea: 55,
+// 					horv: 1,
+// 					oog_date: "2016-10-3",
+// 					vaca: 1,
+// 					processed: true
 
-				}, {
-					id: 1,
-					bayId: 1,
-					growerName: "Van Os Chrysanten C.V.",
-					address: {
-						street: "Harenwert 48",
-						city: "1000 AA Maasland"
-					},
-					gh_bay: 9,
-					comments: "like 9",
+// 				}, {
+// 					id: 1,
+// 					bayId: 1,
+// 					growerName: "Van Os Chrysanten C.V.",
+// 					address: {
+// 						street: "Harenwert 48",
+// 						city: "1000 AA Maasland"
+// 					},
+// 					gh_bay: 9,
+// 					comments: "like 9",
 
-					name: "001 Feeling green dark",
-					percent: 1.0,
-					plants: 32436,
-					erp_plants: 32436,
-					density: 47,
-					planted_date: "2016-02-1",
-					erp_planted_date: "2016-02-1",
-					root: 0,
-					veg: 11,
-					rea: 54,
-					horv: 1,
-					oog_date: "2016-10-4",
-					vaca: 1,
-					processed: true
+// 					name: "001 Feeling green dark",
+// 					percent: 1.0,
+// 					plants: 32436,
+// 					erp_plants: 32436,
+// 					density: 47,
+// 					planted_date: "2016-02-1",
+// 					erp_planted_date: "2016-02-1",
+// 					root: 0,
+// 					veg: 11,
+// 					rea: 54,
+// 					horv: 1,
+// 					oog_date: "2016-10-4",
+// 					vaca: 1,
+// 					processed: true
 
-				}, {
-					id: 1,
-					bayId: 2,
-					growerName: "Van Os Chrysanten C.V.",
-					address: {
-						street: "Aallaan 306",
-						city: "1000 AA Maasland"
-					},
-					gh_bay: 10,
-					comments: "obscure 10",
-					name: "001 Feeling green dark",
-					percent: 1.0,
-					plants: 32436,
-					erp_plants: 32436,
-					density: 47,
-					planted_date: "2016-02-2",
-					erp_planted_date: "2016-02-2",
-					root: 0,
-					veg: 11,
-					rea: 54,
-					horv: 1,
-					oog_date: "2016-10-5",
-					vaca: 1,
-					processed: true
+// 				}, {
+// 					id: 1,
+// 					bayId: 2,
+// 					growerName: "Van Os Chrysanten C.V.",
+// 					address: {
+// 						street: "Aallaan 306",
+// 						city: "1000 AA Maasland"
+// 					},
+// 					gh_bay: 10,
+// 					comments: "obscure 10",
+// 					name: "001 Feeling green dark",
+// 					percent: 1.0,
+// 					plants: 32436,
+// 					erp_plants: 32436,
+// 					density: 47,
+// 					planted_date: "2016-02-2",
+// 					erp_planted_date: "2016-02-2",
+// 					root: 0,
+// 					veg: 11,
+// 					rea: 54,
+// 					horv: 1,
+// 					oog_date: "2016-10-5",
+// 					vaca: 1,
+// 					processed: true
 
-				}, {
-					id: 2,
-					bayId: 1,
-					growerName: "Van Oranje",
-					address: {
-						street: "Aallaan 306",
-						city: "1000 AA Maasland"
-					},
-					gh_bay: 12,
-					comments: "eventually 12",
+// 				}, {
+// 					id: 2,
+// 					bayId: 1,
+// 					growerName: "Van Oranje",
+// 					address: {
+// 						street: "Aallaan 306",
+// 						city: "1000 AA Maasland"
+// 					},
+// 					gh_bay: 12,
+// 					comments: "eventually 12",
 
-					name: "001 Feeling green dark",
-					percent: 0.3,
-					plants: 10436,
-					erp_plants: 10436,
-					density: 47,
-					planted_date: "2016-02-2",
-					erp_planted_date: "2016-02-2",
-					root: 0,
-					veg: 11,
-					rea: 54,
-					horv: 1,
-					oog_date: "2016-10-5",
-					vaca: 1,
-					processed: true
-				}, {
-					id: 2,
-					bayId: 1,
-					growerName: "Van Oranje",
-					address: {
-						street: "Aallaan 306",
-						city: "1000 AA Maasland"
-					},
-					gh_bay: 13,
-					comments: "September",
+// 					name: "001 Feeling green dark",
+// 					percent: 0.3,
+// 					plants: 10436,
+// 					erp_plants: 10436,
+// 					density: 47,
+// 					planted_date: "2016-02-2",
+// 					erp_planted_date: "2016-02-2",
+// 					root: 0,
+// 					veg: 11,
+// 					rea: 54,
+// 					horv: 1,
+// 					oog_date: "2016-10-5",
+// 					vaca: 1,
+// 					processed: true
+// 				}, {
+// 					id: 2,
+// 					bayId: 1,
+// 					growerName: "Van Oranje",
+// 					address: {
+// 						street: "Aallaan 306",
+// 						city: "1000 AA Maasland"
+// 					},
+// 					gh_bay: 13,
+// 					comments: "September",
 
-					name: "001 Feeling green dark",
-					percent: 1.0,
-					plants: 32436,
-					erp_plants: 32436,
-					density: 47,
-					planted_date: "2016-02-2",
-					erp_planted_date: "2016-02-2",
-					root: 0,
-					veg: 11,
-					rea: 54,
-					horv: 1,
-					oog_date: "2016-10-5",
-					vaca: 1,
-					processed: true
-				}]
-			};
+// 					name: "001 Feeling green dark",
+// 					percent: 1.0,
+// 					plants: 32436,
+// 					erp_plants: 32436,
+// 					density: 47,
+// 					planted_date: "2016-02-2",
+// 					erp_planted_date: "2016-02-2",
+// 					root: 0,
+// 					veg: 11,
+// 					rea: 54,
+// 					horv: 1,
+// 					oog_date: "2016-10-5",
+// 					vaca: 1,
+// 					processed: true
+// 				}]
+// 			};
 
 			//             jQuery.sap.require("dummenorangetnv.resources.underscore-min");
 			//   hcpspark.devinit.initialize();
@@ -618,13 +617,6 @@ sap.ui.define([
 				]
 			});
 		},
-
-		// 		getGroupHeader: function (oGroup){
-		// 			return new sap.m.GroupHeaderListItem( {
-		// 				title: oGroup.key,
-		// 				upperCase: false
-		// 			} );
-		// 		},
 
 		onSelectionChange: function(oEvent) {
 			var oList = oEvent.getSource();
@@ -693,12 +685,9 @@ sap.ui.define([
 			}
 		},
 
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf dummenorangetnv.view.ApprovalPage
-		 */
 		onBeforeRendering: function() {
+		    
+
 
 			var oList = this.getView().byId("ListId");
 
@@ -736,12 +725,13 @@ sap.ui.define([
 		onSelect: function() {
 			var oList = this.getView().byId("ListId");
 			var oCBox = this.getView().byId("selectDeselectBoxId");
-
+// 	
 			if (oCBox.getSelected())
 				oList.selectAll();
 			else
 				oList.removeSelections();
 		},
+		
 		onReject: function() {
 		var oList = this.getView().byId("ListId");
 			var aItems = oList.getSelectedItems();
@@ -755,26 +745,35 @@ sap.ui.define([
 				for (var i = 0; i < aItems.length; i++) {
 					var oItem = aItems[i];
 
-					if (oItem.getId().includes("groupHeader"))
+					if (oItem.getId().includes("groupHeader")){
+			            	console.log(oItem);
 						oList.removeItem(oItem);
-					else {
+					}else {
 
 						console.log(oItem);
 						var sPath = oItem.oBindingContexts.custRepres.sPath;
 						console.log(sPath);
-						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/')));
 						console.log(idx);
 						oData.bayData.splice(idx, 1);
 					}
 
 				}
 				oList.removeSelections(true);
-				oModel.refresh();
+				oModel.setData(oData);
+				
+				var oCBox = this.getView().byId("selectDeselectBoxId");
+                oCBox.setSelected(false);
+                console.log(oList.getItems());
+                 var bItems = oList.getItems().length > 0 ? true:false;
+                 console.log(bItems);
+                oCBox.setEnabled(bItems);
+                
 
 			}
 		},
 		onApprove: function() {
-			var oList = this.getView().byId("ListId");
+		var oList = this.getView().byId("ListId");
 			var aItems = oList.getSelectedItems();
 			console.log(aItems);
 			if (aItems.length == 0) {
@@ -786,42 +785,35 @@ sap.ui.define([
 				for (var i = 0; i < aItems.length; i++) {
 					var oItem = aItems[i];
 
-					if (oItem.getId().includes("groupHeader"))
+					if (oItem.getId().includes("groupHeader")){
+			            	console.log(oItem);
 						oList.removeItem(oItem);
-					else {
+					}else {
 
 						console.log(oItem);
 						var sPath = oItem.oBindingContexts.custRepres.sPath;
 						console.log(sPath);
-						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/')));
 						console.log(idx);
 						oData.bayData.splice(idx, 1);
 					}
 
 				}
 				oList.removeSelections(true);
-				oModel.refresh();
+				oModel.setData(oData);
+				
+				var oCBox = this.getView().byId("selectDeselectBoxId");
+                oCBox.setSelected(false);
+                console.log(oList.getItems());
+                 var bItems = oList.getItems().length > 0 ? true:false;
+                 console.log(bItems);
+                oCBox.setEnabled(bItems);
+                
 
 			}
 
 		}
 
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf dummenorangetnv.view.ApprovalPage
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf dummenorangetnv.view.ApprovalPage
-		 */
-		//	onExi  function() {
-		//
-		//	}
 
 	});
 

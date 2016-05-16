@@ -1,7 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="dummenorangetnv.controller.MultipleAddPlants"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page showHeader="false">
-		<Toolbar height="17%" class="orangeHeader">
+		<Toolbar height="21%" class="orangeHeader">
 			<FlexBox height="100%" alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
 				<items>
 					<Button type="Back" press="onPrevPage" text="Back"/>
@@ -43,7 +43,7 @@
             							<Text text="p/m2:" textAlign="Center"  ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
-            							<Text text="root" textAlign="Center" ></Text>
+            							<Text text="ROOT" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
             							<Text text="VEG:" textAlign="Center" ></Text>
@@ -55,7 +55,7 @@
             							<Text text="KO" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="5.5%" justifyContent="Center">
-            							<Text text="Harv" textAlign="Center" ></Text>
+            							<Text text="HARV" textAlign="Center" ></Text>
             			 			</FlexBox>
             						<FlexBox   width="11%" justifyContent="Center">
             							<Text text="OOG" textAlign="Center" ></Text>
