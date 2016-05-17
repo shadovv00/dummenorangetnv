@@ -20,7 +20,8 @@
 			"oog_date": "2016-02-29",
 			"vaca": 1,
 			"processed": false,
-			"deleted": false
+			"deleted": false,
+			"planningType": "rooted"
 		}]
 	}, {
 		"gh_bay": 6,
@@ -43,7 +44,8 @@
 			"oog_date": "2016-03-01",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "rooted"
 		}, {
 			"name": "015 Grand cherry",
 			"square": 690,
@@ -61,7 +63,8 @@
 			"oog_date": "2016-02-28",
 			"vaca": 3,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "rooted"
 		}]
 	}, {
 		"gh_bay": 7,
@@ -89,7 +92,8 @@
 			"oog_date": "2016-03-02",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "rooted"
 		}]
 	}, {
 		"gh_bay": 9,
@@ -112,7 +116,8 @@
 			"oog_date": "2016-03-03",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "rooted"
 		}]
 	}, {
 		"gh_bay": 10,
@@ -135,7 +140,8 @@
 			"oog_date": "2016-03-04",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "rooted"
 		}]
 	}, {
 		"gh_bay": 11,
@@ -163,7 +169,8 @@
 			"oog_date": "2016-03-11",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "unrooted"
 		}, {
 			"name": "001 Feeling green dark1",
 			"square": 589,
@@ -181,7 +188,8 @@
 			"oog_date": "2016-03-12",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "unrooted"
 		}, {
 			"name": "001 Feeling DDD",
 			"square": 589,
@@ -199,7 +207,8 @@
 			"oog_date": "2016-03-13",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "unrooted"
 		}]
 	}, {
 		"gh_bay": 13,
@@ -222,7 +231,8 @@
 			"oog_date": "2016-03-14",
 			"vaca": 1,
 			"processed": true,
-			"deleted": false
+			"deleted": false,
+			"planningType": "unrooted"
 		}]
 	}]
 }

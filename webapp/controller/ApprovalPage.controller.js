@@ -36,7 +36,12 @@ sap.ui.define([
 		 */
 
 		onCustRepresChange: function(oEvent) {
-			var sCusrRepresName = oEvent.getSource().getSelectedKey();
+		    
+		    var oList = this.getView().byId("ListId");
+		    
+        	var oCBox = this.getView().byId("selectDeselectBoxId");
+            
+             var sCusrRepresName = oEvent.getSource().getSelectedKey();
 			console.log(sCusrRepresName);
 			console.log(this.oData.customerRepresentive[0].name);
 			var that = this;
@@ -49,20 +54,14 @@ sap.ui.define([
 				}
 
 			});
-
-			// 		    {	var aFilters = [];
-			// 			// update list binding
-			// 			var obayList = this.getView().byId("ListId");
-			// 			var aListItems = obayList.getItems();
-
-			// 			    var oCustRepresFilter = new sap.ui.model.Filter("custRepes>/id", sap.ui.model.FilterOperator.EQ, this.sCusrRepresId);
-			// 			    console.log(oCustRepresFilter);
-			// 			    aFilters.push(oDiscriptionFilter);
-			// 			    obayList.getBinding("items").filter(aFilters);
-
-			// 		    }
-		},
-
+			 console.log(oList.getItems());
+                 var bItems = oList.getItems().length > 0 ? true:false;
+                 console.log(bItems);
+                oCBox.setEnabled(bItems);
+			},
+		
+	
+     
 		onInit: function() {
 
 			var aCustomerRepresentiveList = {
@@ -603,7 +602,7 @@ sap.ui.define([
 		},
 
 		getGroupHeader: function(oGroup) {
-			return new sap.m.CustomListItem(oGroup.id, {
+		    var oGroupListItem = new sap.m.CustomListItem(oGroup.id, {
 				fieldGroupIds: oGroup.groupId,
 				content: [
 					new sap.m.HBox({
@@ -617,14 +616,9 @@ sap.ui.define([
 					})
 				]
 			});
+			oGroupListItem.addStyleClass("bayDetGrayBackGround");
+			return oGroupListItem;
 		},
-
-		// 		getGroupHeader: function (oGroup){
-		// 			return new sap.m.GroupHeaderListItem( {
-		// 				title: oGroup.key,
-		// 				upperCase: false
-		// 			} );
-		// 		},
 
 		onSelectionChange: function(oEvent) {
 			var oList = oEvent.getSource();
@@ -693,12 +687,9 @@ sap.ui.define([
 			}
 		},
 
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf dummenorangetnv.view.ApprovalPage
-		 */
 		onBeforeRendering: function() {
+		    
+
 
 			var oList = this.getView().byId("ListId");
 
@@ -775,11 +766,16 @@ sap.ui.define([
 				
 				var oCBox = this.getView().byId("selectDeselectBoxId");
                 oCBox.setSelected(false);
+                console.log(oList.getItems());
+                 var bItems = oList.getItems().length > 0 ? true:false;
+                 console.log(bItems);
+                oCBox.setEnabled(bItems);
+                
 
 			}
 		},
 		onApprove: function() {
-			var oList = this.getView().byId("ListId");
+		var oList = this.getView().byId("ListId");
 			var aItems = oList.getSelectedItems();
 			console.log(aItems);
 			if (aItems.length == 0) {
@@ -791,45 +787,35 @@ sap.ui.define([
 				for (var i = 0; i < aItems.length; i++) {
 					var oItem = aItems[i];
 
-					if (oItem.getId().includes("groupHeader"))
+					if (oItem.getId().includes("groupHeader")){
+			            	console.log(oItem);
 						oList.removeItem(oItem);
-					else {
+					}else {
 
 						console.log(oItem);
 						var sPath = oItem.oBindingContexts.custRepres.sPath;
 						console.log(sPath);
-						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/') + 1));
+						var idx = parseInt(sPath.substring(sPath.lastIndexOf('/')));
 						console.log(idx);
 						oData.bayData.splice(idx, 1);
 					}
 
 				}
-				
 				oList.removeSelections(true);
-				oModel.refresh();
-                
+				oModel.setData(oData);
+				
+				var oCBox = this.getView().byId("selectDeselectBoxId");
+                oCBox.setSelected(false);
+                console.log(oList.getItems());
+                 var bItems = oList.getItems().length > 0 ? true:false;
+                 console.log(bItems);
+                oCBox.setEnabled(bItems);
                 
 
 			}
 
 		}
 
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf dummenorangetnv.view.ApprovalPage
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf dummenorangetnv.view.ApprovalPage
-		 */
-		//	onExi  function() {
-		//
-		//	}
 
 	});
 
