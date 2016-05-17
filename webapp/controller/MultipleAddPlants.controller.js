@@ -132,21 +132,26 @@ sap.ui.define([
 			Plants: [
 					{id: '001',
 					name: "Feeling green dark",
-					Rooting: 0,
-					LongDays: 12,
-					Reaction: 54,
-					HarvestDays: 1,
-					VacantDays: 0
+        			density: 47,
+					root: 0,
+					veg: 12,
+        			ko: 1,
+					rea: 54,
+					harv: 1,
+					vaca: 0
 					},
 					{id: '015',
 					name: "Grand cherry",
-					Rooting: 0,
-					LongDays: 12,
-					Reaction: 52,
-					HarvestDays: 1,
-					VacantDays: 0
+        			density: 50,
+					root: 0,
+					veg: 12,
+        			ko: 2,
+					rea: 52,
+					harv: 1,
+					vaca: 0
 					}
 				],
+			plantsPercent:0,
 			prevPage: ''	
 		},
 
@@ -174,7 +179,13 @@ sap.ui.define([
 			var dateToDay=new Date();
 			var oUIControl = null;
 			var that=this;
-			console.log(sId);
+			var indicatorVal=oContext.getProperty("percent");
+			var indicatorState=sap.ui.core.ValueState.Warning;
+			if (indicatorVal>1){
+			    indicatorVal=1;
+			indicatorState=sap.ui.core.ValueState.None;
+			}
+// 			console.log(sId);
 				var localList;
 				if (oContext.getProperty("plant").length<1){
 				    localList=
@@ -198,7 +209,7 @@ sap.ui.define([
         										items: [
                                     				new sap.m.DatePicker({ width:"91%", dateValue: oContext.getProperty("planted_date"),
                                     				valueFormat:'yyyy-ww-u', displayFormat :'yyyy-ww-u', 
-                                    				change: function(){that.onDataChange(this,sId,oContext);}  
+                                    				change: function(){that.onEmptyDataChange(this,sId,oContext);}  
                                     				,  textAlign:"End" }).addStyleClass("sapUiTinyMarginBegin ")
         										]
         									}).addStyleClass("")
@@ -215,6 +226,7 @@ sap.ui.define([
 				
 				oUIControl = new sap.m.CustomListItem(sId, {
 					width: "100%",
+					press: function(){that.onBayPress(this,sId,oContext);},
 					content:[
     						new sap.m.VBox({
     							items:[
@@ -233,7 +245,9 @@ sap.ui.define([
     											width:"4%",
     											justifyContent:"Center",
     											items: [
-    											    new sap.m.CheckBox()
+    											    new sap.m.CheckBox({id:sId+"-CheckBox", 
+        											    select: function(){that.onBaySelectCheckBox(sId+"-CheckBox",sId,oContext);}
+        											    }).addStyleClass("multipleAddPlantsCheckBoxes")
     											]
     										}).addStyleClass(" "),
    										    new sap.m.VBox({
@@ -243,22 +257,20 @@ sap.ui.define([
     	                            	        	localList
     											]
     										}).addStyleClass("")
-
-    									    
     									]
     								}),
         						    new sap.m.ProgressIndicator({
         						        width: "20%",
         						        height: "16px",
-        						        percentValue: oContext.getProperty("percent")*100,
-        						        displayValue: oContext.getProperty("percent")*100+" %"
+        						        state: indicatorState,
+        						        percentValue: indicatorVal*100,
+        						        displayValue: Math.round(oContext.getProperty("percent")*1000)/10+" %"
         						      //  ,state: "Success" 
         						    }).addStyleClass("sapUiSmallMarginTop")
 							]	
 						}).addStyleClass("sapUiSmallMarginTop sapUiTinyMarginBottom")
 					]
 				}).addStyleClass(" bayDetGrayBackGround");
-			
 			// oUIControl.setType(sap.m.ListType.Active);
 			// oUIControl.attachPress(this.onItemSelected, this);
 			return oUIControl;
@@ -398,6 +410,37 @@ sap.ui.define([
 			return oUIControl;
 		}		
 
+
+    ,onPlantPercentChange: function(oEvent) {
+        var plantsPercent=Math.round(parseFloat(sap.ui.getCore().byId("plantPercentId").getValue())*10)/10;
+        if (plantsPercent>100){
+            sap.ui.getCore().byId("plantPercentId").setValue(100);
+        }
+        this.getView().getModel("multiAddModel").getData().plantsPercent=plantsPercent;
+        this.getView().getModel("multiAddModel").refresh();
+    }
+
+	,onBayPress: function(elThis,sId,oContext){
+	   // this.getView().byId(sId+"CheckBox").getSelected()
+	    console.log(this.getView().byId(sId+"-CheckBox").getSelected());
+    }
+    
+	,onBaySelectCheckBox: function(thisEl,sId,oContext) {
+	    var state=this.getView().byId(thisEl).getSelected();
+	    if (state==false){
+	        this.getView().byId("mainSelectCheckBoxId").setSelected(state);
+	    }
+	}
+	
+	,onEmptyDataChange: function(elThis,sId,oContext){
+        if (elThis.getValue()==''){
+            elThis.setValue(0);
+        }
+        oContext.getModel().setProperty(oContext.getPath() + "/planted_date", new Date(elThis.getDateValue()));
+		// ourModel.submitChanges();
+	    oContext.getModel().refresh(true);
+	}
+
 	,onDataChange: function(elThis,sId,oContext){
 	    var thisContr=this;
 	    var thisBayPath=oContext.getPath().substring(0,oContext.getPath().indexOf("/plant"));
@@ -507,44 +550,98 @@ sap.ui.define([
     	    oContext.getModel().refresh(true);
 	}
 
-    ,onCopyLastRound:function(sId,oContext) {
-        var thisModel=this.getView().getModel("multiAddModel");
-        thisModel.setProperty("/Bays",$.extend(true, {}, thisModel.getProperty("/LastRoundBays")));
-        this.getView().getModel("multiAddModel").refresh(true);
+	,onMainSelectCheckBox: function(oEvent) {
+	    var state=this.getView().byId("mainSelectCheckBoxId").getSelected();
+	   // console.log(oEvent);    
+	   // console.log(oEvent.getSource()) ; 
+		$.each(this.getView().byId("multiAddToBaysListId").getItems(), function (index, item) {
+		  item.getContent()[0].getItems()[0].getItems()[1].getItems()[0].setSelected(state);
+		});	    
+	}
 
-    }
 
 	,openMultiPlantsAddDialog: function(elThis,sId,oContext) {
 		this.newMultiPlantsAddDialog = sap.ui.xmlfragment("dummenorangetnv.fragments.MultipleAddPlantsDialog", this);
 		this.getView().addDependent(this.newMultiPlantsAddDialog);
 		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this.newMultiPlantsAddDialog);
 		this.newMultiPlantsAddDialog.open();
-// 		sap.ui.getCore().byId("plantsAvailabilityNameId").setText(oContext.getModel().getProperty(oContext.getPath() + "/id")+" "+
-// 		                                                           oContext.getModel().getProperty(oContext.getPath() + "/name"));
-		
-// 		$.each(this.getView().getModel("bayDetailModel").getData().AvailablePlants, function (index, item) {
-// 		    if(item.id==oContext.getModel().getProperty(oContext.getPath() + "/id")){
-//                 var oTemplate = new sap.m.ColumnListItem({
-//                     cells : [
-//                         new sap.m.Text({
-//                             text : "{bayDetailModel>week}",
-//                             wrapping : false
-//                         }),
-//                         new sap.m.Text({
-//                             text : "{bayDetailModel>quantity}",
-//                             wrapping : false
-//                         })
-//                     ]
-//                 });
-//                 sap.ui.getCore().byId("plantsAvailabilityTableId").bindItems("bayDetailModel>/AvailablePlants/"+index+"/availability", oTemplate);
-// 		    }
-// 		});		
 	}
 
-	,closeMultiPlantsAddAvilabDialog: function(oEvent) {
+	,saveMultiPlantsAddDialog: function(oEvent) {
+	    if (this.getView().getModel("multiAddModel").getData().plantsPercent){
+    		var plantId = sap.ui.getCore().byId("plantSelectorId").getSelectedKey();
+    		var that=this;
+    		var thisPlant;
+    		$.each(this.getView().getModel("multiAddModel").getData().Plants, function (index, plant) {
+    	    if (plant.id === plantId) {
+    	    	thisPlant= $.parseJSON(JSON.stringify(plant));
+    	    	thisPlant.percent=that.getView().getModel("multiAddModel").getData().plantsPercent;
+    	   // 	thisPlant= $.parseJSON(JSON.stringify(thisPlant));
+    	   // 	console.log(thisPlant);
+    	    }
+    		});
+    // 		$.each(that.getView().getModel("multiAddModel").getData().Bays, function (index, bay) {
+    		$.each(that.getView().byId("multiAddToBaysListId").getItems(), function (index, item) {
+    		    if (item.getContent()[0].getItems()[0].getItems()[1].getItems()[0].getSelected()){
+    		        
+    		        console.log(item); 
+    		        console.log(item.oBindingContexts.multiAddModel.sPath); 
+
+     		        var model=that.getView().getModel("multiAddModel");
+     		        var path=item.oBindingContexts.multiAddModel.sPath;
+    		        var bay=model.getProperty(path);
+    		        
+                    var currentPlant=$.parseJSON(JSON.stringify(thisPlant));
+                    currentPlant.plants=Math.round(currentPlant.density* currentPlant.percent*bay.square/100);
+                    currentPlant.planted_date=bay.planted_date;
+                    var oogDate=new Date(bay.planted_date);
+                    oogDate.setDate(oogDate.getDate()+currentPlant.root+currentPlant.veg+currentPlant.ko+currentPlant.rea);
+                    currentPlant.oog_date=oogDate;
+                    bay.percent=bay.percent+currentPlant.percent/100;
+                    bay.plant.push(currentPlant);
+                    model.setProperty(path, bay);
+    		    }
+    		  //  var currentPlant=$.parseJSON(JSON.stringify(thisPlant));
+     		 //   currentPlant.plants=Math.round(currentPlant.density* currentPlant.percent*bay.square/100);
+    		  //  currentPlant.planted_date=bay.planted_date;
+        //         var oogDate=new Date(bay.planted_date);
+        // 		oogDate.setDate(oogDate.getDate()+currentPlant.root+currentPlant.veg+currentPlant.ko+currentPlant.rea);
+    		  //  currentPlant.oog_date=oogDate;
+    		  //  bay.percent=bay.percent+currentPlant.percent/100;
+    		  //  bay.plant.push(currentPlant);
+    		});
+            that.getView().getModel("multiAddModel").refresh(true);	    
+	    }
+    		this.closeMultiPlantsAddDialog();	        
+	}
+
+	,closeMultiPlantsAddDialog: function(oEvent) {
+	    this.getView().getModel("multiAddModel").getData().plantsPercent=0;
 		this.newMultiPlantsAddDialog.close();
 		this.newMultiPlantsAddDialog.destroy();
+		this.getView().byId("mainSelectCheckBoxId").setSelected(false);
 	}
+
+    ,onCopyLastRound:function(sId,oContext) {
+        var thisModel=this.getView().getModel("multiAddModel");
+        
+//         $.each(this.getView().byId("multiAddToBaysListId").getItems(), function (index, item) {
+// 		  item.getContent()[0].getItems()[0].getItems()[1].getItems()[0].setSelected(state);
+// 		});	    
+
+        
+        
+        thisModel.setProperty("/Bays",$.extend(true, {}, thisModel.getProperty("/LastRoundBays")));
+        this.getView().getModel("multiAddModel").refresh(true);
+    }
+
+    ,onMultiAddingPlantCancel:function(sId,oContext) {
+		$.each(this.getView().getModel("multiAddModel").getData().Bays, function (index, bay) {
+		    bay.plant=[];
+		    bay.percent=0;
+		});
+        this.getView().getModel("multiAddModel").refresh(true);	    
+    }
 
 
 	,onPrevPage: function(oEvent){

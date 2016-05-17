@@ -11,14 +11,6 @@
 		</Toolbar>
 		<content>
 			<Panel width="100%" class="orangePanel">
-				<!--<headerToolbar>-->
-				<!--	<Toolbar>-->
-				<!--		<Label class = "left-data-panel sapUiTinyMarginBegin" text = "GH-bay " ></Label>-->
-				<!--		<Label id="addPlantsSelectedBayNumber" class = "right-data-panel sapUiTinyMarginBegin sapUiTinyMarginEnd" text = "6"></Label>-->
-				<!--		<Label class = "left-data-panel sapUiMediumMarginBegin" text = "m2: "></Label>-->
-				<!--		<Label id="addPlantsSelectedBaySquare" class = "right-data-panel sapUiTinyMarginBegin" text = "75m2"></Label>-->
-				<!--	</Toolbar>-->
-				<!--</headerToolbar>-->
 				<content>
 				    <ScrollContainer horizontal="true">
 				        <content>
@@ -66,16 +58,6 @@
             					</HBox>
 
             					<List id="multiAddToBaysListId">
-            		<!--				<CustomListItem >-->
-            		<!--				    <VBox>-->
-            		<!--				        <HBox>-->
-    										<!--<Text text="{multiAddModel>gh_bay}"></Text>            						            -->
-            						            <!--<List>-->
-            						                
-            						            <!--</List>-->
-            		<!--				        </HBox>-->
-            		<!--				    </VBox>-->
-            		<!--				</CustomListItem>            					    -->
             					</List>
 				            </VBox>
 				        </content>
@@ -86,15 +68,15 @@
 		<footer>
 			<Bar >
 				<contentLeft>
-				    <CheckBox text="Select/Deselect all"></CheckBox>
+				    <CheckBox id="mainSelectCheckBoxId" text="Select/Deselect all" select="onMainSelectCheckBox"></CheckBox>
 				</contentLeft>
 				<contentMiddle>
 	   				<Button icon="sap-icon://sys-add" press="openMultiPlantsAddDialog" text="Select plants" />
 	   				<Button icon="sap-icon://survey" press="onCopyLastRound" text="Copy last round" />
 				</contentMiddle>
 				<contentRight>
-	   				<Button icon="sap-icon://sys-cancel" press="onAddingPlant" text="Cancel" />
-	   				<Button icon="sap-icon://sys-enter" press="onAddingPlant" text="Apply plan" />
+	   				<Button icon="sap-icon://sys-cancel" press="onMultiAddingPlantCancel" text="Cancel" />
+	   				<Button icon="sap-icon://sys-enter" press="onPrevPage" text="Apply plan" />
 				</contentRight>
 			</Bar>		    
 		</footer>
