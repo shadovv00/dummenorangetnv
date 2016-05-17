@@ -14,7 +14,7 @@
 			</contentLeft>
 			<contentRight>
 				<Button icon="sap-icon://sys-cancel-2" press="onPrevPage"/>
-				<Button icon="sap-icon://sys-enter-2" press="onPrevPage"/>
+				<Button icon="sap-icon://sys-enter-2" press="onSaveChanges"/>
 			</contentRight>
 		</Bar>
 		<cc:BayTable
@@ -130,7 +130,6 @@
 					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{root}"
 					        fieldWidth="30px"
 					        change="changeRoot"
@@ -141,7 +140,6 @@
 					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{veg}"/>
 					</cc:BayCell>
 					<cc:BayCell
@@ -149,7 +147,6 @@
 					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{rea}"/>
 					</cc:BayCell>
 					<cc:BayCell
@@ -157,7 +154,6 @@
 					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{ko}"/>
 					</cc:BayCell>
 					<cc:BayCell
@@ -165,7 +161,6 @@
 					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{horv}"/>
 					</cc:BayCell>
 					<cc:BayCell
@@ -195,7 +190,6 @@
 					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{vaca}"/>
 					</cc:BayCell>
 				</cc:BayRow>

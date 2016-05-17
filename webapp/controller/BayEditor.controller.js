@@ -1,6 +1,9 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	'sap/m/Dialog',
+	'sap/m/Button',
+	'sap/m/Text'
+], function(Controller, Dialog, Button, Text) {
 	"use strict";
 
 	return Controller.extend("dummenorangetnv.controller.BayEditor", {
@@ -24,16 +27,12 @@ sap.ui.define([
 		 */
 		onInit: function() {
 			var data;
-			var jsonModel = new sap.ui.model.json.JSONModel();
-			jsonModel.loadData("mockdata/bay.json");
-			// 			this.byId("date_id").setDateValue(new Date());
-			var mmm = this.getView().data("mmm");
-			console.log(mmm);
-
 			var oCore = sap.ui.getCore();
 			var oModel = oCore.getModel("jm");
-			console.log(oModel);
-			this.getView().setModel(oModel);
+			var oCopyModel = new sap.ui.model.json.JSONModel();
+			var json1 = oModel.getJSON();
+			oCopyModel.setJSON(json1);
+			this.getView().setModel(oCopyModel);
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
 			this.getView().setModel(oSelectedBayModel, "selectedBay");
 		},
@@ -226,6 +225,39 @@ sap.ui.define([
 						break;
 				}
 			});
+		},
+		onSaveChanges: function() {
+		    var ths = this;
+			var oCore = sap.ui.getCore();
+			var oView = this.getView();
+			var oJmModel = oCore.getModel("jm");
+			var oCopyJmModel = oView.getModel();
+		    var dialog = new Dialog({
+				title: 'Update',
+				type: 'Message',
+				content: new Text({
+					text: 'Are you sure you want to save changes?'
+				}),
+				beginButton: new Button({
+					text: 'Submit',
+					press: function() {
+					    var json = oCopyJmModel.getJSON();
+					    oJmModel.setJSON(json, true);
+					    ths.onPrevPage();
+						dialog.close();
+					}
+				}),
+				endButton: new Button({
+					text: 'Cancel',
+					press: function() {
+						dialog.close();
+					}
+				}),
+				afterClose: function() {
+					dialog.destroy();
+				}
+			});
+			dialog.open();
 		},
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.

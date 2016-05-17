@@ -45,23 +45,18 @@ sap.ui.define([
 			app.to("__page0");
 // 			view.destroy();
 		},
-        _mmm: null,
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
 		onInit: function() {
-		    var jsonModel = new sap.ui.model.json.JSONModel();
-			jsonModel.loadData("mockdata/bay.json");
-			this._mmm = jsonModel;
 			this.byId("date_id").setDateValue(new Date());
 			
 			var oCore = sap.ui.getCore();
+			var oView = this.getView();
 			var oModel = oCore.getModel("jm");
-			console.log(oModel);
-			this.getView().setModel(oModel);
-// 			this.getView().setModel(jsonModel);
+			oView.setModel(oModel, "jm");
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
             this.getView().setModel(oSelectedBayModel,"selectedBay");
             
