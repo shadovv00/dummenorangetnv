@@ -14,7 +14,7 @@
 			</contentLeft>
 			<contentRight>
 				<Button icon="sap-icon://sys-cancel-2" press="onPrevPage"/>
-				<Button icon="sap-icon://sys-enter-2" press="onPrevPage"/>
+				<Button icon="sap-icon://sys-enter-2" press="onSaveChanges"/>
 			</contentRight>
 		</Bar>
 		<cc:BayTable
@@ -33,11 +33,11 @@
 				<cc:BayColumn text="Plants" />
 				<cc:BayColumn text="p/m2" />
 				<cc:BayColumn text="Planted" />
-				<cc:BayColumn text="root" />
+				<cc:BayColumn text="ROOT" />
 				<cc:BayColumn text="VEG" />
 				<cc:BayColumn text="REA" />
 				<cc:BayColumn text="KO" />
-				<cc:BayColumn text="Harv" />
+				<cc:BayColumn text="HARV" />
 				<cc:BayColumn text="OOG" />
 				<cc:BayColumn text="Vaca" />
 			</cc:columns>
@@ -77,7 +77,8 @@
 					</cc:BayCell>
 					<cc:BayCell
 					    width="70px"
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 				        <Input
 				            maxLength="7"
 				            value="{
@@ -89,7 +90,8 @@
 					</cc:BayCell>
 					<cc:BayCell
 				    	width="60px"
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="7"
 					        value="{
@@ -103,13 +105,15 @@
 				                   }" />
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
 					        value="{density}"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <DatePicker
 					        width="100px"
 					        placeholder=" "
@@ -122,45 +126,46 @@
 				            change="changePlantedDate"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{root}"
 					        fieldWidth="30px"
 					        change="changeRoot"
 					        submit="changeRoot"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{veg}"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{rea}"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{ko}"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{horv}"/>
 					</cc:BayCell>
 					<cc:BayCell
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <DatePicker
 					        width="100px"
 					        placeholder=" "
@@ -181,10 +186,10 @@
 					</cc:BayCell>
 					<cc:BayCell
 					    width="3rem"
-					    class="bay-table-cell2">
+					    class="bay-table-cell2"
+					    onFocus="onInputFocus">
 					    <Input
 					        maxLength="3"
-					        type="Number"
 					        value="{vaca}"/>
 					</cc:BayCell>
 				</cc:BayRow>

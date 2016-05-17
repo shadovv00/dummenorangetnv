@@ -46,6 +46,7 @@ sap.ui.define([
 			if(aRows.length) {
 			    aRows[0].setGhbay(ghbay);
 				for(x = 0; x < aRows.length; x++) {
+				    aRows[x].addStyleClass("just-for-arrow-navigation");
 					oRM.renderControl(aRows[x]);
 				}
 			} else if(aEmptyRow) {
@@ -56,6 +57,18 @@ sap.ui.define([
 			    oRM.renderControl(aFtRows[x]);
 			}
 			oRM.write("</tbody>");
+		},
+		onAfterRendering: function() {
+		    var jGroup = this.$();
+		    var jPrevGroup = jGroup.prev();
+		    var oddweek = this.getOddweek();
+		    if(jPrevGroup[0] && oddweek !== -1) {
+		        if(jPrevGroup.hasClass("bay-week-colour0")) {
+		            this.addStyleClass("bay-week-colour0");
+		        } else if(jPrevGroup.hasClass("bay-week-colour1")) {
+		            this.addStyleClass("bay-week-colour1");
+		        }
+		    }
 		}
 	});
 });

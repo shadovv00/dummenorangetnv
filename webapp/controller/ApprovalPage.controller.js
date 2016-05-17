@@ -602,7 +602,7 @@ sap.ui.define([
 		},
 
 		getGroupHeader: function(oGroup) {
-		    var oGroupListItem = new sap.m.CustomListItem(oGroup.id, {
+			return new sap.m.CustomListItem(oGroup.id, {
 				fieldGroupIds: oGroup.groupId,
 				content: [
 					new sap.m.HBox({
@@ -616,8 +616,6 @@ sap.ui.define([
 					})
 				]
 			});
-			oGroupListItem.addStyleClass("bayDetGrayBackGround");
-			return oGroupListItem;
 		},
 
 		onSelectionChange: function(oEvent) {
