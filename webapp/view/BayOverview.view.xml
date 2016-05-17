@@ -34,9 +34,7 @@
 		<cc:BayTable
 		    id="bay_table_id"
 		    minWidth="1050px"
-		    items="{
-		        path: '/data'
-		    }"
+		    items="{  path: 'jm>/data' }"
 		    class="sapUiSmallMarginBeginEnd bay-table-border">
 			<cc:columns>
 				<cc:BayColumn text="GH-bay" class="bay-table-cell" width="3em"/>
@@ -54,14 +52,14 @@
 				<cc:BayColumn text="Vaca" />
 			</cc:columns>
 			<cc:BayRowGroup
-				ghbay="{gh_bay}"
+				ghbay="{jm>gh_bay}"
 				rows="{
-				        path: 'plant',
+				        path: 'jm>plant',
 		                templateShareable: true,
     		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
 				    }"
 				oddweek="{
-			                path: 'plant/0/planted_date',
+			                path: 'jm>plant/0/planted_date',
 					        formatter: '.formatOddWeek'
 				        }">
 			    <cc:BayRow
@@ -71,16 +69,16 @@
 					<cc:BayCell
 					    class="bay-table-cell"
 					    rederror="{
-					                path: 'processed',
+					                path: 'jm>processed',
 							        type:'sap.ui.model.type.Boolean',
 							        formatter: '.formatProcessed'
 						        }">
-						<Text text="{name}" />
+						<Text text="{jm>name}" />
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
 							number="{
-    							        path: 'percent',
+    							        path: 'jm>percent',
     							        type:'sap.ui.model.type.String',
     							        formatter: '.formatPercent'
 							        }"
@@ -89,11 +87,11 @@
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{plants}"
+							number="{jm>plants}"
 							state="{
 					                parts: [
-					                    {path: 'plants'},
-					                    {path: 'erp_plants'}
+					                    {path: 'jm>plants'},
+					                    {path: 'jm>erp_plants'}
 					                ],
 							        formatter: '.formatplants'
 						        }"
@@ -101,66 +99,66 @@
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{density}"
+							number="{jm>density}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell
 					    rederror="{
 					               parts: [
-					                    {path: 'planted_date'},
-					                    {path: 'erp_planted_date'}
+					                    {path: 'jm>planted_date'},
+					                    {path: 'jm>erp_planted_date'}
 					                ],
 							        formatter: '.formatPlantedDate'
 						        }">
 					    <Text
 						    text="{
-						            path: 'planted_date',
+						            path: 'jm>planted_date',
 							        formatter: '.formatConvertStrToDate'
 						      }" />
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{root}"
+							number="{jm>root}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{veg}"
+							number="{jm>veg}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{rea}"
+							number="{jm>rea}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{ko}"
+							number="{jm>ko}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{horv}"
+							number="{jm>horv}"
 							emphasized="false"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<Text
 						    text="{
     		                        parts: [
-			                            {path: 'oog_date'},
-			                            {path: 'planted_date'},
-			                            {path: 'root'},
-			                            {path: 'veg'},
-			                            {path: 'ko'},
-			                            {path: 'rea'},
-			                            {path: 'horv'}
+			                            {path: 'jm>oog_date'},
+			                            {path: 'jm>planted_date'},
+			                            {path: 'jm>root'},
+			                            {path: 'jm>veg'},
+			                            {path: 'jm>ko'},
+			                            {path: 'jm>rea'},
+			                            {path: 'jm>horv'}
 			                        ],
     		                        formatter: '.formatOOGDate'
     		                    }"/>
 					</cc:BayCell>
 					<cc:BayCell>
 						<ObjectNumber 
-							number="{vaca}"
+							number="{jm>vaca}"
 							emphasized="false"/>
 					</cc:BayCell>
 				</cc:BayRow>
@@ -186,18 +184,18 @@
     			            <c:ProgressIndicator 
     			                class="progress-bar-text-middle"
     			                percentValue="{
-        			                        path: 'plant',
+        			                        path: 'jm>plant',
         			                        formatter: '.calculatePercentInt'
     			                        }"
     			                height="4em"
     			                displayValue="{
-        			                        path: 'plant',
+        			                        path: 'jm>plant',
         			                        formatter: '.calculatePercentFloat'
     			                        } %"/>
     			        </cc:BayCell>
     			        <cc:BayCell
     			            colspan="10">
-    			            <Text text="{comments}"/>
+    			            <Text text="{jm>comments}"/>
     			        </cc:BayCell>
     			        <cc:BayCell>
     			            <Button

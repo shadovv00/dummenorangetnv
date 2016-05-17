@@ -23,6 +23,8 @@
 
 		<script>
 			sap.ui.getCore().attachInit(function() {
+			    var jsonModel = new sap.ui.model.json.JSONModel();
+			    jsonModel.loadData("mockdata/bay.json");
 				new sap.m.Shell({
 				    // backgroundImage: "images/flowers1.jpg",
 				    backgroundImage: "images/tile-flower1-orange.jpg",

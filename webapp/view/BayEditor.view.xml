@@ -14,7 +14,7 @@
 			</contentLeft>
 			<contentRight>
 				<Button icon="sap-icon://sys-cancel-2" press="onPrevPage"/>
-				<Button icon="sap-icon://sys-enter-2" press="onPrevPage"/>
+				<Button icon="sap-icon://sys-enter-2" press="onSaveChanges"/>
 			</contentRight>
 		</Bar>
 		<cc:BayTable
