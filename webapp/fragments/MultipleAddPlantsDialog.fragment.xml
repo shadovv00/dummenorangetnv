@@ -44,6 +44,16 @@ controllerName="dummenorangetnv.controller.MultipleAddPlants">
     		</Select>		    
 	    </VBox>
 	</HBox>
+	<HBox width="100%">
+	    <VBox width="10em">
+	    </VBox>
+	    <RadioButtonGroup columns="2" width="100%" class="">
+    		<buttons>
+    			<RadioButton id="multiAddPlantPercentRB" text="Percentage" select="onMultiAddPlantPercentRB" selected='true'/>
+    			<RadioButton id="multiAddPlantNumberRB"  text="Number"     select="onMultiAddPlantNumberRB"/>
+    		</buttons>
+    	</RadioButtonGroup>
+	</HBox>
 	<HBox>
 	    <VBox width="10em">
     		<Label text="Percentage of Bay" class="sapUiSmallMarginTop"/>
@@ -62,7 +72,7 @@ controllerName="dummenorangetnv.controller.MultipleAddPlants">
     		<Label text="Number of plants" class="sapUiSmallMarginTop"/>
 	    </VBox>
 	    <VBox width="29em">
-    		<Input id="plantNumberId" value= "" textAlign="End" width="6em" editable='false' enabled='false'></Input>
+    		<Input id="plantNumberId" value= "{multiAddModel>/plantsNumber}" textAlign="End" width="6em" editable='false' enabled='false'></Input>
 	    </VBox>
 	</HBox>
 

@@ -152,6 +152,7 @@ sap.ui.define([
 					}
 				],
 			plantsPercent:0,
+			plantsNumber:0,
 			prevPage: ''	
 		},
 
@@ -160,18 +161,18 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf dummenorangetnv.view.MultipleAddPlants
 		 */
-			onInit: function() {
-				var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
-				this.getView().setModel(oSelectedBayModel,"selectedBay");
+		onInit: function() {
+			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
+			this.getView().setModel(oSelectedBayModel,"selectedBay");
 
-				var oModel = new sap.ui.model.json.JSONModel(this.addPlantsMockup);
-				this.getView().setModel(oModel,"multiAddModel");
-				this.getView().getModel("multiAddModel").getData().prevPage=sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId();
+			var oModel = new sap.ui.model.json.JSONModel(this.addPlantsMockup);
+			this.getView().setModel(oModel,"multiAddModel");
+			this.getView().getModel("multiAddModel").getData().prevPage=sap.ui.getCore().byId("__xmlview0").byId("AppId").getCurrentPage().getId();
 
-				var multiAddToBaysList = this.getView().byId("multiAddToBaysListId");
-				multiAddToBaysList.bindAggregation("items","multiAddModel>/Bays",this.multiAddToBaysListFactory.bind(this));
-		
-			},
+			var multiAddToBaysList = this.getView().byId("multiAddToBaysListId");
+			multiAddToBaysList.bindAggregation("items","multiAddModel>/Bays",this.multiAddToBaysListFactory.bind(this));
+	
+		},
 
 		multiAddToBaysListFactory : function(sId,oContext) {
 			var ourModel=oContext.getModel();
@@ -565,10 +566,37 @@ sap.ui.define([
 		this.getView().addDependent(this.newMultiPlantsAddDialog);
 		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this.newMultiPlantsAddDialog);
 		this.newMultiPlantsAddDialog.open();
+		this.onMultiAddPlantPercentRB();
 	}
 
+
+	,onMultiAddPlantPercentRB: function(oEvent) {
+	    var core=sap.ui.getCore();
+	    this.getView().getModel("multiAddModel").getData().plantsNumber=0;
+	    core.byId("plantNumberId").setEditable(false);
+	    core.byId("plantNumberId").setEnabled(false);
+	    core.byId("plantNumberId").setValue(0);
+	    core.byId("plantPercentId").setEnabled(true);
+	    core.byId("plantPercentId").setEditable(true);
+	    core.byId("plantPercentSliderId").setEnabled(true);
+	}
+
+
+	,onMultiAddPlantNumberRB: function(oEvent) {
+	    var core=sap.ui.getCore();
+	    this.getView().getModel("multiAddModel").getData().plantsPercent=0;
+	    core.byId("plantPercentId").setEditable(false);
+	    core.byId("plantPercentId").setEnabled(false);
+	    core.byId("plantPercentId").setValue(0);
+	    core.byId("plantPercentSliderId").setEnabled(false);
+	    core.byId("plantPercentSliderId").setValue(0);
+	    core.byId("plantNumberId").setEnabled(true);
+	    core.byId("plantNumberId").setEditable(true);
+	}
+
+
 	,saveMultiPlantsAddDialog: function(oEvent) {
-	    if (this.getView().getModel("multiAddModel").getData().plantsPercent){
+	    if (this.getView().getModel("multiAddModel").getData().plantsPercent||this.getView().getModel("multiAddModel").getData().plantsNumber){
     		var plantId = sap.ui.getCore().byId("plantSelectorId").getSelectedKey();
     		var that=this;
     		var thisPlant;
@@ -576,23 +604,29 @@ sap.ui.define([
     	    if (plant.id === plantId) {
     	    	thisPlant= $.parseJSON(JSON.stringify(plant));
     	    	thisPlant.percent=that.getView().getModel("multiAddModel").getData().plantsPercent;
+    	    	thisPlant.plants=that.getView().getModel("multiAddModel").getData().plantsNumber;
     	   // 	thisPlant= $.parseJSON(JSON.stringify(thisPlant));
     	   // 	console.log(thisPlant);
     	    }
     		});
+    		var selectedBaysNumber=0;
     // 		$.each(that.getView().getModel("multiAddModel").getData().Bays, function (index, bay) {
     		$.each(that.getView().byId("multiAddToBaysListId").getItems(), function (index, item) {
     		    if (item.getContent()[0].getItems()[0].getItems()[1].getItems()[0].getSelected()){
-    		        
-    		        console.log(item); 
-    		        console.log(item.oBindingContexts.multiAddModel.sPath); 
-
+    		      //  console.log(item); 
+    		      //  console.log(item.oBindingContexts.multiAddModel.sPath); 
      		        var model=that.getView().getModel("multiAddModel");
      		        var path=item.oBindingContexts.multiAddModel.sPath;
     		        var bay=model.getProperty(path);
     		        
                     var currentPlant=$.parseJSON(JSON.stringify(thisPlant));
-                    currentPlant.plants=Math.round(currentPlant.density* currentPlant.percent*bay.square/100);
+                    
+                    if (thisPlant.percent){
+                        currentPlant.plants=Math.round(currentPlant.density* currentPlant.percent*bay.square/100);
+                    }else if(thisPlant.plants){
+                        currentPlant.percent=Math.round(currentPlant.plants*100/(currentPlant.density*bay.square));
+                    }
+
                     currentPlant.planted_date=bay.planted_date;
                     var oogDate=new Date(bay.planted_date);
                     oogDate.setDate(oogDate.getDate()+currentPlant.root+currentPlant.veg+currentPlant.ko+currentPlant.rea);
@@ -600,6 +634,7 @@ sap.ui.define([
                     bay.percent=bay.percent+currentPlant.percent/100;
                     bay.plant.push(currentPlant);
                     model.setProperty(path, bay);
+                    selectedBaysNumber++;
     		    }
     		  //  var currentPlant=$.parseJSON(JSON.stringify(thisPlant));
      		 //   currentPlant.plants=Math.round(currentPlant.density* currentPlant.percent*bay.square/100);
@@ -610,13 +645,16 @@ sap.ui.define([
     		  //  bay.percent=bay.percent+currentPlant.percent/100;
     		  //  bay.plant.push(currentPlant);
     		});
-            that.getView().getModel("multiAddModel").refresh(true);	    
+    		if (selectedBaysNumber){
+                that.getView().getModel("multiAddModel").refresh(true);	    
+    		}
 	    }
     		this.closeMultiPlantsAddDialog();	        
 	}
 
 	,closeMultiPlantsAddDialog: function(oEvent) {
 	    this.getView().getModel("multiAddModel").getData().plantsPercent=0;
+	    this.getView().getModel("multiAddModel").getData().plantsNumber=0;
 		this.newMultiPlantsAddDialog.close();
 		this.newMultiPlantsAddDialog.destroy();
 		this.getView().byId("mainSelectCheckBoxId").setSelected(false);
@@ -624,14 +662,23 @@ sap.ui.define([
 
     ,onCopyLastRound:function(sId,oContext) {
         var thisModel=this.getView().getModel("multiAddModel");
-        
-//         $.each(this.getView().byId("multiAddToBaysListId").getItems(), function (index, item) {
-// 		  item.getContent()[0].getItems()[0].getItems()[1].getItems()[0].setSelected(state);
-// 		});	    
-
-        
-        
-        thisModel.setProperty("/Bays",$.extend(true, {}, thisModel.getProperty("/LastRoundBays")));
+        $.each(thisModel.getData().Bays, function (index, bay) {
+		    bay.plant=[];
+		    bay.percent=0;
+            $.each(thisModel.getData().LastRoundBays, function (index, oldBay) {
+                if (bay.gh_bay==oldBay.gh_bay){
+                    if (oldBay.plant.length>0){
+                        bay.plant=$.extend(true, {}, oldBay.plant);
+                        bay.percent=$.parseJSON(JSON.stringify(oldBay.percent));
+                        $.each(bay.plant, function (index, plant) {
+                            plant.planted_date.setDate(bay.planted_date.getDate());
+        	            	plant.oog_date.setDate(plant.planted_date.getDate()+plant.root+plant.veg+plant.ko+plant.rea);
+                        });	    
+                    }
+                }
+    		});	 
+		});	    
+        // thisModel.setProperty("/Bays",$.extend(true, {}, thisModel.getProperty("/LastRoundBays")));
         this.getView().getModel("multiAddModel").refresh(true);
     }
 
