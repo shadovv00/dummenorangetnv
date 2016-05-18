@@ -373,18 +373,14 @@ sap.ui.define([
             if(!!jPrint[0]) {
 		        jPrint.html("");
 		        jPrint = jBody.children("#printId");
-		        jPrint.append(jBayHeaderClone);
-		        jPrint.append("<div style='border-top:2px solid black'><p class='print-date-title'>Date:</p><p>" + oBayDate.getValue() + "</p></div>");
-    		    jPrint.append(jBayTableClone);
-                jBody.append(jPrint);
 		    } else {
 		        jBody.append("<div id='printId' class='visible-for-print-only'></div>");
 		        jPrint = jBody.children("#printId");
-		        jPrint.append(jBayHeaderClone);
+		    }
+		    jPrint.append(jBayHeaderClone);
 		        jPrint.append("<div style='border-top:2px solid black'><p class='print-date-title'>Date:</p><p>" + oBayDate.getValue() + "</p></div>");
     		    jPrint.append(jBayTableClone);
                 jBody.append(jPrint);
-		    }
 		    window.print();
 		}
 
