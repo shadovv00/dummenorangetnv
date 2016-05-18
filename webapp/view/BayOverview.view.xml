@@ -10,7 +10,7 @@
 					<Button type="Back" press="onHomePage" text="Home"/>
 				</items>
 			</FlexBox>
-			<mvc:XMLView viewName="dummenorangetnv.view.BayDetailsHeader"/>
+			<mvc:XMLView id="bayOverviewHeader" viewName="dummenorangetnv.view.BayDetailsHeader"/>
 		</Toolbar>
 		<Bar>
 			<contentLeft>

@@ -1,0 +1,36 @@
+@media only print {
+    .no-print {
+        display: none;
+    }
+    .visible-for-print-only {
+        display: block;
+    }
+    .thead-invisible-header {
+        visibility: visible !important;
+    }
+    
+    .thead-invisible-header tr {
+        font-size: 1rem !important;
+        white-space: nowrap !important;
+    }
+    .visible-for-print-only tbody {
+        page-break-inside: avoid;
+    }
+    .visible-for-print-only tr.-invisible-header {
+        line-height: 3rem !important;
+    }
+    .visible-for-print-only tr {
+        height: 3rem !important;
+    }
+    .sapMBtn, .sapMBtnBase {
+        display: none;
+    }
+    * {
+        font-size: 1rem;
+    }
+    .print-date-title {
+        float: left;
+        margin-right: 0.4rem;
+        margin-left: 0.5rem;
+    }
+}

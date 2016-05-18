@@ -26,7 +26,6 @@ sap.ui.define([
 			var key, x;
 			var aColumns = oControl.getColumns();
 			var aBayRowGroups = oControl.getItems();
-			console.log("quantity >> " + aBayRowGroups.length);
 			var width = oControl.getWidth();
 			var minWidth = oControl.getMinWidth();
 			

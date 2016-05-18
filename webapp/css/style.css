@@ -1,4 +1,9 @@
 /* Enter your custom styles here */
+@media only screen {
+    .visible-for-print-only {
+        display: none;
+    }
+}
 .bay-table-outer-wrapper {
 	/*background: #fff;*/
     position: absolute;

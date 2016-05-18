@@ -257,7 +257,6 @@ sap.ui.define([
 					type: sap.ui.core.mvc.ViewType.XML
 				});
 				oBayEditorView.data("overview_date_str", oDatePicker.getValue());
-				oBayEditorView.data("mmm", this._mmm);
 				app.addPage(oBayEditorView);
 				app.to(oBayEditorView);
 			}  
@@ -310,6 +309,40 @@ sap.ui.define([
 				    //	console.log(aTableItems[x]);
 					aTableItems[x].getBinding("rows").filter(aFilters);
 				}
+		},
+		printBay: function() {
+		    var jBody = $("body");
+		    var jbodyCh = jBody.children(":not(#printId)");
+		    var oBayHeader = this.byId("bayOverviewHeader");
+		    var oBayDate = this.byId("date_id");
+		    var oBayTable = this.byId("bay_table_id");
+		    var jBayHeader = oBayHeader.$();
+		    var jBayTable = (oBayTable.$()).find("table:not(.-visible-header-table)");
+		    var jBayHeaderClone = jBayHeader.clone();
+		    var jBayTableClone = jBayTable.clone();
+		    jBayHeaderClone.find("*").removeAttr("id");
+		    jBayTableClone.find("*").removeAttr("id");
+		    
+		    if(!jbodyCh.hasClass("no-print")) {
+		        jbodyCh.addClass("no-print");
+		    }
+		    var jPrint = $("#printId");
+            if(!!jPrint[0]) {
+		        jPrint.html("");
+		        jPrint = jBody.children("#printId");
+		        jPrint.append(jBayHeaderClone);
+		        jPrint.append("<div style='border-top:2px solid black'><p class='print-date-title'>Date:</p><p>" + oBayDate.getValue() + "</p></div>");
+    		    jPrint.append(jBayTableClone);
+                jBody.append(jPrint);
+		    } else {
+		        jBody.append("<div id='printId' class='visible-for-print-only'></div>");
+		        jPrint = jBody.children("#printId");
+		        jPrint.append(jBayHeaderClone);
+		        jPrint.append("<div style='border-top:2px solid black'><p class='print-date-title'>Date:</p><p>" + oBayDate.getValue() + "</p></div>");
+    		    jPrint.append(jBayTableClone);
+                jBody.append(jPrint);
+		    }
+		    window.print();
 		}
 
 		/**
