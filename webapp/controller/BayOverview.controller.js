@@ -76,6 +76,8 @@ sap.ui.define([
 
 			var oFilterSelectData = {
 				filterData: [{
+					name: "-"
+				}, {
 					name: "001 Feeling green dark"
 				}, {
 					name: "015 Grand cherry"
@@ -221,39 +223,43 @@ sap.ui.define([
 		},
 
 		onDataFilter: function(oEvent) {
+		    
 			console.log(this._sPlantName);
-			console.log(this._sPlanningType);
 			console.log(this._sDiscriptionValue);
+			console.log(this._sPlanningType);
 
 			var aFilters = [];
-			// update list binding
 			var obayTable = this.getView().byId("bay_table_id");
 
 			var aTableItems = obayTable.getItems();
 
-			if (this._sDiscriptionValue != null && this._sDiscriptionValue.trim().length > 0) {
-				console.log("DS");
-				var oDiscriptionFilter = new sap.ui.model.Filter("discription", sap.ui.model.FilterOperator.Contains, this._sDiscriptionValue);
-				aFilters.push(oDiscriptionFilter);
-			}
-
-			if (this._sPlanningType != "-" && this._sPlanningType != null) {
-				console.log("sPT");
-				var oPlanningTypeFilter = new sap.ui.model.Filter("planningType", sap.ui.model.FilterOperator.EQ, this._sPlanningType);
-				aFilters.push(oPlanningTypeFilter);
-			}
-			if (this._sPlantName != null) {
+			if (this._sPlantName != null && this._sPlantName != "-") {
 				console.log("sPN");
-				var oPlantNameFilter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.Contains, this._sPlantName);
+				oPlantNameFilter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.EQ, this._sPlantName);
 				aFilters.push(oPlantNameFilter);
 
 			}
-			console.log(aFilters.length);
-			if (aFilters.length > 0) {
-				for (var x = 0; x < aTableItems.length; x++) {
-					//	console.log(aTableItems[x]);
-					aTableItems[x].getBinding("rows").filter(aFilters);
-				}
+
+			if (this._sDiscriptionValue != null && this._sDiscriptionValue.trim().length > 0) {
+				console.log("DS");
+				oDiscriptionFilter = new sap.ui.model.Filter("discription", sap.ui.model.FilterOperator.Contains, this._sDiscriptionValue);
+				aFilters.push(oDiscriptionFilter);
+			}
+		
+
+			if (this._sPlanningType != "-" && this._sPlanningType != null) {
+				console.log("sPT");
+				oPlanningTypeFilter = new sap.ui.model.Filter("planningType", sap.ui.model.FilterOperator.EQ, this._sPlanningType);
+				aFilters.push(oPlanningTypeFilter);
+			}
+
+			console.log(">>>>>>>>");
+
+			console.log(aFilters);
+
+			for (var x = 0; x < aTableItems.length; x++) {
+				//	console.log(aTableItems[x]);
+				aTableItems[x].getBinding("rows").filter(aFilters);
 			}
 
 			this._getBayFilterDialog().close();
