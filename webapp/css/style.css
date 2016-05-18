@@ -115,6 +115,9 @@
 .texts-font {
      font-size: 130%;
 }
+.thick {
+    font-weight: bold;
+}
 .sapMShellContent {
     overflow: hidden;
 }

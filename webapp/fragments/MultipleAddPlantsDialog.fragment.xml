@@ -1,0 +1,106 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:lForm="sap.ui.layout.form" xmlns:l="sap.ui.layout" 
+controllerName="dummenorangetnv.controller.MultipleAddPlants">
+	<Dialog contentWidth="40em" >
+	<!--<Dialog  >-->
+		<customHeader>
+			<Bar>
+				<contentRight>
+					<Button press="closeMultiPlantsAddDialog" icon="sap-icon://decline"/>
+				</contentRight>
+				<contentLeft>
+					<!--<Title text="Filter"/>-->
+					<Text   class = " sapUiTinyMarginBegin" text="Select plants"></Text>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<content>
+		    <Panel>
+		        
+			<Text   class = " sapUiTinyMarginBegin sapUiSmallMarginButtom" text="Select the variety and percentage of plants that you want to fill the selected bays with"></Text>
+            
+<!--<l:MatrixLayout id="myLayout" >-->
+<!--    <l:MatrixLayoutRow>-->
+<!--        <l:MatrixLayoutCell><Text text="In pharetra diam pretium bibendum" /></l:MatrixLayoutCell>-->
+<!--        <l:MatrixLayoutCell><Text text="Sed tristique diam non imperdiet commodo" /></l:MatrixLayoutCell>-->
+<!--    </l:MatrixLayoutRow>-->
+<!--    <l:MatrixLayoutRow>-->
+<!--        <l:MatrixLayoutCell><Text text="At tincidunt purus finibus" /></l:MatrixLayoutCell>-->
+<!--        <l:MatrixLayoutCell><core:Icon src="sap-icon://add" /></l:MatrixLayoutCell>-->
+<!--    </l:MatrixLayoutRow>-->
+<!--</l:MatrixLayout>            -->
+
+
+	<!--<l:Grid -->
+	<!--	>-->
+	<!--	<l:content>-->
+	<HBox class="sapUiSmallMarginTop">
+	    <VBox width="10em">
+    		<Label text="Variety / Product form" class="sapUiSmallMarginTop"/>    		
+	    </VBox>
+	    <VBox width="29em">
+    		<Select id="plantSelectorId" class="" change="onPlantChange"  
+    			items="{ path: 'multiAddModel>/Plants', sorter: { path: 'id' } }">
+    			<core:Item key="{multiAddModel>id}" text="{multiAddModel>id} {multiAddModel>name}"/>
+    		</Select>		    
+	    </VBox>
+	</HBox>
+	<HBox width="100%">
+	    <VBox width="10em">
+	    </VBox>
+	    <RadioButtonGroup columns="2" width="100%" class="">
+    		<buttons>
+    			<RadioButton id="multiAddPlantPercentRB" text="Percentage" select="onMultiAddPlantPercentRB" selected='true'/>
+    			<RadioButton id="multiAddPlantNumberRB"  text="Number"     select="onMultiAddPlantNumberRB"/>
+    		</buttons>
+    	</RadioButtonGroup>
+	</HBox>
+	<HBox>
+	    <VBox width="10em">
+    		<Label text="Percentage of Bay" class="sapUiSmallMarginTop"/>
+	    </VBox>
+	    <VBox  width="29em">
+    		<HBox class="" width="100%">
+    			<Input id="plantPercentId" value="{multiAddModel>/plantsPercent}%" textAlign="End" width="6em" change="onPlantPercentChange"></Input>
+    			<VBox width="100%">
+    			    <Slider id="plantPercentSliderId" value="{multiAddModel>/plantsPercent}" width="100%" min="0" max="100"></Slider>
+    			</VBox>
+    		</HBox>
+	    </VBox>
+	</HBox>
+	<HBox>
+	    <VBox width="10em">
+    		<Label text="Number of plants" class="sapUiSmallMarginTop"/>
+	    </VBox>
+	    <VBox width="29em">
+    		<Input id="plantNumberId" value= "{multiAddModel>/plantsNumber}" textAlign="End" width="6em" editable='false' enabled='false'></Input>
+	    </VBox>
+	</HBox>
+
+    		<!--<Label text="Variety / Product form" class="sapUiSmallMarginTop">    		</Label>-->
+    		<!--<Select id="plantSelectorId" class="" change="onPlantChange" width="20em" -->
+    		<!--	items="{ path: 'multiAddModel>/Plants', sorter: { path: 'id' } }">-->
+    		<!--	<core:Item key="{multiAddModel>id}" text="{multiAddModel>id} {multiAddModel>name}"/>-->
+    		<!--</Select>		    -->
+    		<!--<Label text="Percentage of Bay" class="sapUiSmallMarginTop"></Label>-->
+    		<!--<HBox class="" width="100%">-->
+    		<!--	<Input id="plantPercentId" value="0" textAlign="End" width="6em"></Input>-->
+    		<!--	<Slider value="0" width="100%" min="0" max="100"></Slider>-->
+    		<!--</HBox>-->
+    		<!--<Label text="Number of plants" class="sapUiSmallMarginTop"></Label>-->
+    		<!--<Input id="plantNumberId" value="0" textAlign="End" width="6em"></Input>-->
+	<!--	</l:content>-->
+	<!--</l:Grid>-->
+
+
+
+
+
+		    </Panel>
+		</content>
+
+		<buttons>
+			<Button text="Cancel" press="closeMultiPlantsAddDialog" class="sapUiMediumMarginEnd"/>
+			<Button text="Add plants" press="saveMultiPlantsAddDialog" class="sapUiMediumMarginEnd"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

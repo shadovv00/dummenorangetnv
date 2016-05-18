@@ -17,7 +17,7 @@
 						<!--<Image src="{growers>imgUrl}" width="95%"/>-->
 							<core:Icon src="sap-icon://person-placeholder" size="1000%"/>
 						<VBox justifyContent="Center" class="sapUiSmallMarginBegin">
-							<Label text="{growers>id} {growers>name}" class="texts-font" design="Bold"/>
+							<Text text="{growers>id} {growers>name}" class="texts-font thick"/>
 							<Text text="{growers>address/street}" class="texts-font"/>
 							<Text text="{growers>address/city}" class="texts-font"/>
 							<Text text="{growers>phoneNumber}" class="texts-font"/>

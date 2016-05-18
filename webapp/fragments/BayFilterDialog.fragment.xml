@@ -32,7 +32,8 @@
 			<l:MatrixLayout columns="2" widths="40%,60%" id="myLayout" width="100%" layoutFixed="true">
 				<l:MatrixLayoutRow>
 					<l:MatrixLayoutCell>
-						<Label text="Variety / product form" labelFor="selectId1" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
+					  
+						<Text text="Variety / product form" labelFor="selectId1" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
 					<l:MatrixLayoutCell >
 						<Select id="plantSelectorId" items="{plants>/filterData}" width="90%" class="sapUiMediumMarginEnd" change="onPlantChange">
 							<core:Item key="{plants>name}" text="{plants>name}"/>
@@ -41,44 +42,77 @@
 				</l:MatrixLayoutRow>
 				<l:MatrixLayoutRow>
 					<l:MatrixLayoutCell>
-						<Label text="Bay Description" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
-					<l:MatrixLayoutCell><Input width="90%" class="sapUiMediumMarginEnd" change="onInput"/></l:MatrixLayoutCell>
+						<Text text="Bay Description" class="sapUiMediumMarginBegin"/></l:MatrixLayoutCell>
+					<l:MatrixLayoutCell><Input id="inputId" width="90%" class="sapUiMediumMarginEnd" change="onInput"/></l:MatrixLayoutCell>
 				</l:MatrixLayoutRow>
 				<l:MatrixLayoutRow>
-					<l:MatrixLayoutCell><Label text="Planningtype" class="sapUiMediumMarginBegin"/>
+					<l:MatrixLayoutCell><Text text="Planningtype" class="sapUiMediumMarginBegin"/>
 					</l:MatrixLayoutCell>
 					<l:MatrixLayoutCell>
-						<Select id="PlanningtypeSelectorId"  width="90%" class="sapUiMediumMarginEnd" change="onPlanningtypChange">
-						    <items>
-							<core:Item key="-" text="-"/>
-							    <core:Item key="rooted" text="rooted"/>
-							        <core:Item key="unrooted" text="unrooted"/>
-							            </items>
+						<Select id="planningtypeSelectorId" width="90%" class="sapUiMediumMarginEnd" change="onPlanningtypChange">
+							<items>
+								<core:Item key="-" text="-"/>
+								<core:Item key="rooted" text="rooted"/>
+								<core:Item key="unrooted" text="unrooted"/>
+							</items>
 						</Select>
 					</l:MatrixLayoutCell>
 				</l:MatrixLayoutRow>
 			</l:MatrixLayout>
+			<!--<VBox justifyContent="Center">-->
+			<!--	<HBox alignItems="Center" justifyContent="SpaceBetween">-->
+			<!--		<Label text="Variety / product form" labelFor="selectId1" class="sapUiMediumMarginBegin"/>-->
+			<!--		<Select id="plantSelectorId" items="{plants>/filterData}" width="90%" class="sapUiMediumMarginEnd" change="onPlantChange">-->
+			<!--			<core:Item key="{plants>name}" text="{plants>name}"/>-->
+			<!--		</Select>-->
+			<!--	</HBox>-->
+			<!--	<HBox alignItems="Center">-->
+			<!--	<Label text="Bay Description" class="sapUiMediumMarginBegin"/>-->
+			<!--	<Input width="90%" class="sapUiMediumMarginEnd" change="onInput"/>-->
+			<!--	</HBox>-->
+			<!--	<HBox alignItems="Center">-->
+			<!--		<Label text="Planningtype" class="sapUiMediumMarginBegin"/>-->
+			<!--			<Select id="PlanningtypeSelectorId" width="90%" class="sapUiMediumMarginEnd" change="onPlanningtypChange">-->
+			<!--				<items>-->
+			<!--					<core:Item key="-" text="-"/>-->
+			<!--					<core:Item key="rooted" text="rooted"/>-->
+			<!--					<core:Item key="unrooted" text="unrooted"/>-->
+			<!--				</items>-->
+			<!--			</Select>-->
+			<!--	</HBox>-->
+			<!--</VBox>-->
+			<!--<HBox justifyContent="SpaceBetween">-->
+			<!--	<VBox alignItems="Start">-->
+			<!--		<FlexBox>-->
+			<!--			<Label text="Variety / product form" labelFor="selectId1" class="sapUiMediumMarginBegin"/>-->
+			<!--		</FlexBox>-->
+			<!--		<FlexBox>-->
+			<!--			<Label text="Bay Description" class="sapUiMediumMarginBegin"/>-->
+			<!--		</FlexBox>-->
+			<!--		<FlexBox>-->
+			<!--			<Label text="Planningtype" class="sapUiMediumMarginBegin"/>-->
+			<!--		</FlexBox>-->
+			<!--	</VBox>-->
+			<!--	<VBox>-->
+			<!--		<Select id="plantSelectorId" items="{plants>/filterData}" width="90%" class="sapUiMediumMarginEnd" change="onPlantChange">-->
+			<!--			<core:Item key="{plants>name}" text="{plants>name}"/>-->
+			<!--		</Select>-->
+			<!--		<Input width="90%" class="sapUiMediumMarginEnd" change="onInput"/>-->
+			<!--		<Select id="PlanningtypeSelectorId" width="90%" class="sapUiMediumMarginEnd" change="onPlanningtypChange">-->
+			<!--			<items>-->
+			<!--				<core:Item key="-" text="-"/>-->
+			<!--				<core:Item key="rooted" text="rooted"/>-->
+			<!--				<core:Item key="unrooted" text="unrooted"/>-->
+			<!--			</items>-->
+			<!--		</Select>-->
+			<!--	</VBox>-->
+			<!--</HBox>-->
 		</content>
-		<!--<VBox>-->
-		<!--	<HBox>-->
-		<!--			<Label text="Variety / product form" labelFor="selectId1"/>-->
-		<!--		<Select id="selectId1" items="{/data}" tooltip="Variety / product form">-->
-		<!--			<core:Item key="{name}" text="{name}"/>-->
-		<!--		</Select>-->
-		<!--			</HBox>-->
-		<!--	<HBox>-->
-		<!--		<Label text="Bay Description"/>-->
-		<!--		<Input/>-->
-		<!--	</HBox>-->
-		<!--	<HBox>-->
-		<!--		<Label text="Planningtype"/>-->
-		<!--		<Select items="{/data}">-->
-		<!--			<core:Item key="{name}" text="{name}"/>-->
-		<!--		</Select>-->
-		<!--	</HBox>-->
-		<!--</VBox>-->
+
 		<buttons>
+		    <Button text="Restore filters" press="onRestoreFilters"/>  
 			<Button text="Filter" press="onDataFilter" class="sapUiMediumMarginEnd"/>
+	  
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
