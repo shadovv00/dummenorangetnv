@@ -235,21 +235,21 @@ sap.ui.define([
 
 			if (this._sPlantName != null && this._sPlantName != "-") {
 				console.log("sPN");
-				oPlantNameFilter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.EQ, this._sPlantName);
+				var oPlantNameFilter = new sap.ui.model.Filter("name", sap.ui.model.FilterOperator.EQ, this._sPlantName);
 				aFilters.push(oPlantNameFilter);
 
 			}
 
 			if (this._sDiscriptionValue != null && this._sDiscriptionValue.trim().length > 0) {
 				console.log("DS");
-				oDiscriptionFilter = new sap.ui.model.Filter("discription", sap.ui.model.FilterOperator.Contains, this._sDiscriptionValue);
+			var	oDiscriptionFilter = new sap.ui.model.Filter("discription", sap.ui.model.FilterOperator.Contains, this._sDiscriptionValue);
 				aFilters.push(oDiscriptionFilter);
 			}
 		
 
 			if (this._sPlanningType != "-" && this._sPlanningType != null) {
 				console.log("sPT");
-				oPlanningTypeFilter = new sap.ui.model.Filter("planningType", sap.ui.model.FilterOperator.EQ, this._sPlanningType);
+			var	oPlanningTypeFilter = new sap.ui.model.Filter("planningType", sap.ui.model.FilterOperator.EQ, this._sPlanningType);
 				aFilters.push(oPlanningTypeFilter);
 			}
 
