@@ -46,18 +46,15 @@ sap.ui.define([
 			// 			view.destroy();
 		},
 
-		_mmm: null,
-
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
 		onInit: function() {
-
-			var jsonModel = new sap.ui.model.json.JSONModel();
-			jsonModel.loadData("mockdata/bay.json");
-			this._mmm = jsonModel;
+// 			var oDataModel = this.getView().getModel("dopa_persistence");
+// 			var sth = oDataModel.read();
+// 			console.log(sth);
 
 			this.byId("date_id").setDateValue(new Date());
 
@@ -65,10 +62,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var oModel = oCore.getModel("jm");
 
-			console.log(oModel);
 			this.getView().setModel(oModel);
-			// 			this.getView().setModel(jsonModel);
-
 			oView.setModel(oModel, "jm");
 
 			var oSelectedBayModel = sap.ui.getCore().getModel("selectedBay");
@@ -318,7 +312,11 @@ sap.ui.define([
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
 		 * @memberOf dummenorangetnv.view.BayOverview
 		 */
-		onAfterRendering: function() {},
+		onAfterRendering: function() {
+		    var oModel = this.getView().getModel("odataModel");
+		    console.log("ODATA");
+			console.log(oModel);
+		},
 
 		goToMultiAddPlants: function(oEvent) {
 			var view = this.getView();

@@ -32,6 +32,7 @@ sap.ui.define([
 				oRM.renderControl(aCells[x]);
 			}
 			oRM.write("</tr>");
+			
 		}
 	});
 });

@@ -49,10 +49,35 @@
 				        templateShareable: true,
     		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
 				    }"
+			    tmpRows="{
+			        path: 'plant',
+	                templateShareable: true,
+		            filters : [{ path : 'deleted', operator : 'EQ', value1: false }]
+			    }"
 				oddweek="{
 			                path: 'plant/0/planted_date',
 					        formatter: '.formatOddWeek'
 				        }">
+			    <cc:tmpRows>
+			        <cc:BayRow
+    			        class="bay-row-tmp">
+    					<cc:BayCell
+    					    class="bay-table-cell" />
+    					<cc:BayCell
+    					    class="bay-table-cell">
+    					</cc:BayCell>
+    					<cc:BayCell
+    					    class="bay-table-cell">
+    					</cc:BayCell>
+    					<cc:BayCell colspan="10">
+    					    <TextArea
+                                    width="100%"
+                                    placeholder="Comments"
+                                    value="Comments...Comments...Comments...Comments...Comments...Comments...Comments..."/>
+    					</cc:BayCell>
+    					<cc:BayCell class="bay-table-cell"/>
+    				</cc:BayRow>
+			    </cc:tmpRows>
 			    <cc:BayRow
 			        frstClmn="2">
 					<cc:BayCell

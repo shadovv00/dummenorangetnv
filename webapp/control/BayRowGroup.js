@@ -17,6 +17,7 @@ sap.ui.define([
 			},
 			aggregations : {
 				"rows" : {type : "dummenorangetnv.control.BayRow", multiple : true, singularName : "row"},
+				"tmpRows" : {type : "dummenorangetnv.control.BayRow", multiple : true, singularName : "tmprow"},//tmp
 				"ftRows" : {type : "dummenorangetnv.control.BayRow", multiple : true, singularName : "ftrow"},
 				"emptyRow" : {type : "dummenorangetnv.control.BayRow", multiple : false}
 			},
@@ -26,6 +27,7 @@ sap.ui.define([
 		renderer: function(oRM, oControl) {
 			var key, x;
 			var aRows = oControl.getRows();
+			var aTmpRows = oControl.getTmpRows(); //tmp
 			var aFtRows = oControl.getFtRows();
 			var aEmptyRow = oControl.getEmptyRow();
 			var ghbay = oControl.getGhbay();
@@ -48,6 +50,9 @@ sap.ui.define([
 				for(x = 0; x < aRows.length; x++) {
 				    aRows[x].addStyleClass("just-for-arrow-navigation");
 					oRM.renderControl(aRows[x]);
+					if(x < aRows.length - 1) {
+					    oRM.renderControl(aTmpRows[x]); //tmp
+					}
 				}
 			} else if(aEmptyRow) {
 			    aEmptyRow.setGhbay(ghbay);

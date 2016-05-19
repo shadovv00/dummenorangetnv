@@ -4,6 +4,9 @@
         display: none;
     }
 }
+.bay-row-tmp {
+    height: 3rem;
+}
 .bay-table-outer-wrapper {
 	/*background: #fff;*/
     position: absolute;

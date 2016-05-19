@@ -84,9 +84,9 @@ sap.ui.define([
 			}
 		},
 		formatPercent: function(value) {
-			return (value * 100) + "%";
+			return Math.round(value * 10000)/100 + "%";
 		},
-		formatPlants: function(percent, square, density, plants) {
+		calculatePlants: function(percent, square, density, plants) {
 			var maxPlants = square * density;
 			return maxPlants * percent;
 		},
@@ -114,11 +114,12 @@ sap.ui.define([
 			return parseInt(ttl);
 		},
 		calculatePercentFloat: function(data) {
-			var entry, ttl = 0;
+			var entry, ttl = 0, val;
 			for (var x = 0; x < data.length; x++) {
 				entry = data[x];
 				if (entry["deleted"]) continue;
-				ttl += entry["percent"] * 100;
+				val = Math.round(entry["percent"] * 10000)/100;
+				ttl += val;
 			}
 			return ttl;
 		},
@@ -146,10 +147,10 @@ sap.ui.define([
 			var sPath = sBindingContext.getPath();
 			var oModel = sBindingContext.getModel();
 			var oValue = oControl.getValue();
-			var valNum = (parseFloat(oValue) / 100).toFixed(4);
+			var valNum = (Math.round(parseFloat(oValue) * 100) / 10000);
 			var sPathT = sPath;
 			sPath = sPath + "/percent";
-			oModel.setProperty(sPath, +valNum, sBindingContext, true);
+			oModel.setProperty(sPath, valNum, sBindingContext, true);
 			oModel.updateBindings(true);
 		},
 		changePlantedDate: function(oEvent) {
